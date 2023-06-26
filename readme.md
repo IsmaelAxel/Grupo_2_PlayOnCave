@@ -8,8 +8,9 @@
 ### Nahuel Argandoña; 🇦🇷 Córdoba capital - 29 años. Estudiante desarrollador full stack 🐣 [Mi Github](https://github.com/Aubar48)
 ### Ismael Callamullo; Buenos Aires - 19 años. Estudiante en desarrollado web full stack y Estudiante de economía en la UBA.[Mi github](https://github.com/IsmaelAxel)
 ### Gaston Gomez; Rosario - 30 años. Estudiante desarrollador full stack.[Mi github](https://github.com/gastonutn)
-### Jorge Luis Olea; 34 años - Tucuman / capital - Estudiante de Programacion [Mi github](https://github.com/jorgitoluis)
-### [Link-Trello] (https://trello.com/b/RdGmfW7u/proyecto-integrador)
+### Jorge Luis Olea; 34 años - Tucuman / capital - Estudiante de Programacion [Mi github](https://github.com/jorgitoluis) 
+
+### Link trello del proyecto.[Trello](https://trello.com/b/RdGmfW7u/proyecto-integrador)
 
 ## Referentes:
 ### [Steam](https://store.steampowered.com/?l=spanish): Seleccionada por ser la pagina numero 1 en venta de juegos
