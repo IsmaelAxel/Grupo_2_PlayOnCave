@@ -1,3 +1,5 @@
+RETROSPECTIVA DEL SPRINT 1
+
 Hacer más:
 -Cumplir con todas las dailys (Esto incluye a todo el equipo).
 -Darle más atención a Trello.
