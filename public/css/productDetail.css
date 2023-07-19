@@ -1,0 +1,92 @@
+.product__main{
+    margin: 0 10px;
+}
+.product__main--article{
+    background-color: var(--gris1);
+    padding: 5px;
+}
+.product__main--article img{
+    width: 100%;
+    margin: 5px 0;
+}
+.product__main--article-info{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.product__main--article-info p{
+    background-color: var(--colorBotones);
+    color: #ffffff;
+    padding: 10px;
+}
+.product__main--article-info h4{
+    color: var(--colorVerde);
+}
+.product__main--article-comprar{
+    text-align: center;
+    background-color: var(--colorVerde);
+    padding: 10px;
+    margin: 5px 0;
+}
+.product__main--article-comprar a{
+    color: #000000;
+    font-weight: 700;
+}
+.product__main--article-favoritos{
+    text-align: center;
+    background-color: var(--gris3);
+    padding: 10px;
+    margin: 0 0 20px;
+}
+.product__main--article-favoritos a{
+    color: #ffffff;
+    font-weight: 700;
+}
+.product__main--infoJuego{
+    color: var(--gris4);
+    margin: 10px 0;
+}
+.product__main--infoJuego-titulo{
+    border-bottom: 1px solid var(--gris3);
+    font-size: .7rem;
+    margin: 10px 0;
+}
+.product__main--infoJuego-titulo h2{
+    font-weight: 400;
+}
+.product__main--infoJuego-more{
+    margin: 5px 0 10px;
+}
+.product__main--infoJuego a{
+    text-decoration: underline;
+    color: var(--colorVerde);
+
+}
+.product__main--requisitos{
+    color: var(--gris4);
+}
+.product__main--requisitos-logo{
+    background-color: var(--gris3);
+    text-align: center;
+    padding: 10px;
+}
+.product__main--requisitos-logo i{
+    color: var(--gris4);
+}
+.product__main--requisitos p{
+    margin: 10px 0;
+}
+.product__main--requisitos-minimos tr td{
+    padding-right: 20px;
+}
+.product__main--requisitos-recomendados{
+    display: none;
+}
+.product__main--requisitos-more{
+    margin: 20px 0;
+}
+.product__main--requisitos-more a{
+    text-decoration: underline;
+    color: var(--colorVerde);
+
+}
