@@ -3,9 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/4a85f0d80f.js" crossorigin="anonymous"></script>
+    <title>productCart</title>
 </head>
-<body>
-    
+<body class="productCart">
+   <header>
+   </header> 
+    <div class="productCart__titulo">
+        <h2>Tu cesta</h2>   
+    </div> 
+<!--------------------------------------- cesta ------------------------------------------------>
+<main class="productCart__main">
+
+    <section class="productCart__main__boxCesta">
+        <div class="productCart__main__boxCesta__juego">
+            <h4>JUEGO</h4>
+        </div>
+        <div class="productCart__main__boxCesta__nombreJuego">
+            <h4>
+                NOMBRE DEL JUEGO
+            </h4>
+        </div>
+        <div class="productCart__main__boxCesta__cantidad">
+            <a href="#"><i class="fa-sharp fa-solid fa-circle-minus"></i></a>
+            1
+            <a href="#"><i class="fa-solid fa-circle-plus"></i></a>
+        </div>
+        <div class="productCart__main__boxCesta__precio">
+            <h4>$ 3.560</h4>
+        </div>
+        <div class="productCart__main__boxCesta__eliminar">
+            <a href="#"><i class="fa-solid fa-trash-can"></i></a>
+        </div>
+    </section>
+<!-------------------------------------------fin de la cesta ----------------------------------->
+<div class="productCart__main__section2">
+<div class="productCart__titulo2">
+ <h2>Resumen del pedido</h2>
+ <div class="productCart__PagoSeguro">
+   <i class="fa-solid fa-lock"></i><h2>Pago Seguro</h2>   
+ </div> 
+</div>
+ <!--------------------------------------- RESUMEN DEL PEDIDO --------------------------------->
+<section class="productCart__main__boxResumen">
+<div class="productCart__main__boxResumen__boxPrecio">
+    <div class="productCart__main__boxResumen__boxPrecio__precioTotal">
+        <h4>Precio Total</h4>
+    </div> 
+    <div class="productCart__main__boxResumen__boxPrecio__totalNumero">       
+        <h4>$3560</h4>
+    </div>
+ </div>
+<div class="productCart__main__boxResumen__separador"></div>
+  <div class="productCart__main__boxResumen__boxImporte">
+       <div class="productCart__main__boxResumen__boxImporte__importeTotal">
+            <h3>Importe Total</h3>
+        </div>
+        <div class="productCart__main__boxResumen__boxImporte__importeNumero">
+            <h3>$3560</h3>
+        </div>
+  </div>   
+ <div class="productCart__main__boxResumen__botonPagar">
+    <a class="productCart__main__boxResumen__botonPagar__pagar" href="#">PAGAR</a>
+ </div>
+<div class="productCart__main__boxResumen__politicas">
+    <p>Al hacer clic en 'pagar', aceptas
+       nuestra politica de reembolso.
+    </p>
+</div>
+</section>
+</div>
+<!-- ---------------------------------FIN DEL RESUMEN-------------------------------------------->
+</main>
+<footer>
+</footer>
 </body>
 </html>
