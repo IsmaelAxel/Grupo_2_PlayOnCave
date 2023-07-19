@@ -27,5 +27,6 @@ ul{
 body{
     background-color: var(--colorBackground);
     max-width: 1180px;
+    margin: 0 auto;
     font-family: var(--tipoGrafiaTextos);
 }
