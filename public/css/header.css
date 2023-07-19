@@ -1,0 +1,55 @@
+
+.home__header{
+    background-color: #000000;
+    color: var(--colorVerde);
+    height: 150px;
+    display: flex;
+    border-bottom: 2px solid var(--colorVerde);
+}
+
+.home__header--box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home__header__box--burguer{
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+    width: 25%;   
+}
+
+.home__header__box--burguer i{
+    background-color: var(--gris2);
+    padding: 3px;
+    padding-bottom: 2px;
+    border-radius: 5px;
+    border: solid 1px var(--colorVerde);
+}
+
+.home__header__box--login nav ul{
+    display: flex;
+}
+
+.home__header__box--login nav ul li a p{
+    display: none;
+}
+
+.home__header__box--login nav ul li a p,.home__header__box--login nav ul li a i{
+    color: var(--colorVerde);
+}
+
+.home__header__box--logo{
+    width: 33%; 
+}
+
+.home__header__box--logo img{
+   
+    width: 100%;
+    top:5px;
+}
+
+.home__header__box--categorias{
+    display: none;
+}
