@@ -1,6 +1,13 @@
+body.index img {
+  background-size: cover;
+}
+.index__main__visita2,
+.index__main__visita3,
 .index--carousel,
+.index__main--caruselExtend,
 .index__main--ofertasDestacadas,
 .index__main--nuevosLanzamientos,
+.index__main--losMasDeseados,
 .index_main_visita2,
 .index__main--proximamente,
 .index_main_visita3,
@@ -62,21 +69,27 @@
   display: flex;
   justify-content: center;
 }
-.index__main--losMasVendidos {
-  color: white;
-  padding-left: 10px;
+.index__main--losMasVendidos,
+.index__main--losMasDeseados {
   background-image: url(/img/index/losMasDestacados.svg);
+  color: white;
+  padding: 10px 10px;
+  text-transform: uppercase;
+  margin: 10px 0;
+  background-size: cover;
+  object-fit: cover;
 }
 .index__main__section--article {
   display: flex;
   flex-direction: row;
-  justify-content: start;
-  align-items: center;
-}
-.index__main__article--img {
-  width: 25%;
+  flex-wrap: nowrap;
 }
 
+.index__main__article--img {
+  width: 25%;
+  border-left: 2px solid var(--colorVerde);
+  margin: 5px 0;
+}
 .index__main__article--nombreProducto,
 .index__main__article--comprar,
 .index__main__article--precio,
@@ -85,10 +98,11 @@
   text-transform: capitalize;
   border: none;
   padding: 5px;
-  margin: 2px 0;
+  margin: 5px 0;
+  background-color: black;
 }
 .index__main__article--nombreProducto {
-  color: black;
+  color: white;
 }
 .index__main__article--comprar {
   background-color: var(--colorVerde);
@@ -98,22 +112,157 @@
   color: var(--colorVerde);
   display: flex;
   gap: 5px;
+  align-items: center;
 }
 .index__main__article--descuento {
   background-color: var(--colorBotones);
   color: white;
-}
-.index__main--losMasVendidos {
-  padding: 10px 10px;
-  text-transform: uppercase;
 }
 
 /* media q tablets */
 
 @media (min-width: 481px) {
   /* main */
+  .index--carousel,
+  .index__main__visita2,
+  .index__main--caruselExtend,
+  .index__main--ofertasDestacadas,
+  .index__main--losMasDeseados {
+    display: block;
+  }
+  .index__main--caruselExtend {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid green;
+    background-color: black;
+    margin: 5px 0;
+  }
+  .index__main--caruselExtend2 {
+    display: flex;
+    gap: 20px;
+  }
+
+  .index__main__visita1,
+  .index__main__visita2 {
+    display: flex;
+    gap: 0px;
+    justify-content: space-between;
+  }
+  .index__main__articleHeader {
+    width: 47%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .index__main__caruselExtend--titulo {
+    display: flex;
+    color: white;
+    font-size: 1.2rem;
+    padding-left: 10px;
+    padding-top: 10px;
+    text-transform: capitalize;
+  }
+  .index__main__caruselExtend--precio {
+    display: flex;
+    align-items: center;
+    color: var(--colorVerde);
+    gap: 5px;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+  }
+  .index__main__caruselExtend--comprar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    background-color: var(--colorVerde);
+    margin: 10px 30px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+  .index__main--ofertasDestacadas {
+    background-image: url(/img/index/ofertasDestacadas.svg);
+    color: white;
+    padding-left: 10px;
+    padding: 10px 10px;
+    text-transform: uppercase;
+    margin: 10px 0;
+    background-size: cover;
+    object-fit: cover;
+  }
+  .index__main__section--article {
+    display: flex;
+    flex-direction: row;
+  }
+  .index__main__article {
+    width: 47%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .index__main__article--img {
+    width: 100%;
+    border-left: 2px solid var(--colorVerde);
+    margin: 5px 0;
+  }
+  .index__main__losMasVendidos {
+    display: flex;
+    gap: 40px;
+    flex-direction: row;
+  }
+  .index__main__ofertas2 {
+    display: none;
+  }
+  .index__main__losMasDeseados {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+  }
 }
 /* desktop */
 @media (min-width: 769px) {
   /* main */
+  .index__main__visita3,
+  .index__main--nuevosLanzamientos,
+  .index__main--proximamente,
+  .index__main--rebajas {
+    display: block;
+  }
+  .index__main__visita3 {
+    display: flex;
+    gap: 0px;
+    justify-content: space-between;
+  }
+  .index__main--nuevosLanzamientos {
+    background-image: url(/img/index/nuevosLanzamientosDestacados.svg);
+    color: white;
+    padding: 10px 10px;
+    text-transform: uppercase;
+    margin: 10px 0;
+    background-size: cover;
+    object-fit: cover;
+  }
+  .index__main--proximamente {
+    background-image: url(/img/index/proximamente.svg);
+    color: white;
+    padding: 10px 10px;
+    text-transform: uppercase;
+    margin: 10px 0;
+    background-size: cover;
+    object-fit: cover;
+  }
+  .index__main--rebajas {
+    background-image: url(/img/index/losMasDestacados.svg);
+    color: white;
+    padding: 10px 10px;
+    text-transform: uppercase;
+    margin: 10px 0;
+    background-size: cover;
+    object-fit: cover;
+  }
+  .index__main--rebajas,
+  .index__main--losMasVendidos,
+  .index__main--losMasDeseados {
+    padding-left: 20px;
+  }
 }
