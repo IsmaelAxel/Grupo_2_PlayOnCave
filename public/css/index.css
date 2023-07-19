@@ -1,0 +1,171 @@
+body.home img {
+  width: 100%;
+}
+body.home h3 {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
+.home_main_banner {
+  width: 100%;
+  display: none;
+}
+.home__main--ofertasDestacadas,
+.home__main--nuevosLanzamientos,
+.home_main_visita2,
+.home__main--proximamente,
+.home_main_visita3,
+.home__main--rebajas,
+.home_main_ofertas {
+  display: none;
+}
+
+.home__main__article {
+  margin: 0 auto 10px;
+  color: var(--colorGrisOscuro);
+  background-color: #ffffff;
+}
+
+.home_main_visita,
+.home_main_ofertas {
+  width: 100%;
+  margin: auto;
+}
+.home_main_visita--precio,
+.home_main_ofertas--precio {
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0;
+  color: var(--colorGrisOscuro);
+  width: 30%;
+}
+.home_main_visita--descuento,
+.home_main_ofertas--descuento {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+  color: var(--colorVerde);
+  text-align: center;
+  padding-bottom: 5px;
+  width: 70%;
+}
+.home_main--descripcion {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+  padding-top: 5px;
+  display: none;
+}
+.home__main__section--article {
+  display: flex;
+  border-top: solid 1px #ebebeb;
+  padding: 15px;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.home__main__article i {
+  display: block;
+  font-size: 16px;
+  padding: 3px;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #39b54a;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  right: 20px;
+  top: -15px;
+  color: #39b54a;
+  text-align: center;
+}
+
+.home_main_visita--descripcion {
+  color: var(--colorGrisOscuro);
+}
+.home__main--losMasVendidos {
+  color: white;
+  padding-left: 10px;
+  background-image: url(/img/index/losMasDestacados.svg);
+}
+.home--main h3 {
+  padding: 10px 0;
+}
+
+/* media q tablets */
+
+@media (min-width: 481px) {
+  /* header */
+  .home_header_encabezado--btn i {
+    position: absolute;
+    top: 30px;
+    right: 25px;
+    font-size: 16px;
+    border-left: 1px solid var(--colorGrisOscuro);
+  }
+  /* main */
+  .home_main_visita,
+  .home_main_ofertas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .home_main--descripcion {
+    display: block;
+  }
+  .home_main_ofertas--descuento,
+  .home_main_visita--descuento {
+    text-align: center;
+  }
+
+  .home__main__article {
+    width: 42%;
+    margin: 0 auto 10px;
+    color: var(--colorGrisOscuro);
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  }
+  /* footer */
+  .home_footer_seguridad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .home_footer_p {
+    display: flex;
+    justify-content: center;
+  }
+}
+/* desktop */
+@media (min-width: 769px) {
+  /* header */
+  .home_header_encabezado--btn i {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    font-size: 16px;
+    border-left: 1px solid var(--colorGrisOscuro);
+  }
+  /* main */
+  .home--main h3 {
+    margin-left: 2%;
+  }
+  .home__main__article {
+    width: 22%;
+  }
+  .home_main_visita--descuento,
+  .home_main_ofertas--descuento {
+    text-align: right;
+  }
+  /* footer */
+  .home_footer_seguridad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .home_footer_p {
+    display: flex;
+    justify-content: center;
+  }
+}
