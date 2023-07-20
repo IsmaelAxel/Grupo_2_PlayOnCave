@@ -1,9 +1,17 @@
-body.index img {
+.index--main{
+  margin: 0;
+  padding: 0;
+}
+
+.index--main img {
   background-size: cover;
   box-shadow: 2px 2px 2px black;
 }
-body.index img:hover {
+.index--main img:hover {
   transform: scale(1.04);
+}
+.index__main__articleHeader img{
+  width: 100%;
 }
 .index__main--chatBot {
   font-size: 2rem;
@@ -26,7 +34,6 @@ body.index img:hover {
   display: none;
 }
 .index__main__section--articleBody {
-  gap: 20px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -43,7 +50,6 @@ body.index img:hover {
 .index__main__section__articleFooter--corazon {
   border: none;
   padding: 5px;
-  gap: 2px;
   margin: 2px 0;
 }
 .index_main_visita--descuento,
@@ -63,19 +69,19 @@ body.index img:hover {
 .index__main__section__articleFooter--comprar,
 .index__main__section__articleFooter--corazon {
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: .8rem;
+  width: 100%;
 }
 .index__main__section__articleFooter--comprar {
   color: black;
   background-color: var(--colorVerde);
   display: flex;
   justify-content: center;
-  gap: 10px;
+  
 }
 .index__main__section__articleFooter--corazon {
   color: white;
   background-color: var(--gris3);
-  gap: 10px;
   display: flex;
   justify-content: center;
 }
@@ -83,9 +89,8 @@ body.index img:hover {
 .index__main--losMasDeseados {
   background-image: url(/img/index/losMasDestacados.svg);
   color: white;
-  padding: 10px 10px;
   text-transform: uppercase;
-  margin: 10px 0;
+  margin: 5px 0;
   background-size: cover;
   object-fit: cover;
   width: 100%;
@@ -95,41 +100,45 @@ body.index img:hover {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  padding: 2px 0;
 }
 
 .index__main__article--img {
-  width: 25%;
+  width: 20%;
   border-left: 2px solid var(--colorVerde);
-  margin: 5px 0;
+  margin: 0;
   box-shadow: 2px 2px 2px black;
 }
 .index__main__article--nombreProducto,
 .index__main__article--comprar,
 .index__main__article--precio,
 .index__main__article--descuento {
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   text-transform: capitalize;
   border: none;
-  padding: 5px;
-  margin: 5px 0;
+  padding: 0;
+  margin:  0;
   background-color: black;
 }
 .index__main__article--nombreProducto {
   color: white;
+  width: 20%;
 }
 .index__main__article--comprar {
   background-color: var(--colorVerde);
   color: black;
+  width: 20%;
 }
 .index__main__article--precio {
   color: var(--colorVerde);
   display: flex;
-  gap: 5px;
   align-items: center;
+  width: 20%;
 }
 .index__main__article--descuento {
   background-color: var(--colorBotones);
   color: white;
+  width: 20%;
 }
 
 /* media q tablets */
@@ -169,29 +178,30 @@ body.index img:hover {
   .index__main__visita1,
   .index__main__visita2 {
     display: flex;
-    gap: 0px;
     justify-content: space-between;
+    margin: 0;
+    padding: 0;
   }
   .index__main__articleHeader {
     width: 45%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    padding: 0 10px;
+    padding: 0;
+    margin: 0;
   }
   .index__main__caruselExtend--titulo {
     display: flex;
     color: white;
     font-size: 1.2rem;
-    padding-left: 10px;
-    padding-top: 10px;
+    margin: 10px 10px;
     text-transform: capitalize;
   }
   .index__main__caruselExtend--precio {
     display: flex;
     align-items: center;
     color: var(--colorVerde);
-    gap: 5px;
+    margin: 10px 0;
     font-size: 1.2rem;
     text-transform: capitalize;
   }
@@ -201,7 +211,7 @@ body.index img:hover {
     gap: 5px;
     border: none;
     background-color: var(--colorVerde);
-    margin: 10px 30px;
+    margin: 10px 10px;
     font-size: 1.2rem;
     text-transform: uppercase;
   }
