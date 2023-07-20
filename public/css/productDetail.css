@@ -42,6 +42,22 @@
     color: #ffffff;
     font-weight: 700;
 }
+.product__main--slider{
+    margin: 20px 0;
+}
+.product__main--slider img{
+    border-top: 1px solid var(--colorVerde);
+    width: 100%;
+    border-bottom: 1px solid var(--colorVerde);
+}
+.product__main--slider-imgs{
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+.product__main--slider-imgs img{
+    width: 30%;
+}
 .product__main--infoJuego{
     color: var(--gris4);
     margin: 10px 0;
@@ -74,10 +90,10 @@
     color: var(--gris4);
 }
 .product__main--requisitos p{
-    margin: 10px 0;
+    margin:  10px 0 20px;
 }
 .product__main--requisitos-minimos tr td{
-    padding-right: 20px;
+    padding-right: 5px;
 }
 .product__main--requisitos-recomendados{
     display: none;
@@ -89,4 +105,69 @@
     text-decoration: underline;
     color: var(--colorVerde);
 
+}
+@media (min-width: 481px) {
+    .product__main{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .product__main--container{
+     padding: 0 10px;
+     width: 70%;
+    }
+    .product__main--article{
+        width: 30%;
+    }
+    .product__main--slider{
+        margin: 0;
+    }
+    .product__main--infoJuego{
+        margin: 30px 0;
+    }
+    .product__main--infoJuego-titulo{
+        font-size: .7rem;
+    }
+    .product__main--infoJuego p{
+        font-size: .6rem;
+    }
+    .product__main--infoJuego-more{
+        margin: 10px 0 0;
+    }
+    .product__main--infoJuego a{
+        font-size: .6rem;
+    }
+    .product__main--requisitos{
+        margin: 0 0 50px;
+        border-left: .5px solid var(--gris3);
+        border-bottom: .5px solid var(--gris3);
+        border-right: .5px solid var(--gris3);
+    }
+    .product__main--requisitos-logo i{
+        font-size: .7rem;
+    }
+    .product__main--requisitos-box{
+        padding: 20px;
+        font-size: .7rem;
+    }
+    .product__main--requisitos-minimos tr td{
+        padding-right: 1.5rem;
+    }
+    .product__main--article{
+        height: 215px;
+    }
+    .product__main--article-info p{
+        font-size: .6rem;
+        padding: 5px;
+    }
+    .product__main--article-info h4{
+        font-size: .7rem;
+    }
+    .product__main--article-comprar{
+        font-size: .7rem;
+    }
+    .product__main--article-favoritos{
+        font-size: .7rem;
+        padding: 10px;
+        margin: 0;
+    }
 }
