@@ -96,11 +96,12 @@ font-size: 14PX;
 .productCart__main__boxResumen{
     color: #ffffff;
     background-color: rgb(22, 24, 24);  
-    padding: 20px 20px 50px 20px;  
+    padding: 20px 20px 50px ;  
 }
 .productCart__main__boxResumen__boxPrecio{
     display:flex;
     justify-content:space-between;
+    
 }
 .productCart__main__boxResumen__boxPrecio__precioTotal h4{
     font-family: var(--tipoGrafiaTextos);
@@ -228,7 +229,7 @@ font-size: 13px;
 }
 }
 /*/////////////////////////////////////////////769//////////////////////////////////////////////////*/
-@media (min-width:768px) {
+@media (min-width:769px) {
 
     .productCart__main__boxCesta{
         justify-content: space-between;
