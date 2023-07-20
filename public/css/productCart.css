@@ -12,17 +12,22 @@
     font-weight: 200;
     font-size: 15px;   
 }
+.productCart__titulo__pagoseguro{
+    display: none;
+}
 .productCart__main{
-    background-color: rgb(0, 0, 0);   
+    background-color: var(--colorBackground); 
 }
 .productCart__main__boxCesta{
     background-color:var(--gris3);
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     padding: 0%;
     flex-direction: row;
     align-items: center;
     gap: 11PX;
+    padding-right: 10px;
 }
 .productCart__main__boxCesta__juego{
     background-color: #ffffff;
@@ -132,11 +137,12 @@ color: var(--colorVerde);
 font-family: var(--tipoGrafiaTextos);
 margin-right: 5px;
 }
-.productCart__main__boxResumen__botonPagar{
+.productCart__main__boxResumen__botonPagar__pagar{
     display: flex;
     justify-content: center;
     background-color:var(--colorVerde);
-    padding: 10px;
+    width: 100%;
+    padding: 10px 0 ;
     margin-top: 20px;
     margin-bottom:10px;
     font-family: var(--tipoGrafiaTextos);
@@ -174,8 +180,9 @@ margin-right: 5px;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        
+        justify-content: space-between;
         gap: 15PX;
+        padding-right: 10px;
     }
     .productCart__main__boxCesta__juego{
         background-color: #ffffff;
@@ -213,9 +220,20 @@ margin-right: 5px;
     font-weight: 100;
     font-size: 10px;   
 }
+.productCart__main__boxResumen__botonPagar__pagar{ 
+    padding: 5px 0 ;   
+}
+.productCart__main__boxResumen__politicas p{
+font-size: 13px;
+}
 }
 /*/////////////////////////////////////////////769//////////////////////////////////////////////////*/
-@media (min-width:769px) {
+@media (min-width:768px) {
+
+    .productCart__main__boxCesta{
+        justify-content: space-between;
+        margin-right: 20;
+    }
     .productCart__main__boxCesta__juego H4{
         font-size: 20px;  }    
     .productCart__main__boxCesta__nombreJuego{
@@ -223,15 +241,59 @@ margin-right: 5px;
     .productCart__main__boxCesta__nombreJuego h4{   
         font-size: 15px;
      } 
-  
-        
+     .productCart__main__boxCesta__cantidad {
+        font-size:20px;
+        margin-right: 5px;
+    }
+    .productCart__main__boxCesta__precio h4{
+        font-size: 20px;
+    }
+     .productCart__main__boxCesta__eliminar{
+        margin-right: 35px;
+     }
+     .productCart__main__boxResumen__boxImporte__importeTotal{
+        width: 10%;
+    }
+}
+/*//////////////////////////////////////////// 1024 /////////////////////////////////////////////////////*/
+@media (min-width:1024px) {
+    .productCart{
+        background-color: var(--colorBackground);
+    }
 
+    .productCart__PagoSeguro{
+        display: none 
+    }
+ .productCart__main{
+    background-color: var(--colorBackground);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin:0;
+    padding: 0;
+    justify-content: flex-end;
+ }
+ .productCart__titulo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+ }
+ .productCart__titulo h2{
+    margin-left: 21px;
+ }
+ .productCart__titulo__pagoseguro{
+    display: block;
+    align-items: center;
+    display: flex;
+    margin-right: 121px;
+ }
+.productCart__main__boxCesta{
+    width: 65%;
+   
+ }
 
-
-
-
-
-
-
-
+ .productCart__main__section2{
+    width: 25%;
+    margin-top: 0;
+ }
 }
