@@ -45,7 +45,8 @@
 .product__main--slider{
     margin: 20px 0;
 }
-.product__main--slider img{
+
+.product__main--slider-screen img{
     border-top: 1px solid var(--colorVerde);
     width: 100%;
     border-bottom: 1px solid var(--colorVerde);
@@ -56,7 +57,12 @@
     justify-content: space-between;
 }
 .product__main--slider-imgs img{
+    border-top: 1px solid var(--colorVerde);
     width: 30%;
+    border-bottom: 1px solid var(--colorVerde);
+}
+.slider1, .slider2, .slider3{
+    display: none;
 }
 .product__main--infoJuego{
     color: var(--gris4);
@@ -92,8 +98,8 @@
 .product__main--requisitos p{
     margin:  10px 0 20px;
 }
-.product__main--requisitos-minimos tr td{
-    padding-right: 5px;
+.product__main--requisitos-minimos tr td, .product__main--requisitos-recomendados tr td{
+    padding-right: 3rem;
 }
 .product__main--requisitos-recomendados{
     display: none;
@@ -110,13 +116,19 @@
     .product__main{
         display: flex;
         flex-direction: row-reverse;
+        justify-content: space-between;
+        margin: 0 20px;
+
     }
     .product__main--container{
-     padding: 0 10px;
-     width: 70%;
+     width: 65%;
     }
     .product__main--article{
         width: 30%;
+        padding: 5px;
+    }
+    .product__main--article img{
+        margin: 0 0 5px;
     }
     .product__main--slider{
         margin: 0;
@@ -149,11 +161,11 @@
         padding: 20px;
         font-size: .7rem;
     }
-    .product__main--requisitos-minimos tr td{
+    .product__main--requisitos-minimos tr td, .product__main--requisitos-recomendados tr td{
         padding-right: 1.5rem;
     }
     .product__main--article{
-        height: 215px;
+        height: 20%;
     }
     .product__main--article-info p{
         font-size: .6rem;
@@ -168,6 +180,52 @@
     .product__main--article-favoritos{
         font-size: .7rem;
         padding: 10px;
-        margin: 0;
+        margin-bottom: 50px;
+    }
+}
+@media (min-width: 769px){
+    .product__main{
+        margin: 0 40px;
+    }
+    .product__main--container{
+        width: 60%;
+       }
+    .product__main--article{
+        width: 25%;
+       }
+    .product__main--article-info p{
+        font-size: .5rem;
+    }
+    .product__main--article-info h4{
+        font-size: .6rem;
+    }
+    .product__main--article-comprar{
+        font-size: .6rem;
+    }
+    .product__main--article-favoritos{
+        font-size: .6rem;
+    }
+    .product__main--slider-screen{
+        padding: 0 50px;
+    }
+    .product__main--slider-imgs img{
+        width: 15%;
+    }
+    .slider1,.slider2,.slider3{
+        display: block;
+    }
+    .product__main--requisitos-more{
+        display: none;
+    }
+    .product__main--requisitos-recomendados{
+        display: block;
+    }
+    .product__main--requisitos-box{
+        display: flex;
+        justify-content: space-between;
+    }
+    .product__main--requisitos-colum{
+        display: flex;
+        flex-direction: column;
     }
 }
