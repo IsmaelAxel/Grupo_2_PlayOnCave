@@ -186,7 +186,7 @@
     padding: 0;
   }
   .index__main__articleHeader {
-    width: 45%;
+    width: 30%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
