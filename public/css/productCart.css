@@ -1,5 +1,5 @@
 .productCart{
-     background-color: black; 
+   
 }
 .productCart__titulo{
     color: #ffffff;
@@ -16,7 +16,8 @@
     display: none;
 }
 .productCart__main{
-    background-color: var(--colorBackground); 
+    background-color: var(--colorBackground);
+    padding-bottom: 200px; 
 }
 .productCart__main__boxCesta{
     background-color:var(--gris3);
@@ -162,6 +163,9 @@ margin-right: 5px;
 }
 /*/////////////////////////////////////////////////// 481 //////////////////////////////////////*/
 @media(min-width:481px) {
+    .productCart__main{
+        padding-bottom: 280px;
+    }
     .productCart__titulo{
         padding-bottom: 15px;   
     }
@@ -231,6 +235,9 @@ font-size: 13px;
 /*/////////////////////////////////////////////769//////////////////////////////////////////////////*/
 @media (min-width:769px) {
 
+    .productCart__main{
+        padding-bottom: 250px;
+    }
     .productCart__main__boxCesta{
         justify-content: space-between;
         margin-right: 20;
@@ -259,11 +266,11 @@ font-size: 13px;
 /*//////////////////////////////////////////// 1024 /////////////////////////////////////////////////////*/
 @media (min-width:1024px) {
     .productCart{
-        background-color: var(--colorBackground);
+        background-color: var(--colorBackground);  
     }
-
     .productCart__PagoSeguro{
-        display: none 
+        display: none ;
+        
     }
  .productCart__main{
     background-color: var(--colorBackground);
@@ -273,6 +280,7 @@ font-size: 13px;
     margin:0;
     padding: 0;
     justify-content: flex-end;
+    padding-bottom: 400px;
  }
  .productCart__titulo{
     display: flex;
