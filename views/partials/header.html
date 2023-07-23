@@ -6,30 +6,39 @@
     <title>POC</title>
     <script src="https://kit.fontawesome.com/42701418d7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="css/header.css">
+   
 </head>
 <body>
     <header class="home__header">
         <div class="home__header--box">
             <div class="home__header__box--burguer">
                 <i class="fa-solid fa-bars"></i>
-                
             </div>
 
             <div class="home__header__box--logo">
                 <img src="/img/header/logo.png"  alt="">
             </div>
+            
             <div class="home__header__box--login">
                 <nav>
                     <ul>
-                        <li><a href=""><i class="fa-solid fa-user"></i><p>ingresar</p></a></li>
-                        <li><a href=""><i class="fa-solid fa-magnifying-glass"></i></a></li>
-                        <li><a href=""><i class="fa-solid fa-cart-shopping"></i><p>mi carrito</p></a></li>
+                        <li><a href="/register"><i class="fa-solid fa-user"></i><p>ingresar</p></a></li>
+                        
+                        <li><i id="numberCart" class="fa-solid fa-4"></i><a href=""><i id="carri" class="fa-solid fa-cart-shopping"></i><p>mi carrito</p></a></li>
                     </ul>
                 </nav>
             </div>
             <div class="home__header__box--categorias" >
+                <div class="home_header_box--barra">           
+                    <form class="home_header_box--form" action="#" method="post" target="_blank">
+                        <input class="home_header_box--form--input" type="search" placeholder="Buscar productos, marcas" >
+                        <div class="home_header_box--btn">   
+                            <i class="fa-solid fa-magnifying-glass"></i>  
+                        </div>
+                    </form>     
+                </div>
                 <nav>
+                    
                     <ul>
                         <li><a href="/">secciones</a></li>
                         <li><a href="/">juegos de mesa</a></li>
@@ -41,6 +50,7 @@
             </div>
             <div class="home__header__box--tema">
                 <i class="fa-solid fa-toggle-on"></i>
+                <p>modo oscuro</p>
             </div>
         </div>  
     </header>

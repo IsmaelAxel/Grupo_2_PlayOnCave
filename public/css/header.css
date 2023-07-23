@@ -2,26 +2,38 @@
 .home__header{
     background-color: #000000;
     color: var(--colorVerde);
-    height: 150px;
-    display: flex;
     border-bottom: 2px solid var(--colorVerde);
+    
+    font-size: 20px;
+    width: 100%;
+    height: 100px;
 }
 
 .home__header--box{
     display: flex;
-    justify-content: space-between;
+    gap: 20px;
+    justify-content: space-evenly;
     align-items: center;
+    
+}
+
+.home__header__box--logo{
+    max-width: 100px;
+}
+
+.home__header__box--logo img{
+
+    width: 100%;
 }
 
 .home__header__box--burguer{
     display: flex;
     justify-content: center;
-    margin-left: 10px;
     width: 25%;   
 }
 
 .home__header__box--burguer i{
-    background-color: var(--gris2);
+    
     padding: 3px;
     padding-bottom: 2px;
     border-radius: 5px;
@@ -30,6 +42,22 @@
 
 .home__header__box--login nav ul{
     display: flex;
+    gap: 15px;
+    top: 0;
+}
+#carri{
+    position: relative;
+}
+#numberCart{
+    position: absolute;
+    top: 26px;
+    margin-left: 6px;
+    font-size: 12px;
+    border-radius: 50%;
+    color: #000000;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 1px 
 }
 
 .home__header__box--login nav ul li a p{
@@ -40,16 +68,187 @@
     color: var(--colorVerde);
 }
 
-.home__header__box--logo{
-    width: 33%; 
-}
-
-.home__header__box--logo img{
-   
-    width: 100%;
-    top:5px;
-}
-
 .home__header__box--categorias{
     display: none;
+}
+
+.home__header__box--tema i{
+    rotate: 90deg;
+    
+}
+.home_header_box--barra{
+    padding: 10px;
+    display: none;
+    font-size: 16px;
+    
+}
+.home_header_box--form{
+    position: relative;
+
+}
+.home_header_box--form--input{
+    border-radius: 5px;
+    border:solid 2px var(--colorVerde);
+    margin: 5px;
+    padding: 5px;
+
+}
+.home_header_box--btn i{
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    font-size: 18px;
+    color: #000000;
+    background-color: var(--colorVerde);
+    padding: 6px;
+    border-radius: 5px;
+}
+.home__header__box--tema p{
+    display: none;
+}
+
+
+@media (min-width:481px){
+
+    .home__header--box{
+        gap: 5px;
+    }
+
+    .home__header__box--logo{
+    max-width: 100px;
+    order: -1;
+    }
+
+    .home__header__box--categorias{
+        display: flex;
+        align-items: center;
+        order: 2;
+    }
+    .home__header__box--categorias ul li a{
+        display: none;
+    }
+    .home_header_box--barra{
+        padding: 10px;
+        display: flex;
+        font-size: 16px;
+    }
+    .home__header__box--burguer{
+        order: 1;
+        width: 15%;   
+    }
+    
+    .home__header__box--login{
+        order: 3;
+    }
+    .home__header__box--login nav ul li a p{
+        font-size: 14px;
+        top: 20px;
+       ;
+    }
+    .home__header__box--login nav ul li a i{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .home__header__box--tema{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        order: 4;
+        margin-right: 10px;
+    }
+
+    .home__header__box--tema p{
+        font-size: 12px;
+        text-align: center;
+    }
+}
+@media (min-width:769px){
+    .home__header{
+        top:20px;
+        font-size: 24px;
+        width: 100%;
+        height: 150px;
+    }
+    .home__header__box--logo{
+        max-width: 150px;
+    }
+    .home__header__box--categorias{
+        top: 12px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .home__header__box--categorias ul{
+        display: flex;
+        flex-direction: row;
+    }
+    .home__header__box--categorias ul li a{
+        display: flex;
+        font-size: 16px;
+        letter-spacing: -1px;
+        color: var(--colorVerde);
+        padding: 5px;
+        border: 1px solid var(--colorVerde);
+        border-radius: 5px;
+        margin: 1px;
+    }
+    .home__header__box--burguer{
+        display: none;   
+    }
+    #numberCart{
+        top: 42px;
+        margin-left: -4.5px;
+        font-size: 0.9rem;  
+    }
+    .home__header__box--tema p{
+        display: block;
+    }
+    .home__header__box--tema i{
+        rotate: 0deg; 
+    }
+    .home_header_box--barra{
+        display: flex;
+        width: 80%;
+        padding: 10px;
+        font-size: 16px;
+    }
+    .home_header_box--form{
+        display: flex;
+        width: 100%;
+    }
+    .home_header_box--form input{
+        width: 100%;
+    }
+    .home__header__box--login nav ul{
+        text-align: center;
+        
+    }
+    
+    .home__header__box--login nav ul li a p{
+        display: block;
+        font-size: 0.7rem;
+        
+    }
+
+}
+@media (min-width:920px){
+    .home__header__box--categorias ul li a{
+        font-size: 17px;
+        letter-spacing: 0;
+        margin: 1px 4px;
+        
+    }
+    .home__header__box--login nav ul li a p{
+        font-size: 0.9rem;}
+        
+    .home__header__box--tema p{
+        font-size: 0.9rem;
+    }
+    .home_header_box--barra{
+        width: 72%;
+    }
+    
 }
