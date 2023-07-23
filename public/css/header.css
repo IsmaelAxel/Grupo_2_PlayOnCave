@@ -139,6 +139,7 @@
     
     .home__header__box--login{
         order: 3;
+        width: 15%;
     }
     .home__header__box--login nav ul li a p{
         font-size: 14px;
@@ -157,6 +158,7 @@
         align-items: center;
         order: 4;
         margin-right: 10px;
+        width: 5%;
     }
 
     .home__header__box--tema p{
@@ -173,13 +175,14 @@
     }
     .home__header__box--logo{
         max-width: 150px;
+        width: 15%;
     }
     .home__header__box--categorias{
         top: 12px;
         position: relative;
         display: flex;
         flex-direction: column;
-        
+        width: 70%;
     }
     .home__header__box--categorias ul{
         display: flex;
@@ -199,9 +202,9 @@
         display: none;   
     }
     #numberCart{
-        top: 42px;
-        margin-left: -4.5px;
-        font-size: 0.9rem;  
+        top: 38px;
+        margin-left: -5px;
+        font-size: 0.9rem;
     }
     .home__header__box--tema p{
         display: block;
@@ -236,16 +239,23 @@
 }
 @media (min-width:920px){
     .home__header__box--categorias ul li a{
-        font-size: 17px;
+        font-size: 20px;
         letter-spacing: 0;
         margin: 1px 4px;
         
     }
     .home__header__box--login nav ul li a p{
         font-size: 0.9rem;}
-        
+
+        .home__header__box--tema{
+            width: 12.5%;
+        } 
     .home__header__box--tema p{
         font-size: 0.9rem;
+        
+    }
+    .home__header__box--login{
+        width: 10%;
     }
     .home_header_box--barra{
         width: 72%;
