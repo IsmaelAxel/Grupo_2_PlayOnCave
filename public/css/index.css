@@ -17,7 +17,7 @@
   font-size: 2rem;
   color: var(--colorIconos);
   position: fixed;
-  right: 10px;
+  right: 0%;
   top: 145px;
   background-color: black;
   border-radius: 45%;
@@ -309,5 +309,11 @@
   .index__main--losMasVendidos,
   .index__main--losMasDeseados {
     padding-left: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .index__main--chatBot {
+    right: 19%;
   }
 }
