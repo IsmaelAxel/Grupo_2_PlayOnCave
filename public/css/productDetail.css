@@ -107,6 +107,7 @@
 .product__main--requisitos-more{
     margin: 20px 0;
 }
+
 .product__main--requisitos-more a{
     text-decoration: underline;
     color: var(--colorVerde);
@@ -223,6 +224,7 @@
     .product__main--requisitos-box{
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
     .product__main--requisitos-colum{
         display: flex;
