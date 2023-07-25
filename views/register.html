@@ -3,9 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registro</title>
+    <script src="https://kit.fontawesome.com/42701418d7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+    
+    
 </head>
 <body>
+    <header class="home__header">
+        <div class="home__header--box">
+            <div class="home__header__box--burguer">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <div class="home__header__box--logo">
+                <img src="/img/header/logo.png"  alt="">
+            </div>
+            
+            <div class="home__header__box--login">
+                <nav>
+                    <ul>
+                        <li><a href="/register"><i class="fa-solid fa-user"></i><p>ingresar</p></a></li>                       
+                        <li  id="carri"><i id="numberCart" class="fa-solid fa-4"></i><a href=""><i class="fa-solid fa-cart-shopping"></i><p>mi carrito</p></a></li>
+                        <li><i class="fa-solid fa-toggle-on" ></i><p id="darkMode">modo oscuro</p></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="home__header__box--categorias" >
+                <div class="home_header_box--barra">           
+                    <form class="home_header_box--form" action="#" method="post" target="_blank">
+                        <input class="home_header_box--form--input" type="search" placeholder="Buscar productos, marcas" >
+                        <div class="home_header_box--btn">   
+                            <i class="fa-solid fa-magnifying-glass"></i>  
+                        </div>
+                    </form>     
+                </div>
+                <nav>
+                    
+                    <ul>
+                        <li><a href="/">secciones</a></li>
+                        <li><a href="/">juegos de mesa</a></li>
+                        <li><a href="/">contacto</a></li>
+                        <li><a href="/">videojuegos</a></li>
+                        <li><a href="/">nosotros</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+        </div>  
+    </header>
+    <main class="register">
+        <div class="register__box">
+        <h2>registrate </h2>
+        <form action="" class="register__form">
+            <div >
+                <label class="form-label" for="name">Nombre</label>
+                <input class="form-control" id="name" type="text" name="name" >
+            </div>
+            <div >
+                <label for="surname" class="form-label">Apellido</label>
+                <input class="form-control" id="surname" type="text" name="surname" >
+            </div>
+            <div >
+                <label class="form-label" for="email">Email</label>
+                <input class="form-control" id="email" type="email" name="email">
+            </div>
+            <div >
+                <label class="form-label" for="password">Contraseña</label>
+                <input class="form-control" id="password" type="password" name="password">
+            </div>
+            <div >
+                <label class="form-label" for="password2">Confirmar Contraseña</label>
+                <input class="form-control" id="password2" type="password" name="password2">
+            </div>
+            <div class="register__form--btn" >
+                <button type="reset" class="register__form--btn--crear">crear cuenta</button>
+                <p>¿Ya tenés cuenta? <a href="/login"> inicía sesión</a></p>
+            </div>
+        </form>
+    </div>
+    </main>
+    <footer class="index__footer">
+        <div class="index__footer__box--iconos">
+            <div><a href=""><i class="fa-brands fa-whatsapp"></i></a></div>
+            <div><a href=""><i class="fa-brands fa-instagram"></i></a></div>
+            <div><a href=""><i class="fa-brands fa-facebook-f"></i></a></div>
+            <div><a href=""><i class="fa-brands fa-twitter"></i></a></div>
+        </div>
+        <nav class="index__footer__nav--menu">
+            <ul>
+                <li><a href="">Términos y Condiciones</a></li>
+                <li><a href="">Politica de Reembolso</a></li>
+                <li><a href="">Politica de Privacidad</a></li>
+            </ul>
+        </nav>
+        <h6><a href="">Ayuda y Soporte</a></h6>
+    </footer>
     
 </body>
 </html>
