@@ -11,6 +11,8 @@
     border-radius: 10px;
     padding: 25px;
     margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #000000;
 }
 
 .register h2{
@@ -51,12 +53,16 @@
 }
 .register__form--btn--crear{
     padding: 10px;
-    background-color: var(--colorVerde);
+    background-color: #000000;
     color: #ffffff;
     font-size: 22px;
     text-transform: uppercase;
     border: none;
+    border: solid 1px var(--colorVerde)
 
+}
+.register__form--btn--crear:active{
+    background-color: var(--gris3);
 }
 .register__form div p a{
     color: var(--colorVerde);
