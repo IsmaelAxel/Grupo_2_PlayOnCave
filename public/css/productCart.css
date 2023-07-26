@@ -1,0 +1,303 @@
+.productCart__titulo{
+    color: #ffffff;
+    padding-top: 30px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+}
+.productCart__titulo h2{
+    font-family: var(--tipoGrafiaTextos);
+    font-weight: 200;
+    font-size: 15px;   
+}
+.productCart__titulo__pagoseguro{
+    display: none;
+}
+.productCart__main{
+    background-color: var(--colorBackground);
+    padding-bottom: 104px;
+}
+.productCart__main__boxCesta{
+    background-color:var(--gris3);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0%;
+    flex-direction: row;
+    align-items: center;
+    gap: 11PX;
+    padding-right: 10px;
+}
+.productCart__main__boxCesta__juego{
+    background-color: #ffffff;
+    padding: 9px 15px;   
+}
+.productCart__main__boxCesta__juego H4{
+font-family: var(--tipoGrafiaTextos);
+font-weight: 900;
+font-size: 14PX;
+}
+.productCart__main__boxCesta__nombreJuego{
+    display: flex;
+    flex-wrap: wrap;
+    width: 24%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 2PX;   
+}
+.productCart__main__boxCesta__nombreJuego h4{
+    font-family: var(--tipoGrafiaTextos);
+    font-weight: 900;
+    font-size: 12px;
+    width: 100%;
+    text-align:center;
+}
+.productCart__main__boxCesta__cantidad{
+    color: #ffffff;
+    font-family: var(--tipoGrafiaTextos);
+    font-size:11px;
+    padding: 0 9px;
+}
+.productCart__main__boxCesta__cantidad i{
+    color:var(--colorVerde);
+    background-color: #000000;
+    border-radius: 10PX;   
+}
+.productCart__main__boxCesta__precio h4{
+    color:var(--colorVerde);
+    font-family: var(--tipoGrafiaTextos);
+    font-size: 13px;
+}
+.productCart__main__boxCesta__eliminar i{
+    color: black;
+    font-size: 12px;
+}
+.productCart__main__section2{
+    margin:80px 40px;
+    background-color: rgba(27, 26, 26, 0.908);
+}
+.productCart__PagoSeguro{
+    display: none;
+}
+.productCart__titulo2 h2{
+   margin-left: 5px;
+   font-family: var(--tipoGrafiaTextos);
+   font-weight: 300;
+   font-size: 18px;  
+}
+.productCart__titulo2{
+    background-color: var(--gris2);
+    color: #ffffff;
+    padding: 10px;
+    padding: 15px;  
+}
+.productCart__main__boxResumen{
+    color: #ffffff;
+    background-color: rgb(22, 24, 24);  
+    padding: 20px 20px 50px ;  
+}
+.productCart__main__boxResumen__boxPrecio{
+    display:flex;
+    justify-content:space-between;
+    
+}
+.productCart__main__boxResumen__boxPrecio__precioTotal h4{
+    font-family: var(--tipoGrafiaTextos);
+    font-weight: 400;
+    font-size: 15px;
+}
+.productCart__main__boxResumen__boxPrecio__totalNumero h4{
+    font-family: var(--tipoGrafiaTextos);
+    font-weight: 400;
+    font-size: 15px;
+    margin-right: 10px;
+
+}
+.productCart__main__boxResumen__separador{
+    border: 1px solid #ffffff;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+.productCart__main__boxResumen__boxImporte{
+display: flex;
+justify-content: space-between;
+margin-top: 20px;
+}
+.productCart__main__boxResumen__boxImporte__importeTotal{
+width: 40%;
+}
+.productCart__main__boxResumen__boxImporte__importeTotal h3{
+font-family: var(--tipoGrafiaTextos);
+font-weight: 400;
+font-size: 14px;
+}
+.productCart__main__boxResumen__boxImporte__importeNumero{
+color: var(--colorVerde);
+font-family: var(--tipoGrafiaTextos);
+margin-right: 5px;
+}
+.productCart__main__boxResumen__botonPagar__pagar{
+    display: flex;
+    justify-content: center;
+    background-color:var(--colorVerde);
+    width: 100%;
+    padding: 10px 0 ;
+    margin-top: 20px;
+    margin-bottom:10px;
+    font-family: var(--tipoGrafiaTextos);
+    font-weight: 900;
+    font-size: 18px;
+}
+.productCart__main__boxResumen__botonPagar__pagar{
+    color: #000000;
+
+}
+.productCart__main__boxResumen__politicas p{
+    margin-top: 20px;
+    font-family: var(--tipoGrafiaTextos);
+    font-weight: 100;
+    font-size: 15px;   
+}
+/*/////////////////////////////////////////////////// 481 //////////////////////////////////////*/
+@media(min-width:481px) {
+    .productCart__main{
+        padding-bottom: 200px;
+    }
+    .productCart__titulo{
+        padding-bottom: 15px;   
+    }
+    .productCart__titulo h2{
+        font-weight: 200;
+         font-size: 25px; 
+    }
+    .productCart__PagoSeguro{
+        display: block  
+    }
+    .productCart__titulo2{
+        display: flex;
+        justify-content: space-between;   
+    }
+    .productCart__main__boxCesta{
+        background-color:var(--gris3);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15PX;
+        padding-right: 10px;
+    }
+    .productCart__main__boxCesta__juego{
+        background-color: #ffffff;
+        padding: 20px 15px;
+    }
+.productCart__main__boxCesta__juego H4{
+    letter-spacing: 8px;   
+}
+.productCart__main__boxCesta__nombreJuego h4{
+    letter-spacing: 8px;     
+}
+.productCart__main__boxCesta__cantidad {
+    font-size:15px;
+    margin-right: 5px;
+}
+.productCart__main__boxCesta__precio h4{
+    font-size: 15px;
+}
+.productCart__main__boxCesta__eliminar i{
+    font-size: 25px;
+    margin-left: 35px;
+}
+.productCart__main__section2{
+    margin:20px 40px;
+    background-color: rgba(27, 26, 26, 0.908);
+}
+.productCart__PagoSeguro{
+      display: flex;
+      justify-content: center;
+}
+.productCart__main__boxResumen__boxImporte__importeTotal{
+    width: 20%;
+}
+.productCart__main__boxResumen__politicas p{
+    font-weight: 100;
+    font-size: 10px;   
+}
+.productCart__main__boxResumen__botonPagar__pagar{ 
+    padding: 5px 0 ;   
+}
+.productCart__main__boxResumen__politicas p{
+font-size: 13px;
+}
+}
+/*/////////////////////////////////////////////769//////////////////////////////////////////////////*/
+@media (min-width:769px) {
+
+    .productCart__main{
+        padding-bottom: 250px;
+    }
+    .productCart__main__boxCesta{
+        justify-content: space-between;
+        margin-right: 20;
+    }
+    .productCart__main__boxCesta__juego H4{
+        font-size: 20px;  }    
+    .productCart__main__boxCesta__nombreJuego{
+          width: 15%;   }    
+    .productCart__main__boxCesta__nombreJuego h4{   
+        font-size: 15px;
+     } 
+     .productCart__main__boxCesta__cantidad {
+        font-size:20px;
+        margin-right: 5px;
+    }
+    .productCart__main__boxCesta__precio h4{
+        font-size: 20px;
+    }
+     .productCart__main__boxCesta__eliminar{
+        margin-right: 35px;
+     }
+     .productCart__main__boxResumen__boxImporte__importeTotal{
+        width: 10%;
+    }
+}
+/*//////////////////////////////////////////// 1024 /////////////////////////////////////////////////////*/
+@media (min-width:1024px) {
+    .productCart{
+        background-color: var(--colorBackground);  
+    }
+    .productCart__PagoSeguro{
+        display: none ;
+        
+    }
+ .productCart__main{
+    background-color: var(--colorBackground);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin:0;
+    padding: 0;
+    justify-content: flex-end;
+    padding-bottom: 181px;
+ }
+ .productCart__titulo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+ }
+ .productCart__titulo h2{
+    margin-left: 21px;
+ }
+ .productCart__titulo__pagoseguro{
+    display: block;
+    align-items: center;
+    display: flex;
+    margin-right: 121px;
+ }
+.productCart__main__boxCesta{
+    width: 65%;
+ }
+ .productCart__main__section2{
+    width: 25%;
+    margin-top: 0;
+ }
+}
