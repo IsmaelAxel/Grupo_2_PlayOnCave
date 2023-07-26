@@ -147,6 +147,7 @@ margin-right: 5px;
     font-family: var(--tipoGrafiaTextos);
     font-weight: 900;
     font-size: 18px;
+    border: none;
 }
 .productCart__main__boxResumen__botonPagar__pagar{
     color: #000000;
