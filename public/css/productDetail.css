@@ -1,5 +1,5 @@
 .product__main{
-    margin: 0 10px;
+    margin: 10px;
 }
 .product__main--article{
     background-color: var(--gris1);
@@ -118,7 +118,7 @@
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-between;
-        margin: 0 20px;
+        margin: 20px;
 
     }
     .product__main--container{
@@ -186,7 +186,7 @@
 }
 @media (min-width: 769px){
     .product__main{
-        margin: 0 40px;
+        margin: 40px;
     }
     .product__main--container{
         width: 60%;
