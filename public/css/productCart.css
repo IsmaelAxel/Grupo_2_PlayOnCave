@@ -14,7 +14,7 @@
 }
 .productCart__main{
     background-color: var(--colorBackground);
-    padding-bottom: 200px; 
+    padding-bottom: 104px;
 }
 .productCart__main__boxCesta{
     background-color:var(--gris3);
@@ -161,7 +161,7 @@ margin-right: 5px;
 /*/////////////////////////////////////////////////// 481 //////////////////////////////////////*/
 @media(min-width:481px) {
     .productCart__main{
-        padding-bottom: 280px;
+        padding-bottom: 200px;
     }
     .productCart__titulo{
         padding-bottom: 15px;   
@@ -277,7 +277,7 @@ font-size: 13px;
     margin:0;
     padding: 0;
     justify-content: flex-end;
-    padding-bottom: 400px;
+    padding-bottom: 181px;
  }
  .productCart__titulo{
     display: flex;
