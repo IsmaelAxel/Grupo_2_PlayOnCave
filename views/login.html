@@ -1,41 +1,110 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/24ccf67ffc.js" crossorigin="anonymous"></script>
     <title>Login</title>
-    <link rel="stylesheet" href="/css/login.css">
 </head>
-<body class="login"> 
-    <main class="login__main">
-        <div class="login__main__box">
-            <h1 class="login__main__box__iniciar">Iniciar Sesion con mi Email</h1>
-        </div>
-        <section class="login__main__box__formulario">
-            <div class="login__main__box__formulario__correo">
-                <form action="">Ingresar Correo</form>
+<body>
+    <header class="home__header">
+        <div class="home__header--box">
+            <div class="home__header__box--burguer">
+                <i class="fa-solid fa-bars"></i>
             </div>
-            <div class="login__main__box__formulario__clave">
-                <form action="">Ingresar clave</form>
-            </div>          
-        </section>
-        <section class="login__main__box__opciones">
-                <div class="login__main__box__opciones__registrarme">
-                    <a href="#">Registrarme</a>
+
+            <div class="home__header__box--logo">
+                <img src="/img/header/logo.png"  alt="">
+            </div>
+            
+            <div class="home__header__box--login">
+                <nav>
+                    <ul>
+                        <li><a href="/register"><i class="fa-solid fa-user"></i><p>ingresar</p></a></li>
+                        
+                        <li><i id="numberCart" class="fa-solid fa-4"></i><a href=""><i id="carri" class="fa-solid fa-cart-shopping"></i><p>mi carrito</p></a></li>
+                        <li><i class="fa-solid fa-toggle-on"></i><p>modo oscuro</p></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="home__header__box--categorias" >
+                <div class="home_header_box--barra">           
+                    <form class="home_header_box--form" action="#" method="post" target="_blank">
+                        <input class="home_header_box--form--input" type="search" placeholder="Buscar productos, marcas" >
+                        <div class="home_header_box--btn">   
+                            <i class="fa-solid fa-magnifying-glass"></i>  
+                        </div>
+                    </form>     
                 </div>
-                <div class="login__main__box__opciones__recuperar">
-                    <a href="#">Olvide mi clave</a>
-                </div>    
-            <div class="login__main__box__boton1">
-                <button>Login</button>
+                <nav>
+                    
+                    <ul>
+                        <li><a href="/">secciones</a></li>
+                        <li><a href="/">juegos de mesa</a></li>
+                        <li><a href="/">contacto</a></li>
+                        <li><a href="/">videojuegos</a></li>
+                        <li><a href="/">nosotros</a></li>
+                    </ul>
+                </nav>
             </div>
-            <div class="login__main__box__titulo2">
-                <h4>Iniciar Sesion con Google</h4>
+            
+        </div>  
+    </header>
+    <main class="main__login">
+        <div class="main__login--formulario">
+            <h2 class="main__login__formulario--titulo">Iniciar Sesión</h2>
+
+            <form action="">
+                <div class="main__login__formulario__form--inputs">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="text" name="" id="" placeholder="Ingresar Correo...">
+                </div>
+                <div class="main__login__formulario__form--inputs">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" name="Contraseña" id="Contraseña" placeholder="Ingresar clave...">
+                </div>
+
+                <div class="main__login__formulario__form--box">
+                    <a href="">Registrarme</a>
+                    <a href="">Olvide Mi clave</a>
+                </div>
+                <div>
+                    <button class="main__login__formulario__form--button" type="submit">LOGIN</button>
+                </div>
+            </form>
+            <div class="main__login--lineaVerde">
+                <h5>Iniciar Sesion con google</h5>
             </div>
-            <div class="login__main__box_boton2">
-                <button>Continuar Con GOOGLE</button>
+            <div class="main__login--buttonGoogle">
+                <img src="/img/login/logo_g.png" alt="">
+                <a href="">Continuar con google</a>
             </div>
-        </section>
+
+        </div>
+
     </main>
+
+    <footer class="index__footer">
+        <div class="index__footer__box--iconos">
+            <div><a href=""><i class="fa-brands fa-whatsapp"></i></a></div>
+            <div><a href=""><i class="fa-brands fa-instagram"></i></a></div>
+            <div><a href=""><i class="fa-brands fa-facebook-f"></i></a></div>
+            <div><a href=""><i class="fa-brands fa-twitter"></i></a></div>
+        </div>
+        <nav class="index__footer__nav--menu">
+            <ul>
+                <li><a href="">Términos y Condiciones</a></li>
+                <li><a href="">Politica de Reembolso</a></li>
+                <li><a href="">Politica de Privacidad</a></li>
+            </ul>
+        </nav>
+        <h6><a href="">Ayuda y Soporte</a></h6>
+    </footer>
+
 </body>
+
 </html>
+
+<form action=""></form>
