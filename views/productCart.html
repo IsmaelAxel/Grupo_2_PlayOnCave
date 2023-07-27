@@ -3,9 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/4a85f0d80f.js" crossorigin="anonymous"></script>
+    <title>productCart</title>
 </head>
-<body>
+<body class="productCart">
+    <header class="home__header">
+        <div class="home__header--box">
+            <div class="home__header__box--burguer">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <div class="home__header__box--logo">
+                <img src="/img/header/logo.png"  alt="">
+            </div>
+            
+            <div class="home__header__box--login">
+                <nav>
+                    <ul>
+                        <li><a href="/register"><i class="fa-solid fa-user"></i><p>ingresar</p></a></li>                       
+                        <li  id="carri"><i id="numberCart" class="fa-solid fa-4"></i><a href=""><i class="fa-solid fa-cart-shopping"></i><p>mi carrito</p></a></li>
+                        <li><i class="fa-solid fa-toggle-on" ></i><p id="darkMode">modo oscuro</p></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="home__header__box--categorias" >
+                <div class="home_header_box--barra">           
+                    <form class="home_header_box--form" action="#" method="post" target="_blank">
+                        <input class="home_header_box--form--input" type="search" placeholder="Buscar productos, marcas" >
+                        <div class="home_header_box--btn">   
+                            <i class="fa-solid fa-magnifying-glass"></i>  
+                        </div>
+                    </form>     
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="/">secciones</a></li>
+                        <li><a href="/">juegos de mesa</a></li>
+                        <li><a href="/">contacto</a></li>
+                        <li><a href="/">videojuegos</a></li>
+                        <li><a href="/">nosotros</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+        </div>  
+    </header>
+   
+    <div class="productCart__titulo">
+        <h2>Tu cesta</h2>
+        <div class="productCart__titulo__pagoseguro">
+         <i class="fa-solid fa-lock"></i>
+         <h2>Pago Seguro</h2>   
+        </div>      
+    </div> 
+<!--------------------------------------- cesta ------------------------------------------------>
+<main class="productCart__main">
+
+    <section class="productCart__main__boxCesta">
+        <div class="productCart__main__boxCesta__juego">
+            <h4>JUEGO</h4>
+        </div>
+        <div class="productCart__main__boxCesta__nombreJuego">
+            <h4>
+                NOMBRE DEL JUEGO
+            </h4>
+        </div>
+        <div class="productCart__main__boxCesta__cantidad">
+            <a href="#"><i class="fa-sharp fa-solid fa-circle-minus"></i></a>
+            1
+            <a href="#"><i class="fa-solid fa-circle-plus"></i></a>
+        </div>
+        <div class="productCart__main__boxCesta__precio">
+            <h4>$ 3.560</h4>
+        </div>
+        <div class="productCart__main__boxCesta__eliminar">
+            <a href="#"><i class="fa-solid fa-trash-can"></i></a>
+        </div>
+    </section>
+<!-------------------------------------------fin de la cesta ----------------------------------->
+<div class="productCart__main__section2">
+<div class="productCart__titulo2">
+ <h2>Resumen del pedido</h2>
+ <div class="productCart__PagoSeguro">
+   <i class="fa-solid fa-lock"></i><h2>Pago Seguro</h2>   
+ </div> 
+</div>
+ <!--------------------------------------- RESUMEN DEL PEDIDO --------------------------------->
+<section class="productCart__main__boxResumen">
+<div class="productCart__main__boxResumen__boxPrecio">
+    <div class="productCart__main__boxResumen__boxPrecio__precioTotal">
+        <h4>Precio Total</h4>
+    </div> 
+    <div class="productCart__main__boxResumen__boxPrecio__totalNumero">       
+        <h4>$3560</h4>
+    </div>
+ </div>
+<div class="productCart__main__boxResumen__separador"></div>
+  <div class="productCart__main__boxResumen__boxImporte">
+       <div class="productCart__main__boxResumen__boxImporte__importeTotal">
+            <h3>Importe Total</h3>
+        </div>
+        <div class="productCart__main__boxResumen__boxImporte__importeNumero">
+            <h3>$3560</h3>
+        </div>
+  </div>   
+ <div class="productCart__main__boxResumen__botonPagar">
     
+    <button class="productCart__main__boxResumen__botonPagar__pagar">PAGAR</button>
+ </div>
+<div class="productCart__main__boxResumen__politicas">
+    <p>Al hacer clic en 'pagar', aceptas
+       nuestra politica de reembolso.
+    </p>
+</div>
+</section>
+</div>
+<!-- ---------------------------------FIN DEL RESUMEN-------------------------------------------->
+</main>
+<footer class="index__footer">
+    <div class="index__footer__box--iconos">
+        <div><a href=""><i class="fa-brands fa-whatsapp"></i></a></div>
+        <div><a href=""><i class="fa-brands fa-instagram"></i></a></div>
+        <div><a href=""><i class="fa-brands fa-facebook-f"></i></a></div>
+        <div><a href=""><i class="fa-brands fa-twitter"></i></a></div>
+    </div>
+    <nav class="index__footer__nav--menu">
+        <ul>
+            <li><a href="">Términos y Condiciones</a></li>
+            <li><a href="">Politica de Reembolso</a></li>
+            <li><a href="">Politica de Privacidad</a></li>
+        </ul>
+    </nav>
+    <h6><a href="">Ayuda y Soporte</a></h6>
+</footer>
 </body>
 </html>

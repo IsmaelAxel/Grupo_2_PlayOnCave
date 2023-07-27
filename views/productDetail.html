@@ -1,11 +1,170 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DetalleDelProducto</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/3a56c9fe8b.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    
+    <header class="home__header">
+        <div class="home__header--box">
+            <div class="home__header__box--burguer">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <div class="home__header__box--logo">
+                <img src="/img/header/logo.png"  alt="">
+            </div>
+            
+            <div class="home__header__box--login">
+                <nav>
+                    <ul>
+                        <li><a href="/register"><i class="fa-solid fa-user"></i><p>ingresar</p></a></li>                       
+                        <li  id="carri"><i id="numberCart" class="fa-solid fa-4"></i><a href=""><i class="fa-solid fa-cart-shopping"></i><p>mi carrito</p></a></li>
+                        <li><i class="fa-solid fa-toggle-on" ></i><p id="darkMode">modo oscuro</p></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="home__header__box--categorias" >
+                <div class="home_header_box--barra">           
+                    <form class="home_header_box--form" action="#" method="post" target="_blank">
+                        <input class="home_header_box--form--input" type="search" placeholder="Buscar productos, marcas" >
+                        <div class="home_header_box--btn">   
+                            <i class="fa-solid fa-magnifying-glass"></i>  
+                        </div>
+                    </form>     
+                </div>
+                <nav>
+                    
+                    <ul>
+                        <li><a href="/">secciones</a></li>
+                        <li><a href="/">juegos de mesa</a></li>
+                        <li><a href="/">contacto</a></li>
+                        <li><a href="/">videojuegos</a></li>
+                        <li><a href="/">nosotros</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+        </div>  
+    </header>
+    <main class="product__main">
+        <article class="product__main--article">
+            <img src="/img/productDetail/product_detail_1.jpg" alt="">
+            <div class="product__main--article-info">
+                <p>Descuento</p>
+                <h4>$Precio</h4>
+            </div>
+            <div class="product__main--article-comprar"><a href=""><i class="fa-solid fa-cart-shopping"></i> COMPRAR</a>
+            </div>
+            <div class="product__main--article-favoritos"><a href=""><i class="fa-regular fa-heart"></i> AÑADIR A LISTA
+                    DE DESEOS</a></div>
+        </article>
+        <div class="product__main--container">
+            <div class="product__main--slider">
+                <div class="product__main--slider-screen">
+                    <img id="product_detail_imgs" src="/img/productDetail/product_detail_1.jpg" alt="">
+                </div>
+                <div class="product__main--slider-imgs">
+                    <img src="/img/productDetail/product_detail_1.jpg" alt="" onclick="document.getElementById('product_detail_imgs').setAttribute('src','/img/productDetail/product_detail_1.jpg')">
+                    <img src="/img/productDetail/product_detail_2.jpg" alt="" onclick="document.getElementById('product_detail_imgs').setAttribute('src','/img/productDetail/product_detail_2.jpg')">
+                    <img src="/img/productDetail/product_detail_3.jpg" alt="" onclick="document.getElementById('product_detail_imgs').setAttribute('src','/img/productDetail/product_detail_3.jpg')">
+                    <img class="slider1" src="/img/productDetail/product_detail_4.jpg" alt="" onclick="document.getElementById('product_detail_imgs').setAttribute('src','/img/productDetail/product_detail_4.jpg')">
+                    <img class="slider2" src="/img/productDetail/product_detail_5.jpg" alt="" onclick="document.getElementById('product_detail_imgs').setAttribute('src','/img/productDetail/product_detail_5.jpg')">
+                    <img class="slider3" src="/img/productDetail/product_detail_6.jpg" alt="" onclick="document.getElementById('product_detail_imgs').setAttribute('src','/img/productDetail/product_detail_6.jpg')">
+                </div>
+            </div>
+            <div class="product__main--infoJuego">
+                <div class="product__main--infoJuego-titulo">
+                    <h2>ACERCA DE ESTE JUEGO</h2>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, mollitia hic? Accusantium quasi
+                    impedit quas, distinctio ex ut cum facilis animi itaque adipisci eaque eum exercitationem, dolores
+                    sed eius aut.
+                </p>
+                <div class="product__main--infoJuego-more"><a href="">LEER MÁS</a></div>
+            </div>
+            <div class="product__main--requisitos">
+                <div class="product__main--requisitos-logo">
+                    <i class="fa-brands fa-windows"></i>
+                </div>
+                <div class="product__main--requisitos-box">
+                    <div class="product__main--requisitos-colum">
+                        <p>Requisitos mínimos:</p>
+                        <table class="product__main--requisitos-minimos">
+                            <tr>
+                                <td>OS:</td>
+                                <td>asdasdassda</td>
+                            </tr>
+                            <tr>
+                                <td>Procesador:</td>
+                                <td>asdsadasd</td>
+                            </tr>
+                            <tr>
+                                <td>Memoria:</td>
+                                <td>adsadasdasd</td>
+                            </tr>
+                            <tr>
+                                <td>Grafica:</td>
+                                <td>asdasdadasd</td>
+                            </tr>
+                            <tr>
+                                <td>Almacenamiento: </td>
+                                <td>sdasdasd</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="product__main--requisitos-colum">
+                        <p>Requisitos recomendado:</p>
+                        <table class="product__main--requisitos-recomendados">
+                            <tr>
+                                <td>OS:</td>
+                                <td>asdas</td>
+                            </tr>
+                            <tr>
+                                <td>Procesador:</td>
+                                <td>asdsadasd</td>
+                            </tr>
+                            <tr>
+                                <td>Memoria:</td>
+                                <td>adsadasdasd</td>
+                            </tr>
+                            <tr>
+                                <td>Grafica:</td>
+                                <td>asdasdadasd</td>
+                            </tr>
+                            <tr>
+                                <td>Almacenamiento: </td>
+                                <td>sdasdasasdsad</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="product__main--requisitos-more"><a href="">LEER MÁS</a></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="index__footer">
+        <div class="index__footer__box--iconos">
+            <div><a href=""><i class="fa-brands fa-whatsapp"></i></a></div>
+            <div><a href=""><i class="fa-brands fa-instagram"></i></a></div>
+            <div><a href=""><i class="fa-brands fa-facebook-f"></i></a></div>
+            <div><a href=""><i class="fa-brands fa-twitter"></i></a></div>
+        </div>
+        <nav class="index__footer__nav--menu">
+            <ul>
+                <li><a href="">Términos y Condiciones</a></li>
+                <li><a href="">Politica de Reembolso</a></li>
+                <li><a href="">Politica de Privacidad</a></li>
+            </ul>
+        </nav>
+        <h6><a href="">Ayuda y Soporte</a></h6>
+    </footer>
 </body>
+
 </html>
