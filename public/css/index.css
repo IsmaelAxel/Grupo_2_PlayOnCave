@@ -1,3 +1,5 @@
+
+
 .index--main {
   margin: 0;
   padding: 0;
@@ -18,25 +20,93 @@
   color: var(--colorIconos);
   position: fixed;
   right: 0%;
-  top: 145px;
+  bottom: 0%;
   background-color: black;
   border-radius: 45%;
   box-shadow: 0 3px 3px 3px var(--colorVerde);
   padding: 0 10px;
   z-index: 999;
 }
-
-.index__main__visita2,
-.index__main__visita3,
-.index--carousel,
-.index__main--caruselExtend,
-.index__main--ofertasDestacadas,
-.index__main--nuevosLanzamientos,
-.index__main--losMasDeseados,
-.index__main--proximamente,
-.index__main--rebajas,
-.index_main_ofertas {
-  display: none;
+.index__main__caruselExtend--titulo {
+  display: flex;
+  color: white;
+  font-size: 0.8rem;
+  margin: 10px 10px;
+  text-transform: capitalize;
+}
+.index__main__caruselExtend--precio {
+  display: flex;
+  align-items: center;
+  color: var(--colorVerde);
+  margin: 10px 0;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+.index__main__caruselExtend--comprar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: none;
+  background-color: var(--colorVerde);
+  margin: 10px 10px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+.index--carousel {
+  box-shadow: 2px 2px 2px black;
+}
+.index__main--caruselExtend {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid green;
+  background-color: black;
+  margin: 5px 0;
+  box-shadow: 2px 2px 2px black;
+}
+.index__main--caruselExtend2 {
+  display: flex;
+  gap: 20px;
+}
+.index__main--ofertasDestacadas {
+  background-image: url(/img/index/ofertasDestacadas.svg);
+  color: white;
+  padding-left: 10px;
+  padding: 10px 10px;
+  text-transform: uppercase;
+  margin: 10px 0;
+  background-size: cover;
+  object-fit: cover;
+  box-shadow: 2px 2px 2px black;
+}
+.index__main--nuevosLanzamientos {
+  background-image: url(/img/index/nuevosLanzamientosDestacados.svg);
+  color: white;
+  padding: 10px 10px;
+  text-transform: uppercase;
+  margin: 10px 0;
+  background-size: cover;
+  object-fit: cover;
+  box-shadow: 2px 2px 2px black;
+}
+.index__main--proximamente {
+  background-image: url(/img/index/proximamente.svg);
+  color: white;
+  padding: 10px 10px;
+  text-transform: uppercase;
+  margin: 10px 0;
+  background-size: cover;
+  object-fit: cover;
+  box-shadow: 2px 2px 2px black;
+}
+.index__main--rebajas {
+  background-image: url(/img/index/losMasDestacados.svg);
+  color: white;
+  padding: 10px 10px;
+  text-transform: uppercase;
+  margin: 10px 0;
+  background-size: cover;
+  object-fit: cover;
+  box-shadow: 2px 2px 2px black;
 }
 .index__main__section--articleBody {
   display: flex;
@@ -156,10 +226,9 @@
   .index__main--losMasDeseados {
     display: block;
   }
+
   .index__main--chatBot {
     font-size: 3rem;
-    position: fixed;
-    top: auto;
   }
   .index--carousel {
     box-shadow: 2px 2px 2px black;
@@ -180,12 +249,13 @@
   .index__main__visita1,
   .index__main__visita2 {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-around;
     margin: 0;
     padding: 0;
   }
   .index__main__articleHeader {
-    width: 30%;
+    width: 45%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -262,7 +332,7 @@
 /* desktop */
 @media (min-width: 769px) {
   /* main */
-  .index__main__visita3,
+  .index__main__articleHeader3 .index__main__visita3,
   .index__main--nuevosLanzamientos,
   .index__main--proximamente,
   .index__main--rebajas {
