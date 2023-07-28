@@ -124,9 +124,7 @@
   gap: 5px;
 }
 /*Ofertas destacadas*/
-.index__main__visita--ocultarMobile1 {
-  display: none;
-}
+
 .index__main--ofertasDestacadas {
   background-image: url(/img/index/ofertasDestacadas.svg);
   color: white;
@@ -144,9 +142,7 @@
   width: 100%;
 }
 /*Nuevos lanzamientos*/
-.index__main__visita--ocultarMobile2 {
-  display: none;
-}
+
 .index__main--nuevosLanzamientos {
   background-image: url(/img/index/nuevosLanzamientosDestacados.svg);
   color: white;
@@ -158,9 +154,7 @@
   box-shadow: 2px 2px 2px black;
 }
 /*Proximamente*/
-.index__main__visita--ocultarMobile3 {
-  display: none;
-}
+
 .index__main--proximamente {
   background-image: url(/img/index/proximamente.svg);
   color: white;
@@ -172,9 +166,7 @@
   box-shadow: 2px 2px 2px black;
 }
 /*Rebajas*/
-.index__main__visita--ocultarMobile4 {
-  display: none;
-}
+
 .index__main--rebajas {
   background-image: url(/img/index/losMasDestacados.svg);
   color: white;
@@ -202,14 +194,12 @@
 }
 /*otra diseño de card en los mas vendidos*/
 
-
 .index__main__losMasVendidos2 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   padding: 2px 0;
   width: 100%;
-  
 }
 
 .index_main_losMasVendidos--nombreProducto,
@@ -276,7 +266,6 @@
   align-items: center;
   text-align: center;
   justify-content: center;
-  
 }
 .index__main__losMasVendidos__articleFooter--corazon {
   display: none;
@@ -285,18 +274,40 @@
 /* Media query tablets */
 @media (min-width: 481px) {
   /* main */
+  .index__main__articleHeader1 {
+    display: none;
+  }
+
+  .index__main__losMasVendidos,
+  .index__main__visita--ocultarTablet6,
+  .index__main__visita--ocultarTablet5,
+  .index__main__visita--ocultarTablet4,
+  .index__main__visita--ocultarTablet3,
+  .index__main__visita--ocultarTablet2,
+  .index__main__visita--ocultarTablet1 {
+    display: none;
+  }
   .index_main_losMasVendidos--nombreProducto {
     display: none;
   }
-  .index__main__losMasVendidos__articleFooter--corazon,
-  .index--carousel,
-  .index__main__visita2,
-  .index__main--caruselExtend,
-  .index__main--ofertasDestacadas,
-  .index__main--losMasDeseados {
+  .index__main__articleHeader2 {
+    display: flex;
+  }
+  .index__main__losMasVendidos__articleFooter--corazon {
     display: block;
   }
-
+  .index__main__visita--ocultarMobile6,
+  .index__main__visita--ocultarMobile5,
+  .index__main__visita--ocultarMobile4,
+  .index__main__visita--ocultarMobile3,
+  .index__main__visita--ocultarMobile2,
+  .index__main__visita--ocultarMobile1 {
+    display: block;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
   .index__main--chatBot {
     font-size: 3rem;
   }
@@ -305,10 +316,11 @@
   .index__main__visita2 {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: row;
     margin: 0;
     padding: 0;
   }
+  
   .index__main__articleHeader {
     width: 45%;
     display: flex;
@@ -333,12 +345,7 @@
     border-left: 2px solid var(--colorVerde);
     margin: 5px 0;
   }
-  .index__main__losMasVendidos {
-    display: flex;
-    gap: 40px;
-    flex-direction: row;
-    box-shadow: 2px 2px 2px black;
-  }
+
   .index__main__ofertas2 {
     display: none;
   }
@@ -349,76 +356,45 @@
     box-shadow: 2px 2px 2px black;
   }
   /*otra diseño de card en los mas vendidos*/
-  .index__main__losMasVendidos2 {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    padding: 2px 0;
-  }
-
-  .index_main_losMasVendidos--nombreProducto,
-  .index__main__losMasVendidos__articleFooter--comprar,
-  .index__main__losMasVendidos--precio,
-  .index_main_losMasVendidos--descuento {
-    font-size: 0.6rem;
-    text-transform: capitalize;
-    border: none;
-    padding: 0;
-    margin: 0;
-    background-color: black;
-  }
-  .index__main__losMasVendidos--articleBody {
-    display: flex;
-  }
-  .index__main__losMasVendidos--img {
-    width: 20%;
-    border-left: 2px solid var(--colorVerde);
-    margin: 0;
-    box-shadow: 2px 2px 2px black;
-    display: flex;
-    align-items: center;
-  }
-
-  .index_main_losMasVendidos--nombreProducto {
-    display: none;
-  }
-
-  .index_main_losMasVendidos--descuento {
-    background-color: var(--colorBotones);
-    color: white;
-    width: 30%;
-    margin-right: 5px;
-    display: flex;
-    align-items: center;
-  }
-  .index__main__losMasVendidos--precio {
-    color: var(--colorVerde);
-    display: flex;
-    align-items: center;
-    width: 30%;
-  }
-  .index__main__losMasVendidos--articleFooter {
-    display: flex;
-  }
-  .index__main__losMasVendidos__articleFooter--comprar {
-    background-color: var(--colorVerde);
-    color: black;
-    width: 100%;
-    margin-left: 4px;
-  }
-  .index__main__losMasVendidos__articleFooter--corazon {
-    display: block;
-    width: 100%;
-  }
 }
 /* Media query desktop */
 @media (min-width: 769px) {
   /* main */
-  .index__main__visita3,
-  .index__main--nuevosLanzamientos,
-  .index__main--proximamente,
-  .index__main--rebajas {
+  .index__main__articleHeader1 {
     display: block;
+  }
+  .index__main__articleHeader1,
+  .index__main__articleHeader {
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  }
+  .index__main__visita--ocultarTablet6,
+  .index__main__visita--ocultarTablet5,
+  .index__main__visita--ocultarTablet4,
+  .index__main__visita--ocultarTablet3,
+  .index__main__visita--ocultarTablet2,
+  .index__main__visita--ocultarTablet1 {
+    display: block;
+  }
+
+  .index__main__visita1,
+  .index__main__visita2 {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+  }
+  .index__main__articleHeader {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
   }
   .index__main--chatBot {
     font-size: 4rem;
