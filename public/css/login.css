@@ -1,5 +1,5 @@
 .main__login {
-    margin: 10px;
+    margin: 0 10px;
 
 }
 
@@ -126,5 +126,10 @@
     .main__login--buttonGoogle{
         width: 70%;
         margin: 20px auto;
+    }
+}
+@media (min-width:1440px){
+    .main__login--formulario {
+        margin: 160px auto;
     }
 }
