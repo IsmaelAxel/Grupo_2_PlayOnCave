@@ -24,6 +24,8 @@
     align-items: center;
     gap: 11PX;
     padding-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
 }
 .productCart__main__boxCesta__juego{
     width: auto;
@@ -33,10 +35,8 @@
     justify-content: space-around;
       
 }
-.productCart__main__boxCesta__juego img{   
-width: 90%;
-margin: 5px 0;
-}
+.productCart__main__boxCesta__juego img{
+    width: 90%;margin: 5px 0;}
 
 
 .productCart__main__boxCesta__nombreJuego{
@@ -180,7 +180,6 @@ margin-right: 5px;
     }
     .productCart__titulo2{
         display: flex;
-        justify-content: space-between;   
     }
     .productCart__main__boxCesta{
         background-color:var(--gris3);
@@ -195,12 +194,16 @@ margin-right: 5px;
         
         padding: 0px 0px;
     }
+
 .productCart__main__boxCesta__juego H4{
-    letter-spacing: 8px;   
+   
 }
 .productCart__main__boxCesta__nombreJuego h4{
-    letter-spacing: 15px;     
+    l     
 }
+.productCart__main__boxCesta__juego img{
+    width: 50%;margin: 5px 0;}
+
 .productCart__main__boxCesta__cantidad {
     font-size:15px;
     margin-right: 5px;
@@ -251,6 +254,8 @@ font-size: 13px;
     .productCart__main__boxCesta__nombreJuego h4{   
         font-size: 20px;
      } 
+     .productCart__main__boxCesta__juego img{
+        width: 35%;margin: 5px 0;}
      .productCart__main__boxCesta__cantidad {
         font-size:20px;
         margin-right: 5px;
@@ -277,12 +282,13 @@ font-size: 13px;
  .productCart__main{
     background-color: var(--colorBackground);
     display: flex;
+    padding-bottom: 181px;
     flex-wrap: wrap;
     align-items: flex-start;
-    margin:0;
-    padding: 0;
-    justify-content: flex-end;
-    padding-bottom: 181px;
+    flex-direction: row;
+ }
+ .productCart__main__boxCesta__juego img{
+    width: 50%;
  }
  .productCart__titulo{
     display: flex;
@@ -302,9 +308,12 @@ font-size: 13px;
     width: 65%;
  }
  .productCart__main__boxCesta__nombreJuego h4{
-    font-size: 25px;
+    font-size: 20px;
  }
  .productCart__main__section2{
+    position: relative;
+    top: -110px;
+    left: 10px;
     width: 25%;
     margin-top: 0;
  }
