@@ -196,14 +196,11 @@ margin-right: 5px;
         padding: 0px 0px;
     }
 
-.productCart__main__boxCesta__juego H4{
-   
+
+ .productCart__main__boxCesta__juego img{
+    width:50%;
+    margin:5px 0;
 }
-.productCart__main__boxCesta__nombreJuego h4{
-    l     
-}
-.productCart__main__boxCesta__juego img{
-    width: 50%;margin: 5px 0;}
 
 .productCart__main__boxCesta__cantidad {
     font-size:15px;
@@ -237,6 +234,7 @@ margin-right: 5px;
 .productCart__main__boxResumen__politicas p{
 font-size: 13px;
 }
+
 }
 /*/////////////////////////////////////////////769//////////////////////////////////////////////////*/
 @media (min-width:769px) {
