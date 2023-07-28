@@ -1,12 +1,11 @@
 /*Index main*/
 .index--main {
-  margin: 0;
+  margin: 10px;
   padding: 0;
 }
 .index--main img {
   background-size: cover;
   box-shadow: 2px 2px 2px black;
-  width: 100%;
 }
 .index--main img:hover {
   transform: scale(1.04);
@@ -125,7 +124,9 @@
   gap: 5px;
 }
 /*Ofertas destacadas*/
-
+.index__main__visita--ocultarMobile1 {
+  display: none;
+}
 .index__main--ofertasDestacadas {
   background-image: url(/img/index/ofertasDestacadas.svg);
   color: white;
@@ -137,7 +138,15 @@
   object-fit: cover;
   box-shadow: 2px 2px 2px black;
 }
+.index__main__articleHeader1 img,
+.index__main__articleHeader2 img,
+.index__main__articleHeader3 img {
+  width: 100%;
+}
 /*Nuevos lanzamientos*/
+.index__main__visita--ocultarMobile2 {
+  display: none;
+}
 .index__main--nuevosLanzamientos {
   background-image: url(/img/index/nuevosLanzamientosDestacados.svg);
   color: white;
@@ -149,6 +158,9 @@
   box-shadow: 2px 2px 2px black;
 }
 /*Proximamente*/
+.index__main__visita--ocultarMobile3 {
+  display: none;
+}
 .index__main--proximamente {
   background-image: url(/img/index/proximamente.svg);
   color: white;
@@ -160,6 +172,9 @@
   box-shadow: 2px 2px 2px black;
 }
 /*Rebajas*/
+.index__main__visita--ocultarMobile4 {
+  display: none;
+}
 .index__main--rebajas {
   background-image: url(/img/index/losMasDestacados.svg);
   color: white;
@@ -171,6 +186,9 @@
   box-shadow: 2px 2px 2px black;
 }
 /*Los mas vendidos Los mas deseados*/
+.index__main__visita--ocultarMobile5 {
+  display: none;
+}
 .index__main--losMasVendidos,
 .index__main--losMasDeseados {
   background-image: url(/img/index/losMasDestacados.svg);
@@ -183,23 +201,21 @@
   box-shadow: 2px 2px 2px black;
 }
 /*otra diseño de card en los mas vendidos*/
-.index__main__section--article {
+
+
+.index__main__losMasVendidos2 {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   padding: 2px 0;
+  width: 100%;
+  
 }
 
-.index__main__article--img {
-  width: 20%;
-  border-left: 2px solid var(--colorVerde);
-  margin: 0;
-  box-shadow: 2px 2px 2px black;
-}
-.index__main__article--nombreProducto,
-.index__main__article--comprar,
-.index__main__article--precio,
-.index__main__article--descuento {
+.index_main_losMasVendidos--nombreProducto,
+.index__main__losMasVendidos__articleFooter--comprar,
+.index__main__losMasVendidos--precio,
+.index_main_losMasVendidos--descuento {
   font-size: 0.6rem;
   text-transform: capitalize;
   border: none;
@@ -207,30 +223,72 @@
   margin: 0;
   background-color: black;
 }
-.index__main__article--nombreProducto {
+.index__main__losMasVendidos--articleBody {
+  display: flex;
+  justify-content: center;
+}
+.index__main__losMasVendidos--img {
+  width: 20%;
+  border-left: 2px solid var(--colorVerde);
+  margin: 0;
+  box-shadow: 2px 2px 2px black;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.index_main_losMasVendidos--nombreProducto {
   color: white;
-  width: 20%;
+  width: 30%;
+  margin-left: 5px;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
-.index__main__article--comprar {
-  background-color: var(--colorVerde);
-  color: black;
-  width: 20%;
+
+.index_main_losMasVendidos--descuento {
+  background-color: var(--colorBotones);
+  color: white;
+  width: 30%;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
-.index__main__article--precio {
+
+.index__main__losMasVendidos--precio {
   color: var(--colorVerde);
   display: flex;
   align-items: center;
-  width: 20%;
+  width: 30%;
+  text-align: center;
+  justify-content: center;
 }
-.index__main__article--descuento {
-  background-color: var(--colorBotones);
-  color: white;
-  width: 20%;
+
+.index__main__losMasVendidos__articleFooter--comprar {
+  background-color: var(--colorVerde);
+  color: black;
+  width: 30%;
+  margin-left: 4px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  
+}
+.index__main__losMasVendidos__articleFooter--corazon {
+  display: none;
 }
 
 /* Media query tablets */
 @media (min-width: 481px) {
   /* main */
+  .index_main_losMasVendidos--nombreProducto {
+    display: none;
+  }
+  .index__main__losMasVendidos__articleFooter--corazon,
   .index--carousel,
   .index__main__visita2,
   .index__main--caruselExtend,
@@ -289,6 +347,68 @@
     gap: 40px;
     justify-content: space-between;
     box-shadow: 2px 2px 2px black;
+  }
+  /*otra diseño de card en los mas vendidos*/
+  .index__main__losMasVendidos2 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 2px 0;
+  }
+
+  .index_main_losMasVendidos--nombreProducto,
+  .index__main__losMasVendidos__articleFooter--comprar,
+  .index__main__losMasVendidos--precio,
+  .index_main_losMasVendidos--descuento {
+    font-size: 0.6rem;
+    text-transform: capitalize;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+  }
+  .index__main__losMasVendidos--articleBody {
+    display: flex;
+  }
+  .index__main__losMasVendidos--img {
+    width: 20%;
+    border-left: 2px solid var(--colorVerde);
+    margin: 0;
+    box-shadow: 2px 2px 2px black;
+    display: flex;
+    align-items: center;
+  }
+
+  .index_main_losMasVendidos--nombreProducto {
+    display: none;
+  }
+
+  .index_main_losMasVendidos--descuento {
+    background-color: var(--colorBotones);
+    color: white;
+    width: 30%;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+  }
+  .index__main__losMasVendidos--precio {
+    color: var(--colorVerde);
+    display: flex;
+    align-items: center;
+    width: 30%;
+  }
+  .index__main__losMasVendidos--articleFooter {
+    display: flex;
+  }
+  .index__main__losMasVendidos__articleFooter--comprar {
+    background-color: var(--colorVerde);
+    color: black;
+    width: 100%;
+    margin-left: 4px;
+  }
+  .index__main__losMasVendidos__articleFooter--corazon {
+    display: block;
+    width: 100%;
   }
 }
 /* Media query desktop */
