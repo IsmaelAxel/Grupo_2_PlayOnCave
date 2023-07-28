@@ -77,15 +77,18 @@
     font-weight: 400;
 }
 .product__main--infoJuego-more{
-    margin: 5px 0 10px;
+    margin: 20px 0;
 }
-.product__main--infoJuego a{
+.product__main--infoJuego-more a{
     text-decoration: underline;
     color: var(--colorVerde);
+    font-size: .8rem;
 
 }
 .product__main--requisitos{
     color: var(--gris4);
+    text-align: left;
+    font-size: .8rem;
 }
 .product__main--requisitos-logo{
     background-color: var(--gris3);
@@ -95,24 +98,24 @@
 .product__main--requisitos-logo i{
     color: var(--gris4);
 }
-.product__main--requisitos p{
-    margin:  10px 0 20px;
+.product__main--requisitos table{
+    padding: 5px;
 }
-.product__main--requisitos-minimos tr td, .product__main--requisitos-recomendados tr td{
-    padding-right: 3rem;
+.product__main--requisitos table tr th, .product__main--requisitos table tr td {
+    padding: 10px 0;
 }
-.product__main--requisitos-recomendados{
+.product__main--requisitos table tr td{
+    width: 50%;
+}
+.product__main--requisitos--tableRecomendados{
     display: none;
 }
-.product__main--requisitos-more{
-    margin: 20px 0;
-}
-
-.product__main--requisitos-more a{
+.product__main--requisitos a{
     text-decoration: underline;
     color: var(--colorVerde);
-
+    font-size: .8rem;
 }
+
 @media (min-width: 481px) {
     .product__main{
         display: flex;
@@ -127,6 +130,7 @@
     .product__main--article{
         width: 30%;
         padding: 5px;
+        height: 50%;
     }
     .product__main--article img{
         margin: 0 0 5px;
@@ -141,15 +145,19 @@
         font-size: .7rem;
     }
     .product__main--infoJuego p{
-        font-size: .6rem;
+        font-size: .7rem;
     }
-    .product__main--infoJuego-more{
-        margin: 10px 0 0;
+    .product__main--requisitos table{
+        padding: 30px;
     }
-    .product__main--infoJuego a{
-        font-size: .6rem;
+    .product__main--infoJuego-more a{
+        font-size: .8rem;
+    }
+    .product__main--requisitos a{
+        padding: 0 30px;
     }
     .product__main--requisitos{
+        padding: 0 0 30px;
         margin: 0 0 50px;
         border-left: .5px solid var(--gris3);
         border-bottom: .5px solid var(--gris3);
@@ -162,12 +170,7 @@
         padding: 20px;
         font-size: .7rem;
     }
-    .product__main--requisitos-minimos tr td, .product__main--requisitos-recomendados tr td{
-        padding-right: 1.5rem;
-    }
-    .product__main--article{
-        height: 20%;
-    }
+    
     .product__main--article-info p{
         font-size: .6rem;
         padding: 5px;
@@ -189,13 +192,14 @@
         margin: 40px;
     }
     .product__main--container{
-        width: 60%;
+        width: 65%;
        }
     .product__main--article{
-        width: 25%;
+        width: 29%;
+        height: 40%;
        }
     .product__main--article-info p{
-        font-size: .5rem;
+        font-size: 1rem;
     }
     .product__main--article-info h4{
         font-size: .6rem;
@@ -215,19 +219,23 @@
     .slider1,.slider2,.slider3{
         display: block;
     }
+    .product__main--infoJuego p{
+        font-size: 1rem;
+    }
     .product__main--requisitos-more{
         display: none;
     }
-    .product__main--requisitos-recomendados{
+    .product__main--requisitos a{
+        display: none;
+    }
+    .product__main--requisitos table tr th{
+        padding-right: 10px;
+    }
+    .product__main--requisitos--tableRecomendados{
         display: block;
     }
-    .product__main--requisitos-box{
+    .product__main--requisitos-flex{
         display: flex;
         justify-content: space-between;
-        flex-wrap: wrap;
-    }
-    .product__main--requisitos-colum{
-        display: flex;
-        flex-direction: column;
     }
 }
