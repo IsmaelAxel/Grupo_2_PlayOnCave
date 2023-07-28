@@ -180,6 +180,7 @@ margin-right: 5px;
     }
     .productCart__titulo2{
         display: flex;
+        justify-content: space-between;
     }
     .productCart__main__boxCesta{
         background-color:var(--gris3);
