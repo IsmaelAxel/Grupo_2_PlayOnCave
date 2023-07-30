@@ -17,10 +17,6 @@
 </head>
 
 <body class="index">
-    <!-- Script bootstrap-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
     <!-- Header-->
     <header class="home__header">
         <div class="home__header--box">
@@ -29,37 +25,29 @@
             </div>
 
             <div class="home__header__box--logo">
-                <img src="/img/header/logo.png" alt="">
+                <a href="/"><img src="/img/header/logo.png"  alt=""></a> 
             </div>
-
+            
             <div class="home__header__box--login">
                 <nav>
                     <ul>
-                        <li><a href="/register"><i class="fa-solid fa-user"></i>
-                                <p>ingresar</p>
-                            </a></li>
-                        <li id="carri"><i id="numberCart" class="fa-solid fa-4"></i><a href=""><i
-                                    class="fa-solid fa-cart-shopping"></i>
-                                <p>mi carrito</p>
-                            </a></li>
-                        <li><i class="fa-solid fa-toggle-on"></i>
-                            <p id="darkMode">modo oscuro</p>
-                        </li>
+                        <li><a href="/login"><i class="fa-solid fa-user"></i><p>ingresar</p></a></li>                       
+                        <li  id="carri"><i id="numberCart" class="fa-solid fa-4"></i><a href="/productCart"><i class="fa-solid fa-cart-shopping"></i><p>mi carrito</p></a></li>
+                        <li><i class="fa-solid fa-toggle-on" ></i><p id="darkMode">modo oscuro</p></li>
                     </ul>
                 </nav>
             </div>
-            <div class="home__header__box--categorias">
-                <div class="home_header_box--barra">
+            <div class="home__header__box--categorias" >
+                <div class="home_header_box--barra">           
                     <form class="home_header_box--form" action="#" method="post" target="_blank">
-                        <input class="home_header_box--form--input" type="search"
-                            placeholder="Buscar productos, marcas">
-                        <div class="home_header_box--btn">
-                            <i class="fa-solid fa-magnifying-glass"></i>
+                        <input class="home_header_box--form--input" type="search" placeholder="Buscar productos, marcas" >
+                        <div class="home_header_box--btn">   
+                            <i class="fa-solid fa-magnifying-glass"></i>  
                         </div>
-                    </form>
+                    </form>     
                 </div>
                 <nav>
-
+                    
                     <ul>
                         <li><a href="/">secciones</a></li>
                         <li><a href="/">juegos de mesa</a></li>
@@ -69,8 +57,8 @@
                     </ul>
                 </nav>
             </div>
-
-        </div>
+            
+        </div>  
     </header>
     <!-- Main index-->
     <main class="index--main">
@@ -79,13 +67,13 @@
             <div id="carouselExample" class="carousel slide">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="/img/index/onePiece.png" class="d-block w-100" alt="img">
+                        <a href="/productDetail"><img src="/img/index/onePiece.png" class="d-block w-100" alt="img"></a>
                     </div>
                     <div class="carousel-item">
-                        <img src="/img/index/forza_horizon_5.jpg" class="d-block w-100" alt="img">
+                        <a href="/productDetail"> <img src="/img/index/forza_horizon_5.jpg" class="d-block w-100" alt="img"></a>
                     </div>
                     <div class="carousel-item">
-                        <img src="/img/index/theDivision2.png" class="d-block w-100" alt="img">
+                       <a href="/productDetail">  <img src="/img/index/theDivision2.png" class="d-block w-100" alt="img"> </a>
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
@@ -121,7 +109,7 @@
             <div class="index__main__visita--ocultarMobile1">
 
                 <div class="index__main__articleHeader1">
-                    <img src="/img/index/rpgMakerMv.png" alt="">
+                    <a href="/productDetail"><img src="/img/index/rpgMakerMv.png" alt=""></a> 
                     <div class="index__main__section--articleBody">
                         <button class="index_main_visita--descuento">40% OFF </button>
                         <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
@@ -137,7 +125,7 @@
                 </div>
 
                 <div class="index__main__articleHeader">
-                    <img src="/img/index/onePiece.png" alt="">
+                    <a href="/productDetail"><img src="/img/index/onePiece.png" alt=""></a>
                     <div class="index__main__section--articleBody">
                         <button class="index_main_visita--descuento">40% OFF </button>
                         <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
@@ -153,7 +141,7 @@
                 </div>
 
                 <div class="index__main__articleHeader">
-                    <img src="/img/index/w2k23.jpg" alt="">
+                    <a href="/productDetail"><img src="/img/index/w2k23.jpg" alt=""></a>
                     <div class="index__main__section--articleBody">
                         <button class="index_main_visita--descuento">40% OFF </button>
                         <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
@@ -179,7 +167,7 @@
             <!-- Card nuevos lanzamientos ocultas en mobile 2 -->
             <div class="index__main__visita--ocultarMobile2">
                 <div class="index__main__articleHeader1">
-                    <img src="/img/index/theDivision2.png" alt="">
+                    <a href="/productDetail"><img src="/img/index/theDivision2.png" alt=""></a>
                     <div class="index__main__section--articleBody">
                         <button class="index_main_visita--descuento">40% OFF </button>
                         <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
@@ -209,7 +197,7 @@
                     </div>
                 </div>
                 <div class="index__main__articleHeader">
-                    <img src="/img/index/onePiece.png" alt="">
+                    <a href="/productDetail"><img src="/img/index/onePiece.png" alt=""></a>
                     <div class="index__main__section--articleBody">
                         <button class="index_main_visita--descuento">40% OFF </button>
                         <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
@@ -235,7 +223,7 @@
             <!-- Card proximamente ocultas en mobile 3 -->
             <div class="index__main__visita--ocultarMobile3">
                 <div class="index__main__articleHeader1">
-                    <img src="/img/index/forza_horizon_5.jpg" alt="">
+                    <a href="/productDetail"><img src="/img/index/forza_horizon_5.jpg" alt=""></a>
                     <div class="index__main__section--articleBody">
                         <button class="index_main_visita--descuento">40% OFF </button>
                         <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
@@ -251,7 +239,7 @@
                 </div>
 
                 <div class="index__main__articleHeader">
-                    <img src="/img/index/onePiece.png" alt="">
+                    <a href="/productDetail"><img src="/img/index/onePiece.png" alt=""></a>
                     <div class="index__main__section--articleBody">
                         <button class="index_main_visita--descuento">40% OFF </button>
                         <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
@@ -266,7 +254,7 @@
                     </div>
                 </div>
                 <div class="index__main__articleHeader">
-                    <img src="/img/index/narutoStorm4.jpg" alt="">
+                    <a href="/productDetail"><img src="/img/index/narutoStorm4.jpg" alt=""></a>
                     <div class="index__main__section--articleBody">
                         <button class="index_main_visita--descuento">40% OFF </button>
                         <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
@@ -292,7 +280,7 @@
             <!--  Card Rebajas ocultas en mobile 4-->
             <div class="index__main__visita--ocultarMobile4">
                 <div class="index__main__articleHeader1">
-                    <img src="/img/index/hogwarts__legacy.jpg" alt="">
+                    <a href="/productDetail"><img src="/img/index/hogwarts__legacy.jpg" alt=""></a>
                     <div class="index__main__section--articleBody">
                         <button class="index_main_visita--descuento">40% OFF </button>
                         <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
@@ -307,7 +295,7 @@
                     </div>
                 </div>
                 <div class="index__main__articleHeader">
-                    <img src="/img/index/gtaV.jpg" alt="">
+                    <a href="/productDetail"><img src="/img/index/gtaV.jpg" alt=""></a>
                     <div class="index__main__section--articleBody">
                         <button class="index_main_visita--descuento">40% OFF </button>
                         <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
@@ -322,7 +310,7 @@
                     </div>
                 </div>
                 <div class="index__main__articleHeader">
-                    <img src="/img/index/onePiece.png" alt="">
+                    <a href="/productDetail"> <img src="/img/index/onePiece.png" alt=""> </a>
                     <div class="index__main__section--articleBody">
                         <button class="index_main_visita--descuento">40% OFF </button>
                         <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
@@ -363,7 +351,7 @@
 
             <div class="index__main__losMasVendidos2">
                 <div class="index__main__losMasVendidos--articleBody">
-                    <img class="index__main__losMasVendidos--img" src="/img/index/onePiece.png" alt="img">
+                    <a href="/productDetail"><img class="index__main__losMasVendidos--img" src="/img/index/onePiece.png" alt="img"></a>
                     <p class="index_main_losMasVendidos--nombreProducto">nombre de producto</p>
                     <p class="index_main_losMasVendidos--descuento">40% OFF </p>
                     <span class="index__main__losMasVendidos--precio"><i
@@ -379,7 +367,7 @@
             </div>
             <div class="index__main__losMasVendidos2">
                 <div class="index__main__losMasVendidos--articleBody">
-                    <img class="index__main__losMasVendidos--img" src="/img/index/w2k23.jpg" alt="img">
+                    <a href="/productDetail"><img class="index__main__losMasVendidos--img" src="/img/index/w2k23.jpg" alt="img"></a>
 
                     <p class="index_main_losMasVendidos--nombreProducto">nombre de producto</p>
                     <p class="index_main_losMasVendidos--descuento">40% OFF </p>
@@ -402,7 +390,7 @@
             <!-- Card los mas deseados ocultar mobile 6 -->
             <div class="index__main__visita--ocultarMobile6">
                 <div class="index__main__articleHeader1">
-                    <img src="/img/index/EAfc24.jpg" alt="">
+                    <a href="/productDetail"> <img src="/img/index/EAfc24.jpg" alt=""> </a>
                     <div class="index__main__section--articleBody">
                         <button class="index_main_visita--descuento">40% OFF </button>
                         <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
@@ -417,7 +405,7 @@
                     </div>
                 </div>
                 <div class="index__main__articleHeader">
-                    <img src="/img/index/onePiece.png" alt="">
+                    <a href="/productDetail"><img src="/img/index/onePiece.png" alt=""></a>
                     <div class="index__main__section--articleBody">
                         <button class="index_main_visita--descuento">40% OFF </button>
                         <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
@@ -432,7 +420,7 @@
                     </div>
                 </div>
                 <div class="index__main__articleHeader">
-                    <img src="/img/index/half-life__alyx.jpg" alt="">
+                    <a href="/productDetail"> <img src="/img/index/half-life__alyx.jpg" alt=""></a>
                     <div class="index__main__section--articleBody">
                         <button class="index_main_visita--descuento">40% OFF </button>
                         <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
@@ -458,7 +446,7 @@
             <!-- Card los mas deseados ocultar mobile 6 -->
             <div class="index__main__visita--ocultarMobile6">
                 <div class="index__main__articleHeader1">
-                    <img src="/img/index/EAfc24.jpg" alt="">
+                    <a href="/productDetail"> <img src="/img/index/EAfc24.jpg" alt=""> </a>
                     <div class="index__main__section--articleBody">
                         <button class="index_main_visita--descuento">40% OFF </button>
                         <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
@@ -473,7 +461,7 @@
                     </div>
                 </div>
                 <div class="index__main__articleHeader">
-                    <img src="/img/index/onePiece.png" alt="">
+                    <a href="/productDetail"> <img src="/img/index/onePiece.png" alt=""> </a>
                     <div class="index__main__section--articleBody">
                         <button class="index_main_visita--descuento">40% OFF </button>
                         <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
@@ -488,7 +476,7 @@
                     </div>
                 </div>
                 <div class="index__main__articleHeader">
-                    <img src="/img/index/half-life__alyx.jpg" alt="">
+                    <a href="/productDetail"> <img src="/img/index/half-life__alyx.jpg" alt=""> </a>
                     <div class="index__main__section--articleBody">
                         <button class="index_main_visita--descuento">40% OFF </button>
                         <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
@@ -523,6 +511,10 @@
         </nav>
         <h6><a href="">Ayuda y Soporte</a></h6>
     </footer>
+    <!-- Script bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
     <!-- Scrip animation -->
     <script src="/js/index.js"></script>
 </body>
