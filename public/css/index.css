@@ -301,6 +301,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    width: 100%;
   }
   .index__main--chatBot {
     font-size: 3rem;
