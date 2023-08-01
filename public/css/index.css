@@ -1,414 +1,86 @@
-/*Index main*/
-.index--main {
+.index{
   margin: 10px;
- 
-}
-.index--main img {
-  background-size: cover;
-  box-shadow: 2px 2px 2px black;
-}
-.index--main img:hover {
-  transform: scale(1.04);
 }
 
-/*Carousel*/
-.index--carousel {
-  box-shadow: 2px 2px 2px black;
+.swiper {
+  width: 100%;
+  height: 100%;
 }
-/*Extención de carousel*/
-.index__main--caruselExtend {
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
   display: flex;
-  justify-content: space-between;
-  border: 1px solid green;
-  background-color: black;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.swiper-pagination-bullet {
+  background-color: var(--colorVerde);
+  opacity: 1;
+}
+
+.index__main--products{
+  margin: 10px 0;
+}
+.index__main--titulo1{
+   background-image: url('/img/index/losMasVendidos.svg');
+}
+.index__main--titulo2{
+  background-image: url('/img/index/nuevosLanzamientosDestacados.svg');
+}
+.index__main--titulo1, .index__main--titulo2{
+  text-align: center;
+  color: #ffffff;
+  padding: 5px;
+  font-size: 1.5rem;
+}
+
+.index__main--article{
+  margin: 0 0 10px ;
+  background-color: var(--gris1);
+  padding: 5px;
+}
+.index__main--article img{
+  width: 100%;
   margin: 5px 0;
-  box-shadow: 2px 2px 2px black;
 }
-.index__main--caruselExtend2 {
+.index__main--article-info{
   display: flex;
+  align-items: center;
   gap: 20px;
 }
-.index__main__caruselExtend--titulo {
-  display: flex;
-  color: white;
-  font-size: 0.8rem;
-  margin: 10px 10px;
-  text-transform: capitalize;
+.index__main--article-info p{
+  background-color: var(--colorBotones);
+  color: #ffffff;
+  padding: 10px;
 }
-.index__main__caruselExtend--precio {
-  display: flex;
-  align-items: center;
+.index__main--article-info h4{
   color: var(--colorVerde);
-  margin: 10px 0;
-  font-size: 0.8rem;
-  text-transform: capitalize;
 }
-.index__main__caruselExtend--comprar {
-  display: flex;
-  align-items: center;
-  gap: 5px;
+.index__main--article-comprar a button{
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background-color: var(--colorVerde);
+  color: #000000;
+  font-weight: 700;
   border: none;
-  background-color: var(--colorVerde);
-  margin: 10px 10px;
-  font-size: 0.8rem;
-  text-transform: uppercase;
+  margin: 6px 0;
 }
-/*Chat bot*/
-.index__main--chatBot {
-  font-size: 2rem;
-  color: var(--colorIconos);
-  position: fixed;
-  right: 0%;
-  bottom: 0%;
-  background-color: black;
-  border-radius: 45%;
-  box-shadow: 0 3px 3px 3px var(--colorVerde);
-  padding: 0 10px;
-  z-index: 999;
-}
-/*card*/
-.index__main__articleHeader img {
+.index__main--article-verMas a button{
   width: 100%;
-}
-
-.index__main__section--articleBody {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  
-}
-
-.index__main__section__articleFooter--comprar,
-.index__main__section__articleFooter--corazon {
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  width: 100%;
-}
-.index__main__section__articleFooter--comprar {
-  color: black;
-  background-color: var(--colorVerde);
-  display: flex;
-  justify-content: center;
-}
-.index__main__section__articleFooter--corazon {
-  color: white;
+  padding: 10px;
+  text-align: center;
   background-color: var(--gris3);
-  display: flex;
-  justify-content: center;
-}
-/*todo en uno las card*/
-.index_main_visita--descuento,
-.index__main__visita--precio,
-.index__main__section__articleFooter--comprar,
-.index__main__section__articleFooter--corazon {
+  color: #ffffff;
+  font-weight: 700;
   border: none;
-  padding: 5px;
-  margin: 2px 0;
-}
-.index_main_visita--descuento,
-.index__main__visita--precio {
-  text-transform: capitalize;
-  font-size: 1rem;
-}
-.index_main_visita--descuento {
-  color: white;
-  background-color: var(--colorBotones);
-}
-.index__main__visita--precio {
-  color: var(--colorVerde);
-  display: flex;
-  gap: 5px;
-}
-/*Ofertas destacadas*/
-
-.index__main--ofertasDestacadas {
-  background-image: url(/img/index/ofertasDestacadas.svg);
-  color: white;
-  padding-left: 10px;
-  padding: 10px 10px;
-  text-transform: uppercase;
-  margin: 10px 0;
-  background-size: cover;
-  object-fit: cover;
-  box-shadow: 2px 2px 2px black;
-}
-.index__main__articleHeader1 img,
-.index__main__articleHeader2 img,
-.index__main__articleHeader3 img {
-  width: 100%;
-}
-/*Nuevos lanzamientos*/
-
-.index__main--nuevosLanzamientos {
-  background-image: url(/img/index/nuevosLanzamientosDestacados.svg);
-  color: white;
-  padding: 10px 10px;
-  text-transform: uppercase;
-  margin: 10px 0;
-  background-size: cover;
-  object-fit: cover;
-  box-shadow: 2px 2px 2px black;
-}
-/*Proximamente*/
-
-.index__main--proximamente {
-  background-image: url(/img/index/proximamente.svg);
-  color: white;
-  padding: 10px 10px;
-  text-transform: uppercase;
-  margin: 10px 0;
-  background-size: cover;
-  object-fit: cover;
-  box-shadow: 2px 2px 2px black;
-}
-/*Rebajas*/
-
-.index__main--rebajas {
-  background-image: url(/img/index/losMasDestacados.svg);
-  color: white;
-  padding: 10px 10px;
-  text-transform: uppercase;
-  margin: 10px 0;
-  background-size: cover;
-  object-fit: cover;
-  box-shadow: 2px 2px 2px black;
-}
-/*Los mas vendidos Los mas deseados*/
-
-.index__main--losMasVendidos,
-.index__main--losMasDeseados {
-  background-image: url(/img/index/losMasDestacados.svg);
-  color: white;
-  text-transform: uppercase;
-  margin: 5px 0;
-  background-size: cover;
-  object-fit: cover;
-  width: 100%;
-  box-shadow: 2px 2px 2px black;
-}
-/*otra diseño de card en los mas vendidos*/
-.index__main__losMasVendidos2 {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding: 2px 0;
-  width: 100%;
-}
-
-.index_main_losMasVendidos--nombreProducto,
-.index__main__losMasVendidos__articleFooter--comprar,
-.index__main__losMasVendidos--precio,
-.index_main_losMasVendidos--descuento {
-  font-size: 0.6rem;
-  text-transform: capitalize;
-  border: none;
-  padding: 0;
-  margin: 0;
-  background-color: black;
-}
-.index__main__losMasVendidos--articleBody {
-  display: flex;
-  justify-content: center;
-}
-.index__main__losMasVendidos--img {
-  width: 20%;
-  border-left: 2px solid var(--colorVerde);
-  margin: 0;
-  box-shadow: 2px 2px 2px black;
-  display: flex;
-  align-items: center;
-  text-align: center;
-}
-
-.index_main_losMasVendidos--nombreProducto {
-  color: white;
-  width: 30%;
-  margin-left: 5px;
-  margin-right: 5px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-}
-
-.index_main_losMasVendidos--descuento {
-  background-color: var(--colorBotones);
-  color: white;
-  width: 30%;
-  margin-right: 5px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-}
-
-.index__main__losMasVendidos--precio {
-  color: var(--colorVerde);
-  display: flex;
-  align-items: center;
-  width: 30%;
-  text-align: center;
-  justify-content: center;
-}
-
-.index__main__losMasVendidos__articleFooter--comprar {
-  background-color: var(--colorVerde);
-  color: black;
-  width: 30%;
-  margin-left: 4px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-}
-.index__main__losMasVendidos__articleFooter--corazon {
-  display: none;
-}
-
-/* Media query tablets */
-@media (min-width: 481px) {
-  /* main */
-  .index__main__articleHeader1 {
-    display: none;
-  }
-
-  .index__main__losMasVendidos,
-  .index__main__visita--ocultarTablet6,
-  .index__main__visita--ocultarTablet5,
-  .index__main__visita--ocultarTablet4,
-  .index__main__visita--ocultarTablet3,
-  .index__main__visita--ocultarTablet2,
-  .index__main__visita--ocultarTablet1 {
-    display: none;
-  }
-  .index_main_losMasVendidos--nombreProducto {
-    display: none;
-  }
-  .index__main__articleHeader2 {
-    display: flex;
-  }
-  .index__main__losMasVendidos__articleFooter--corazon {
-    display: block;
-  }
-  .index__main__visita--ocultarMobile6,
-  .index__main__visita--ocultarMobile5,
-  .index__main__visita--ocultarMobile4,
-  .index__main__visita--ocultarMobile3,
-  .index__main__visita--ocultarMobile2,
-  .index__main__visita--ocultarMobile1 {
-    display: block;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 100%;
-  }
-  .index__main--chatBot {
-    font-size: 3rem;
-  }
-
-  .index__main__visita1,
-  .index__main__visita2 {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .index__main__articleHeader {
-    width: 45%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
-  }
-
-  .index__main__section--article {
-    display: flex;
-    flex-direction: row;
-  }
-  .index__main__article {
-    width: 47%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-  }
-  .index__main__article--img {
-    width: 100%;
-    border-left: 2px solid var(--colorVerde);
-    margin: 5px 0;
-  }
-
-  .index__main__ofertas2 {
-    display: none;
-  }
-  .index__main__losMasDeseados {
-    display: flex;
-    gap: 40px;
-    justify-content: space-between;
-    box-shadow: 2px 2px 2px black;
-  }
-  /*otra diseño de card en los mas vendidos*/
-}
-/* Media query desktop */
-@media (min-width: 769px) {
-  /* main */
-  .index__main__articleHeader1 {
-    display: block;
-  }
-  .index__main__articleHeader1,
-  .index__main__articleHeader {
-    width: 30%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
-  }
-  .index__main__visita--ocultarTablet6,
-  .index__main__visita--ocultarTablet5,
-  .index__main__visita--ocultarTablet4,
-  .index__main__visita--ocultarTablet3,
-  .index__main__visita--ocultarTablet2,
-  .index__main__visita--ocultarTablet1 {
-    display: block;
-  }
-
-  .index__main__visita1,
-  .index__main__visita2 {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    margin: 0;
-    padding: 0;
-  }
-  .index__main__articleHeader {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
-  }
-  .index__main--chatBot {
-    font-size: 4rem;
-  }
-  .index__main__visita3 {
-    display: flex;
-    gap: 0px;
-    justify-content: space-between;
-  }
-
-  .index__main--rebajas,
-  .index__main--losMasVendidos,
-  .index__main--losMasDeseados {
-    padding-left: 20px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .index__main--chatBot {
-    right: 19%;
-  }
 }

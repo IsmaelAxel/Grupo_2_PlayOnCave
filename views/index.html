@@ -5,19 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <!-- Script bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <!-- Script fontaweseome-->
-    <script src="https://kit.fontawesome.com/53932b54f0.js" crossorigin="anonymous"></script>
-    <!-- Css link-->
+    <!-- SWIPER -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- Hoja personalizada -->
     <link rel="stylesheet" href="/css/styles.css">
-    <!-- Logo-->
-    <link rel="shortcut icon" href="/img/logo.svg" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/42701418d7.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="index">
-    <!-- Header-->
+<body>
     <header class="home__header">
         <div class="home__header--box">
             <div class="home__header__box--burguer">
@@ -25,29 +20,37 @@
             </div>
 
             <div class="home__header__box--logo">
-                <a href="/"><img src="/img/header/logo.png"  alt=""></a> 
+                <a href="/"><img src="/img/header/logo.png" alt=""></a>
             </div>
-            
+
             <div class="home__header__box--login">
                 <nav>
                     <ul>
-                        <li><a href="/login"><i class="fa-solid fa-user"></i><p>ingresar</p></a></li>                       
-                        <li  id="carri"><i id="numberCart" class="fa-solid fa-4"></i><a href="/productCart"><i class="fa-solid fa-cart-shopping"></i><p>mi carrito</p></a></li>
-                        <li><i class="fa-solid fa-toggle-on" ></i><p id="darkMode">modo oscuro</p></li>
+                        <li><a href="/login"><i class="fa-solid fa-user"></i>
+                                <p>ingresar</p>
+                            </a></li>
+                        <li id="carri"><i id="numberCart" class="fa-solid fa-4"></i><a href="/productCart"><i
+                                    class="fa-solid fa-cart-shopping"></i>
+                                <p>mi carrito</p>
+                            </a></li>
+                        <li><i class="fa-solid fa-toggle-on"></i>
+                            <p id="darkMode">modo oscuro</p>
+                        </li>
                     </ul>
                 </nav>
             </div>
-            <div class="home__header__box--categorias" >
-                <div class="home_header_box--barra">           
+            <div class="home__header__box--categorias">
+                <div class="home_header_box--barra">
                     <form class="home_header_box--form" action="#" method="post" target="_blank">
-                        <input class="home_header_box--form--input" type="search" placeholder="Buscar productos, marcas" >
-                        <div class="home_header_box--btn">   
-                            <i class="fa-solid fa-magnifying-glass"></i>  
+                        <input class="home_header_box--form--input" type="search"
+                            placeholder="Buscar productos, marcas">
+                        <div class="home_header_box--btn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
-                    </form>     
+                    </form>
                 </div>
                 <nav>
-                    
+
                     <ul>
                         <li><a href="/">secciones</a></li>
                         <li><a href="/">juegos de mesa</a></li>
@@ -57,444 +60,124 @@
                     </ul>
                 </nav>
             </div>
-            
-        </div>  
+
+        </div>
     </header>
-    <!-- Main index-->
-    <main class="index--main">
-        <!-- Boostrap carousel -->
-        <div class="index--carousel">
-            <div id="carouselExample" class="carousel slide">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <a href="/productDetail"><img src="/img/index/onePiece.png" class="d-block w-100" alt="img"></a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="/productDetail"> <img src="/img/index/forza_horizon_5.jpg" class="d-block w-100" alt="img"></a>
-                    </div>
-                    <div class="carousel-item">
-                       <a href="/productDetail">  <img src="/img/index/theDivision2.png" class="d-block w-100" alt="img"> </a>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+    <main class="index">
+        <!-- CARROUSEL -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="/img/carrousel/carrousel_1.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="/img/carrousel/carrousel_2.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="/img/carrousel/carrousel_3.jpg" alt=""></div>
             </div>
+            <div class="swiper-pagination"></div>
         </div>
-        <!-- Extención del carousel -->
-        <div class="index__main--caruselExtend">
-            <p class="index__main__caruselExtend--titulo">titulo de juego</p>
-            <div class="index__main--caruselExtend2">
-                <span class="index__main__caruselExtend--precio"><i
-                        class="fa-solid fa-hand-holding-dollar"></i>precio</span>
-                <button class="index__main__caruselExtend--comprar"><i
-                        class="fa-solid fa-cart-shopping"></i>comprar</button>
-            </div>
+        <div class="index__main--products">
+            <h1 class="index__main--titulo1">Los más vendidos</h1>
+            <div class="index__main--products-box">
+            <article class="index__main--article">
+                <img src="/img/productDetail/product_detail_1.jpg" alt="">
+                <div class="index__main--article-info">
+                    <p>30% OFF</p>
+                    <h4>$1500</h4>
+                </div>
+                <div class="index__main--article-comprar"><a href="/productCart"><button type="button"><i
+                                class="fa-solid fa-cart-shopping"></i> COMPRAR</button></a>
+                </div>
+                <div class="index__main--article-verMas"><a href=""><button>
+                           VER MÁS</button></a></div>
+            </article>
+            <article class="index__main--article">
+                <img src="/img/productDetail/product_detail_1.jpg" alt="">
+                <div class="index__main--article-info">
+                    <p>30% OFF</p>
+                    <h4>$1500</h4>
+                </div>
+                <div class="index__main--article-comprar"><a href="/productCart"><button type="button"><i
+                                class="fa-solid fa-cart-shopping"></i> COMPRAR</button></a>
+                </div>
+                <div class="index__main--article-verMas"><a href=""><button>
+                           VER MÁS</button></a></div>
+            </article>
+            <article class="index__main--article">
+                <img src="/img/productDetail/product_detail_1.jpg" alt="">
+                <div class="index__main--article-info">
+                    <p>30% OFF</p>
+                    <h4>$1500</h4>
+                </div>
+                <div class="index__main--article-comprar"><a href="/productCart"><button type="button"><i
+                                class="fa-solid fa-cart-shopping"></i> COMPRAR</button></a>
+                </div>
+                <div class="index__main--article-verMas"><a href=""><button>
+                           VER MÁS</button></a></div>
+            </article>
+            <article class="index__main--article">
+                <img src="/img/productDetail/product_detail_1.jpg" alt="">
+                <div class="index__main--article-info">
+                    <p>30% OFF</p>
+                    <h4>$1500</h4>
+                </div>
+                <div class="index__main--article-comprar"><a href="/productCart"><button type="button"><i
+                                class="fa-solid fa-cart-shopping"></i> COMPRAR</button></a>
+                </div>
+                <div class="index__main--article-verMas"><a href=""><button>
+                           VER MÁS</button></a></div>
+            </article>
         </div>
-        <!-- Chat bot -->
-        <div class="index__main--chatBot"><i class="fa-solid fa-headset"></i></div>
-        <!-- Ofertas destacadas -->
-        <h3 class="index__main--ofertasDestacadas">ofertas destacadas</h3>
-        <!-- Card ofertas destacadas -->
-        <div class="index__main__visita1">
-
-            <!-- Card ofertas ocultas en mobile -->
-            <div class="index__main__visita--ocultarMobile1">
-
-                <div class="index__main__articleHeader1">
-                    <a href="/productDetail"><img src="/img/index/rpgMakerMv.png" alt=""></a> 
-                    <div class="index__main__section--articleBody">
-                        <button class="index_main_visita--descuento">40% OFF </button>
-                        <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
-                        </span>
-                    </div>
-                    <div class="index__main__section--articleFooter">
-                        <button class="index__main__section__articleFooter--comprar"><i
-                                class="fa-solid fa-cart-shopping"></i>comprar</button>
-                        <button class="index__main__section__articleFooter--corazon"><i
-                                class="fa-regular fa-heart"></i>añadir
-                            a lista de deseados</button>
-                    </div>
+            <h1 class="index__main--titulo2">Nuevos Lanzamientos</h1>
+            <div class="index__main--products-box">
+            <article class="index__main--article">
+                <img src="/img/productDetail/product_detail_1.jpg" alt="">
+                <div class="index__main--article-info">
+                    <p>30% OFF</p>
+                    <h4>$1500</h4>
                 </div>
-
-                <div class="index__main__articleHeader">
-                    <a href="/productDetail"><img src="/img/index/onePiece.png" alt=""></a>
-                    <div class="index__main__section--articleBody">
-                        <button class="index_main_visita--descuento">40% OFF </button>
-                        <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
-                        </span>
-                    </div>
-                    <div class="index__main__section--articleFooter">
-                        <button class="index__main__section__articleFooter--comprar"><i
-                                class="fa-solid fa-cart-shopping"></i>comprar</button>
-                        <button class="index__main__section__articleFooter--corazon"><i
-                                class="fa-regular fa-heart"></i>añadir
-                            a lista de deseados</button>
-                    </div>
+                <div class="index__main--article-comprar"><a href="/productCart"><button type="button"><i
+                                class="fa-solid fa-cart-shopping"></i> COMPRAR</button></a>
                 </div>
-
-                <div class="index__main__articleHeader">
-                    <a href="/productDetail"><img src="/img/index/w2k23.jpg" alt=""></a>
-                    <div class="index__main__section--articleBody">
-                        <button class="index_main_visita--descuento">40% OFF </button>
-                        <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
-                        </span>
-                    </div>
-                    <div class="index__main__section--articleFooter">
-                        <button class="index__main__section__articleFooter--comprar"><i
-                                class="fa-solid fa-cart-shopping"></i>comprar</button>
-                        <button class="index__main__section__articleFooter--corazon"><i
-                                class="fa-regular fa-heart"></i>añadir
-                            a lista de deseados</button>
-                    </div>
+                <div class="index__main--article-verMas"><a href=""><button>
+                           VER MÁS</button></a></div>
+            </article>
+            <article class="index__main--article">
+                <img src="/img/productDetail/product_detail_1.jpg" alt="">
+                <div class="index__main--article-info">
+                    <p>30% OFF</p>
+                    <h4>$1500</h4>
                 </div>
-            </div>
-
+                <div class="index__main--article-comprar"><a href="/productCart"><button type="button"><i
+                                class="fa-solid fa-cart-shopping"></i> COMPRAR</button></a>
+                </div>
+                <div class="index__main--article-verMas"><a href=""><button>
+                           VER MÁS</button></a></div>
+            </article>
+            <article class="index__main--article">
+                <img src="/img/productDetail/product_detail_1.jpg" alt="">
+                <div class="index__main--article-info">
+                    <p>30% OFF</p>
+                    <h4>$1500</h4>
+                </div>
+                <div class="index__main--article-comprar"><a href="/productCart"><button type="button"><i
+                                class="fa-solid fa-cart-shopping"></i> COMPRAR</button></a>
+                </div>
+                <div class="index__main--article-verMas"><a href=""><button>
+                           VER MÁS</button></a></div>
+            </article>
+            <article class="index__main--article">
+                <img src="/img/productDetail/product_detail_1.jpg" alt="">
+                <div class="index__main--article-info">
+                    <p>30% OFF</p>
+                    <h4>$1500</h4>
+                </div>
+                <div class="index__main--article-comprar"><a href="/productCart"><button type="button"><i
+                                class="fa-solid fa-cart-shopping"></i> COMPRAR</button></a>
+                </div>
+                <div class="index__main--article-verMas"><a href=""><button>
+                           VER MÁS</button></a></div>
+            </article>
         </div>
-        <!-- Nuevos lanzamientos destacados -->
-        <h3 class="index__main--nuevosLanzamientos">nuevos lanzamientos destacados</h3>
-        <!-- Card nuevos lanzamientos destacados -->
-
-        <div class="index__main__visita3">
-
-            <!-- Card nuevos lanzamientos ocultas en mobile 2 -->
-            <div class="index__main__visita--ocultarMobile2">
-                <div class="index__main__articleHeader1">
-                    <a href="/productDetail"><img src="/img/index/theDivision2.png" alt=""></a>
-                    <div class="index__main__section--articleBody">
-                        <button class="index_main_visita--descuento">40% OFF </button>
-                        <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
-                        </span>
-                    </div>
-                    <div class="index__main__section--articleFooter">
-                        <button class="index__main__section__articleFooter--comprar"><i
-                                class="fa-solid fa-cart-shopping"></i>comprar</button>
-                        <button class="index__main__section__articleFooter--corazon"><i
-                                class="fa-regular fa-heart"></i>añadir
-                            a lista de deseados</button>
-                    </div>
-                </div>
-                <div class="index__main__articleHeader">
-                    <img src="/img/index/worldOfTank.jpg" alt="">
-                    <div class="index__main__section--articleBody">
-                        <button class="index_main_visita--descuento">40% OFF </button>
-                        <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
-                        </span>
-                    </div>
-                    <div class="index__main__section--articleFooter">
-                        <button class="index__main__section__articleFooter--comprar"><i
-                                class="fa-solid fa-cart-shopping"></i>comprar</button>
-                        <button class="index__main__section__articleFooter--corazon"><i
-                                class="fa-regular fa-heart"></i>añadir
-                            a lista de deseados</button>
-                    </div>
-                </div>
-                <div class="index__main__articleHeader">
-                    <a href="/productDetail"><img src="/img/index/onePiece.png" alt=""></a>
-                    <div class="index__main__section--articleBody">
-                        <button class="index_main_visita--descuento">40% OFF </button>
-                        <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
-                        </span>
-                    </div>
-                    <div class="index__main__section--articleFooter">
-                        <button class="index__main__section__articleFooter--comprar"><i
-                                class="fa-solid fa-cart-shopping"></i>comprar</button>
-                        <button class="index__main__section__articleFooter--corazon"><i
-                                class="fa-regular fa-heart"></i>añadir
-                            a lista de deseados</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!-- Proximamente -->
-        <h3 class="index__main--proximamente">proximamente</h3>
-        <!-- Card proximamente -->
-        <div class="index__main__visita3">
-
-
-            <!-- Card proximamente ocultas en mobile 3 -->
-            <div class="index__main__visita--ocultarMobile3">
-                <div class="index__main__articleHeader1">
-                    <a href="/productDetail"><img src="/img/index/forza_horizon_5.jpg" alt=""></a>
-                    <div class="index__main__section--articleBody">
-                        <button class="index_main_visita--descuento">40% OFF </button>
-                        <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
-                        </span>
-                    </div>
-                    <div class="index__main__section--articleFooter">
-                        <button class="index__main__section__articleFooter--comprar"><i
-                                class="fa-solid fa-cart-shopping"></i>comprar</button>
-                        <button class="index__main__section__articleFooter--corazon"><i
-                                class="fa-regular fa-heart"></i>añadir
-                            a lista de deseados</button>
-                    </div>
-                </div>
-
-                <div class="index__main__articleHeader">
-                    <a href="/productDetail"><img src="/img/index/onePiece.png" alt=""></a>
-                    <div class="index__main__section--articleBody">
-                        <button class="index_main_visita--descuento">40% OFF </button>
-                        <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
-                        </span>
-                    </div>
-                    <div class="index__main__section--articleFooter">
-                        <button class="index__main__section__articleFooter--comprar"><i
-                                class="fa-solid fa-cart-shopping"></i>comprar</button>
-                        <button class="index__main__section__articleFooter--corazon"><i
-                                class="fa-regular fa-heart"></i>añadir
-                            a lista de deseados</button>
-                    </div>
-                </div>
-                <div class="index__main__articleHeader">
-                    <a href="/productDetail"><img src="/img/index/narutoStorm4.jpg" alt=""></a>
-                    <div class="index__main__section--articleBody">
-                        <button class="index_main_visita--descuento">40% OFF </button>
-                        <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
-                        </span>
-                    </div>
-                    <div class="index__main__section--articleFooter">
-                        <button class="index__main__section__articleFooter--comprar"><i
-                                class="fa-solid fa-cart-shopping"></i>comprar</button>
-                        <button class="index__main__section__articleFooter--corazon"><i
-                                class="fa-regular fa-heart"></i>añadir
-                            a lista de deseados</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!-- Rebajas -->
-        <h3 class="index__main--rebajas">rebajas</h3>
-        <!-- Card rebajas-->
-        <div class="index__main__visita3">
-
-
-            <!--  Card Rebajas ocultas en mobile 4-->
-            <div class="index__main__visita--ocultarMobile4">
-                <div class="index__main__articleHeader1">
-                    <a href="/productDetail"><img src="/img/index/hogwarts__legacy.jpg" alt=""></a>
-                    <div class="index__main__section--articleBody">
-                        <button class="index_main_visita--descuento">40% OFF </button>
-                        <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
-                        </span>
-                    </div>
-                    <div class="index__main__section--articleFooter">
-                        <button class="index__main__section__articleFooter--comprar"><i
-                                class="fa-solid fa-cart-shopping"></i>comprar</button>
-                        <button class="index__main__section__articleFooter--corazon"><i
-                                class="fa-regular fa-heart"></i>añadir
-                            a lista de deseados</button>
-                    </div>
-                </div>
-                <div class="index__main__articleHeader">
-                    <a href="/productDetail"><img src="/img/index/gtaV.jpg" alt=""></a>
-                    <div class="index__main__section--articleBody">
-                        <button class="index_main_visita--descuento">40% OFF </button>
-                        <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
-                        </span>
-                    </div>
-                    <div class="index__main__section--articleFooter">
-                        <button class="index__main__section__articleFooter--comprar"><i
-                                class="fa-solid fa-cart-shopping"></i>comprar</button>
-                        <button class="index__main__section__articleFooter--corazon"><i
-                                class="fa-regular fa-heart"></i>añadir
-                            a lista de deseados</button>
-                    </div>
-                </div>
-                <div class="index__main__articleHeader">
-                    <a href="/productDetail"> <img src="/img/index/onePiece.png" alt=""> </a>
-                    <div class="index__main__section--articleBody">
-                        <button class="index_main_visita--descuento">40% OFF </button>
-                        <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
-                        </span>
-                    </div>
-                    <div class="index__main__section--articleFooter">
-                        <button class="index__main__section__articleFooter--comprar"><i
-                                class="fa-solid fa-cart-shopping"></i>comprar</button>
-                        <button class="index__main__section__articleFooter--corazon"><i
-                                class="fa-regular fa-heart"></i>añadir
-                            a lista de deseados</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!-- Los mas vendidos -->
-        <h3 class="index__main--losMasVendidos">los mas vendidos</h3>
-        <!-- Card los mas vendidos -->
-        <div class="index__main__losMasVendidos">
-            <div class="index__main__visita--ocultarTablet5">
-                <div class="index__main__losMasVendidos2">
-                    <div class="index__main__losMasVendidos--articleBody">
-                        <img class="index__main__losMasVendidos--img" src="/img/index/rpgMakerMv.png" alt="img">
-                        <p class="index_main_losMasVendidos--nombreProducto">nombre de producto</p>
-                        <p class="index_main_losMasVendidos--descuento">40% OFF </p>
-                        <span class="index__main__losMasVendidos--precio"><i
-                                class="fa-solid fa-hand-holding-dollar"></i>6.770
-                        </span>
-                        <a class="index__main__losMasVendidos__articleFooter--comprar"><i
-                                class="fa-solid fa-cart-shopping"></i>comprar</a>
-                        <a class="index__main__losMasVendidos__articleFooter--corazon"><i
-                                class="fa-regular fa-heart"></i>añadir
-                            a lista de deseados</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="index__main__losMasVendidos2">
-                <div class="index__main__losMasVendidos--articleBody">
-                    <a href="/productDetail"><img class="index__main__losMasVendidos--img" src="/img/index/onePiece.png" alt="img"></a>
-                    <p class="index_main_losMasVendidos--nombreProducto">nombre de producto</p>
-                    <p class="index_main_losMasVendidos--descuento">40% OFF </p>
-                    <span class="index__main__losMasVendidos--precio"><i
-                            class="fa-solid fa-hand-holding-dollar"></i>6.770
-                    </span>
-                    <a class="index__main__losMasVendidos__articleFooter--comprar"><i
-                            class="fa-solid fa-cart-shopping"></i>comprar</a>
-                    <a class="index__main__losMasVendidos__articleFooter--corazon"><i
-                            class="fa-regular fa-heart"></i>añadir
-                        a lista de deseados</a>
-                </div>
-
-            </div>
-            <div class="index__main__losMasVendidos2">
-                <div class="index__main__losMasVendidos--articleBody">
-                    <a href="/productDetail"><img class="index__main__losMasVendidos--img" src="/img/index/w2k23.jpg" alt="img"></a>
-
-                    <p class="index_main_losMasVendidos--nombreProducto">nombre de producto</p>
-                    <p class="index_main_losMasVendidos--descuento">40% OFF </p>
-                    <span class="index__main__losMasVendidos--precio"><i
-                            class="fa-solid fa-hand-holding-dollar"></i>6.770
-                    </span>
-                    <a class="index__main__losMasVendidos__articleFooter--comprar"><i
-                            class="fa-solid fa-cart-shopping"></i>comprar</a>
-                    <a class="index__main__losMasVendidos__articleFooter--corazon"><i
-                            class="fa-regular fa-heart"></i>añadir
-                        a lista de deseados</a>
-                </div>
-
-            </div>
-        </div>
-        <!-- Los mas vendidos tablet new diseño -->
-        <div class="index__main__visita2">
-
-
-            <!-- Card los mas deseados ocultar mobile 6 -->
-            <div class="index__main__visita--ocultarMobile6">
-                <div class="index__main__articleHeader1">
-                    <a href="/productDetail"> <img src="/img/index/EAfc24.jpg" alt=""> </a>
-                    <div class="index__main__section--articleBody">
-                        <button class="index_main_visita--descuento">40% OFF </button>
-                        <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
-                        </span>
-                    </div>
-                    <div class="index__main__section--articleFooter">
-                        <button class="index__main__section__articleFooter--comprar"><i
-                                class="fa-solid fa-cart-shopping"></i>comprar</button>
-                        <button class="index__main__section__articleFooter--corazon"><i
-                                class="fa-regular fa-heart"></i>añadir
-                            a lista de deseados</button>
-                    </div>
-                </div>
-                <div class="index__main__articleHeader">
-                    <a href="/productDetail"><img src="/img/index/onePiece.png" alt=""></a>
-                    <div class="index__main__section--articleBody">
-                        <button class="index_main_visita--descuento">40% OFF </button>
-                        <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
-                        </span>
-                    </div>
-                    <div class="index__main__section--articleFooter">
-                        <button class="index__main__section__articleFooter--comprar"><i
-                                class="fa-solid fa-cart-shopping"></i>comprar</button>
-                        <button class="index__main__section__articleFooter--corazon"><i
-                                class="fa-regular fa-heart"></i>añadir
-                            a lista de deseados</button>
-                    </div>
-                </div>
-                <div class="index__main__articleHeader">
-                    <a href="/productDetail"> <img src="/img/index/half-life__alyx.jpg" alt=""></a>
-                    <div class="index__main__section--articleBody">
-                        <button class="index_main_visita--descuento">40% OFF </button>
-                        <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
-                        </span>
-                    </div>
-                    <div class="index__main__section--articleFooter">
-                        <button class="index__main__section__articleFooter--comprar"><i
-                                class="fa-solid fa-cart-shopping"></i>comprar</button>
-                        <button class="index__main__section__articleFooter--corazon"><i
-                                class="fa-regular fa-heart"></i>añadir
-                            a lista de deseados</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!-- Los mas deseados -->
-        <h3 class="index__main--losMasDeseados">los más deseados</h3>
-        <!-- Card los mas deseados -->
-        <div class="index__main__visita2">
-
-
-            <!-- Card los mas deseados ocultar mobile 6 -->
-            <div class="index__main__visita--ocultarMobile6">
-                <div class="index__main__articleHeader1">
-                    <a href="/productDetail"> <img src="/img/index/EAfc24.jpg" alt=""> </a>
-                    <div class="index__main__section--articleBody">
-                        <button class="index_main_visita--descuento">40% OFF </button>
-                        <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
-                        </span>
-                    </div>
-                    <div class="index__main__section--articleFooter">
-                        <button class="index__main__section__articleFooter--comprar"><i
-                                class="fa-solid fa-cart-shopping"></i>comprar</button>
-                        <button class="index__main__section__articleFooter--corazon"><i
-                                class="fa-regular fa-heart"></i>añadir
-                            a lista de deseados</button>
-                    </div>
-                </div>
-                <div class="index__main__articleHeader">
-                    <a href="/productDetail"> <img src="/img/index/onePiece.png" alt=""> </a>
-                    <div class="index__main__section--articleBody">
-                        <button class="index_main_visita--descuento">40% OFF </button>
-                        <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
-                        </span>
-                    </div>
-                    <div class="index__main__section--articleFooter">
-                        <button class="index__main__section__articleFooter--comprar"><i
-                                class="fa-solid fa-cart-shopping"></i>comprar</button>
-                        <button class="index__main__section__articleFooter--corazon"><i
-                                class="fa-regular fa-heart"></i>añadir
-                            a lista de deseados</button>
-                    </div>
-                </div>
-                <div class="index__main__articleHeader">
-                    <a href="/productDetail"> <img src="/img/index/half-life__alyx.jpg" alt=""> </a>
-                    <div class="index__main__section--articleBody">
-                        <button class="index_main_visita--descuento">40% OFF </button>
-                        <span class="index__main__visita--precio"><i class="fa-solid fa-hand-holding-dollar"></i>6.770
-                        </span>
-                    </div>
-                    <div class="index__main__section--articleFooter">
-                        <button class="index__main__section__articleFooter--comprar"><i
-                                class="fa-solid fa-cart-shopping"></i>comprar</button>
-                        <button class="index__main__section__articleFooter--corazon"><i
-                                class="fa-regular fa-heart"></i>añadir
-                            a lista de deseados</button>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </main>
-    <!-- Footer -->
     <footer class="index__footer">
         <div class="index__footer__box--iconos">
             <div><a href=""><i class="fa-brands fa-whatsapp"></i></a></div>
@@ -511,12 +194,10 @@
         </nav>
         <h6><a href="">Ayuda y Soporte</a></h6>
     </footer>
-    <!-- Script bootstrap-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
-    <!-- Scrip animation -->
-    <script src="/js/index.js"></script>
+    <!-- SWIPER -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <!-- SCRIPTS -->
+    <script src="/js/carrousel.js"></script>
 </body>
 
 </html>
