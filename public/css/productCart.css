@@ -22,9 +22,9 @@
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
-    gap: 11PX;
-    padding-right: 10px;
-    margin-left: 10px;
+    gap: 5PX;
+    margin-right: 6px;
+    margin-left: 6px;
     margin-bottom: 20px;
 }
 .productCart__main__boxCesta__juego{
@@ -42,12 +42,11 @@
 .productCart__main__boxCesta__nombreJuego{
     display: flex;
     flex-wrap: wrap;
-    width: 24%;
+    width: 15%;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    padding: 2PX;   
-    
+    padding: 2PX;
 }
 .productCart__main__boxCesta__nombreJuego h4{
     font-family: var(--tipoGrafiaTextos);
@@ -59,22 +58,51 @@
 .productCart__main__boxCesta__cantidad{
     color: #ffffff;
     font-family: var(--tipoGrafiaTextos);
-    font-size:11px;
+    font-size:19px;
     padding: 0 9px;
+    display: flex;
 }
+.productCart__main__boxCesta__cantidad__unidad{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    margin: 0 5px;
+}
+.productCart__main__boxCesta__cantidad__buton__minus{
+    background-color:var(--colorVerde);
+    border-radius: 53%;
+    padding: 1px 9px;
+    border: none;
+    box-shadow: 1px 1px 2px black;
+}
+.productCart__main__boxCesta__cantidad__buton__plus{
+    background-color:var(--colorVerde);
+    border-radius: 53%;
+    padding: 1px 6px;
+    border: none;
+    box-shadow: 1px 1px 2px black;
+}
+.productCart__main__boxCesta__eliminar{
+    background-color:var(--gris3);
+    padding: 1px;
+}
+
 .productCart__main__boxCesta__cantidad i{
-    color:var(--colorVerde);
-    background-color: #000000;
-    border-radius: 10PX;   
+    color: #000000;
+    background-color: var(--colorVerde);
+    border-radius: 10PX;
 }
 .productCart__main__boxCesta__precio h4{
     color:var(--colorVerde);
     font-family: var(--tipoGrafiaTextos);
-    font-size: 13px;
+    font-size: 17px;
+    text-shadow: 1px 1px 2px black;
 }
+.productCart__main__boxCesta__eliminar{
+    margin-right: 4px;}
 .productCart__main__boxCesta__eliminar i{
     color: black;
-    font-size: 12px;
+    font-size: 20px;
 }
 .productCart__main__section2{
     margin:80px 40px;
@@ -192,10 +220,25 @@ margin-right: 5px;
         padding-right: 10px;
     }
     .productCart__main__boxCesta__juego{
-        
         padding: 0px 0px;
     }
-
+    .productCart__main__boxCesta__cantidad__buton__minus{
+        background-color:var(--colorVerde);
+        border-radius: 53%;
+        padding: 1px 12px;
+        border: none;
+        box-shadow: 1px 1px 2px black;
+    }
+    .productCart__main__boxCesta__cantidad__buton__plus{
+        background-color:var(--colorVerde);
+        border-radius: 53%;
+        padding: 1px 9px;
+        border: none;
+        box-shadow: 1px 1px 2px black;
+    }
+    .productCart__main__boxCesta__nombreJuego h4{
+     font-size: 18px;
+}
 
  .productCart__main__boxCesta__juego img{
     width:50%;
@@ -203,16 +246,15 @@ margin-right: 5px;
 }
 
 .productCart__main__boxCesta__cantidad {
-    font-size:15px;
+    font-size:25px;
     margin-right: 5px;
 }
 .productCart__main__boxCesta__precio h4{
-    font-size: 15px;
+    font-size: 20px;
 }
 .productCart__main__boxCesta__eliminar i{
     font-size: 25px;
-    margin-left: 35px;
-}
+ }  
 .productCart__main__section2{
     margin:20px 40px;
     background-color: rgba(27, 26, 26, 0.908);
@@ -251,19 +293,33 @@ font-size: 13px;
     .productCart__main__boxCesta__nombreJuego{
           width: 15%;   }    
     .productCart__main__boxCesta__nombreJuego h4{   
-        font-size: 20px;
+        font-size: 25px;
      } 
      .productCart__main__boxCesta__juego img{
         width: 35%;margin: 5px 0;}
      .productCart__main__boxCesta__cantidad {
-        font-size:20px;
+        font-size:25px;
         margin-right: 5px;
     }
+    .productCart__main__boxCesta__cantidad__buton__minus{
+        background-color:var(--colorVerde);
+        border-radius: 53%;
+        padding: 1px 12px;
+        border: none;
+        box-shadow: 1px 1px 2px black;
+    }
+    .productCart__main__boxCesta__cantidad__buton__plus{
+        background-color:var(--colorVerde);
+        border-radius: 53%;
+        padding: 1px 9px;
+        border: none;
+        box-shadow: 1px 1px 2px black;
+    }
     .productCart__main__boxCesta__precio h4{
-        font-size: 20px;
+        font-size: 25px;
     }
      .productCart__main__boxCesta__eliminar{
-        margin-right: 35px;
+        margin-right: 40px;
      }
      .productCart__main__boxResumen__boxImporte__importeTotal{
         width: 10%;
@@ -309,6 +365,20 @@ font-size: 13px;
  .productCart__main__boxCesta__nombreJuego h4{
     font-size: 20px;
  }
+ .productCart__main__boxCesta__cantidad__buton__minus{
+    background-color:var(--colorVerde);
+    border-radius: 53%;
+    padding: 1px 13px;
+    border: none;
+    box-shadow: 1px 1px 2px black;
+}
+.productCart__main__boxCesta__cantidad__buton__plus{
+    background-color:var(--colorVerde);
+    border-radius: 53%;
+    padding: 1px 9px;
+    border: none;
+    box-shadow: 1px 1px 2px black;
+}
  .productCart__main__section2{
     position: relative;
     top: -110px;
