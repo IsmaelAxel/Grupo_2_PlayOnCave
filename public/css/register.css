@@ -31,14 +31,13 @@
     
 }
 .register__form input{
-    background-color: var(--gris3);
+    background-color: #ffffff;
     border: none;
     border-bottom: 2px solid var(--colorVerde);
-    border-radius: 4px;
+    padding: 3px;
 }
-.register__form input:focus{
-    background-color: var(--gris4);
-}
+
+
 .register__form div{
     display: flex;
     gap: 10px;
@@ -67,5 +66,40 @@
 .register__form div p a{
     color: var(--colorVerde);
     padding-left: 10px;
+}
+@media (min-width:481px){
+    .register__box{
+        margin: 150px auto;
+        width: 100%;
+        max-width: 512px;   
+    }
+    .register__form{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .register__form--email{
+        width: 94%;
+    }
+}
+@media (min-width:769px){
+    .register__box{
+        margin: 200px auto;
+        width: 100%;
+        max-width: 650px;   
+    }
+    .register__form{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .register__form--email{
+        width: 83%;
+    }
+    .register__form--btn--crear{
+        margin: 20px auto;
+    }
 }
 
