@@ -12,7 +12,7 @@
     <header class="home__header">
         <div class="home__header--box">
             <div class="home__header__box--burguer">
-                <i class="fa-solid fa-bars"></i>
+                <a onclick="document.querySelector('.home__header__box__categorias--nav').classList.toggle('showMenu')"><i class="fas fa-bars"></i></a>
             </div>
 
             <div class="home__header__box--logo">
@@ -28,7 +28,7 @@
                     </ul>
                 </nav>
             </div>
-            <div class="home__header__box--categorias" >
+            
                 <div class="home_header_box--barra">           
                     <form class="home_header_box--form" action="#" method="post" target="_blank">
                         <input class="home_header_box--form--input" type="search" placeholder="Buscar productos, marcas" >
@@ -37,8 +37,7 @@
                         </div>
                     </form>     
                 </div>
-                <nav>
-                    
+                <nav class="home__header__box__categorias--nav">      
                     <ul>
                         <li><a href="/">secciones</a></li>
                         <li><a href="/">juegos de mesa</a></li>
@@ -47,8 +46,6 @@
                         <li><a href="/">nosotros</a></li>
                     </ul>
                 </nav>
-            </div>
-            
         </div>  
     </header>
     

@@ -3,26 +3,30 @@
     background-color: #000000;
     color: var(--colorVerde);
     border-bottom: 2px solid var(--colorVerde);
-    
     font-size: 20px;
     width: 100%;
-    height: 100px;
+    
 }
 
 .home__header--box{
     display: flex;
-    gap: 20px;
-    justify-content: center;
+    width: 100%;
     align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 320px;
+    margin: 0 auto;
 }
 
 .home__header__box--logo{
-    max-width: 100px;
+    width: 40%;
+    text-align: center;
+
+    
 }
 
 .home__header__box--logo img{
-
-    width: 100%;
+    width: 128px
 }
 
 .home__header__box--burguer{
@@ -42,7 +46,7 @@
 .home__header__box--login nav ul{
     display: flex;
     gap: 5px;
-    /* top: 0; */
+   
 }
 
 #carri{
@@ -75,8 +79,29 @@
     padding: 3px;
 }
 
-.home__header__box--categorias{
-    display: none;
+.home__header__box__categorias--nav{
+    height: 0;
+    overflow: hidden;
+    transition: all 1s ease;
+    width: 100%;
+}
+.showMenu{
+    height: 160px;
+}
+.home__header__box__categorias--nav ul li a{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: -1px;
+    color: #ffffff;
+    padding: 5px;
+    border: 1px solid var(--colorVerde);
+    border-radius: 5px;
+    margin: 1px;
+}
+.home__header__box__categorias--nav ul li a:hover{
+    color: var(--colorVerde);
 }
 
 .home__header__box--tema i{
