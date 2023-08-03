@@ -13,6 +13,7 @@
     margin-top: 20px;
     margin-bottom: 20px;
     background-color: #000000;
+    box-shadow: 0px 0px 10px var(--colorVerde);
 }
 
 .register h2{
@@ -28,15 +29,19 @@
     flex-direction: column;
     gap: 15px;
     width: 100%;
-    
 }
+
 .register__form input{
     background-color: #ffffff;
     border: none;
-    border-bottom: 2px solid var(--colorVerde);
     padding: 3px;
+    outline: none;
 }
 
+.register__form input:hover{
+    box-shadow: 0px 0px 10px var(--colorVerde);
+    border-bottom: 2px solid var(--colorVerde);
+}
 
 .register__form div{
     display: flex;
@@ -51,17 +56,18 @@
 
 }
 .register__form--btn--crear{
-    padding: 10px;
+    padding: 8px;
     background-color: #000000;
     color: #ffffff;
-    font-size: 22px;
+    font-size: 20px;
     text-transform: uppercase;
     border: none;
-    border: solid 1px var(--colorVerde)
+    border: solid 3px var(--colorVerde);
+    box-shadow: 0px 0px 10px var(--colorVerde);
 
 }
-.register__form--btn--crear:active{
-    background-color: var(--gris3);
+.register__form--btn--crear:hover{
+    background-color: var(--gris2);
 }
 .register__form div p a{
     color: var(--colorVerde);
@@ -69,7 +75,7 @@
 }
 @media (min-width:481px){
     .register__box{
-        margin: 150px auto;
+        margin: 100px auto 200px;
         width: 100%;
         max-width: 512px;   
     }
@@ -82,12 +88,16 @@
     .register__form--email{
         width: 94%;
     }
+    .register__form--btn{
+        width: 100%;
+        margin-top: 20px;
+    }
 }
 @media (min-width:769px){
     .register__box{
-        margin: 200px auto;
+        margin: 100px auto 300px;
         width: 100%;
-        max-width: 650px;   
+        max-width: 650px;
     }
     .register__form{
         display: flex;
@@ -95,8 +105,11 @@
         flex-wrap: wrap;
         justify-content: space-around;
     }
-    .register__form--email{
-        width: 83%;
+    .register__form div{
+        width: 40%;
+    }
+    #register__form--email{
+        width: 91%;
     }
     .register__form--btn--crear{
         margin: 20px auto;
