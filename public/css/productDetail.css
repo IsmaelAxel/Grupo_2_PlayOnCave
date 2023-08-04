@@ -23,25 +23,28 @@
     color: var(--colorVerde);
 }
 .product__main--article-comprar{
+    width: 100%;
+    border: none;
     text-align: center;
     background-color: var(--colorVerde);
     padding: 10px;
-    margin: 5px 0;
-}
-.product__main--article-comprar a{
+    margin: 5px 0;    
     color: #000000;
     font-weight: 700;
+    cursor: pointer;
 }
 .product__main--article-favoritos{
+    width: 100%;
+    border: none;
     text-align: center;
     background-color: var(--gris3);
     padding: 10px;
     margin: 0 0 20px;
-}
-.product__main--article-favoritos a{
     color: #ffffff;
     font-weight: 700;
+    cursor: pointer;
 }
+
 .product__main--slider{
     margin: 20px 0;
 }
@@ -50,6 +53,8 @@
     border-top: 1px solid var(--colorVerde);
     width: 100%;
     border-bottom: 1px solid var(--colorVerde);
+    object-fit: cover;
+    max-height: 185px;
 }
 .product__main--slider-imgs{
     margin: 10px 0 0;
@@ -116,7 +121,7 @@
     font-size: .8rem;
 }
 
-@media (min-width: 481px) {
+@media (min-width:481px) {
     .product__main{
         display: flex;
         flex-direction: row-reverse;
@@ -131,6 +136,10 @@
         width: 30%;
         padding: 5px;
         height: 50%;
+        transition: all 1s ease;
+    }
+    .product__main--article:hover{
+        box-shadow: 0px 0px 10px var(--colorVerde);
     }
     .product__main--article img{
         margin: 0 0 5px;
@@ -140,6 +149,13 @@
     }
     .product__main--slider-screen img{
         max-height: 238px;
+    }
+    .product__main--slider-imgs img{
+        transition: all 1s ease;
+        cursor: pointer;
+    }
+    .product__main--slider-imgs img:hover{
+        box-shadow: 0px 0px 10px var(--colorVerde);
     }
     .product__main--infoJuego{
         margin: 30px 0;
@@ -203,22 +219,22 @@
         height: 40%;
        }
     .product__main--article-info p{
-        font-size: 1rem;
+        font-size: .6rem;
     }
     .product__main--article-info h4{
-        font-size: .6rem;
+        font-size: 1rem;
     }
     .product__main--article-comprar{
-        font-size: .6rem;
+        font-size: .8rem;
     }
     .product__main--article-favoritos{
-        font-size: .6rem;
+        font-size: .8rem;
     }
     .product__main--slider-screen{
         padding: 0 50px;
     }
     .product__main--slider-screen img{
-        max-height: 258px;
+        max-height: 300px;
     }
     .product__main--slider-imgs img{
         width: 15%;
