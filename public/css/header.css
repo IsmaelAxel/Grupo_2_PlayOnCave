@@ -91,7 +91,6 @@
     flex-direction: column;
     text-align: center;
     font-size: 14px;
-    letter-spacing: -1px;
     color: #ffffff;
     padding: 5px;
     border: 1px solid var(--colorVerde);
@@ -198,6 +197,10 @@
         font-size: 24px;
         width: 100%;
     }
+    .home__header--box{
+        width: 100%;
+        max-width: 949px;
+    }
     .home__header__box--logo{
         width: 15%;
     }
@@ -205,28 +208,28 @@
     .home__header__box__categorias--nav{
         height: auto;
         margin-bottom: 5px;
+        width: 100%;
     }
     .home__header__box__categorias--nav ul{
         display: flex;
         flex-direction: row;
         justify-content: center;
     }
-    .home_header_box--btn i{ 
-        right: 6px;
-    }
-
     .home__header__box__categorias--nav ul li a{
         display: flex;
         font-size: 16px;
-        letter-spacing: -1px;
+        letter-spacing: 0px;
         color: var(--colorVerde);
         padding: 5px;
-        border: 1px solid var(--colorVerde);
         border-radius: 5px;
-        margin: 1px;
+        margin: 2px;
+        box-shadow: 0px 0px 10px var(--colorVerde);
     }
     .home__header__box--burguer{
         display: none;   
+    }
+    .home_header_box--btn i{ 
+        right: 6px;
     }
     #numberCart{
         bottom: 58px;
@@ -264,32 +267,34 @@
 
 }
 @media (min-width:950px){
-    .home__header__box--categorias ul li a{
+    .home__header--box{
+        width: 100%;
+        max-width: 1180px;
+    }
+    .home__header__box__categorias--nav{
+        max-width:1180px;
+        width:100%;
+    }
+   
+    .home__header__box__categorias--nav ul li a{
         font-size: 18px;
         letter-spacing: 0;
-        margin: 1px 4px;
-        
+        margin: 1px 4px;     
     }
     .home__header__box--login nav ul li a p{
         font-size: 0.9rem;}
     #numberCart{
         bottom: 64px;
-        right: 10px;
-            
+        right: 10px;          
     }
-
     .home__header__box--tema{
          width: 12.5%;
     } 
     .home__header__box--tema p{
-        font-size: 0.9rem;
-        
-    }
-    .home__header__box--login{
-        width: 15%;
+        font-size: 0.9rem;   
     }
     .home_header_box--barra{
-        width: 72%;
+        width: 50%;
     }
     #darkMode{ 
         font-size: 0.9rem;
