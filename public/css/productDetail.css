@@ -138,6 +138,9 @@
     .product__main--slider{
         margin: 0;
     }
+    .product__main--slider-screen img{
+        max-height: 238px;
+    }
     .product__main--infoJuego{
         margin: 30px 0;
     }
@@ -156,6 +159,7 @@
     .product__main--requisitos a{
         padding: 0 30px;
     }
+
     .product__main--requisitos{
         padding: 0 0 30px;
         margin: 0 0 50px;
@@ -212,6 +216,9 @@
     }
     .product__main--slider-screen{
         padding: 0 50px;
+    }
+    .product__main--slider-screen img{
+        max-height: 258px;
     }
     .product__main--slider-imgs img{
         width: 15%;
