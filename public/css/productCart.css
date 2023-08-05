@@ -85,8 +85,14 @@
     background-color: #000000;
     color: var(--colorVerde);
     border: 3px solid var(--colorVerde);
-    box-shadow: 0px 0px 10px var(--colorVerde);
+    
     margin-left: 0px;
+}
+.productCart__main__boxCesta__boton{
+  transition: all 1s ease   
+}
+.productCart__main__boxCesta__boton :hover{
+    box-shadow: 0px 0px 10px var(--colorVerde);
 }
 .productCart__main__boxCard {
     display: flex;
