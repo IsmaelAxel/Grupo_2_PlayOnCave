@@ -72,6 +72,7 @@
     margin: 5px;
     border: none;
     box-shadow: 1px 1px 10px black;
+    cursor: pointer;  
 }
 .productCart__main__boxCesta__cantidad__unidad{
   margin-top: 5px;
@@ -96,14 +97,51 @@
     color: var(--colorVerde);
     border: 3px solid var(--colorVerde);
     margin-left: 0px;
+    cursor: pointer;
+
 }
 .productCart__main__boxCesta__boton{
-  transition: all 1s ease   
+  transition: all 1s ease;
+  position:relative;
+   
 }
-.productCart__main__boxCesta__boton :hover{
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+#fifth{
+    overflow:hidden;
+    border: 1px solid rgba(119, 163, 69, 0.5);
+    transition:all .2s ease-in-out;
+  }
+  
+  #fifth:before{
+    content:" ";
+    display:block;
+    width:200px;
+    height:80px;
+    background:rgba(119, 163, 69, 0.5);
+    position:absolute;
+    top:-10px;
+    left:-200px;
+    transform:rotate(-45deg);
+    transition:all .6s ease-in-out;  
+  }
+  
+  #fifth:hover:before{
+    margin-left:300%;
+    cursor: pointer;
+
+  }
+  
+  #fifth:hover {
+    border: 1px solid rgba(119, 163, 69, 0.5);
     box-shadow: 0px 0px 10px var(--colorVerde);
-    transition: all 1s ease;
-}
+
+
+    
+  }
+  
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
 .productCart__main__boxCard {
     display: flex;
     flex-wrap: wrap;
@@ -159,17 +197,18 @@
 .productCart__main__boxResumen__botonPagar__pagar {
     display: flex;
     justify-content: center;
-    background-color: var(--colorBackground);
+    background-color: #000000;
     width: 100%;
     padding: 10px 0;
     margin-top: 20px;
     margin-bottom: 10px;
     font: 900 18px var(--tipoGrafiaTextos);
     border: none;
-    color: #fff;
+    color: #ffffff;
     border: 2px solid;
-  border-color: var(--colorVerde);
-  position: relative; 
+    border-color: var(--colorVerde);
+    position: relative; 
+    cursor: pointer;  
 }
 .productCart__main__boxResumen__botonPagar__pagar:before {
     content:"";
@@ -178,7 +217,7 @@
     left: 0px;
     width: 0px;
     height: 100%;
-    background: rgba(75, 202, 7, 0.1);
+    background: rgba(53,191,18,0.3);
     transition: all 1s ease;
   }
   .productCart__main__boxResumen__botonPagar__pagar:hover:before {
