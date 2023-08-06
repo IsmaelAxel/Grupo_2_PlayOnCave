@@ -31,18 +31,21 @@
   margin: 10px 0;
 }
 .index__main--titulo1{
+  box-shadow: 0px 0px 10px #e9160b;
    background-image: url('/img/index/ofertasDestacadas.svg');
    background-repeat: no-repeat;
    background-size: cover;
    width: 100%;
 }
 .index__main--titulo2{
+  box-shadow: 0px 0px 10px #5214ad;
   background-image: url('/img/index/nuevosLanzamientosDestacados.svg');
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
 }
 .index__main--titulo3{
+  box-shadow: 0px 0px 10px var(--colorBotones);
   background-image: url('/img/index/losMasVendidos.svg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -53,6 +56,21 @@
   color: #ffffff;
   padding: 5px;
   font-size: 1.5rem;
+}
+.index__main--chat{
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 1000;
+}
+.index__main--chat i{
+  color: var(--colorIconos);
+  background-color: #000000;
+  border: 3px solid var(--colorVerde);
+  padding: 10px;
+  font-size: 1.5rem;
+  border-radius: 49%;
+  box-shadow: 0px 0px 10px var(--colorVerde);
 }
 
 .index__main--article{
@@ -192,5 +210,13 @@
   }
   .index__main--article-comprar a button{
     margin: 2px 0;
+  }
+  .index__main--chat{
+    right: 30px;
+    bottom: 20px;
+  }
+  .index__main--chat i{
+    padding: 20px;
+    font-size: 2rem;
   }
 } 
