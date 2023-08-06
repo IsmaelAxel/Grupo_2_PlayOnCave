@@ -20,7 +20,12 @@
     align-items: center;
     margin: 0 6px 20px;
     width: 100%;
-    box-shadow: 0px 0px 6px var(--colorVerde);
+    
+}
+.productCart__main__boxCesta:hover{
+    box-shadow: 0px 0px 10px var(--colorVerde);
+    transition: all 1s ease;
+
 }
 .productCart__main__boxCesta__juego {
     width: 15%;
@@ -93,6 +98,7 @@
 }
 .productCart__main__boxCesta__boton :hover{
     box-shadow: 0px 0px 10px var(--colorVerde);
+    transition: all 1s ease;
 }
 .productCart__main__boxCard {
     display: flex;
@@ -158,9 +164,13 @@
     border: none;
     color: #000000;
 }
+.productCart__main__boxResumen__botonPagar__pagar:hover{
+box-shadow: 0px 0px 10px var(--colorVerde);
+    transition: all 1s ease;
 .productCart__main__boxResumen__politicas p {
     margin-top: 20px;
     font: 100 15px var(--tipoGrafiaTextos);
+}
 }
 /* ///////////////////////////////////////////////////////////////481 ///////////////////////////////////////////////////////////////////*/
 @media (min-width: 481px) {
@@ -303,7 +313,7 @@
         width: 100%;
         margin-left: 15px;
         margin-bottom: 26px;
-        box-shadow: 1px 1px 10px var(--colorVerde);
+        
     }
     .productCart__main__boxCesta__nombreJuego h4 {
         font-size: 20px;
