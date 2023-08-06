@@ -53,18 +53,28 @@
 }
 .productCart__main__boxCesta__cantidad {
     color: #ffffff;
-    font: 19px var(--tipoGrafiaTextos);
-    padding: 0 9px;
+    font: 16px var(--tipoGrafiaTextos);
+    padding: 10px;
     display: flex;
-    margin-right: 5px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.productCart__main__boxCesta__cantidad p{
+    margin: 5px;
+    font-size: 18px;
 }
 .productCart__main__boxCesta__cantidad__buton__minus,
 .productCart__main__boxCesta__cantidad__buton__plus {
     background-color: var(--colorVerde);
-    border-radius: 53%;
-    padding: 1px 9px;
+    border-radius: 100%;
+    padding: 3px;
+    margin: 5px;
     border: none;
-    box-shadow: 1px 1px 2px black;
+    box-shadow: 1px 1px 10px black;
+}
+.productCart__main__boxCesta__cantidad__unidad{
+  margin-top: 5px;
 }
 .productCart__main__boxCesta__eliminar{
     background-color: var(--gris3);
@@ -75,11 +85,6 @@
 .productCart__main__boxCesta__eliminar a{
     color: #000000;
      }
-.productCart__main__boxCesta__cantidad i {
-    color: #000000;
-    background-color: var(--colorVerde);
-    border-radius: 10px;
-}
 .productCart__main__boxCesta__precio h4 {
     color: var(--colorVerde);
     font: 17px var(--tipoGrafiaTextos);
@@ -90,7 +95,6 @@
     background-color: #000000;
     color: var(--colorVerde);
     border: 3px solid var(--colorVerde);
-    
     margin-left: 0px;
 }
 .productCart__main__boxCesta__boton{
@@ -155,23 +159,41 @@
 .productCart__main__boxResumen__botonPagar__pagar {
     display: flex;
     justify-content: center;
-    background-color: var(--colorVerde);
+    background-color: var(--colorBackground);
     width: 100%;
     padding: 10px 0;
     margin-top: 20px;
     margin-bottom: 10px;
     font: 900 18px var(--tipoGrafiaTextos);
     border: none;
-    color: #000000;
+    color: #fff;
+    border: 2px solid;
+  border-color: var(--colorVerde);
+  position: relative; 
 }
+.productCart__main__boxResumen__botonPagar__pagar:before {
+    content:"";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 100%;
+    background: rgba(75, 202, 7, 0.1);
+    transition: all 1s ease;
+  }
+  .productCart__main__boxResumen__botonPagar__pagar:hover:before {
+  width: 100%;
+  }
+
 .productCart__main__boxResumen__botonPagar__pagar:hover{
 box-shadow: 0px 0px 10px var(--colorVerde);
-    transition: all 1s ease;
+    transition: all 1s ease; }
+
 .productCart__main__boxResumen__politicas p {
     margin-top: 20px;
     font: 100 15px var(--tipoGrafiaTextos);
 }
-}
+
 /* ///////////////////////////////////////////////////////////////481 ///////////////////////////////////////////////////////////////////*/
 @media (min-width: 481px) {
     .productCart__main {
@@ -196,7 +218,7 @@ box-shadow: 0px 0px 10px var(--colorVerde);
     }
     .productCart__main__boxCesta__cantidad__buton__minus,
     .productCart__main__boxCesta__cantidad__buton__plus {
-        padding: 1px 12px;
+        margin: 6px;
     }
     .productCart__main__boxCesta__nombreJuego h4 {
         font-size: 18px;
@@ -208,6 +230,9 @@ box-shadow: 0px 0px 10px var(--colorVerde);
     .productCart__main__boxCesta__cantidad {
         font-size: 25px;
         margin-right: 5px;
+    }
+    .productCart__main__boxCesta__cantidad p{
+        font-size: 25px;
     }
     .productCart__main__boxCesta__precio h4 {
         font-size: 20px;
@@ -255,9 +280,13 @@ box-shadow: 0px 0px 10px var(--colorVerde);
         font-size: 25px;
         margin-right: 5px;
     }
+    .productCart__main__boxCesta__cantidad p{
+        margin: 5px;
+        font-size: 28px;
+    }
     .productCart__main__boxCesta__cantidad__buton__minus,
     .productCart__main__boxCesta__cantidad__buton__plus {
-        padding: 1px 12px;
+        margin: 7px;
     }
     .productCart__main__boxCesta__precio h4 {
         font-size: 25px;
@@ -318,13 +347,13 @@ box-shadow: 0px 0px 10px var(--colorVerde);
     .productCart__main__boxCesta__nombreJuego h4 {
         font-size: 20px;
     }
-    .productCart__main__boxCesta__cantidad__buton__minus,
-    .productCart__main__boxCesta__cantidad__buton__plus {
-        padding: 1px 13px;
-    }
     .productCart__main__section2 {
         top: -110px;
         left: 10px;
         width: 25%;
         margin-top: 0;
-    }}
+    }
+
+
+
+}
