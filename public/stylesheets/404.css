@@ -22,4 +22,9 @@
     font-family: var(--tipoGrafiaTextos);
     font-weight: 900;
     font-size: 20px;
+    width: 100%;
+    cursor: pointer;
+}
+.error__main__box__a{
+    width: 100%;
 }
