@@ -1,17 +1,3 @@
-//title double
-let alertShow = false
-
-if (document.title === "Home") {
-    setInterval(() => {
-        document.title =
-            alertShow ? "Home"
-                : "playOnCave"
-
-        alertShow = !alertShow
-    }, 1000)
-}
-
-
 //modo dia y noche con localStorage
 const botonModo = document.getElementById("modo");
 botonModo.addEventListener("click", cambiarModo);

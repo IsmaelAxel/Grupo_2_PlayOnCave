@@ -32,21 +32,21 @@
 }
 .index__main--titulo1{
   box-shadow: 0px 0px 10px #e9160b;
-   background-image: url('/img/index/ofertasDestacadas.svg');
+   background-image: url('/images/index/ofertasDestacadas.svg');
    background-repeat: no-repeat;
    background-size: cover;
    width: 100%;
 }
 .index__main--titulo2{
   box-shadow: 0px 0px 10px #5214ad;
-  background-image: url('/img/index/nuevosLanzamientosDestacados.svg');
+  background-image: url('/images/index/nuevosLanzamientosDestacados.svg');
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
 }
 .index__main--titulo3{
   box-shadow: 0px 0px 10px var(--colorBotones);
-  background-image: url('/img/index/losMasVendidos.svg');
+  background-image: url('/images/index/losMasVendidos.svg');
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;

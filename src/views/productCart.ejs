@@ -1,52 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/stylesheets/styles.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/4a85f0d80f.js" crossorigin="anonymous"></script>
     <title>productCart</title>
 </head>
+
 <body class="productCart">
     <header class="home__header">
         <div class="home__header--box">
             <div class="home__header__box--burguer">
-                <a onclick="document.querySelector('.home__header__box__categorias--nav').classList.toggle('showMenu')"><i class="fas fa-bars"></i></a>
+                <a onclick="document.querySelector('.home__header__box__categorias--nav').classList.toggle('showMenu')"><i
+                        class="fas fa-bars"></i></a>
             </div>
 
             <div class="home__header__box--logo">
-                <a href="/"><img src="/img/header/logo.png"  alt=""></a>
+                <a href="/"><img src="/images/header/logo.png" alt=""></a>
             </div>
-            
+
             <div class="home__header__box--login">
                 <nav>
                     <ul>
-                        <li><a href="/login"><i class="fa-solid fa-user"></i><p>ingresar</p></a></li>                       
-                        <li  id="carri"><i id="numberCart" class="fa-solid fa-4"></i><a href="/productCart"><i class="fa-solid fa-cart-shopping"></i><p>mi carrito</p></a></li>
-                        <li><i class="fa-solid fa-toggle-on" ></i><p id="darkMode">modo oscuro</p></li>
+                        <li><a href="/login"><i class="fa-solid fa-user"></i>
+                                <p>ingresar</p>
+                            </a></li>
+                        <li id="carri"><i id="numberCart" class="fa-solid fa-4"></i><a href="/productCart"><i
+                                    class="fa-solid fa-cart-shopping"></i>
+                                <p>mi carrito</p>
+                            </a></li>
+                        <li><i class="fa-solid fa-toggle-on"></i>
+                            <p id="darkMode">modo oscuro</p>
+                        </li>
                     </ul>
                 </nav>
             </div>
-            
-                <div class="home_header_box--barra">           
-                    <form class="home_header_box--form" action="#" method="post" target="_blank">
-                        <input class="home_header_box--form--input" type="search" placeholder="Buscar productos, marcas" >
-                        <div class="home_header_box--btn">   
-                           <a href=""> <i class="fa-solid fa-magnifying-glass"></i> </a> 
-                        </div>
-                    </form>     
-                </div>
-                <nav class="home__header__box__categorias--nav">      
-                    <ul>
-                        <li><a href="/">secciones</a></li>
-                        <li><a href="/">juegos de mesa</a></li>
-                        <li><a href="/">contacto</a></li>
-                        <li><a href="/">videojuegos</a></li>
-                        <li><a href="/">nosotros</a></li>
-                    </ul>
-                </nav>
-        </div>  
+
+            <div class="home_header_box--barra">
+                <form class="home_header_box--form" action="#" method="post" target="_blank">
+                    <input class="home_header_box--form--input" type="search" placeholder="Buscar productos, marcas">
+                    <div class="home_header_box--btn">
+                        <a href=""> <i class="fa-solid fa-magnifying-glass"></i> </a>
+                    </div>
+                </form>
+            </div>
+            <nav class="home__header__box__categorias--nav">
+                <ul>
+                    <li><a href="/">secciones</a></li>
+                    <li><a href="/">juegos de mesa</a></li>
+                    <li><a href="/">contacto</a></li>
+                    <li><a href="/">videojuegos</a></li>
+                    <li><a href="/">nosotros</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <div class="productCart__titulo">
         <h2>Tu cesta</h2>
@@ -61,7 +71,7 @@
             <!-- juego1 -->
             <article class="productCart__main__boxCesta">
                 <div class="productCart__main__boxCesta__juego">
-                    <img src="/img/elden.jpg" alt="elden">
+                    <img src="/images/elden.jpg" alt="elden">
                 </div>
                 <div class="productCart__main__boxCesta__nombreJuego">
                     <h4>Elden Ring</h4>
@@ -85,7 +95,7 @@
             <!-- juego2 -->
             <article class="productCart__main__boxCesta">
                 <div class="productCart__main__boxCesta__juego">
-                    <img src="/img/Barbie_Pegasus.webp" alt="barbie">
+                    <img src="/images/Barbie_Pegasus.webp" alt="barbie">
                 </div>
                 <div class="productCart__main__boxCesta__nombreJuego">
                     <h4>Barbie Pegasus</h4>
@@ -108,7 +118,7 @@
             </article>
             <!-- fin de juego2 -->
             <div id="fifth" class="productCart__main__boxCesta__boton">
-                <button>SEGUIR COMPRANDO</button>
+                <a href="/"><button>SEGUIR COMPRANDO</button></a>
             </div>
         </div>
         <!-- fin de div card -->
@@ -165,4 +175,5 @@
         <h6><a href="">Ayuda y Soporte</a></h6>
     </footer>
 </body>
+
 </html>
