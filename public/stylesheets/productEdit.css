@@ -19,7 +19,7 @@ input[type="file"]::file-selector-button{
     border-radius: 0.2em;
     background-color:var(--gris4);
     transition: 1s;
-    margin: 0 0 0 40px;
+    
 }
 .productEdit__box h1 {
     font-size: 14px;
