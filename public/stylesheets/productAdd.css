@@ -18,7 +18,7 @@ input[type="file"]::file-selector-button{
     border-radius: 0.2em;
     background-color:var(--gris4);
     transition: 1s;
-    margin: 0 0 0 40px;
+   /*  margin: 0 0 0 40px; */
 }
 .productAdd__box h1 {
     font-size: 14px;
@@ -46,6 +46,9 @@ input[type="file"]::file-selector-button{
 }
 .productAdd__box__form div {
     margin: 10px;
+}
+.productAdd__box__form--price{
+    width: 100%;
 }
 .productAdd__box__form input, .productAdd__box__form label{
     margin: 5px;
