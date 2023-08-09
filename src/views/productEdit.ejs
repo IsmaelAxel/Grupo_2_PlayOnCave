@@ -1,9 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('partials/head') %>
-<body>
-<%- include('partials/header') %>
-<%- include('partials/footer') %>    
-    
-</body>
+    <body>
+        <%- include('partials/header') %>
+                <main class="productEdit">
+                  <div class="productEdit__box">
+                    <h1>editar producto</h1>
+                    <form class="productEdit__box__form">
+                        <div class="productEdit__box__form--name">
+                            <label for="name">Editar nombre:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="productEdit__box__form--category">
+                            <label for="category">Editar Categoría:</label>
+                            <select id="category" name="category" required>
+                                <option disabled selected>categoria</option>
+                                <option value="accion">Acción</option>
+                                <option value="aventura">Aventura</option>
+                                <option value="estrategia">Estrategia</option>
+                                <option value="rol">Rol</option>
+                                <option value="simulacion">Simulación</option>
+                                <option value="simulacion">otros</option>
+                                <!-- Agrega más opciones de categorías  -->
+                            </select>
+                        </div>
+                        <div class="productEdit__box__form--price">
+                            <label for="price">Editar Precio:</label>
+                            <input type="number" id="price" name="price" step="0.01" min="0" required placeholder="$">
+                        </div>
+                        <div class="productEdit__box__form--descuento">
+                            <label for="price">Editar Descuento:</label>
+                            <input type="number" id="price" name="price"  required placeholder="%">
+                        </div>
+                        <div class="productEdit__box__form--requiMinimos">
+                           <h3>Editar Requisitos minimos</h3>
+                           <label for="os">os:</label>
+                            <input type="text" id="os" name="os" required>
+                            <label for="Procesador">Procesador:</label>
+                            <input type="text" id="Memoria" name="Memoria" required>
+                            <label for="Procesador">Memoria:</label>
+                            <input type="text" id="Memoria" name="Memoria" required>
+                            <label for="Grafica">Grafica:</label>
+                            <input type="text" id="Grafica" name="Grafica" required>
+                            <label for="Almacenamiento">Almacenamiento:</label>
+                            <input type="text" id="Almacenamiento" name="Almacenamiento" required>
+                            
+                        </div>
+                        <div class="productEdit__box__form--requiRecomendados"">
+                            <h3>Editar Requisitos recomendados</h3>
+                           <label for="os">os:</label>
+                            <input type="text" id="os" name="os" required>
+                            <label for="Procesador">Procesador:</label>
+                            <input type="text" id="Memoria" name="Memoria" required>
+                            <label for="Procesador">Memoria:</label>
+                            <input type="text" id="Memoria" name="Memoria" required>
+                            <label for="Grafica">Grafica:</label>
+                            <input type="text" id="Grafica" name="Grafica" required>
+                            <label for="Almacenamiento">Almacenamiento:</label>
+                            <input type="text" id="Almacenamiento" name="Almacenamiento" required>
+                        </div>
+                        <div class="productEdit__box__form--description">
+                            <label for="description">Descripción:</label>
+                            <textarea class="productEdit__box__form__description--text" id="description" name="description"required></textarea>
+                        </div>
+                        <div class="productEdit__box__form--image">
+                            <label for="image">Imagen:</label>
+                            <input class="productEdit__box__image--img" type="file" id="image" name="image" accept="image/*" required>
+                        </div>
+                        <div class="productEdit__box__form--btn">
+                            <button class="productEdit__box__form--btn--DeleteProduct" type="submit">Delete</button>
+                            <button class="productEdit__box__form--btn--update" type="submit">update</button>
+                        </div>
+                    </form>
+                  </div>
+                </main>
+                <%- include('partials/footer') %>
+    </body>
+
 </html>
