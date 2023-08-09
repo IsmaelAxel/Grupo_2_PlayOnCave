@@ -1,0 +1,144 @@
+
+.productAdd{
+    font-family: var(--tipoGrafiaTextos);
+    font-size: 14px;
+    color: #000000;
+
+}
+.productAdd__box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+   margin: 50px auto 50px;
+    border: 2px solid var(--colorVerde);
+    background-color: #000000;
+    padding:5px;
+    max-width: 310px;
+    box-shadow: 0px 0px 10px var(--colorVerde);
+}
+.productAdd__box h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    margin: 10px;
+    font-family: var(--tipoGrafiaTextos);
+    font-size: 18px;
+}
+.productAdd__box__form{
+    margin: 5px;
+
+}
+.productAdd__box label{
+    color: #ffffff;
+    margin: 0 auto;
+    
+}
+.productAdd__box input {
+    color: #000000;
+    padding: 3px;
+}
+
+.productAdd__box h1 {
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    font-family: var(--tipoGrafiaTitulos);
+    color: #ffffff;
+    margin: 15px 0;
+}
+.productAdd__box__form label{
+    
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.productAdd__box__form--name input{
+    width: 100%;
+    margin: 10px  ;
+    align-items: center;
+    
+}
+.productAdd__box__form--image input{
+   font-size: 11px;
+   margin: 10px ; 
+}
+.productAdd__box__form__description label{
+ margin: 10px;
+}
+.productAdd__box__form__description--text { 
+    resize:none; 
+    width: 100%;
+    padding: 5px;
+    margin: 10px ;
+    border: 2px solid var(--colorVerde) ;
+}
+.productAdd__box__form__description--text{
+    width: 100%;
+}
+.productAdd__box__form--image input{
+    color: #ffffff;
+ }
+
+.productAdd__box__form--category select {
+    width: 100%;
+   margin: 10px;
+   
+ }
+
+ .productAdd__box__form--price input{
+    width: 100%;
+    margin: 10px;
+ }
+ .productAdd__box__form--descuento input{
+     width: 100%;
+     margin: 10px;
+ }
+ .productAdd__box__form--requiRecomendados input,.productAdd__box__form--requiMinimos input{
+    width: 100%;
+    margin: 10px;
+ }
+ .productAdd__box__form--btn{
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 10px;
+ }
+ .productAdd__box__form--btn--clear{
+    width: 35%;
+    padding: 5px;
+    background-color: red;
+    font-weight: 900;        
+ }
+ .productAdd__box__form--btn--cargar{
+    padding: 5px;
+    width: 35%;
+    background-color: var(--colorVerde);
+    font-weight: 900;
+ }
+ 
+ /*//////////////////////////////////481 ///////////////////////////////////////////////////////////////////////// */
+ @media (min-width: 481px){
+
+    .productAdd{
+    font-size: 20px;
+    
+}
+.productAdd__box h1 {
+    font-size: 16px;
+    
+}
+ }
+ @media (min-width:768px)
+{
+
+
+}
+
+@media (min-width:1024px){
+
+}
