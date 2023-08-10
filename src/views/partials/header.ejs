@@ -1,53 +1,39 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POC</title>
-    <script src="https://kit.fontawesome.com/42701418d7.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/stylesheets/styles.css">
-   
-</head>
-<body>
-    <header class="home__header">
-        <div class="home__header--box">
-            <div class="home__header__box--burguer">
-                <a onclick="document.querySelector('.home__header__box__categorias--nav').classList.toggle('showMenu')"><i class="fas fa-bars"></i></a>
-            </div>
+<header class="home__header">
+    <div class="home__header--box">
+        <div class="home__header__box--burguer">
+            <a onclick="document.querySelector('.home__header__box__categorias--nav').classList.toggle('showMenu')"><i class="fas fa-bars"></i></a>
+        </div>
 
-            <div class="home__header__box--logo">
-                <a href="/"><img src="/img/header/logo.png"  alt=""></a>
+        <div class="home__header__box--logo">
+            <a href="/"><img src="/images/header/logo.png"  alt=""></a>
+        </div>
+        
+        <div class="home__header__box--login">
+            <nav>
+                <ul>
+                    <li><a href="/users/login"><i class="fa-solid fa-user"></i><p>ingresar</p></a></li>                       
+                    <li  id="carri"><i id="numberCart" class="fa-solid fa-4"></i><a href="/products/productCart"><i class="fa-solid fa-cart-shopping"></i><p>mi carrito</p></a></li>
+                    <li><i class="fa-solid fa-toggle-on" ></i><p id="darkMode">modo oscuro</p></li>
+                </ul>
+            </nav>
+        </div>
+        
+            <div class="home_header_box--barra">           
+                <form class="home_header_box--form" action="#" method="post" target="_blank">
+                    <input class="home_header_box--form--input" type="search" placeholder="Buscar productos, marcas" >
+                    <div class="home_header_box--btn">   
+                       <a href=""> <i class="fa-solid fa-magnifying-glass"></i> </a> 
+                    </div>
+                </form>     
             </div>
-            
-            <div class="home__header__box--login">
-                <nav>
-                    <ul>
-                        <li><a href="/login"><i class="fa-solid fa-user"></i><p>ingresar</p></a></li>                       
-                        <li  id="carri"><i id="numberCart" class="fa-solid fa-4"></i><a href="/productCart"><i class="fa-solid fa-cart-shopping"></i><p>mi carrito</p></a></li>
-                        <li><i class="fa-solid fa-toggle-on" ></i><p id="darkMode">modo oscuro</p></li>
-                    </ul>
-                </nav>
-            </div>
-            
-                <div class="home_header_box--barra">           
-                    <form class="home_header_box--form" action="#" method="post" target="_blank">
-                        <input class="home_header_box--form--input" type="search" placeholder="Buscar productos, marcas" >
-                        <div class="home_header_box--btn">   
-                           <a href=""> <i class="fa-solid fa-magnifying-glass"></i> </a> 
-                        </div>
-                    </form>     
-                </div>
-                <nav class="home__header__box__categorias--nav">      
-                    <ul>
-                        <li><a href="/">secciones</a></li>
-                        <li><a href="/">juegos de mesa</a></li>
-                        <li><a href="/">contacto</a></li>
-                        <li><a href="/">videojuegos</a></li>
-                        <li><a href="/">nosotros</a></li>
-                    </ul>
-                </nav>
-        </div>  
-    </header>
-    
-</body>
-</html>
+            <nav class="home__header__box__categorias--nav">      
+                <ul>
+                    <li><a href="/#destacados">Destacados</a></li>
+                    <li><a href="/#news">Nuevos lanzamientos</a></li>
+                    <li><a href="/#+vendidos">Mas Vendidos</a></li>
+                    <li><a href="/users/admin">Admin</a></li>
+                    <li><a href="/contacto">Contacto</a></li>
+                </ul>
+            </nav>
+    </div>  
+</header>

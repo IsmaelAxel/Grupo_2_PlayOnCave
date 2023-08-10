@@ -1,59 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
+<%- include('partials/head') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- SWIPER -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <!-- Hoja personalizada -->
-    <link rel="stylesheet" href="/stylesheets/styles.css">
-    <script src="https://kit.fontawesome.com/42701418d7.js" crossorigin="anonymous"></script>
-</head>
 
 <body>
-    <header class="home__header">
-        <div class="home__header--box">
-            <div class="home__header__box--burguer">
-                <a onclick="document.querySelector('.home__header__box__categorias--nav').classList.toggle('showMenu')"><i class="fas fa-bars"></i></a>
-            </div>
-
-            <div class="home__header__box--logo">
-                <a href="/"><img src="/images/header/logo.png"  alt=""></a>
-            </div>
-            
-            <div class="home__header__box--login">
-                <nav>
-                    <ul>
-                        <li><a href="/login"><i class="fa-solid fa-user"></i><p>ingresar</p></a></li>                       
-                        <li  id="carri"><i id="numberCart" class="fa-solid fa-4"></i><a href="/productCart"><i class="fa-solid fa-cart-shopping"></i><p>mi carrito</p></a></li>
-                        <li><i class="fa-solid fa-toggle-on" ></i><p id="darkMode">modo oscuro</p></li>
-                    </ul>
-                </nav>
-            </div>
-            
-                <div class="home_header_box--barra">           
-                    <form class="home_header_box--form" action="#" method="post" target="_blank">
-                        <input class="home_header_box--form--input" type="search" placeholder="Buscar productos, marcas" >
-                        <div class="home_header_box--btn">   
-                           <a href=""> <i class="fa-solid fa-magnifying-glass"></i> </a> 
-                        </div>
-                    </form>     
-                </div>
-                <nav class="home__header__box__categorias--nav">      
-                    <ul>
-                        <li><a href="/">secciones</a></li>
-                        <li><a href="/">juegos de mesa</a></li>
-                        <li><a href="/">contacto</a></li>
-                        <li><a href="/">videojuegos</a></li>
-                        <li><a href="/">nosotros</a></li>
-                    </ul>
-                </nav>
-        </div>  
-    </header>
+    <%- include('partials/header') %>
     <main class="index">
         <!-- CARROUSEL -->
         <div class="swiper mySwiper">
@@ -68,7 +19,7 @@
             <a href=""><i class="fa-solid fa-comments"></i></a>
         </div>
         <div class="index__main--products">
-            <h1 class="index__main--titulo1">Destacados</h1>
+            <h1 id="destacados" class="index__main--titulo1">Destacados</h1>
             <article class="index__main--article" data-aos="fade-up" data-aos-duration="1000">
                 <img src="/images/index/productos/index_products_1.jpg" alt="">
                 <div class="index__main--article-info">
@@ -117,7 +68,7 @@
                 <div class="index__main--article-verMas"><a href="/products/productDetail"><button>
                             VER MÁS</button></a></div>
             </article>
-            <h1 class="index__main--titulo2">Nuevos Lanzamientos</h1>
+            <h1 id="news" class="index__main--titulo2">Nuevos Lanzamientos</h1>
             <article class="index__main--article" data-aos="fade-up" data-aos-duration="1000">
                 <img src="/images/index/productos/index_products_1.jpg" alt="">
                 <div class="index__main--article-info">
@@ -167,7 +118,7 @@
                             VER MÁS</button></a>
                     </div>
             </article>
-            <h1 class="index__main--titulo3">Los más vendidos</h1>
+            <h1 id="+vendidos" class="index__main--titulo3">Los más vendidos</h1>
             <div class="index__main--article-box1">
                 <article class="index__main__article--horizontal" data-aos="flip-down" data-aos-duration="1000">
                     <img src="/images/index/productos/index_products_1.jpg" alt="">
@@ -255,22 +206,7 @@
                 </div>
         </div>
     </main>
-    <footer class="index__footer">
-        <div class="index__footer__box--iconos">
-            <div><a href=""><i class="fa-brands fa-whatsapp"></i></a></div>
-            <div><a href=""><i class="fa-brands fa-instagram"></i></a></div>
-            <div><a href=""><i class="fa-brands fa-facebook-f"></i></a></div>
-            <div><a href=""><i class="fa-brands fa-twitter"></i></a></div>
-        </div>
-        <nav class="index__footer__nav--menu">
-            <ul>
-                <li><a href="">Términos y Condiciones</a></li>
-                <li><a href="">Politica de Reembolso</a></li>
-                <li><a href="">Politica de Privacidad</a></li>
-            </ul>
-        </nav>
-        <h6><a href="">Ayuda y Soporte</a></h6>
-    </footer>
+    <%- include('partials/footer') %>
     <!-- SWIPER -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <!-- AOS -->
