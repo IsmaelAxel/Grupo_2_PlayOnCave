@@ -4,4 +4,4 @@ RETROSPECTIVA DEL SPRINT 1
 
 RETROSPECTIVA DEL SPRINT 2
 
-![Alt text](https://discord.com/channels/1114643570641620993/1114643571967021119/1139838195643719752) 
+![Alt text](https://cdn.discordapp.com/attachments/1114643571967021119/1139835846728626206/retrospectivaSprint2.png) 
