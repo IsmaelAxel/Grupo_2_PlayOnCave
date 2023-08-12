@@ -5,7 +5,6 @@
     border-bottom: 2px solid var(--colorVerde);
     font-size: 20px;
     width: 100%;
-    
 }
 
 .home__header--box{
@@ -16,6 +15,7 @@
     max-width: 320px;
     margin: 0 auto;
     justify-content: space-around;
+    text-transform: capitalize;
 }
 
 .home__header__box--logo{
