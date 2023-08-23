@@ -1,0 +1,47 @@
+[
+    {
+       "id": "100",
+       "firstName": "Gaston",
+       "lastName": "Gomez",
+       "email": "gaston.miguel.gomez@gmail.com",
+       "password": "admin",
+       "rol": "admin",
+       "avatar": "../../public/images/avatar1.png"
+    },
+    {
+        "id": "101",
+        "firstName": "Ismael",
+        "lastName": "Callamullo",
+        "email": "ismael_callamullo@hotmail.com",
+        "password": "admin",
+        "rol": "admin",
+        "avatar":"../../public/images/avatar2.png"
+     },
+     {
+        "id": "102",
+        "firstName": "Nahuel",
+        "lastName": "Argandoña",
+        "email": "nnahuell.gb@hotmail.com",
+        "password": "admin",
+        "rol": "admin",
+        "avatar": "../../public/images/avatar3.jpg"
+     },
+     {
+        "id": "103",
+        "firstName": "Wilson",
+        "lastName": "Carrillo",
+        "email": "wolfc777@gmail.com",
+        "password": "admin",
+        "rol": "admin",
+        "avatar": "../../public/images/avatar4.jpg"
+     },
+     {
+        "id": "104",
+        "firstName": "Jorge",
+        "lastName": "Olea",
+        "email": "jorgitoluisolea@gmail.com",
+        "password": "admin",
+        "rol": "admin",
+        "avatar": "../../public/images/avatar5.jpg"
+     }
+]
