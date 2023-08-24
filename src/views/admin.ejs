@@ -3,6 +3,21 @@
 <%- include('partials/head') %>
 <body>
 <%- include('partials/header') %> 
+<main class="admin__main">
+    <div class="admin__main__box">
+        <h1>Bienvenido Admin</h1>
+        <a href="/products/productAdd">
+            <button type="button">Cargar producto</button>
+        </a>
+        <form action="">
+            <label for="">Editar productor por Id:</label>
+            <input type="number" name="id" id="id" placeholder="ingrese id...">
+            <a href="/products/productEdit">
+                <button type="button">Editar</button>
+            </a>
+        </form>
+    </div>
+</main>
 <%- include('partials/footer') %>   
 </body>
 </html>
