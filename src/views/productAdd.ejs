@@ -6,7 +6,7 @@
                 <main class="productAdd">
                   <div class="productAdd__box">
                     <h1>Carga de Nuevos Productos</h1>
-                    <form class="productAdd__box__form" method="post" action="/products/productAdd">
+                    <form class="productAdd__box__form" method="post" action="/products/productAdd" enctype="multipart/form-data">
                         <div class="productAdd__box__form--name">
                             <label for="title">Nombre del Producto:</label>
                             <input type="text" id="title" name="title" >
@@ -66,7 +66,7 @@
                         </div>
                         <div>
                         <label for="images">Imagenes Secundarias:</label>
-                        <input class="productAdd__box__image--img" type="file" id="images" name="images">
+                        <input class="productAdd__box__image--img" multiple type="file" id="images" name="images">
                          </div>
                         <div class="productAdd__box__form--btn">
                             <button class="productAdd__box__form--btn--clear" type="reset">CLEAR</button>
