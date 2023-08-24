@@ -6,69 +6,70 @@
                 <main class="productAdd">
                   <div class="productAdd__box">
                     <h1>Carga de Nuevos Productos</h1>
-                    <form class="productAdd__box__form">
+                    <form class="productAdd__box__form" method="post" action="/products/productAdd">
                         <div class="productAdd__box__form--name">
-                            <label for="name">Nombre del Producto:</label>
-                            <input type="text" id="name" name="name" required>
+                            <label for="title">Nombre del Producto:</label>
+                            <input type="text" id="title" name="title" >
                         </div>
                         <div class="productAdd__box__form--category">
                             <label for="category">Categoría:</label>
-                            <select id="category" name="category" required>
-                                <option disabled selected>categoria</option>
-                                <option value="accion">Acción</option>
-                                <option value="aventura">Aventura</option>
-                                <option value="estrategia">Estrategia</option>
-                                <option value="rol">Rol</option>
-                                <option value="simulacion">Simulación</option>
-                                <option value="simulacion">otros</option>
+                            <select id="category" name="category" >
+                                <option hidden selected>categoria</option>
+                                <option value="destacados">Destacados</option>
+                                <option value="NuevosLanzamientos">Nuevos Lanzamientos</option>
+                                <option value="masVendidos">Más Vendidos</option>
                                 <!-- Agrega más opciones de categorías  -->
                             </select>
                         </div>
                         <div class="productAdd__box__form--price">
                             <label for="price">Precio:</label>
-                            <input type="number" id="price" name="price" step="0.01" min="0" required placeholder="$">
+                            <input type="number" id="price" name="price" placeholder="$">
                         </div>
                         <div class="productAdd__box__form--descuento">
-                            <label for="price">Descuento:</label>
-                            <input type="number" id="price" name="price"  required placeholder="%">
+                            <label for="discount">Descuento:</label>
+                            <input type="number" id="discount" name="discount" placeholder="%">
                         </div>
                         <div class="productAdd__box__form--requiMinimos">
                            <h3>Requisitos minimos</h3>
-                           <label for="os">os:</label>
-                            <input type="text" id="os" name="os" required>
-                            <label for="Procesador">Procesador:</label>
-                            <input type="text" id="Memoria" name="Memoria" required>
-                            <label for="Procesador">Memoria:</label>
-                            <input type="text" id="Memoria" name="Memoria" required>
-                            <label for="Grafica">Grafica:</label>
-                            <input type="text" id="Grafica" name="Grafica" required>
-                            <label for="Almacenamiento">Almacenamiento:</label>
-                            <input type="text" id="Almacenamiento" name="Almacenamiento" required>
+                           <label for="reqMinOs">os:</label>
+                            <input type="text" id="reqMinOs" name="reqMinOs" >
+                            <label for="reqMinProcessor">Procesador:</label>
+                            <input type="text" id="reqMinProcessor" name="reqMinProcessor" >
+                            <label for="reqMinMemory">Memoria:</label>
+                            <input type="text" id="reqMinMemory" name="reqMinMemory" >
+                            <label for="reqMinGraphicsCard">Grafica:</label>
+                            <input type="text" id="reqMinGraphicsCard" name="reqMinGraphicsCard" >
+                            <label for="reqMinDisk">Almacenamiento:</label>
+                            <input type="text" id="reqMinDisk" name="reqMinDisk" >
                             
                         </div>
-                        <div class="productAdd__box__form--requiRecomendados"">
+                        <div class="productAdd__box__form--requiRecomendados">
                             <h3>Requisitos recomendados</h3>
-                           <label for="os">os:</label>
-                            <input type="text" id="os" name="os" required>
-                            <label for="Procesador">Procesador:</label>
-                            <input type="text" id="Memoria" name="Memoria" required>
-                            <label for="Procesador">Memoria:</label>
-                            <input type="text" id="Memoria" name="Memoria" required>
-                            <label for="Grafica">Grafica:</label>
-                            <input type="text" id="Grafica" name="Grafica" required>
-                            <label for="Almacenamiento">Almacenamiento:</label>
-                            <input type="text" id="Almacenamiento" name="Almacenamiento" required>
+                           <label for="reqRecommendedOs">os:</label>
+                            <input type="text" id="reqRecommendedOs" name="reqRecommendedOs" >
+                            <label for="reqRecommendedProcessor">Procesador:</label>
+                            <input type="text" id="reqRecommendedProcessor" name="reqRecommendedProcessor" >
+                            <label for="reqRecommendedMemory">Memoria:</label>
+                            <input type="text" id="reqRecommendedMemory" name="reqRecommendedMemory" >
+                            <label for="reqRecommendedGraphicsCard">Grafica:</label>
+                            <input type="text" id="reqRecommendedGraphicsCard" name="reqRecommendedGraphicsCard" >
+                            <label for="reqRecommendedDisk">Almacenamiento:</label>
+                            <input type="text" id="reqRecommendedDisk" name="reqRecommendedDisk" >
                         </div>
                         <div class="productAdd__box__form--description">
                             <label for="description">Descripción:</label>
-                            <textarea class="productAdd__box__form__description--text" id="description" name="description"required></textarea>
+                            <textarea class="productAdd__box__form__description--text" id="description" name="description"></textarea>
                         </div>
                         <div class="productAdd__box__form--image">
-                            <label for="image">Imagen:</label>
-                            <input class="productAdd__box__image--img" type="file" id="image" name="image" accept="image/*" required>
+                            <label for="MainImage">Imagen Principal:</label>
+                            <input class="productAdd__box__image--img" type="file" id="MainImage" name="MainImage">
                         </div>
+                        <div>
+                        <label for="images">Imagenes Secundarias:</label>
+                        <input class="productAdd__box__image--img" type="file" id="images" name="images">
+                         </div>
                         <div class="productAdd__box__form--btn">
-                            <button class="productAdd__box__form--btn--clear" type="submit">CLEAR</button>
+                            <button class="productAdd__box__form--btn--clear" type="reset">CLEAR</button>
                             <button class="productAdd__box__form--btn--cargar" type="submit">CARGAR</button>
                         </div>
                     </form>
