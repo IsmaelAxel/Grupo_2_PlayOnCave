@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('partials/head') %>
+<body>
+    <%- include('partials/header') %>
+<% if (results.length) { %>
+    <div >
+        <% results.forEach(result => { %>
+            <%- include('partials/productCard',{
+                ...result,
+                toThousand
+            }) %>
+        <% }) %>
+    </div>
+<% }else{ %>
+    <div >
+        <h2 style="color: tomato;">No hay productos que coincidan con esa búsqueda</h2>
+    </div>
+    <% } %>
+    <%- include('partials/footer') %>
+</body>
+</html>
