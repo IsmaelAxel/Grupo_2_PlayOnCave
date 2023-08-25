@@ -1,0 +1,18 @@
+
+<article class="index__main--article" data-aos="fade-up" data-aos-duration="1000">
+    <img src="/images/products/<%= MainImage %>" alt="">
+    <div class="index__main--article-info">
+        <h4><%= price %></h4>
+        <% if (discount) { %>
+            <p><%= discount %>%</p>
+            
+            <h4>$<%= price-(price*discount/100).toFixed(0) %></h4> 
+        <% } %>
+         
+    </div>
+    <div class="index__main--article-comprar"><a href="/products/productCart"><button type="button"><i
+                    class="fa-solid fa-cart-shopping"></i> COMPRAR</button></a>
+    </div>
+    <div class="index__main--article-verMas"><a href="/products/productDetail"><button>
+                VER MÁS</button></a></div>
+</article>

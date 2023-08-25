@@ -20,191 +20,32 @@
         </div>
         <div class="index__main--products">
             <h1 id="destacados" class="index__main--titulo1">Destacados</h1>
-            <article class="index__main--article" data-aos="fade-up" data-aos-duration="1000">
-                <img src="/images/index/productos/index_products_1.jpg" alt="">
-                <div class="index__main--article-info">
-                    <p>30% OFF</p>
-                    <h4>$1500</h4>
-                </div>
-                <div class="index__main--article-comprar"><a href="/products/productCart"><button type="button"><i
-                                class="fa-solid fa-cart-shopping"></i> COMPRAR</button></a>
-                </div>
-                <div class="index__main--article-verMas"><a href="/products/productDetail"><button>
-                            VER MÁS</button></a></div>
-            </article>
-            <article class="index__main--article" data-aos="fade-up" data-aos-duration="1000">
-                <img src="/images/index/productos/index_products_2.jpg" alt="">
-                <div class="index__main--article-info">
-                    <p>30% OFF</p>
-                    <h4>$1500</h4>
-                </div>
-                <div class="index__main--article-comprar"><a href="/products/productCart"><button type="button"><i
-                                class="fa-solid fa-cart-shopping"></i> COMPRAR</button></a>
-                </div>
-                <div class="index__main--article-verMas"><a href="/products/productDetail"><button>
-                            VER MÁS</button></a></div>
-            </article>
-            <article class="index__main--article" data-aos="fade-up" data-aos-duration="1000">
-                <img src="/images/index/productos/index_products_3.jpg" alt="">
-                <div class="index__main--article-info">
-                    <p>30% OFF</p>
-                    <h4>$1500</h4>
-                </div>
-                <div class="index__main--article-comprar"><a href="/products/productCart"><button type="button"><i
-                                class="fa-solid fa-cart-shopping"></i> COMPRAR</button></a>
-                </div>
-                <div class="index__main--article-verMas"><a href="/products/productDetail"><button>
-                            VER MÁS</button></a></div>
-            </article>
-            <article class="index__main--article" data-aos="fade-up" data-aos-duration="1000">
-                <img src="/images/index/productos/index_products_4.jpg" alt="">
-                <div class="index__main--article-info">
-                    <p>30% OFF</p>
-                    <h4>$1500</h4>
-                </div>
-                <div class="index__main--article-comprar"><a href="/products/productCart"><button type="button"><i
-                                class="fa-solid fa-cart-shopping"></i> COMPRAR</button></a>
-                </div>
-                <div class="index__main--article-verMas"><a href="/products/productDetail"><button>
-                            VER MÁS</button></a></div>
-            </article>
+            <% productsFeatured.forEach(product => { %>
+             <%- include('partials/productCard',{
+                ...product
+             }) %>
+            <% }) %>
             <h1 id="news" class="index__main--titulo2">Nuevos Lanzamientos</h1>
-            <article class="index__main--article" data-aos="fade-up" data-aos-duration="1000">
-                <img src="/images/index/productos/index_products_1.jpg" alt="">
-                <div class="index__main--article-info">
-                    <p>30% OFF</p>
-                    <h4>$1500</h4>
-                </div>
-                <div class="index__main--article-comprar"><a href="/products/productCart"><button type="button"><i
-                                class="fa-solid fa-cart-shopping"></i> COMPRAR</button></a>
-                </div>
-                <div class="index__main--article-verMas"><a href="/products/productDetail"><button>
-                            VER MÁS</button></a></div>
-            </article>
-            <article class="index__main--article" data-aos="fade-up" data-aos-duration="1000">
-                <img src="/images/index/productos/index_products_2.jpg" alt="">
-                <div class="index__main--article-info">
-                    <p>30% OFF</p>
-                    <h4>$1500</h4>
-                </div>
-                <div class="index__main--article-comprar"><a href="/products/productCart"><button type="button"><i
-                                class="fa-solid fa-cart-shopping"></i> COMPRAR</button></a>
-                </div>
-                <div class="index__main--article-verMas"><a href="/products/productDetail"><button>
-                            VER MÁS</button></a></div>
-            </article>
-            <article class="index__main--article" data-aos="fade-up" data-aos-duration="1000">
-                <img src="/images/index/productos/index_products_3.jpg" alt="">
-                <div class="index__main--article-info">
-                    <p>30% OFF</p>
-                    <h4>$1500</h4>
-                </div>
-                <div class="index__main--article-comprar"><a href="/products/productCart"><button type="button"><i
-                                class="fa-solid fa-cart-shopping"></i> COMPRAR</button></a>
-                </div>
-                <div class="index__main--article-verMas"><a href="/products/productDetail"><button>
-                            VER MÁS</button></a></div>
-            </article>
-            <article class="index__main--article" data-aos="fade-up" data-aos-duration="1000">
-                <img src="/images/index/productos/index_products_4.jpg" alt="">
-                <div class="index__main--article-info">
-                    <p>30% OFF</p>
-                    <h4>$1500</h4>
-                </div>
-                <div class="index__main--article-comprar"><a href="/products/productCart"><button type="button"><i
-                                class="fa-solid fa-cart-shopping"></i> COMPRAR</button></a>
-                </div>
-                <div class="index__main--article-verMas"><a href="/products/productDetail"><button>
-                            VER MÁS</button></a>
-                    </div>
-            </article>
+            <% productsNewReleases.forEach(product => { %>
+                <%- include('partials/productCard',{
+                   ...product
+                }) %>
+               <% }) %>
+               
             <h1 id="+vendidos" class="index__main--titulo3">Los más vendidos</h1>
-            <div class="index__main--article-box1">
-                <article class="index__main__article--horizontal" data-aos="flip-down" data-aos-duration="1000">
-                    <img src="/images/index/productos/index_products_1.jpg" alt="">
-                    <a href="/products/productDetail">
-                        <h4>Warhammer <i class="fa-solid fa-cart-shopping"></i></h4>
-                    </a>
-                    <h4>$1500</h4>
-                    <p>-30%</p>
-                </article>
-                <article class="index__main__article--horizontal" data-aos="flip-down" data-aos-duration="1000">
-                    <img src="/images/index/productos/index_products_2.jpg" alt="">
-                    <a href="/products/productDetail">
-                        <h4>Warhammer <i class="fa-solid fa-cart-shopping"></i></h4>
-                    </a>
-                    <h4>$1500</h4>
-                    <p>-30%</p>
-                </article>
-                <article class="index__main__article--horizontal" data-aos="flip-down" data-aos-duration="1000">
-                    <img src="/images/index/productos/index_products_3.jpg" alt="">
-                    <a href="/products/productDetail">
-                        <h4>Warhammer <i class="fa-solid fa-cart-shopping"></i></h4>
-                    </a>
-                    <h4>$1500</h4>
-                    <p>-30%</p>
-                </article>
-                <article class="index__main__article--horizontal" data-aos="flip-down" data-aos-duration="1000">
-                    <img src="/images/index/productos/index_products_4.jpg" alt="">
-                    <a href="/products/productDetail">
-                        <h4>Warhammer <i class="fa-solid fa-cart-shopping"></i></h4>
-                    </a>
-                    <h4>$1500</h4>
-                    <p>-30%</p>
-                </article>
-            </div>
+            <% productsBestSellers.forEach(product => { %>
+                <%- include('partials/productCardM',{
+                   ...product
+                }) %>
+               <% }) %>
             <div class="index__main--article-box2">
-                <article class="index__main--article" data-aos="fade-up" data-aos-duration="1000">
-                    <img src="/images/index/productos/index_products_1.jpg" alt="">
-                    <div class="index__main--article-info">
-                        <p>30% OFF</p>
-                        <h4>$1500</h4>
-                    </div>
-                    <div class="index__main--article-comprar"><a href="/products/productCart"><button type="button"><i
-                                    class="fa-solid fa-cart-shopping"></i> COMPRAR</button></a>
-                    </div>
-                    <div class="index__main--article-verMas"><a href="/products/productDetail"><button>
-                                VER MÁS</button></a></div>
-                </article>
-                <article class="index__main--article" data-aos="fade-up" data-aos-duration="1000">
-                    <img src="/images/index/productos/index_products_2.jpg" alt="">
-                    <div class="index__main--article-info">
-                        <p>30% OFF</p>
-                        <h4>$1500</h4>
-                    </div>
-                    <div class="index__main--article-comprar"><a href="/products/productCart"><button type="button"><i
-                                    class="fa-solid fa-cart-shopping"></i> COMPRAR</button></a>
-                    </div>
-                    <div class="index__main--article-verMas"><a href="/products/productDetail"><button>
-                                VER MÁS</button></a></div>
-                </article>
-                <article class="index__main--article" data-aos="fade-up" data-aos-duration="1000">
-                    <img src="/images/index/productos/index_products_3.jpg" alt="">
-                    <div class="index__main--article-info">
-                        <p>30% OFF</p>
-                        <h4>$1500</h4>
-                    </div>
-                    <div class="index__main--article-comprar"><a href="/products/productCart"><button type="button"><i
-                                    class="fa-solid fa-cart-shopping"></i> COMPRAR</button></a>
-                    </div>
-                    <div class="index__main--article-verMas"><a href="/products/productDetail"><button>
-                                VER MÁS</button></a></div>
-                </article>
-                <article class="index__main--article" data-aos="fade-up" data-aos-duration="1000">
-                    <img src="/images/index/productos/index_products_4.jpg" alt="">
-                    <div class="index__main--article-info">
-                        <p>30% OFF</p>
-                        <h4>$1500</h4>
-                    </div>
-                    <div class="index__main--article-comprar"><a href="/products/productCart"><button type="button"><i
-                                    class="fa-solid fa-cart-shopping"></i> COMPRAR</button></a>
-                    </div>
-                    <div class="index__main--article-verMas"><a href="/products/productDetail"><button>
-                                VER MÁS</button></a></div>
-                </article>
+                <% productsBestSellers.forEach(product => { %>
+                    <%- include('partials/productCard',{
+                       ...product
+                    }) %>
+                   <% }) %>
                     </div>
                 </div>
-        </div>
     </main>
     <%- include('partials/footer') %>
     <!-- SWIPER -->
