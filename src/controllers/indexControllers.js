@@ -17,7 +17,7 @@ module.exports ={
 			toThousand,
 			keywords: req.query.keywords,
 		})
-	},
+	  },
 
 
 }

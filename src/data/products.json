@@ -5,7 +5,7 @@
       "category": "featured",
       "price": 8299,
       "discount": 0,
-      "MainImage": "DarkSouls (1).jpeg",
+      "MainImage": "DarkSoulsm (1).webp",
       "images": [
          "DarkSouls (2).jpg",
          "DarkSouls (3).jpg",
@@ -31,7 +31,7 @@
       "category": "featured",
       "price": 11999,
       "discount": 0,
-      "MainImage": "fc24 (1).jpg",
+      "MainImage": "fc24 (1).webp",
       "images": [
          "fc24 (2).jpg",
          "fc24 (3).jpg",
@@ -57,7 +57,7 @@
       "category": "featured",
       "price": 11999,
       "discount": 50,
-      "MainImage": "ForzaHorizon5 (2).jpg",
+      "MainImage": "ForzaHorizon5 (2).webp",
       "images": [
          "ForzaHorizon5 (3).jpg",
          "ForzaHorizon5 (4).jpg",
@@ -83,7 +83,7 @@
       "category": "featured",
       "price": 3999,
       "discount": 0,
-      "MainImage": "Rainbow Six® Extraction (1).png",
+      "MainImage": "Rainbow Six® Extraction (1).webp",
       "images": [
          "Rainbow Six® Extraction (2).jpg",
          "Rainbow Six® Extraction (3).jpg",
@@ -109,7 +109,7 @@
       "category": "new releases",
       "price": 11999,
       "discount": 0,
-      "MainImage": "starfield (6).jpg",
+      "MainImage": "starfield (2).webp",
       "images": [
          "starfield (8).jpg",
          "starfield (1).jpg",
@@ -161,7 +161,7 @@
       "category": "new releases",
       "price": 9999,
       "discount": 0,
-      "MainImage": "Cyberpunk2077 (2).jpg",
+      "MainImage": "Cyberpunk2077 (2).webp",
       "images": [
          "Cyberpunk2077 (3).jpg",
          "Cyberpunk2077 (4).jpg",
@@ -187,7 +187,7 @@
       "category": "new releases",
       "price": 10999,
       "discount": 0,
-      "MainImage": "mk1 (1).jpg",
+      "MainImage": "mk1 (1).webp",
       "images": [
          "mk1 (10).jpg",
          "mk1 (9).jpg",
@@ -291,7 +291,7 @@
       "category": "best sellers",
       "price": 12399,
       "discount": 0,
-      "MainImage": "ArmoredCore (2).jpg",
+      "MainImage": "ArmoredCore (2).webp",
       "images": [
          "ArmoredCore (3).jpg",
          "ArmoredCore (4).jpg",
@@ -311,5 +311,4 @@
       "reqRecommendedDisk": "60 GB de espacio disponible",
       "reqMinDisk": "60 GB de espacio disponible"
    }
-   
 ]

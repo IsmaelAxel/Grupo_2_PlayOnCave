@@ -7,10 +7,12 @@
  <%- include('partials/header') %>   
     <main class="product__main">
         <article class="product__main--article">
-            <img src="/images/productDetail/product_detail_1.jpg" alt="">
+            <img src="/images/products/<%= MainImage%>" alt="">
             <div class="product__main--article-info">
-                <p>Descuento</p>
-                <h4>$Precio</h4>
+                <% if (discount) { %>
+                    <p><%= discount %>%</p>
+                    <% } %>   
+                <h4>$<%= toThousand((price-(price*discount/100)).toFixed(0)) %></h4>
             </div>
             <a href="/products/productCart"><button type="button" class="product__main--article-comprar"><i class="fa-solid fa-cart-shopping"></i> COMPRAR </button></a>
             <a href=""><button type="button" class="product__main--article-favoritos"><i class="fa-regular fa-heart"></i> AÑADIR A LISTA DE DESEOS </button></a>
@@ -18,25 +20,23 @@
         <div class="product__main--container">
             <div class="product__main--slider">
                 <div class="product__main--slider-screen">
-                    <img id="product_detail_imgs" src="/images/productDetail/product_detail_1.jpg" alt="">
+                    <img id="product_detail_imgs" src="/images/products/<%= MainImage%>" alt="">
                 </div>
                 <div class="product__main--slider-imgs">
-                    <img src="/images/productDetail/product_detail_1.jpg" alt="" onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/productDetail/product_detail_1.jpg')">
-                    <img src="/images/productDetail/product_detail_2.jpg" alt="" onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/productDetail/product_detail_2.jpg')">
-                    <img src="/images/productDetail/product_detail_3.jpg" alt="" onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/productDetail/product_detail_3.jpg')">
-                    <img class="slider1" src="/images/productDetail/product_detail_4.jpg" alt="" onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/productDetail/product_detail_4.jpg')">
-                    <img class="slider2" src="/images/productDetail/product_detail_5.jpg" alt="" onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/productDetail/product_detail_5.jpg')">
-                    <img class="slider3" src="/images/productDetail/product_detail_6.jpg" alt="" onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/productDetail/product_detail_6.jpg')">
+                    <img src="/images/products/<%= MainImage%>" alt="" onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= MainImage%>')">
+                    <img src="/images/products/<%= images[0]%>" alt="" onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[0]%>')">
+                    <img src="/images/products/<%= images[1]%>" alt="" onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[1]%>')">
+                    <img class="slider1" src="/images/products/<%= images[2]%>" alt="" onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[2]%>')">
+                    <img class="slider2" src="/images/products/<%= images[3]%>" alt="" onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[3]%>')">
+                    <img class="slider3" src="/images/products/<%= images[4]%>" alt="" onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[4]%>')">
                 </div>
             </div>
             <div class="product__main--infoJuego">
                 <div class="product__main--infoJuego-titulo">
-                    <h2>ACERCA DE ESTE JUEGO</h2>
+                    <h2>ACERCA DE ESTE JUEGO: <%= title %></h2>
                 </div>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, mollitia hic? Accusantium quasi
-                    impedit quas, distinctio ex ut cum facilis animi itaque adipisci eaque eum exercitationem, dolores
-                    sed eius aut.
+                <p> 
+                    <%= description %>
                 </p>
                 <div class="product__main--infoJuego-more"><a href="">LEER MÁS</a></div>
             </div>
@@ -51,23 +51,23 @@
                     </tr>
                     <tr>
                         <th>OS:</th>
-                        <td>64-bit: Windows 10</td>
+                        <td><%= reqMinOs %></td>
                     </tr>
                     <tr>
                         <th>Procesador:</th>
-                        <td>Amd ryzen 5/ intel core i5</td>
+                        <td><%= reqMinProcessor %></td>
                     </tr>
                     <tr>
                         <th>Memoria:</th>
-                        <td>8gb RAM</td>
+                        <td><%= reqMinMemory %></td>
                     </tr>
                     <tr>
                         <th>Grafica:</th>
-                        <td>NVIDIA GeForce rtx 2060/ AMD radeon rx 570</td>
+                        <td><%= reqMinGraphicsCard %></td>
                     </tr>
                     <tr>
                         <th>Almacenamiento:</th>
-                        <td>80 gb libres</td>
+                        <td><%= reqMinDisk %></td>
                     </tr>
                 </table>
                 <table class="product__main--requisitos--tableRecomendados">
@@ -76,23 +76,23 @@
                     </tr>
                     <tr>
                         <th>OS:</th>
-                        <td>64-bit: Windows 10</td>
+                        <td><%= reqRecommendedOs %></td>
                     </tr>
                     <tr>
                         <th>Procesador:</th>
-                        <td>Amd ryzen 5/ intel core i5</td>
+                        <td><%= reqRecommendedProcessor %></td>
                     </tr>
                     <tr>
                         <th>Memoria:</th>
-                        <td>8gb RAM</td>
+                        <td><%= reqRecommendedMemory %></td>
                     </tr>
                     <tr>
                         <th>Grafica:</th>
-                        <td>NVIDIA GeForce rtx 2060/ AMD radeon rx 570</td>
+                        <td><%= reqRecommendedGraphicsCard %></td>
                     </tr>
                     <tr>
                         <th>Almacenamiento:</th>
-                        <td>80 gb libres</td>
+                        <td><%= reqRecommendedDisk %></td>
                     </tr>
                 </table>
                 <a href="">LEER MÁS</a>

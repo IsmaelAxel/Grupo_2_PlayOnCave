@@ -1,5 +1,8 @@
- const {readJSON, writeJSON} = require('../data')
-// const { v4: uuidv4 } = require('uuid');
+ 
+  const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  const {writeJSON,readJSON} = require('../data/index');
+  const productRead=readJSON('products.json');
+
 module.exports = {
    /*  index: (req, res) => {
     return res.render('index',);
@@ -8,7 +11,14 @@ module.exports = {
         return res.render('productCart');
     },
     productDetail: (req, res) => {
-        return res.render('productDetail');
+
+        const product = productRead.find(product => product.id === req.params.id)
+        console.log(product);
+		return res.render('productDetail',{
+			...product,
+            toThousand
+		})
+       
     },
     productEdit: (req, res) => {
         return res.render('productEdit');
