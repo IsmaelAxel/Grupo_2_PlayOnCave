@@ -231,11 +231,7 @@
     .home_header_box--btn i{ 
         right: 6px;
     }
-    #numberCart{
-        bottom: 58px;
-        right: 6px;
-        
-    }
+   
     .home__header__box--tema p{
         display: block;
     }
@@ -252,13 +248,24 @@
         display: flex;
         width: 100%;
     }
+   
     .home__header__box--login nav ul{
         text-align: center;  
+    }
+    .home__header__box--login nav ul li{
+        position: relative;
+        top: 25px;
     }
     
     .home__header__box--login nav ul li a p{
         display: block;
         font-size: 0.7rem;
+    }
+    #numberCart{
+        position: absolute;
+        bottom: 78px;
+        right: 6px;
+        
     }
     #darkMode{
         display: block;
@@ -281,11 +288,20 @@
         letter-spacing: 0;
         margin: 1px 4px;     
     }
+    .home__header__box--login nav ul li{
+        position: relative;
+        top: 25px;
+    }
+    
     .home__header__box--login nav ul li a p{
-        font-size: 0.9rem;}
+        display: block;
+        font-size: 0.9rem;
+    }
     #numberCart{
-        bottom: 64px;
-        right: 10px;          
+        position: absolute;
+        bottom: 88px;
+        right: 10px;
+        
     }
     .home__header__box--tema{
          width: 12.5%;
