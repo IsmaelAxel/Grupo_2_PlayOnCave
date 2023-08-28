@@ -8,6 +8,8 @@
 .product__main--article img{
     width: 100%;
     margin: 5px 0;
+    height: 173.81px;
+    object-fit: cover;
 }
 .product__main--article-info{
     display: flex;
@@ -65,6 +67,7 @@
     border-top: 1px solid var(--colorVerde);
     width: 30%;
     border-bottom: 1px solid var(--colorVerde);
+    height: 61.93px;
 }
 .slider1, .slider2, .slider3{
     display: none;

@@ -132,6 +132,8 @@
 }
 .index__main__article--horizontal img{
   width: 30%;
+  height: 47.48px;
+  object-fit: cover;
   border-left: 1px solid var(--colorVerde);
 }
 .index__main__article--horizontal a{

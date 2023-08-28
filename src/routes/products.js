@@ -24,4 +24,5 @@ router.put('/productUpdate/:id', upload.fields([
             name: 'images'
         }
     ]), productsControllers.productCreate);
+   router.delete('/delete/:id', productsControllers.productDelete)
 module.exports = router;

@@ -26,5 +26,6 @@ module.exports = {
     },
     productUpdate: require('./products/update'),
     productCreate: require('./products/create'),
+    productDelete: require('./products/delete'),
 
 }
