@@ -1,80 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('partials/head') %>
+
     <body>
         <%- include('partials/header') %>
-                <main class="productEdit">
-                  <div class="productEdit__box">
-                    <h1>editar producto</h1>
-                    <form class="productEdit__box__form">
-                        <div class="productEdit__box__form--name">
-                            <label for="name">Editar nombre:</label>
-                            <input type="text" id="name" name="name" required>
+            <main class="productEdit">
+                <div class="productEdit__box">
+                    <h1>editar producto <%= title %>
+                    </h1>
+                    <form class="productEdit__box__form" action="/products/productUpdate/<%= id %>?_method=PUT"
+                        method="POST" enctype="multipart/form-data">
+                        <div class="productAdd__box__form--name">
+                            <label for="title">Nombre del Producto:</label>
+                            <input type="text" id="title" name="title" value="<%= title %>">
                         </div>
-                        <div class="productEdit__box__form--category">
-                            <label for="category">Editar Categoría:</label>
-                            <select id="category" name="category" required>
-                                <option disabled selected>categoria</option>
-                                <option value="accion">Acción</option>
-                                <option value="aventura">Aventura</option>
-                                <option value="estrategia">Estrategia</option>
-                                <option value="rol">Rol</option>
-                                <option value="simulacion">Simulación</option>
-                                <option value="simulacion">otros</option>
+                        <div class="productAdd__box__form--category">
+                            <label for="category">Categoría:</label>
+                            <select id="category" name="category">
+                                <option hidden selected>categoria</option>
+                                <option value="featured">Destacados</option>
+                                <option value="new releases">Nuevos Lanzamientos</option>
+                                <option value="best sellers">Más Vendidos</option>
                                 <!-- Agrega más opciones de categorías  -->
                             </select>
                         </div>
-                        <div class="productEdit__box__form--price">
-                            <label for="price">Editar Precio:</label>
-                            <input type="number" id="price" name="price" step="0.01" min="0" required placeholder="$">
+                        <div class="productAdd__box__form--price">
+                            <label for="price">Precio:</label>
+                            <input type="number" id="price" name="price" value="<%= price %>" placeholder="$">
                         </div>
-                        <div class="productEdit__box__form--descuento">
-                            <label for="price">Editar Descuento:</label>
-                            <input type="number" id="price" name="price"  required placeholder="%">
+                        <div class="productAdd__box__form--descuento">
+                            <label for="discount">Descuento:</label>
+                            <input type="number" id="discount" name="discount" value="<%= discount %>" placeholder="%">
                         </div>
-                        <div class="productEdit__box__form--requiMinimos">
-                           <h3>Editar Requisitos minimos</h3>
-                           <label for="os">os:</label>
-                            <input type="text" id="os" name="os" required>
-                            <label for="Procesador">Procesador:</label>
-                            <input type="text" id="Memoria" name="Memoria" required>
-                            <label for="Procesador">Memoria:</label>
-                            <input type="text" id="Memoria" name="Memoria" required>
-                            <label for="Grafica">Grafica:</label>
-                            <input type="text" id="Grafica" name="Grafica" required>
-                            <label for="Almacenamiento">Almacenamiento:</label>
-                            <input type="text" id="Almacenamiento" name="Almacenamiento" required>
-                            
+                        <div class="productAdd__box__form--requiMinimos">
+                            <h3>Requisitos minimos</h3>
+                            <label for="reqMinOs">os:</label>
+                            <input type="text" id="reqMinOs" name="reqMinOs" value="<%= reqMinOs %>">
+                            <label for="reqMinProcessor">Procesador:</label>
+                            <input type="text" id="reqMinProcessor" name="reqMinProcessor"
+                                value="<%= reqMinProcessor %>">
+                            <label for="reqMinMemory">Memoria:</label>
+                            <input type="text" id="reqMinMemory" name="reqMinMemory" value="<%= reqMinMemory %>">
+                            <label for="reqMinGraphicsCard">Grafica:</label>
+                            <input type="text" id="reqMinGraphicsCard" name="reqMinGraphicsCard"
+                                value="<%= reqMinGraphicsCard %>">
+                            <label for="reqMinDisk">Almacenamiento:</label>
+                            <input type="text" id="reqMinDisk" name="reqMinDisk" value="<%= reqMinDisk %>">
+
                         </div>
-                        <div class="productEdit__box__form--requiRecomendados"">
-                            <h3>Editar Requisitos recomendados</h3>
-                           <label for="os">os:</label>
-                            <input type="text" id="os" name="os" required>
-                            <label for="Procesador">Procesador:</label>
-                            <input type="text" id="Memoria" name="Memoria" required>
-                            <label for="Procesador">Memoria:</label>
-                            <input type="text" id="Memoria" name="Memoria" required>
-                            <label for="Grafica">Grafica:</label>
-                            <input type="text" id="Grafica" name="Grafica" required>
-                            <label for="Almacenamiento">Almacenamiento:</label>
-                            <input type="text" id="Almacenamiento" name="Almacenamiento" required>
+                        <div class="productAdd__box__form--requiRecomendados">
+                            <h3>Requisitos recomendados</h3>
+                            <label for="reqRecommendedOs">os:</label>
+                            <input type="text" id="reqRecommendedOs" name="reqRecommendedOs"
+                                value="<%= reqRecommendedOs %>">
+                            <label for="reqRecommendedProcessor">Procesador:</label>
+                            <input type="text" id="reqRecommendedProcessor" name="reqRecommendedProcessor"
+                                value="<%= reqRecommendedProcessor %>">
+                            <label for="reqRecommendedMemory">Memoria:</label>
+                            <input type="text" id="reqRecommendedMemory" name="reqRecommendedMemory"
+                                value="<%= reqRecommendedMemory %>">
+                            <label for="reqRecommendedGraphicsCard">Grafica:</label>
+                            <input type="text" id="reqRecommendedGraphicsCard" name="reqRecommendedGraphicsCard"
+                                value="<%= reqRecommendedGraphicsCard %>">
+                            <label for="reqRecommendedDisk">Almacenamiento:</label>
+                            <input type="text" id="reqRecommendedDisk" name="reqRecommendedDisk"
+                                value="<%= reqRecommendedDisk %>">
                         </div>
-                        <div class="productEdit__box__form--description">
+                        <div class="productAdd__box__form--description">
                             <label for="description">Descripción:</label>
-                            <textarea class="productEdit__box__form__description--text" id="description" name="description"required></textarea>
+                            <textarea class="productAdd__box__form__description--text" id="description"
+                                name="description" value="<%= description %>"></textarea>
                         </div>
-                        <div class="productEdit__box__form--image">
-                            <label for="image">Imagen:</label>
-                            <input class="productEdit__box__image--img" type="file" id="image" name="image" accept="image/*" required>
+                        <div class="productAdd__box__form--image">
+                            <label for="MainImage">Imagen Principal:</label>
+                            <input class="productAdd__box__image--img" type="file" id="MainImage" name="MainImage">
                         </div>
-                        <div class="productEdit__box__form--btn">
-                            <button class="productEdit__box__form--btn--DeleteProduct" type="submit">Delete</button>
-                            <button class="productEdit__box__form--btn--update" type="submit">update</button>
+                        <div>
+                            <label for="images">Imagenes Secundarias:</label>
+                            <input class="productAdd__box__image--img" multiple type="file" id="images" name="images">
+                        </div>
+                        <div class="productAdd__box__form--btn">
+                            <button class="productAdd__box__form--btn--clear" type="reset">CLEAR</button>
+                            <button class="productAdd__box__form--btn--cargar" type="submit">CARGAR</button>
                         </div>
                     </form>
-                  </div>
-                </main>
-                <%- include('partials/footer') %>
+                </div>
+            </main>
+            <%- include('partials/footer') %>
     </body>
 
 </html>

@@ -5,16 +5,23 @@ const upload = require('../middlewares/upload');
 const router = express.Router();
 
 /* GET home page. */
-router.get('/productCart',productsControllers.productCart);
-router.get('/productDetail/:id?',productsControllers.productDetail );
-router.get('/productEdit',productsControllers.productEdit);
-router.get('/productAdd',productsControllers.productAdd);
-router.post('/productAdd',upload.fields([
+router.get('/productCart', productsControllers.productCart);
+router.get('/productDetail/:id?', productsControllers.productDetail);
+router.get('/productEdit/:id', productsControllers.productEdit);
+router.get('/productAdd', productsControllers.productAdd);
+router.put('/productUpdate/:id', upload.fields([
     {
-        name: 'MainImage'
+        name: 'MainImage', maxCount: 1
     },
     {
-        name: 'images'
-    }
-]),productsControllers.productCreate);
+        name: 'images', maxCount: 5
+    }]), productsControllers.productUpdate),
+    router.post('/productAdd', upload.fields([
+        {
+            name: 'MainImage'
+        },
+        {
+            name: 'images'
+        }
+    ]), productsControllers.productCreate);
 module.exports = router;

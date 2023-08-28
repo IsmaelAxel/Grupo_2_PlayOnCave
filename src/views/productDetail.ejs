@@ -3,104 +3,137 @@
 
 <%- include('partials/head') %>
 
-<body>
- <%- include('partials/header') %>   
-    <main class="product__main">
-        <article class="product__main--article">
-            <img src="/images/products/<%= MainImage%>" alt="">
-            <div class="product__main--article-info">
-                <% if (discount) { %>
-                    <p><%= discount %>%</p>
-                    <% } %>   
-                <h4>$<%= toThousand((price-(price*discount/100)).toFixed(0)) %></h4>
-            </div>
-            <a href="/products/productCart"><button type="button" class="product__main--article-comprar"><i class="fa-solid fa-cart-shopping"></i> COMPRAR </button></a>
-            <a href=""><button type="button" class="product__main--article-favoritos"><i class="fa-regular fa-heart"></i> AÑADIR A LISTA DE DESEOS </button></a>
-        </article>
-        <div class="product__main--container">
-            <div class="product__main--slider">
-                <div class="product__main--slider-screen">
-                    <img id="product_detail_imgs" src="/images/products/<%= MainImage%>" alt="">
+    <body>
+        <%- include('partials/header') %>
+            <main class="product__main">
+                <article class="product__main--article">
+                    <img src="/images/products/<%= MainImage%>" alt="">
+                    <div class="product__main--article-info">
+                        <% if (discount) { %>
+                            <p>
+                                <%= discount %>%
+                            </p>
+                            <% } %>
+                                <h4>$<%= toThousand((price-(price*discount/100)).toFixed(0)) %>
+                                </h4>
+                    </div>
+                    <a href="/products/productCart"><button type="button" class="product__main--article-comprar"><i
+                                class="fa-solid fa-cart-shopping"></i> COMPRAR </button></a>
+                    <a href=""><button type="button" class="product__main--article-favoritos"><i
+                                class="fa-regular fa-heart"></i> AÑADIR A LISTA DE DESEOS </button></a>
+                </article>
+                <div class="product__main--container">
+                    <div class="product__main--slider">
+                        <div class="product__main--slider-screen">
+                            <img id="product_detail_imgs" src="/images/products/<%= MainImage%>" alt="">
+                        </div>
+                        <div class="product__main--slider-imgs">
+                            <img src="/images/products/<%= MainImage%>" alt=""
+                                onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= MainImage%>')">
+                            <img src="/images/products/<%= images[0]%>" alt=""
+                                onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[0]%>')">
+                            <img src="/images/products/<%= images[1]%>" alt=""
+                                onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[1]%>')">
+                            <img class="slider1" src="/images/products/<%= images[2]%>" alt=""
+                                onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[2]%>')">
+                            <img class="slider2" src="/images/products/<%= images[3]%>" alt=""
+                                onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[3]%>')">
+                            <img class="slider3" src="/images/products/<%= images[4]%>" alt=""
+                                onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[4]%>')">
+                        </div>
+                    </div>
+                    <div class="product__main--infoJuego">
+                        <div class="product__main--infoJuego-titulo">
+                            <h2>ACERCA DE ESTE JUEGO: <%= title %>
+                            </h2>
+                        </div>
+                        <p>
+                            <%= description %>
+                        </p>
+                        <div class="product__main--infoJuego-more"><a href="">LEER MÁS</a></div>
+                    </div>
+                    <div class="product__main--requisitos">
+                        <div class="product__main--requisitos-logo">
+                            <i class="fa-brands fa-windows"></i>
+                        </div>
+                        <div class="product__main--requisitos-flex">
+                            <table class="product__main--requisitos--tableMinimos">
+                                <tr>
+                                    <th>Requisitos Minímos:</th>
+                                </tr>
+                                <tr>
+                                    <th>OS:</th>
+                                    <td>
+                                        <%= reqMinOs %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Procesador:</th>
+                                    <td>
+                                        <%= reqMinProcessor %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Memoria:</th>
+                                    <td>
+                                        <%= reqMinMemory %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Grafica:</th>
+                                    <td>
+                                        <%= reqMinGraphicsCard %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Almacenamiento:</th>
+                                    <td>
+                                        <%= reqMinDisk %>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table class="product__main--requisitos--tableRecomendados">
+                                <tr>
+                                    <th>Recomendados:</th>
+                                </tr>
+                                <tr>
+                                    <th>OS:</th>
+                                    <td>
+                                        <%= reqRecommendedOs %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Procesador:</th>
+                                    <td>
+                                        <%= reqRecommendedProcessor %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Memoria:</th>
+                                    <td>
+                                        <%= reqRecommendedMemory %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Grafica:</th>
+                                    <td>
+                                        <%= reqRecommendedGraphicsCard %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Almacenamiento:</th>
+                                    <td>
+                                        <%= reqRecommendedDisk %>
+                                    </td>
+                                </tr>
+                            </table>
+                            <a href="">LEER MÁS</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="product__main--slider-imgs">
-                    <img src="/images/products/<%= MainImage%>" alt="" onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= MainImage%>')">
-                    <img src="/images/products/<%= images[0]%>" alt="" onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[0]%>')">
-                    <img src="/images/products/<%= images[1]%>" alt="" onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[1]%>')">
-                    <img class="slider1" src="/images/products/<%= images[2]%>" alt="" onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[2]%>')">
-                    <img class="slider2" src="/images/products/<%= images[3]%>" alt="" onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[3]%>')">
-                    <img class="slider3" src="/images/products/<%= images[4]%>" alt="" onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[4]%>')">
-                </div>
-            </div>
-            <div class="product__main--infoJuego">
-                <div class="product__main--infoJuego-titulo">
-                    <h2>ACERCA DE ESTE JUEGO: <%= title %></h2>
-                </div>
-                <p> 
-                    <%= description %>
-                </p>
-                <div class="product__main--infoJuego-more"><a href="">LEER MÁS</a></div>
-            </div>
-            <div class="product__main--requisitos">
-                <div class="product__main--requisitos-logo">
-                    <i class="fa-brands fa-windows"></i>
-                </div>
-                <div class="product__main--requisitos-flex">
-                <table class="product__main--requisitos--tableMinimos">
-                    <tr>
-                        <th>Requisitos Minímos:</th>
-                    </tr>
-                    <tr>
-                        <th>OS:</th>
-                        <td><%= reqMinOs %></td>
-                    </tr>
-                    <tr>
-                        <th>Procesador:</th>
-                        <td><%= reqMinProcessor %></td>
-                    </tr>
-                    <tr>
-                        <th>Memoria:</th>
-                        <td><%= reqMinMemory %></td>
-                    </tr>
-                    <tr>
-                        <th>Grafica:</th>
-                        <td><%= reqMinGraphicsCard %></td>
-                    </tr>
-                    <tr>
-                        <th>Almacenamiento:</th>
-                        <td><%= reqMinDisk %></td>
-                    </tr>
-                </table>
-                <table class="product__main--requisitos--tableRecomendados">
-                    <tr>
-                        <th>Recomendados:</th>
-                    </tr>
-                    <tr>
-                        <th>OS:</th>
-                        <td><%= reqRecommendedOs %></td>
-                    </tr>
-                    <tr>
-                        <th>Procesador:</th>
-                        <td><%= reqRecommendedProcessor %></td>
-                    </tr>
-                    <tr>
-                        <th>Memoria:</th>
-                        <td><%= reqRecommendedMemory %></td>
-                    </tr>
-                    <tr>
-                        <th>Grafica:</th>
-                        <td><%= reqRecommendedGraphicsCard %></td>
-                    </tr>
-                    <tr>
-                        <th>Almacenamiento:</th>
-                        <td><%= reqRecommendedDisk %></td>
-                    </tr>
-                </table>
-                <a href="">LEER MÁS</a>
-            </div>
-            </div>
-        </div>
-    </main>
-<%- include('partials/footer') %>
-</body>
+                <a href="/products/productEdit/<%= id %>">EDITAR</a>
+            </main>
+            <%- include('partials/footer') %>
+    </body>
 
 </html>
