@@ -6,3 +6,6 @@ RETROSPECTIVA DEL SPRINT 2
 
 ![Alt text](https://cdn.discordapp.com/attachments/1114643571967021119/1139835846728626206/retrospectivaSprint2.png) 
 
+RETROSPECTIVA DEL SPRINT 4
+
+![Alt text](https://cdn.discordapp.com/attachments/1114643571967021119/1145841565626019900/retro4.jpg) 
