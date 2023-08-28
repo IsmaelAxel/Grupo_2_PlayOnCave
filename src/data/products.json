@@ -238,7 +238,7 @@
       "title": "Resident Evil 4",
       "category": "best sellers",
       "price": 12956,
-      "discount": 0,
+      "discount": 50,
       "MainImage": "ResidentEvil4 (1).webp",
       "images": [
          "ResidentEvil4 (2).jpg",
@@ -248,8 +248,8 @@
          "ResidentEvil4 (1).jpg"
       ],
       "description": "Seis años después de la catástrofe biológica en Raccoon City, el agente Leon S. Kennedy, uno de los supervivientes del desastre, ha sido enviado a rescatar a la hija del presidente, a quien han secuestrado. Siguiendo su rastro, llega a una apartada población europea, donde sus habitantes sufren un mal terrible. Así comienza esta historia de un arriesgado rescate y terror escalofriante donde se cruzan la vida y la muerte, y el miedo y la catarsis.",
-      "reqRecommendedOs": " Windows 10 (64 bit)/Windows 11 (64 bit)",
-      "reqMinOs": " Windows 10 (64-bit OS required)",
+      "reqRecommendedOs": "Windows 10 (64 bit)/Windows 11 (64 bit)",
+      "reqMinOs": "Windows 10 (64-bit OS required)",
       "reqRecommendedProcessor": "AMD Ryzen 5 3600 / Intel Core i7 8700",
       "reqMinProcessor": "AMD Ryzen 3 1200 / Intel Core i5-7500",
       "reqRecommendedMemory": "16 GB de RAM",

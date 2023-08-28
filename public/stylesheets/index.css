@@ -93,10 +93,13 @@
 .index__main--article-info p{
   background-color: var(--colorBotones);
   color: #ffffff;
-  padding: 10px;
+  padding: 5px;
+  margin: 5px 0;
 }
 .index__main--article-info h4{
   color: var(--colorVerde);
+  margin: 5px 0;
+  font-size: 1rem;
 }
 .index__main--article-comprar a button{
   width: 100%;
@@ -144,18 +147,23 @@
 .index__main__article--horizontal a h4{
   color: #ffffff;
   font-weight: 300;
+  font-size: .7rem;
+  margin: 5px 0;
 }
 .index__main__article--horizontal a h4:hover{
   color: var(--colorVerde);
 }
 .index__main__article--horizontal h4{
   color: var(--colorVerde);
+  font-size: .7rem;
+  margin: 5px 0;
 }
 .index__main__article--horizontal p{
   background-color: var(--colorBotones);
   color: #ffffff;
   padding: 3px;
   font-size: .6rem;
+  margin: 5px 0;
 }
 .index__main--article-box2{
   display: none;

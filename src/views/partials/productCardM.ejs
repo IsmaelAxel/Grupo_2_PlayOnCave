@@ -3,11 +3,11 @@
     <article class="index__main__article--horizontal" data-aos="flip-down" data-aos-duration="1000">
         <img src="/images/products/<%=MainImage %>" alt="">
         <a href="/products/productDetail">
-            <h4><%= title %><i class="fa-solid fa-cart-shopping"></i></h4>
+            <h4><%= title %>  <i class="fa-solid fa-cart-shopping"></i></h4>
         </a>
         <h4><%= price %></h4>
         <% if (discount) { %>
-            <p><%= discount %>%</p>
+            <p>-<%= discount %>%</p>
         <% } %>
     </article>
 </div>

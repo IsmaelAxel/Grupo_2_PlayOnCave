@@ -1,5 +1,7 @@
 .product__main{
     margin: 10px;
+    max-width: 420px;
+    margin: 0 auto;
 }
 .product__main--article{
     background-color: var(--gris1);
@@ -83,6 +85,7 @@
 }
 .product__main--infoJuego-titulo h2{
     font-weight: 400;
+    font-size: 1.1rem;
 }
 .product__main--infoJuego-more{
     margin: 20px 0;
@@ -97,6 +100,7 @@
     color: var(--gris4);
     text-align: left;
     font-size: .8rem;
+
 }
 .product__main--requisitos-logo{
     background-color: var(--gris3);
@@ -108,6 +112,7 @@
 }
 .product__main--requisitos table{
     padding: 5px;
+    border-collapse: separate;
 }
 .product__main--requisitos table tr th, .product__main--requisitos table tr td {
     padding: 10px 0;
@@ -124,7 +129,7 @@
     font-size: .8rem;
 }
 
-@media (min-width:481px) {
+@media (min-width:769px) {
     .product__main{
         display: flex;
         flex-direction: row-reverse;
@@ -213,6 +218,7 @@
 @media (min-width: 769px){
     .product__main{
         margin: 40px;
+        max-width: 95%;
     }
     .product__main--container{
         width: 65%;

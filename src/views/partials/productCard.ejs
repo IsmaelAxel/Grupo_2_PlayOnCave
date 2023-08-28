@@ -4,7 +4,7 @@
     <div class="index__main--article-info">
         <h4> $<%=toThousand(price)%></h4>
         <% if (discount) { %>
-            <p><%= discount %>%</p>
+            <p>-<%= discount %>%</p>
             
             <h4>$<%= toThousand(price-(price*discount/100).toFixed(0))%></h4> 
         <% } %>
