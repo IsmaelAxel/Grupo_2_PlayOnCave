@@ -6,7 +6,7 @@ const router = express.Router();
 
 /* GET home page. */
 router.get('/productCart',productsControllers.productCart);
-router.get('/productDetail/:id?',productsControllers.productDetail );
+router.get('/productDetail/:id?',productsControllers.productDetail);
 router.get('/productEdit',productsControllers.productEdit);
 router.get('/productAdd',productsControllers.productAdd);
 router.post('/productAdd',upload.fields([
@@ -17,4 +17,5 @@ router.post('/productAdd',upload.fields([
         name: 'images'
     }
 ]),productsControllers.productCreate);
+router.delete('/delete/:id', productsControllers.productDelete);
 module.exports = router;

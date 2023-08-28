@@ -27,5 +27,6 @@ module.exports = {
         return res.render('productAdd');
     },
     productCreate: require('./products/create'),
+    productDelete: require('./products/delete'),
 
 }
