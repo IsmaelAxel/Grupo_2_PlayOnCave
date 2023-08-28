@@ -1,6 +1,5 @@
 const { readJSON, writeJSON } = require("../../data");
 const { unlinkSync, existsSync } = require("fs");
-const path = require('path');
 module.exports = (req, res) => {
     const { title, category, price, discount, description, reqRecommendedOs,
         reqMinOs, reqRecommendedProcessor, reqMinProcessor, reqRecommendedMemory, reqMinMemory,
@@ -56,9 +55,7 @@ module.exports = (req, res) => {
 
         return product
     })
-    // Cambio aquí: Agregamos una ruta relativa a la carpeta 'data' para guardar el JSON
-    const jsonPath = path.join(__dirname, '../../data/products.json');
-    writeJSON(productsModify, jsonPath)
-
+   
+    writeJSON(productsModify, 'products.json')
     return res.redirect('/')
 }
