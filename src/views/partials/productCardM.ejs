@@ -6,6 +6,8 @@
             <h4><%= title %><i class="fa-solid fa-cart-shopping"></i></h4>
         </a>
         <h4><%= price %></h4>
-        <p>-<%= discount %></p>
+        <% if (discount) { %>
+            <p><%= discount %>%</p>
+        <% } %>
     </article>
 </div>
