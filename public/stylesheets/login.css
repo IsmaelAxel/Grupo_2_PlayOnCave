@@ -71,8 +71,9 @@
     position: absolute;
     background-color: #000000;
     top: -8px;
-    left: 60px;
+    left: 47px;
     padding: 0px 10px;
+    font-size: 1rem;
 
 }
 
@@ -105,7 +106,7 @@
     }
     .main__login--lineaVerde h5{
         top: -8px;
-        left: 110px;
+        left: 97px;
         
     
     }
@@ -118,7 +119,7 @@
         margin: 200px auto;
     }
     .main__login--lineaVerde h5{
-        left: 265px;
+        left: 247px;
     }
     .main__login__formulario__form--inputs input {
         width: 70%;

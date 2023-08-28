@@ -4,20 +4,22 @@
     <%- include('partials/head') %>
 <body>
     <%- include('partials/header') %>
+
 <% if (results.length) { %>
-    <div >
+    <main class="main__search">
         <% results.forEach(result => { %>
-            <%- include('partials/productCard',{
+            <%- include('partials/productCardS',{
                 ...result,
                 toThousand
             }) %>
         <% }) %>
-    </div>
+    </main>
 <% }else{ %>
-    <div >
-        <h2 style="color: tomato;">No hay productos que coincidan con esa búsqueda</h2>
-    </div>
+    <main class="main__search__error">
+    <div class="main__search__error--404" >No se encontro tu busqueda</div>
+    </main>
     <% } %>
+
     <%- include('partials/footer') %>
 </body>
 </html>
