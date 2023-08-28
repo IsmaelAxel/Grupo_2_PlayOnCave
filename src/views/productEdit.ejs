@@ -17,11 +17,11 @@
                         <div class="productAdd__box__form--category">
                             <label for="category">Categoría:</label>
                             <select id="category" name="category">
-                                <option hidden selected>categoria</option>
-                                <option value="featured">Destacados</option>
-                                <option value="new releases">Nuevos Lanzamientos</option>
-                                <option value="best sellers">Más Vendidos</option>
-                                <!-- Agrega más opciones de categorías  -->
+                                <option hidden>Seleccione una categoría</option>
+                                <option value="featured" <%= (category === 'featured') ? 'selected' : '' %>>Destacados</option>
+                                <option value="new releases" <%= (category === 'new releases') ? 'selected' : '' %>>Nuevos Lanzamientos</option>
+                                <option value="best sellers" <%= (category === 'best sellers') ? 'selected' : '' %>>Más Vendidos</option>
+                                <!-- Agrega más opciones de categorías aquí -->
                             </select>
                         </div>
                         <div class="productAdd__box__form--price">
@@ -69,7 +69,7 @@
                         <div class="productAdd__box__form--description">
                             <label for="description">Descripción:</label>
                             <textarea class="productAdd__box__form__description--text" id="description"
-                                name="description" value="<%= description %>"></textarea>
+                                name="description"><%= description %></textarea>
                         </div>
                         <div class="productAdd__box__form--image">
                             <label for="MainImage">Imagen Principal:</label>
