@@ -161,9 +161,9 @@
 .index__main__article--horizontal p{
   background-color: var(--colorBotones);
   color: #ffffff;
-  padding: 3px;
   font-size: .6rem;
-  margin: 5px 0;
+  padding: 2px 4px;
+  margin: 2px 0;
 }
 .index__main--article-box2{
   display: none;
@@ -208,10 +208,11 @@
   }
   .index__main--article-info p{
     font-size: .8rem;
-    padding: 5px;
+    padding: 2px 4px;
+    margin: 2px 0;
   }
 }
-@media (min-width: 769px){
+@media (min-width: 1024px){
   .swiper-slide img {
     height: 400px;
   }

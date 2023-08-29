@@ -1,0 +1,7 @@
+body.dia{
+    background-color: var(--colorBackground) ;
+}
+body.noche{
+
+    background-color: var(--gris4);
+}
