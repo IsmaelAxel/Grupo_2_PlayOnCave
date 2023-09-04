@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include('partials/head') %>
+<%- include('partials/head', {title: "home"}) %>
 
 
 <body>
@@ -15,9 +15,9 @@
             </div>
             <div class="swiper-pagination"></div>
         </div>
-        <div class="index__main--chat">
+        <!-- <div class="index__main--chat">
             <a href=""><i class="fa-solid fa-comments"></i></a>
-        </div>
+        </div> -->
         <div class="index__main--products">
             <h1 id="destacados" class="index__main--titulo1">Destacados</h1>
             <% productsFeatured.forEach(product => { %>

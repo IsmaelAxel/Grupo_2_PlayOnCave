@@ -90,6 +90,11 @@
   align-items: center;
   gap: 20px;
 }
+.index__main--article-lineProduct{
+  text-decoration: line-through;
+  text-decoration-thickness: 3px;
+  text-decoration-color: var(--colorBotones);
+}
 .index__main--article-info p{
   background-color: var(--colorBotones);
   color: #ffffff;

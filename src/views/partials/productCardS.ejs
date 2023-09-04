@@ -1,12 +1,13 @@
 <article class="index__main--article">
 <img src="/images/products/<%= MainImage %>" alt="">
 <div class="index__main--article-info">
-    <h4> $<%=toThousand(price)%></h4>
     <% if (discount) { %>
+        <h4 class="index__main--article-lineProduct"> $<%=toThousand(price)%></h4>
         <p>-<%= discount %>%</p>
-        
         <h4>$<%= toThousand(price-(price*discount/100).toFixed(0))%></h4> 
-    <% } %>
+    <% } else { %>
+        <h4> $<%=toThousand(price)%></h4>
+        <% }  %> 
      
 </div>
 <div class="index__main--article-comprar"><a href="/products/productCart"><button type="button"><i
