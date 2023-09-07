@@ -6,9 +6,8 @@ module.exports = {
     login: (req, res) => {
         return res.render('login');
     },
-    register: (req, res) => {
-        return res.render('register');
-    },
+    register: require('./users/register'),
+    processRegister: require('./users/processRegister'),
     admin : (req,res)  => {
 
         const products = readJSON('products.json');
