@@ -16,6 +16,12 @@ module.exports = {
             products,
             
         })
+    },
+    users: (req,res)  => {
+
+        return res.render('users');
+
+
     }
 
-}
+ }

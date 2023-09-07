@@ -6,7 +6,7 @@
        "email": "gaston.miguel.gomez@gmail.com",
        "password": "admin",
        "rol": "admin",
-       "avatar": "../../public/images/avatar1.png"
+       "avatar": "avatar1.png"
     },
     {
         "id": "101",
@@ -15,7 +15,7 @@
         "email": "ismael_callamullo@hotmail.com",
         "password": "admin",
         "rol": "admin",
-        "avatar":"../../public/images/avatar2.png"
+        "avatar":"avatar2.png"
      },
      {
         "id": "102",
@@ -24,7 +24,7 @@
         "email": "nnahuell.gb@hotmail.com",
         "password": "admin",
         "rol": "admin",
-        "avatar": "../../public/images/avatar3.jpg"
+        "avatar": "avatar3.jpg"
      },
      {
         "id": "103",
@@ -33,7 +33,7 @@
         "email": "wolfc777@gmail.com",
         "password": "admin",
         "rol": "admin",
-        "avatar": "../../public/images/avatar4.jpg"
+        "avatar": "avatar4.jpg"
      },
      {
         "id": "104",
@@ -42,6 +42,6 @@
         "email": "jorgitoluisolea@gmail.com",
         "password": "admin",
         "rol": "admin",
-        "avatar": "../../public/images/avatar5.jpg"
+        "avatar": "avatar5.jpg"
      }
 ]
