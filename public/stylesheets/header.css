@@ -100,7 +100,10 @@
 .home__header__box__categorias--nav ul li a:hover{
     color: var(--colorVerde);
 }
-
+.home__header__switch--mode{
+    background-color: #000000;
+    border: none;
+}
 .home__header__box--tema i{
     rotate: 90deg;
     
