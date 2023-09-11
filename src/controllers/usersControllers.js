@@ -3,9 +3,9 @@ const { writeJSON, readJSON } = require('../data/index');
 const productRead = readJSON('products.json');
 
 module.exports = {
-    login: (req, res) => {
-        return res.render('login');
-    },
+    login:require('./users/login') ,
+    processLogin:require('./users/processLogin'),
+    
     register: require('./users/register'),
     processRegister: require('./users/processRegister'),
     admin : (req,res)  => {
@@ -21,6 +21,7 @@ module.exports = {
         return res.render('users');
 
 
-    }
+    },
+    logout:require('./users/logOut')
 
  }

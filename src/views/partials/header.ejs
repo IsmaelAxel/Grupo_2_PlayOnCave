@@ -11,8 +11,15 @@
         <div class="home__header__box--login">
             <nav class="home__header__box__login--nav">
                 <ul class="home__header__box__login__nav--ul" >
-                    <li><a href="/users/login"><i class="fa-solid fa-user"></i><p>ingresar</p></a></li>                       
-<!--                     <li id="carri"><i id="numberCart" class="fa-solid fa-4"></i><a href="/products/productCart"><i class="fa-solid fa-cart-shopping"></i><p>mi <br> carrito</p></a></li>
+                    <% if (locals.userLogin) { %>
+                        <li><a href="/users/profile"><i class="fa-solid fa-user"></i><p> <%= userLogin.firstName %></p></a></li> 
+                        <li id="carri"><i id="numberCart" class="fa-solid fa-4"></i><a href="/products/productCart"><i class="fa-solid fa-cart-shopping"></i><p>mi <br> carrito</p></a></li>
+                     
+                    <% }else{ %>
+                        <li><a href="/users/login"><i class="fa-solid fa-user"></i><p>ingresar</p></a></li> 
+                    <% } %>
+                                         
+<!--                    
  -->                    <li><button id="modo" class="home__header__switch--mode">🌓</button></li>
                 </ul>
             </nav>
@@ -22,7 +29,7 @@
                 <form class="home_header_box--form" action="/search" method="get"  >
                     <input class="home_header_box--form--input" name="keywords" type="text" placeholder="Buscar productos, marcas" >
                     <div class="home_header_box--btn">   
-                       <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button> 
+                       <button class="home_header_box--button" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button> 
                     </div>
                 </form>     
             </div>
@@ -31,8 +38,17 @@
                     <li><a href="/#destacados">destacados</a></li>
                     <li><a href="/#news">lanzamientos</a></li>
                     <li><a href="/#+vendidos">mas vendidos</a></li>
-                    <li><a href="/users/admin">admin</a></li>
+                    
                     <li><a href="/contacto">contacto</a></li>
+
+                    <% if (locals.userLogin) { %>
+                        <% if (userLogin.rol === "admin") { %>
+                            <li><a href="/users/admin">admin</a></li>
+                        <% } %>
+                        
+                        <li><a href="/users/logout">salir</a></li>
+                    <% } %>
+
                 </ul>
             </nav>
     </div>  

@@ -9,7 +9,7 @@ module.exports = (req,res) => {
         console.log(users)
         users.push({
             id: uuidv4(),
-            firstname: req.body.name.trim(),
+            firstName: req.body.name.trim(),
             lastname: req.body.surname.trim(),
             email: req.body.email,
             password : bcrypt.hashSync(req.body.password,10),

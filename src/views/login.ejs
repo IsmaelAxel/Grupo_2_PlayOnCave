@@ -8,19 +8,26 @@
         <div class="main__login--formulario">
             <h2 class="main__login__formulario--titulo">Iniciar Sesión</h2>
 
-            <form action="">
+            <form action="" method="POST">
                 <div class="main__login__formulario__form--inputs">
                     <i class="fa-regular fa-envelope"></i>
-                    <input type="email" name="email" id="email" placeholder="Ingresar Correo...">
+                    <input type="email" id="email" placeholder="Tu email" name="email">
+                    <small class="text-danger d-flex justify-content-center ms-2"><%= locals.errors && (errors.email && errors.email.msg) %></small>
                 </div>
                 <div class="main__login__formulario__form--inputs">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" name="Contraseña" id="Contraseña" placeholder="Ingresar clave...">
+                    <input type="password" name="password" id="password" placeholder="Ingresar clave...">
+                    <small class="text-danger  d-flex justify-content-center ms-2"><%= locals.errors && (errors.password && errors.password.msg) %></small>
+                   
                 </div>
 
                 <div class="main__login__formulario__form--box">
                     <a href="/users/register">Registrarme</a>
                     <a href="">Olvide Mi clave</a>
+                </div>
+                <div class="form-check d-flex justify-content-center gap-2 " >
+                    <input type="checkbox" name="remember" class="form-check-input  " id="remember">
+                    <label for="remember" class="form-check-label d-flex gap-0">recordame</label>
                 </div>
                 <div>
                     <button class="main__login__formulario__form--button" type="submit">LOGIN</button>

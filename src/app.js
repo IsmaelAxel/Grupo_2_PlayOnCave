@@ -8,6 +8,8 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products')
 const app = express();
+const session = require("express-session");
+const userSessionCheck = require('./middlewares/userSessionCheck');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -19,7 +21,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname,'..', 'public')));
 app.use(methodOverride('_method'));
+app.use(session({
+  secret : "PlayOnCave",
+  resave : true , 
+  saveUninitialized : true
+}))
 
+app.use(userSessionCheck);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
