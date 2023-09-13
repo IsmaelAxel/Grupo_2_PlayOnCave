@@ -12,8 +12,10 @@ module.exports = {
     admin : (req,res)  => {
 
         const products = readJSON('products.json');
+        const users = readJSON('users.json');
         return res.render('admin', {
             products,
+            users
             
         })
     },
@@ -23,12 +25,10 @@ module.exports = {
 
 
     },
-    profile: (req,res)  => {
-
-        return res.render('profile');
+    profile: require("./users/profile")
 
 
-    },
+    ,
     logout:require('./users/logOut')
 
  }

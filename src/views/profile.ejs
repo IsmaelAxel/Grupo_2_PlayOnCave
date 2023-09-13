@@ -1,12 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>profile</title>
-</head>
-<body>
-    <h1>soy profile y mamerto </h1>
-    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><%= firstName %></title>
+        <!-- AOS -->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <!-- SWIPER -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+        <!-- bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <!-- Hoja personalizada -->
+        <link rel="stylesheet" href="/stylesheets/styles.css">
+        <script src="https://kit.fontawesome.com/42701418d7.js" crossorigin="anonymous"></script>
+    </head>
+
+
+<body class="detalle">
+    <%- include('partials/header') %>
+
+    <main class="detalle__main d-flex">
+        <div class="row">
+        <div class="col-12 col-md-10 col-lg-3 mx-auto mt-5">
+            <div class="card mb-3 shadow-lg bg-dark text-white" style="width: 18rem;">
+                <img class="card-img-top img-thumbnail" src="/images/users/<%= avatar %>" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Perfil de <%= firstName %></h5>
+                  <p class="card-text">soy cordobe me gusta el vino y la joda</p>
+                </div>
+                <ul class="list-group list-group-flush ">
+                  <li class="list-group-item">mi nombre es: <%= firstName %></li>
+                  <li class="list-group-item">mi pellido es: <%= lastName %></li>
+                  
+                </ul>
+              </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-10 col-lg-8 mx-auto mt-5">
+                <div class="card mb-3 shadow-lg bg-dark text-white">
+                  <div class="card-header">
+                    Perfil usuario
+                  </div>
+                  <div class="card-body">
+                    <form action="/users/update?_method=PUT" method="POST" class="row">
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="name" placeholder="Tu nombre" name="name" value="<%= firstName %>">
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="surname" class="form-label">Apellido</label>
+                            <input type="text" class="form-control" id="surname" placeholder="Tu apellido" name="surname" value="<%= lastName %>">
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="birthday" class="form-label">Cumpleaños</label>
+                            <input type="date" class="form-control" id="birthday" name="birthday" value="<%= birthday %>">
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="address" class="form-label">Dirección</label>
+                            <input type="text" class="form-control" id="address" placeholder="Domicilio" name="address" value="<%= address %>">
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="province" class="form-label">Provincia</label>
+                            <select type="text" class="form-select" id="province" name="province">
+                                <option <%= province === "" && 'selected' %> value="" hidden>Seleccione...</option>
+                                <option <%= province === "BA" && 'selected' %> value="BA">Buenos Aires</option>
+                                <option <%= province === "NQN" && 'selected' %> value="NQN">Neuquén</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="city" class="form-label">Ciudad</label>
+                            <select type="text" class="form-select" id="city" name="city">
+                                <option <%= city === "" && 'selected' %> value="" hidden>Seleccione...</option>
+                                <option <%= city === "BA" && 'selected' %> value="BA">Buenos Aires</option>
+                                <option <%= city === "NQN" && 'selected' %> value="NQN">Neuquén</option>
+                            </select>
+                        </div>
+                      
+                        <div class="d-flex justify-content-end">
+                            <button type="submit" class="btn btn-dark">Guardar cambios</button>
+                        </div>
+                    </form>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <%- include('partials/footer') %>
+    <%- include('partials/scripts') %>
+
 </body>
+
 </html>

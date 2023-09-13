@@ -6,7 +6,11 @@
       "email": "gaston.miguel.gomez@gmail.com",
       "password": "gaston",
       "rol": "admin",
-      "avatar": "avatar1.png"
+      "avatar": "avatar1.png",
+      "birthday": null,
+      "address": null,
+      "city": null,
+      "province": null
    },
    {
       "id": "101",
@@ -43,5 +47,18 @@
       "password": "gaston",
       "rol": "admin",
       "avatar": "avatar5.jpg"
+   },
+   {
+      "id": "4dee52a7-b9cd-4c06-ac6f-9f12da2f162e",
+      "firstName": "cint",
+      "lastName": "jai",
+      "email": "cintii_25@hotmail.com",
+      "password": "$2a$10$tz84kHJp13LJ37I1zq4cku8.0MpiGATVTv3X.HKhVJ06KyGSqp97i",
+      "rol": "user",
+      "avatar": "2.jpeg1694575862389_products_.jpeg",
+      "birthday": null,
+      "address": null,
+      "city": null,
+      "province": null
    }
 ]
