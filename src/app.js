@@ -10,6 +10,7 @@ const productsRouter = require('./routes/products')
 const app = express();
 const session = require("express-session");
 const userSessionCheck = require('./middlewares/userSessionCheck');
+const userLogs = require('./middlewares/userLogs');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -26,8 +27,9 @@ app.use(session({
   resave : true , 
   saveUninitialized : true
 }))
-
+app.use(userLogs);
 app.use(userSessionCheck);
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

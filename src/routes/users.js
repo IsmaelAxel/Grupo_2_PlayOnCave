@@ -3,6 +3,8 @@ const usersControllers = require('../controllers/usersControllers');
 const uploadUser = require('../middlewares/uploadUser');
 const registerValidator = require('../validations/registerValidator');
 const loginValitator = require('../validations/loginValitator');
+const userCheck = require('../middlewares/userCheck');
+const adminCheck=require('../middlewares/adminCheck')
 const router = express.Router();
 
 /* GET users listing. */
@@ -11,6 +13,7 @@ router.post('/login', uploadUser.single('img'), loginValitator, usersControllers
 router.get('/logout', usersControllers.logout);
 router.get('/register', usersControllers.register);
 router.post('/register', uploadUser.single('img'), registerValidator,usersControllers.processRegister);
-router.get('/admin', usersControllers.admin);
+router.get('/profile',userCheck,usersControllers.profile)
+router.get('/admin',adminCheck,usersControllers.admin);
 router.get('/', usersControllers.users);
 module.exports = router;

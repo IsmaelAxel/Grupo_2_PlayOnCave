@@ -8,6 +8,7 @@ module.exports = {
     
     register: require('./users/register'),
     processRegister: require('./users/processRegister'),
+    
     admin : (req,res)  => {
 
         const products = readJSON('products.json');
@@ -19,6 +20,12 @@ module.exports = {
     users: (req,res)  => {
 
         return res.render('users');
+
+
+    },
+    profile: (req,res)  => {
+
+        return res.render('profile');
 
 
     },
