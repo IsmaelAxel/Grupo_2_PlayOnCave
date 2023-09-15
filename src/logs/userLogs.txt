@@ -164,3 +164,4 @@ El usuario ingreso a la ruta:/users/login
 El usuario ingreso a la ruta:/users/login
 El usuario ingreso a la ruta:/
 El usuario ingreso a la ruta:/users/profile
+El usuario ingreso a la ruta:/users/profileUpdate/102?_method=PUT

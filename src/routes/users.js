@@ -15,7 +15,7 @@ router.get('/logout', usersControllers.logout);
 router.get('/register', usersControllers.register);
 router.post('/register', uploadUser.single('img'), registerValidator, usersControllers.processRegister);
 router.get('/profile', userCheck, usersControllers.profile)
-router.put('/profileUpdate/:id', userCheck, uploadUser.single('img'), profileValidator, usersControllers.updateProfile)
+router.put('/profileUpdate/:id', userCheck, uploadUser.single('avatar'), profileValidator, usersControllers.updateProfile)
 router.get('/admin', adminCheck, usersControllers.admin);
 router.get('/', usersControllers.users);
 module.exports = router;
