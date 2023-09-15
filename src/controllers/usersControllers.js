@@ -25,10 +25,8 @@ module.exports = {
 
 
     },
-    profile: require("./users/profile")
-
-
-    ,
+    profile: require("./users/profile"),
+    updateProfile: require("./users/updateProfile"),
     logout:require('./users/logOut')
 
  }
