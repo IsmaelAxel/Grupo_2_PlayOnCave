@@ -2,6 +2,7 @@ const bcrypt = require('bcryptjs')
 const { v4: uuidv4 } = require('uuid');
 const {readJSON, writeJSON} = require('../../data')
 const {validationResult} = require('express-validator')
+const {existsSync, unlinkSync} = require('fs')
 module.exports = (req,res) => {
     const errors = validationResult(req)
     if(errors.isEmpty()){
@@ -10,7 +11,7 @@ module.exports = (req,res) => {
         users.push({
             id: uuidv4(),
             firstName: req.body.name.trim(),
-            lastname: req.body.surname.trim(),
+            lastName: req.body.surname.trim(),
             email: req.body.email,
             password : bcrypt.hashSync(req.body.password,10),
             rol : 'user',
@@ -23,6 +24,7 @@ module.exports = (req,res) => {
         writeJSON(users, 'users.json')
         return res.redirect('/')
     }else{
+        (req.file && existsSync(`./public/images/users/${req.file.filename}`) && unlinkSync(`./public/images/users/${req.file.filename}`)) 
         return res.render('register',{
             title: 'register',
             errors: errors.mapped(),

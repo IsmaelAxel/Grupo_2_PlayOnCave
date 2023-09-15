@@ -6,7 +6,9 @@ module.exports = [
       min: 3,
     })
     .withMessage("El nombre es obligatorio")
-    .isAlpha("es-ES")
+    .isAlpha("es-ES",{
+      ignore: " "
+    })
     .withMessage("Solo letras"),
   check("surname")
     .isLength({

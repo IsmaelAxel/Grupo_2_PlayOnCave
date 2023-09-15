@@ -12,7 +12,7 @@
                     <form action="" method="POST">
                         <div class="main__login__formulario__form--inputs">
                             <i class="fa-regular fa-envelope"></i>
-                            <input type="email" id="email" placeholder="Tu email" name="email">
+                            <input type="text" id="email" placeholder="Tu email" name="email">
                             <small class="text-danger d-flex justify-content-center ms-2">
                                 <%= locals.errors && (errors.email && errors.email.msg) %>
                             </small>
@@ -28,12 +28,12 @@
 
                         <div class="main__login__formulario__form--box">
                             <a href="/users/register">Registrarme</a>
-                            <a href="">Olvide Mi clave</a>
+                            <div class="form-check d-flex justify-content-center gap-2 ">
+                                <input type="checkbox" class="form-check-input"  id="remember" name="remember">
+                                <label for="remember" class="form-check-label d-flex gap-0">recordame</label>
+                            </div>
                         </div>
-                        <div class="form-check d-flex justify-content-center gap-2 ">
-                            <input type="checkbox" class="form-check-input"  id="remember" name="remember">
-                            <label for="remember" class="form-check-label d-flex gap-0">recordame</label>
-                        </div>
+
                         <div>
                             <button class="main__login__formulario__form--button" type="submit">LOGIN</button>
                         </div>
