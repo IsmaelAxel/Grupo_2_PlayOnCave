@@ -94,7 +94,7 @@
                                 </div>
                                 <div class="col-12 col-md-6 mb-3">
                                     <label for="province" class="form-label">Provincia</label>
-                                    <select type="text" class="form-select" id="province" name="province">
+                                    <select type="text" class="form-select" id="province" name="province" value="<%= province %>">
                                         <option <%=province==="" && 'selected' %> value="" hidden>Seleccione...</option>
                                         <option <%=province==="BA" && 'selected' %> value="BA">Buenos Aires</option>
                                         <option <%=province==="ROS" && 'selected' %> value="ROS">Santa Fe</option>
@@ -109,7 +109,7 @@
                                 </div>
                                 <div class="col-12 col-md-6 mb-3">
                                     <label for="city" class="form-label">Ciudad</label>
-                                    <select type="text" class="form-select" id="city" name="city">
+                                    <select type="text" class="form-select" id="city" name="city" value="<%= city %>">
                                         <option <%=city==="" && 'selected' %> value="" hidden>Seleccione...</option>
                                         <option <%=city==="BA" && 'selected' %> value="BA">Buenos Aires</option>
                                         <option <%=city==="ROS" && 'selected' %> value="ROS">Rosario</option>

@@ -1,5 +1,5 @@
 const { readJSON, writeJSON } = require("../../data");
-const { unlinkSync } = require("fs").promises; // Importa fs.promises para usar promesas.
+const { existsSync, unlinkSync } = require('fs')
 const { validationResult } = require("express-validator");
 
 module.exports = async (req, res) => {
@@ -23,9 +23,9 @@ module.exports = async (req, res) => {
                         // Verifica si existe la imagen y elimínala si es necesario.
                         const imagePath = `./public/images/users/${user.avatar}`;
                         try {
-                            const stats =  fs.promises.stat(imagePath);
+                            const stats = fs.promises.stat(imagePath);
                             if (stats.isFile()) {
-                                 fs.promises.unlink(imagePath);
+                                fs.promises.unlink(imagePath);
                             }
                         } catch (err) {
                             console.error('Error al verificar o eliminar el archivo:', err);
@@ -40,6 +40,7 @@ module.exports = async (req, res) => {
             await writeJSON(usersModify, 'users.json');
             res.redirect('/');
         } else {
+            (req.file && existsSync(`./public/images/users/${req.file.filename}`) && unlinkSync(`./public/images/users/${req.file.filename}`))
             return res.render('profile', {
                 title: 'profile',
                 errors: errors.mapped(),
