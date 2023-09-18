@@ -9,3 +9,7 @@ RETROSPECTIVA DEL SPRINT 2
 RETROSPECTIVA DEL SPRINT 4
 
 ![Alt text](https://cdn.discordapp.com/attachments/1114643571967021119/1145841565626019900/retro4.jpg) 
+
+RETROSPECTIVA DEL SPRINT 5
+
+![Alt text](https://cdn.discordapp.com/attachments/1114643571967021119/1153331669626007682/gaston_3.jpg) 
