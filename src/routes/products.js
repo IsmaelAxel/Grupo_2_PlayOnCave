@@ -1,7 +1,8 @@
 const express = require('express');
 const productsControllers = require('../controllers/productsControllers');
 const upload = require('../middlewares/upload');
-const productAddValidator = require('../validations/productsAddValidator')
+const productAddValidator = require('../validations/productsAddValidator');
+const productEditValidator = require('../validations/productEditValidator');
 
 const router = express.Router();
 
@@ -16,7 +17,7 @@ router.put('/productUpdate/:id', upload.fields([
     },
     {
         name: 'images', maxCount: 5
-    }]), productsControllers.productUpdate),
+    }]),productEditValidator, productsControllers.productUpdate),
     router.post('/productAdd', upload.fields([
         {
             name: 'MainImage'

@@ -6,7 +6,7 @@ module.exports = [
       .bail()
       .isLength({
         min: 4,
-        max: 50,
+        max: 100,
       })
       .withMessage("Debe tener entre 4 y 20 caracteres"),
     check("category")
@@ -23,56 +23,55 @@ module.exports = [
       min: 20,
       max: 500,
     }).withMessage('Debe tener entre 20 y 500 caracteres'),
-    
       check('reqMinOs').notEmpty().withMessage("Se espera un minimo de requisitos").bail()
     .isLength({
       min: 3,
-      max: 50,
-    }).withMessage("Se espera un minimo de 3 caracteres y un maximo 50 caracteres ").bail(),
+      max: 100,
+    }).withMessage("Se espera entre 20 y 100 caracteres").bail(),
     check('reqRecommendedOs').notEmpty().withMessage("Se espera un recomendado de requisitos").bail()
     .isLength({
       min: 3,
-      max: 50,
-    }).withMessage("Se espera un minimo de 3 caracteres y un maximo 50 caracteres ").bail(),
+      max: 100,
+    }).withMessage("Se espera entre 20 y 100 caracteres").bail(),
     check('reqRecommendedProcessor').notEmpty().withMessage("Se espera un recomendado de requisitos").bail()
     .isLength({
       min: 3,
-      max: 50,
-    }).withMessage("Se espera un minimo de 3 caracteres y un maximo 50 caracteres ").bail(),
+      max: 100,
+    }).withMessage("Se espera entre 20 y 100 caracteres").bail(),
     check('reqMinProcessor').notEmpty().withMessage("Se espera un minimo de requisitos").bail()
     .isLength({
       min: 3,
-      max: 50,
-    }).withMessage("Se espera un minimo de 3 caracteres y un maximo 50 caracteres ").bail(),
+      max: 100,
+    }).withMessage("Se espera entre 20 y 100 caracteres").bail(),
     check('reqRecommendedMemory').notEmpty().withMessage("Se espera un recomendado de requisitos").bail()
     .isLength({
       min: 3,
-      max: 50,
-    }).withMessage("Se espera un minimo de 3 caracteres y un maximo 50 caracteres ").bail(),
+      max: 100,
+    }).withMessage("Se espera entre 20 y 100 caracteres").bail(),
     check('reqMinMemory').notEmpty().withMessage("Se espera un minimo de requisitos").bail()
     .isLength({
       min: 3,
-      max: 50,
-    }).withMessage("Se espera un minimo de 3 caracteres y un maximo 50 caracteres ").bail(),
+      max: 100,
+    }).withMessage("Se espera entre 20 y 100 caracteres").bail(),
     check('reqRecommendedGraphicsCard').notEmpty().withMessage("Se espera un recomendado de requisitos").bail()
     .isLength({
       min: 3,
-      max: 50,
-    }).withMessage("Se espera un minimo de 3 caracteres y un maximo 50 caracteres ").bail(),
+      max: 100,
+    }).withMessage("Se espera entre 20 y 100 caracteres").bail(),
     check('reqMinGraphicsCard').notEmpty().withMessage("Se espera un minimo de requisitos").bail()
     .isLength({
       min: 3,
-      max: 50,
-    }).withMessage("Se espera un minimo de 3 caracteres y un maximo 50 caracteres ").bail(),
+      max: 100,
+    }).withMessage("Se espera entre 20 y 100 caracteres").bail(),
     check('reqRecommendedDisk').notEmpty().withMessage("Se espera un recomendado de requisitos").bail()
     .isLength({
       min: 3,
-      max: 50,
-    }).withMessage("Se espera un minimo de 3 caracteres y un maximo 50 caracteres ").bail(),
+      max: 100,
+    }).withMessage("Se espera entre 20 y 100 caracteres").bail(),
     check('reqMinDisk').notEmpty().withMessage("Se espera un minimo de requisitos").bail()
     .isLength({
       min: 3,
-      max: 50,
-    }).withMessage("Se espera un minimo de 3 caracteres y un maximo 50 caracteres ").bail(),
+      max: 100,
+    }).withMessage("Se espera entre 20 y 100 caracteres").bail(),
   ];
   

@@ -26,7 +26,7 @@
                         <div class="productAdd__box__form--price">
                             <label for="price">Precio:</label>
                             <input type="number" id="price" name="price" placeholder="$" value="<%= locals.old && (old.price && old.price) %>">
-                            <small class="text-danger ms-2"><%= locals.errors && (errors.title && errors.title.msg) %></small>
+                            <small class="text-danger ms-2"><%= locals.errors && (errors.price && errors.price.msg) %></small>
                         </div>
                         <div class="productAdd__box__form--descuento">
                             <label for="discount">Descuento:</label>
@@ -70,7 +70,7 @@
                         </div>
                         <div class="productAdd__box__form--description">
                             <label for="description">Descripción:</label>
-                            <textarea class="productAdd__box__form__description--text" id="description" name="description" value="<%= locals.old && (old.description && old.description) %>"></textarea>
+                            <textarea class="productAdd__box__form__description--text" id="description" name="description" ><%= locals.old && (old.description && old.description) %></textarea>
                             <small class="text-danger ms-2"><%= locals.errors && (errors.description && errors.description.msg) %></small>
                         </div>
                         <div class="productAdd__box__form--image">
