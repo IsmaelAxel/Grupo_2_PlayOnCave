@@ -1,6 +1,7 @@
 const express = require('express');
 const productsControllers = require('../controllers/productsControllers');
 const upload = require('../middlewares/upload');
+const productAddValidator = require('../validations/productsAddValidator')
 
 const router = express.Router();
 
@@ -21,8 +22,8 @@ router.put('/productUpdate/:id', upload.fields([
             name: 'MainImage'
         },
         {
-            name: 'images'
+            name: 'images', maxCount: 5
         }
-    ]), productsControllers.productCreate);
+    ]),productAddValidator, productsControllers.productCreate);
    router.delete('/delete/:id', productsControllers.productDelete)
 module.exports = router;

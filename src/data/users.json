@@ -63,5 +63,18 @@
       "address": null,
       "city": null,
       "province": null
+   },
+   {
+      "id": "012dc53c-0edc-4573-af9e-918162156fde",
+      "firstName": "Berlin",
+      "lastName": "Callamullo",
+      "email": "berlin@hotmail.com",
+      "password": "$2a$10$v/3XdPzOadY9CBnM1ia88ulju1SV2OMYzLwpupyN6G5fQFSIO./P2",
+      "rol": "user",
+      "avatar": null,
+      "birthday": null,
+      "address": null,
+      "city": null,
+      "province": null
    }
 ]

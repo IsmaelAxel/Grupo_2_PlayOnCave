@@ -22,7 +22,7 @@ module.exports = (req,res) => {
             province : null
         })
         writeJSON(users, 'users.json')
-        return res.redirect('/')
+        return res.redirect('/users/login')
     }else{
         (req.file && existsSync(`./public/images/users/${req.file.filename}`) && unlinkSync(`./public/images/users/${req.file.filename}`)) 
         return res.render('register',{
