@@ -30,6 +30,14 @@
 .index__main--products{
   margin: 10px 0;
 }
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  left: 25px;
+  background-color: #5214ad;
+  color: #ffffff;
+  border: none;
+}
 .index__main--titulo1{
   box-shadow: 0px 0px 10px #e9160b;
    background-image: url('/images/index/ofertasDestacadas.svg');

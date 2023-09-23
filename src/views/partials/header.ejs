@@ -12,11 +12,11 @@
             <nav class="home__header__box__login--nav">
                 <ul class="home__header__box__login__nav--ul" >
                     <% if (locals.userLogin) { %>
-                        <li><a href="/users/profile"><i class="fa-solid fa-user"></i><p> <%= userLogin.firstName %></p></a></li> 
+                        <li><a href="/users/profile"><i class="fa-solid fa-user"></i><p class="home__header__box__login__nav__ul__li__a__p" id="userlogin__p"> <%= userLogin.firstName %></p></a></li> 
                         <li id="carri"><i id="numberCart" class="fa-solid fa-4"></i><a href="/products/productCart"><i class="fa-solid fa-cart-shopping"></i><p>mi <br> carrito</p></a></li>
                      
                     <% }else{ %>
-                        <li><a href="/users/login"><i class="fa-solid fa-user"></i><p>ingresar</p></a></li> 
+                        <li><a href="/users/login"><i class="fa-solid fa-user"></i><p id="userlogin__p">ingresar</p></a></li> 
                     <% } %>
                                          
 <!--                    
@@ -39,7 +39,7 @@
                     <li><a href="/#news">lanzamientos</a></li>
                     <li><a href="/#+vendidos">mas vendidos</a></li>
                     
-                    <li><a href="/contacto">contacto</a></li>
+                    <li><a href="/contact">contacto</a></li>
 
                     <% if (locals.userLogin) { %>
                         <% if (userLogin.rol === "admin") { %>

@@ -4,7 +4,8 @@ const router = express.Router();
 
 /* GET home page. */
 router.get('/', indexControllers.index );
-router.get('/search', indexControllers.search )
+router.get('/search', indexControllers.search );
+router.get('/contact', indexControllers.contact );
 
 
 module.exports = router;

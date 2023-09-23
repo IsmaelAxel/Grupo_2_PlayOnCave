@@ -18,7 +18,8 @@ module.exports ={
 			keywords: req.query.keywords,
 		})
 	  },
-
-
+    contact: (req, res) =>{
+      return res.render('contact')
+    }
 }
 

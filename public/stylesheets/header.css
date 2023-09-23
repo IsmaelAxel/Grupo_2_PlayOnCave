@@ -43,7 +43,7 @@
 
 .home__header__box--login nav ul{
     display: flex;
-    gap: 5px;
+    gap: 3px;
    
 }
 
@@ -72,6 +72,7 @@
     display: none;
 }
 
+
 .home__header__box--login nav ul li a p,.home__header__box--login nav ul li a i{
     color: var(--colorVerde);
     padding: 3px;
@@ -84,15 +85,15 @@
     width: 100%;
 }
 .showMenu{
-    height: 160px;
+    height: 200px;
 }
 .home__header__box__categorias--nav ul li a{
     display: flex;
     flex-direction: column;
     text-align: center;
-    font-size: 14px;
+    font-size: 12px;
     color: #ffffff;
-    padding: 5px;
+    padding: 3px;
     border: 1px solid var(--colorVerde);
     border-radius: 5px;
     margin: 1px;
@@ -110,12 +111,10 @@
 }
 .home_header_box--barra{
     padding: 10px;
-    display: none;
     font-size: 16px;  
 }
 .home_header_box--button{
     border: none;
-    
 }
 .home_header_box--form{
     position: relative;
@@ -168,15 +167,26 @@
         order: 3;
         max-width: 481px;
     }
+    .home__header__box__categorias--nav ul li a{
+        font-size: 14px;
+    }
     
     .home__header__box--login{
         order: 2;
         width: 15%;
+        margin-top: 25px;
     }
     .home__header__box--login nav ul li a p{
-        font-size: 14px;
-        top: 20px;
-       ;
+        
+       display: none;
+    }
+    
+    #userlogin__p{
+        font-size: 10px;
+        display: flex;
+    }
+    #numberCart{
+        bottom: 58px;
     }
     .home__header__box--login nav ul li a i{
         display: flex;
@@ -200,7 +210,7 @@
 }
 @media (min-width:769px){
     .home__header{
-        font-size: 24px;
+        font-size: 18px;
         width: 100%;
     }
     .home__header--box{
@@ -223,13 +233,16 @@
     }
     .home__header__box__categorias--nav ul li a{
         display: flex;
-        font-size: 16px;
+        font-size: 14px;
         letter-spacing: 0px;
-        color: var(--colorVerde);
+        color: #ffffff;
         padding: 5px;
         border-radius: 5px;
         margin: 2px;
         box-shadow: 0px 0px 10px var(--colorVerde);
+    }
+    .home__header__box__categorias--nav ul li a:hover{
+        color: var(--colorVerde);
     }
     .home__header__box--burguer{
         display: none;   
@@ -254,7 +267,9 @@
         display: flex;
         width: 100%;
     }
-   
+    .home__header__box--login{
+        margin-top: 10px;
+    }
     .home__header__box--login nav ul{
         text-align: center;  
     }
@@ -265,17 +280,19 @@
     
     .home__header__box--login nav ul li a p{
         display: block;
-        font-size: 0.7rem;
+        font-size: 12px;
     }
     #numberCart{
-        position: absolute;
-        bottom: 78px;
-        right: 6px;
+        bottom: 76px;
+        right: 8px;
         
     }
     #darkMode{
         display: block;
         font-size: 0.7rem;
+    }
+    #userlogin__p{
+        font-size: 14px;
     }
 
 }
@@ -301,13 +318,12 @@
     
     .home__header__box--login nav ul li a p{
         display: block;
-        font-size: 0.9rem;
+        font-size: 14px;
     }
     #numberCart{
         position: absolute;
-        bottom: 88px;
-        right: 10px;
-        
+        bottom: 84px;
+        right: 12px;
     }
     .home__header__box--tema{
          width: 12.5%;
