@@ -1,55 +1,72 @@
 <header class="home__header">
     <div class="home__header--box">
         <div class="home__header__box--burguer">
-            <a onclick="document.querySelector('.home__header__box__categorias--nav').classList.toggle('showMenu')"><i class="fas fa-bars"></i></a>
+            <a onclick="document.querySelector('.home__header__box__categorias--nav').classList.toggle('showMenu')"><i
+                    class="fas fa-bars"></i></a>
         </div>
 
         <div class="home__header__box--logo">
-            <a href="/"><img src="/images/header/logo.png"  alt=""></a>
+            <a href="/"><img src="/images/header/logo.png" alt=""></a>
         </div>
-        
+
         <div class="home__header__box--login">
             <nav class="home__header__box__login--nav">
-                <ul class="home__header__box__login__nav--ul" >
+                <ul class="home__header__box__login__nav--ul">
                     <% if (locals.userLogin) { %>
-                        <li><a href="/users/profile"><i class="fa-solid fa-user"></i><p class="home__header__box__login__nav__ul__li__a__p" id="userlogin__p"> <%= userLogin.firstName %></p></a></li> 
-                        <li id="carri"><i id="numberCart" class="fa-solid fa-4"></i><a href="/products/productCart"><i class="fa-solid fa-cart-shopping"></i><p>mi <br> carrito</p></a></li>
-                     
-                    <% }else{ %>
-                        <li><a href="/users/login"><i class="fa-solid fa-user"></i><p id="userlogin__p">ingresar</p></a></li> 
-                    <% } %>
-                                         
-<!--                    
- -->                    <li><button id="modo" class="home__header__switch--mode">🌓</button></li>
+                        <li><a href="/users/profile"><i class="fa-solid fa-user"></i>
+                                <p class="home__header__box__login__nav__ul__li__a__p" id="userlogin__p">
+                                    <%= userLogin.firstName %>
+                                </p>
+                            </a></li>
+                        <li id="carri"><i id="numberCart" class="fa-solid fa-4"></i><a href="/products/productCart"><i
+                                    class="fa-solid fa-cart-shopping"></i>
+                                <p>mi <br> carrito</p>
+                            </a></li>
+
+                        <% }else{ %>
+                            <li><a href="/users/login"><i class="fa-solid fa-user"></i>
+                                    <p id="userlogin__p">ingresar</p>
+                                </a></li>
+                            <% } %>
+
+                                <!--                    
+ -->                            <label class="switch">
+                                    <input type="checkbox" id="modo">
+                                    <span class="slider"></span>
+                                </label>
+
+                                <!-- <li><button id="modo" class="home__header__switch--mode">🌓</button></li> -->
                 </ul>
             </nav>
         </div>
-        
-            <div class="home_header_box--barra">           
-                <form class="home_header_box--form" action="/search" method="get"  >
-                    <input class="home_header_box--form--input" name="keywords" type="text" placeholder="Buscar productos, marcas" >
-                    <div class="home_header_box--btn">   
-                       <button class="home_header_box--button" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button> 
-                    </div>
-                </form>     
-            </div>
-            <nav class="home__header__box__categorias--nav">      
-                <ul>
-                    <li><a href="/#destacados">destacados</a></li>
-                    <li><a href="/#news">lanzamientos</a></li>
-                    <li><a href="/#+vendidos">mas vendidos</a></li>
-                    
-                    <li><a href="/contact">contacto</a></li>
 
-                    <% if (locals.userLogin) { %>
-                        <% if (userLogin.rol === "admin") { %>
-                            <li><a href="/users/admin">admin</a></li>
+        <div class="home_header_box--barra">
+            <form class="home_header_box--form" action="/search" method="get">
+                <input class="home_header_box--form--input" name="keywords" type="text"
+                    placeholder="Buscar productos, marcas">
+                <div class="home_header_box--btn">
+                    <button class="home_header_box--button" type="submit"><i
+                            class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </form>
+        </div>
+        <nav class="home__header__box__categorias--nav">
+            <ul>
+                <li><a href="/#destacados">destacados</a></li>
+                <li><a href="/#news">lanzamientos</a></li>
+                <li><a href="/#+vendidos">mas vendidos</a></li>
+
+                <li><a href="/contact">contacto</a></li>
+
+                <% if (locals.userLogin) { %>
+                    <% if (userLogin.rol==="admin" ) { %>
+                        <li><a href="/users/admin">admin</a></li>
                         <% } %>
-                        
-                        <li><a href="/users/logout">salir</a></li>
-                    <% } %>
 
-                </ul>
-            </nav>
-    </div>  
+                            <li><a href="/users/logout">salir</a></li>
+                            <% } %>
+
+            </ul>
+        </nav>
+    </div>
 </header>

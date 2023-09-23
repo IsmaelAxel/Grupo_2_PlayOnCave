@@ -1,22 +1,21 @@
-//modo dia y noche con localStorage
-const botonModo = document.getElementById("modo");
-botonModo.addEventListener("click", cambiarModo);
-
-// Obtener el estado del modo del almacenamiento local
+// Obtener el estado del modo del almacenamiento local o configurar el modo claro por defecto
 if (localStorage.getItem('modo') === 'noche') {
     document.querySelector('body').classList.add('noche');
+} else {
+    document.querySelector('body').classList.remove('noche');
 }
+
+const botonModo = document.getElementById("modo");
+botonModo.addEventListener("change", cambiarModo);
 
 function cambiarModo() {
     const body = document.querySelector("body");
 
-    body.classList.toggle("dia");
-    body.classList.toggle("noche");
     if (localStorage.getItem('modo') === 'dia') {
+        body.classList.add("noche");
         localStorage.setItem('modo', 'noche');
     } else {
+        body.classList.remove("noche");
         localStorage.setItem('modo', 'dia');
-
     }
-
 }
