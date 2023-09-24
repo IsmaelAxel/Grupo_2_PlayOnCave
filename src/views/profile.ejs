@@ -24,114 +24,109 @@
     <%- include('partials/header') %>
 
         <main class="detalle__main d-flex">
-
-            <div class="row">
-                <div class="col-12 col-md-10 col-lg-8 mx-auto mt-5">
-                    <div class="card mb-3 shadow-lg bg-dark text-white">
-                        <div class="card-header">
-                            Perfil usuario
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-10 col-lg-3 mx-auto mt-5 text-center">
+                        <div class="card mb-3 shadow-lg bg-dark text-white" style="width: 18rem; margin: 0 auto;">
+                            <img class="card-img-top img-thumbnail" src="/images/users/<%= avatar || 'avatar1.png' %>"
+                                alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Perfil de <%= firstName %>
+                                        <%= lastName %>
+                                </h5>
+                                <p class="card-text">Rol: <%= rol %>
+                                </p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Email: <%= email %>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="card-body">
-                            <form action="/users/profileUpdate/<%= id %>?_method=PUT" method="POST" class="row"
-                                enctype="multipart/form-data">
-                                <div class="row">
-                                    <div class="col-12 col-md-10 col-lg-3 mx-auto mt-5">
-                                        <div class="card mb-3 shadow-lg bg-dark text-white" style="width: 18rem;">
-                                            <img class="card-img-top img-thumbnail"
-                                                src="/images/users/<%= avatar || 'avatar1.png' %>" alt="Card image cap">
-                                            <label for="avatar" class="form-label">Subir una imagen</label>
-                                            <input class="form-control" type="file" id="avatar" name="avatar">
-                                            <small class="text-danger ms-2">
-                                                <%= locals.errors && (errors.avatar && errors.avatar.msg) %>
-                                            </small>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Perfil de <%= firstName %>
-                                                        <%= lastName %>
-                                                </h5>
-                                                <p class="card-text">Rol: <%= rol %>
-                                                </p>
-                                            </div>
-                                            <ul class="list-group list-group-flush ">
-                                                <li class="list-group-item">Email: <%= email %>
-                                                </li>
-                                            </ul>
-                                        </div>
+                    </div>
+                    <div class="col-12 col-md-10 col-lg-8 mx-auto mt-5">
+                        <div class="card mb-3 shadow-lg bg-dark text-white">
+                            <div class="card-header">Perfil usuario</div>
+                            <div class="card-body">
+                                <form action="/users/profileUpdate/<%= id %>?_method=PUT" method="POST" class="row"
+                                    enctype="multipart/form-data">
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="firstName" class="form-label">Nombre</label>
+                                        <input type="text" class="form-control" id="firstName" placeholder="Tu nombre"
+                                            name="firstName" value="<%= firstName %>">
+                                        <small class="text-danger ms-2">
+                                            <%= locals.errors && (errors.firstName && errors.firstName.msg) %>
+                                        </small>
                                     </div>
-                                </div>
-
-
-                                <div class="col-12 col-md-6 mb-3">
-                                    <label for="firstName" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" id="firstName" placeholder="Tu nombre"
-                                        name="firstName" value="<%= firstName %>">
-                                    <small class="text-danger ms-2">
-                                        <%= locals.errors && (errors.firstName && errors.firstName.msg) %>
-                                    </small>
-                                </div>
-                                <div class="col-12 col-md-6 mb-3">
-                                    <label for="lastName" class="form-label">Apellido</label>
-                                    <input type="text" class="form-control" id="lastName" placeholder="Tu apellido"
-                                        name="lastName" value="<%= lastName %>">
-                                    <small class="text-danger ms-2">
-                                        <%= locals.errors && (errors.lastName && errors.lastName.msg) %>
-                                    </small>
-                                </div>
-                                <div class="col-12 col-md-6 mb-3">
-                                    <label for="birthday" class="form-label">Cumpleaños</label>
-                                    <input type="date" class="form-control" id="birthday" name="birthday"
-                                        value="<%= birthday %>">
-                                    <small class="text-danger ms-2">
-                                        <%= locals.errors && (errors.birthday && errors.birthday.msg) %>
-                                    </small>
-                                </div>
-                                <div class="col-12 col-md-6 mb-3">
-                                    <label for="address" class="form-label">Dirección</label>
-                                    <input type="text" class="form-control" id="address" placeholder="Domicilio"
-                                        name="address" value="<%= address %>">
-                                    <small class="text-danger ms-2">
-                                        <%= locals.errors && (errors.address && errors.address.msg) %>
-                                    </small>
-                                </div>
-                                <div class="col-12 col-md-6 mb-3">
-                                    <label for="province" class="form-label">Provincia</label>
-                                    <select type="text" class="form-select" id="province" name="province" value="<%= province %>">
-                                        <option <%=province==="" && 'selected' %> value="" hidden>Seleccione...</option>
-                                        <option <%=province==="BA" && 'selected' %> value="BA">Buenos Aires</option>
-                                        <option <%=province==="ROS" && 'selected' %> value="ROS">Santa Fe</option>
-                                        <option <%=province==="CBA" && 'selected' %> value="CBA">Córdoba</option>
-                                        <option <%=province==="NQN" && 'selected' %> value="NQN">Neuquén</option>
-                                        <option <%=province==="MDZ" && 'selected' %> value="MDZ">Mendoza</option>
-                                        <option <%=province==="UAQ" && 'selected' %> value="UAQ">San Juan</option>
-                                    </select>
-                                    <small class="text-danger ms-2">
-                                        <%= locals.errors && (errors.province && errors.province.msg) %>
-                                    </small>
-                                </div>
-                                <div class="col-12 col-md-6 mb-3">
-                                    <label for="city" class="form-label">Ciudad</label>
-                                    <select type="text" class="form-select" id="city" name="city" value="<%= city %>">
-                                        <option <%=city==="" && 'selected' %> value="" hidden>Seleccione...</option>
-                                        <option <%=city==="BA" && 'selected' %> value="BA">Buenos Aires</option>
-                                        <option <%=city==="ROS" && 'selected' %> value="ROS">Rosario</option>
-                                        <option <%=city==="CBA" && 'selected' %> value="CBA">Córdoba</option>
-                                        <option <%=city==="NQN" && 'selected' %> value="NQN">Neuquén</option>
-                                        <option <%=city==="MDZ" && 'selected' %> value="MDZ">Mendoza</option>
-                                        <option <%=city==="UAQ" && 'selected' %> value="UAQ">San Juan</option>
-                                    </select>
-                                    <small class="text-danger ms-2">
-                                        <%= locals.errors && (errors.city && errors.city.msg) %>
-                                    </small>
-                                </div>
-
-                                <div class="d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-dark">Guardar cambios</button>
-                                </div>
-                            </form>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="lastName" class="form-label">Apellido</label>
+                                        <input type="text" class="form-control" id="lastName" placeholder="Tu apellido"
+                                            name="lastName" value="<%= lastName %>">
+                                        <small class="text-danger ms-2">
+                                            <%= locals.errors && (errors.lastName && errors.lastName.msg) %>
+                                        </small>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="birthday" class="form-label">Cumpleaños</label>
+                                        <input type="date" class="form-control" id="birthday" name="birthday"
+                                            value="<%= birthday %>">
+                                        <small class="text-danger ms-2">
+                                            <%= locals.errors && (errors.birthday && errors.birthday.msg) %>
+                                        </small>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="address" class="form-label">Dirección</label>
+                                        <input type="text" class="form-control" id="address" placeholder="Domicilio"
+                                            name="address" value="<%= address %>">
+                                        <small class="text-danger ms-2">
+                                            <%= locals.errors && (errors.address && errors.address.msg) %>
+                                        </small>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="province" class="form-label">Provincia</label>
+                                        <select type="text" class="form-select" id="province" name="province"
+                                            value="<%= province %>">
+                                            <option <%=province==="" && 'selected' %> value="" hidden>Seleccione...
+                                            </option>
+                                            <option <%=province==="BA" && 'selected' %> value="BA">Buenos Aires</option>
+                                            <option <%=province==="ROS" && 'selected' %> value="ROS">Santa Fe</option>
+                                            <option <%=province==="CBA" && 'selected' %> value="CBA">Córdoba</option>
+                                            <option <%=province==="NQN" && 'selected' %> value="NQN">Neuquén</option>
+                                            <option <%=province==="MDZ" && 'selected' %> value="MDZ">Mendoza</option>
+                                            <option <%=province==="UAQ" && 'selected' %> value="UAQ">San Juan</option>
+                                        </select>
+                                        <small class="text-danger ms-2">
+                                            <%= locals.errors && (errors.province && errors.province.msg) %>
+                                        </small>
+                                    </div>
+                                    <div class="col-12 col-md-6 mb-3">
+                                        <label for="city" class="form-label">Ciudad</label>
+                                        <select type="text" class="form-select" id="city" name="city"
+                                            value="<%= city %>">
+                                            <option <%=city==="" && 'selected' %> value="" hidden>Seleccione...</option>
+                                            <option <%=city==="BA" && 'selected' %> value="BA">Buenos Aires</option>
+                                            <option <%=city==="ROS" && 'selected' %> value="ROS">Rosario</option>
+                                            <option <%=city==="CBA" && 'selected' %> value="CBA">Córdoba</option>
+                                            <option <%=city==="NQN" && 'selected' %> value="NQN">Neuquén</option>
+                                            <option <%=city==="MDZ" && 'selected' %> value="MDZ">Mendoza</option>
+                                            <option <%=city==="UAQ" && 'selected' %> value="UAQ">San Juan</option>
+                                        </select>
+                                        <small class="text-danger ms-2">
+                                            <%= locals.errors && (errors.city && errors.city.msg) %>
+                                        </small>
+                                    </div>
+                                    <input class="form-control" type="file" id="avatar" name="avatar" hidden>
+                                    <div class="d-flex justify-content-between">
+                                        <label for="avatar" class="btn btn-secondary">Avatar</label>
+                                        <button type="submit" class="btn btn-dark">Guardar cambios</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
+
         <%- include('partials/footer') %>
             <%- include('partials/scripts') %>
 
