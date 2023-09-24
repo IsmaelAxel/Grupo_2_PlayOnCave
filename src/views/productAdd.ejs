@@ -16,9 +16,9 @@
                             <label for="category">Categoría:</label>
                             <select id="category" name="category" >
                                 <option hidden selected></option>
-                                <option value="featured">Destacados</option>
-                                <option value="new releases">Nuevos Lanzamientos</option>
-                                <option value="best sellers">Más Vendidos</option>
+                                <option value="featured" <%= locals.old && (old.category) %>>Destacados</option>
+                                <option value="new releases" <%= locals.old && (old.category) %>>Nuevos Lanzamientos</option>
+                                <option value="best sellers" <%= locals.old && (old.category) %>>Más Vendidos</option>
                                 <!-- Agrega más opciones de categorías  -->
                             </select>
                             <small class="text-danger ms-2"><%= locals.errors && (errors.category && errors.category.msg) %></small>
@@ -75,7 +75,7 @@
                         </div>
                         <div class="productAdd__box__form--image">
                             <label for="MainImage">Imagen Principal:</label>
-                            <input class="productAdd__box__image--img" type="file" id="MainImage" name="MainImage" value="<%= locals.old && (old.MainImage && old.MainImage) %>">
+                            <input class="productAdd__box__image--img" type="file" id="MainImage" name="MainImage">
                             <small class="text-danger ms-2"><%= locals.errors && (errors.MainImage && errors.MainImage.msg) %></small>
                         </div>
                         <div>

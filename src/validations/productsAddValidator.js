@@ -23,7 +23,13 @@ module.exports = [
       min: 20,
       max: 500,
     }).withMessage('Debe tener entre 20 y 500 caracteres'),
-    
+    body('MainImage')
+    .custom((value,{req}) => {
+      if(req.files.MainImage){
+        return true
+      }
+      return false
+    }).withMessage('Debes subir una imagen principal'),
       check('reqMinOs').notEmpty().withMessage("Se espera un minimo de requisitos").bail()
     .isLength({
       min: 3,

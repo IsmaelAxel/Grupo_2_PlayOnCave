@@ -28,7 +28,7 @@ module.exports = (req,res) => {
         }
         )
         writeJSON(products, 'products.json')
-        return res.redirect('/')
+        return res.redirect('/users/admin')
     }else{
         (req.files.MainImage && existsSync(`./public/images/products/${req.files.MainImage[0].filename }`)) && unlinkSync(`./public/images/products/${req.files.MainImage[0].filename }`);
 

@@ -1,5 +1,5 @@
 <article class="index__main--article" data-aos="fade-down" data-aos-duration="1000">
-    <img src="/images/products/<%= MainImage %>" alt="">
+    <a href="/products/productDetail/<%= id%>"><img src="/images/products/<%= MainImage || 'default_image.png' %>" alt=""></a>
     <div class="index__main--article-info">
         <% if (discount) { %>
             <h4 class="index__main--article-lineProduct"> $<%=toThousand(price)%></h4>

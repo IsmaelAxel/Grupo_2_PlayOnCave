@@ -13,13 +13,14 @@ main.main__search__error{
     margin: 200px 0;
     background: var(--colorBackground);
     color: var(--colorVerde);
-    font-size: 3rem;
-    font-family: 'Fira Mono', monospace;
-    letter-spacing: -7px;
+    font-size: .9rem;
+    font-family: var(--tipoGrafiaTitulos);
+    letter-spacing: -4px;
   }
   
   .main__search__error--404{
     animation: glitch 1s linear infinite;
+    margin: 0 auto;
   }
   
   @keyframes glitch{
@@ -75,3 +76,14 @@ main.main__search__error{
       transform: translate(-22px,5px) skew(21deg); 
     }
   }
+@media(min-width: 481px){
+  main.main__search__error{ 
+    margin: 350px 0;
+  }
+}
+@media(min-width: 900px){
+  main.main__search__error{ 
+    font-size: 2rem;
+    letter-spacing: -4px;
+  }
+}
