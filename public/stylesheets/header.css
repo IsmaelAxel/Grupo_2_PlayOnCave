@@ -32,8 +32,7 @@
     width: 25%;
 }
 
-.home__header__box--burguer i{
-    
+.home__header__box--burguer i{  
     padding: 3px;
     padding-bottom: 2px;
     border-radius: 5px;
@@ -42,8 +41,7 @@
 
 .home__header__box--login nav ul{
     display: flex;
-    gap: 3px;
-   
+    gap: 3px; 
 }
 
 #carri{
@@ -78,7 +76,7 @@
     width: 100%;
 }
 .showMenu{
-    height: 200px;
+    height: 170px;
 }
 .home__header__box__categorias--nav ul li a{
     display: flex;
@@ -95,18 +93,13 @@
     color: var(--colorVerde);
 }
 
-.home__header__box--tema i{
-    rotate: 90deg;
-    
-}
 .home_header_box--barra{
-    padding: 10px;
-    font-size: 16px;  
+    font-size: 16px;
 }
-.home_header_box--button{
-    border: none;
-}
+
 .home_header_box--form{
+    display: flex;
+    justify-content: space-between;
     position: relative;
 }
 .home_header_box--form--input{
@@ -116,15 +109,20 @@
     padding: 5px;
     width: 100%;
 }
+
 .home_header_box--btn i{
     position: absolute;
     top: 6px;
-    right: -4px;
+    right: 7px;
     font-size: 18px;
     color: #000000;
     background-color: var(--colorVerde);
     padding: 6px;
     border-radius: 5px;
+}
+
+.home_header_box--button{
+    border: none;
 }
 .home__header__box--tema p{
     display: none;
@@ -190,6 +188,9 @@
         order: -1;
         width: 25%;
     }
+    .home__header__box--logo img{
+        width: 110px;
+    }
     
     .home_header_box--barra{
         padding: 10px;
@@ -213,15 +214,16 @@
     
     .home__header__box--login{
         order: 2;
-        width: 15%;
-        margin-top: 25px;
+        width: 20%;
+        margin-top: 40px;
     }
     
     .home__header__box--login nav ul li a p{
-        
        display: none;
     }
-    
+    .showMenu{
+        height: 185px;
+    }
     #userlogin__p{
         font-size: 10px;
         display: flex;
@@ -256,7 +258,6 @@
         width: 24px;
         height: 18px;
         top: 2px;
-       
       }
       
     .slider {
@@ -305,6 +306,9 @@
     .home__header__box--logo{
         width: 15%;
     }
+    .home__header__box--logo img{
+        width: 130px;
+    }
     
     .home__header__box__categorias--nav{
         height: auto;
@@ -347,6 +351,7 @@
         width: 50%;
         padding: 10px;
         font-size: 16px;
+        justify-content: center;
     }
     .home_header_box--form{
         display: flex;
@@ -407,14 +412,12 @@
         bottom: 84px;
         right: 12px;
     }
-    .home__header__box--tema{
-         width: 12.5%;
-    } 
     .home__header__box--tema p{
         font-size: 0.9rem;   
+    } 
+    .home_header_box--form{
+        display: flex;
+        max-width: 500px;
+        justify-content: center;
     }
-    .home_header_box--barra{
-        width: 50%;
-    }
-   
 }
