@@ -20,7 +20,7 @@ module.exports = (req,res) => {
 
     writeJSON(productsModify, "products.json");
 
-    return res.redirect("/");
+    return res.redirect("/users/admin");
 }
 
 
