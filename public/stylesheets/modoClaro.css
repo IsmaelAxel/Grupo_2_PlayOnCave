@@ -3,5 +3,64 @@ body.dia {
   background-color: var(--colorBackground);
 }
 body.noche {
+  background-color:var(--gris4);
+}
+body.noche header{
+  background-color: var(--colorBackgroundMc);
+  border-bottom:solid 2px #000000
+}
+body.noche footer{
+  background-color: var(--colorBackgroundMc);
+}
+body.noche header nav li a,body.noche header nav li p,body.noche header nav ul li i{
+  color: #ffffff;
+}
+body.noche header nav li a:hover{
+  color:black;
+  text-shadow: 5px 0 15px white;
+}
+body.noche .home__header__box__categorias--nav ul li a {
+  border:solid 2px #ffffff;
+  box-shadow: none
+}
+body.noche .home__header__box__categorias--nav ul li a:hover{
+  border:solid 2px #000000;
+  box-shadow: 0 0 10px white;
+}
+body.noche .home_header_box--btn i{
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+}
+body.noche .home_header_box--form--input{
+  border:solid 2px #000000;
+
+}
+body.noche .home__header__box--burguer{
+  color: #ffffff;
+}
+body.noche .home__header__box--burguer a i{
+  border:solid 2px #000000;
+
+}
+body.noche  header nav ul li .slider{
+  
+  background-color: rgb(0, 0, 0);
+}
+/* ----------------------------------------------------------------------------------------------- */
+body.noche main article{
+  background-color:white;
+  border: solid 2px black;
+
+}
+body.noche .index__main--article-comprar button{
   background-color: var(--gris4);
+  border: solid 1px rgb(0, 0, 0);
+}
+body.noche .index__main--article-verMas button{
+  background-color:var(--colorBackgroundMc) ;
+  border: solid 1px rgb(0, 0, 0);
+}
+body.noche .index__main--article h4{
+  color: var(--colorBackgroundMc);
+
 }
