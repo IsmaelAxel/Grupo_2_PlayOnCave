@@ -244,3 +244,22 @@
     font-size: 2rem;
   }
 } 
+
+/* Modo Claro */
+body.noche main article{
+  background-color:white;
+  border: solid 2px black;
+
+}
+body.noche .index__main--article-comprar button{
+  background-color: var(--gris4);
+  border: solid 1px rgb(0, 0, 0);
+}
+body.noche .index__main--article-verMas button{
+  background-color:var(--colorBackgroundMc) ;
+  border: solid 1px rgb(0, 0, 0);
+}
+body.noche .index__main--article h4{
+  color: var(--colorBackgroundMc);
+
+}

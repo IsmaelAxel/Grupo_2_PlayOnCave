@@ -64,3 +64,7 @@ footer.index__footer{
         font-size: .9rem;
     }
 }
+/* Modo Claro */
+body.noche footer{
+    background-color: var(--colorBackgroundMc);
+  }
