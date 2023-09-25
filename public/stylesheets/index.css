@@ -197,9 +197,12 @@
   .index__main--article:hover{
      box-shadow: 0px 0px 10px var(--colorVerde);
   }
+  /* Modo claro hover */
+  body.noche .index__main--article:hover{
+    box-shadow: 0px 0px 10px var(--colorBackgroundMc);
+  }
   .index__main--article img{
     margin: 0;
-
   }
   .index__main--article-box1{
     display: none;
@@ -261,5 +264,26 @@ body.noche .index__main--article-verMas button{
 }
 body.noche .index__main--article h4{
   color: var(--colorBackgroundMc);
+}
+body.noche .index__main__article--horizontal img{
+  border-left: 1px solid var(--colorBackgroundMc);
+}
+body.noche .index__main__article--horizontal a{
+  color: var(--gris1);
+}
 
+body.noche .index__main__article--horizontal a h4{
+  color: var(--gris1);
+}
+body.noche .index__main__article--horizontal a h4:hover{
+  color: var(--colorBackgroundMc);
+}
+body.noche .index__main__article--horizontal h4{
+  color: var(--colorBackgroundMc);
+}
+body.noche .index__main__article--horizontal p{
+  background-color: var(--colorBotones);
+}
+body.noche .swiper-pagination-bullet {
+  background-color: var(--colorBackgroundMc);
 }
