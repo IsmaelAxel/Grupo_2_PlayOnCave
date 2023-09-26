@@ -72,7 +72,7 @@
     margin: 5px;
     border: none;
     box-shadow: 1px 1px 10px black;
-    cursor: pointer;  
+    cursor: pointer;
 }
 .productCart__main__boxCesta__cantidad__unidad{
   margin-top: 5px;
@@ -219,10 +219,10 @@
     height: 100%;
     background: rgba(53,191,18,0.3);
     transition: all 1s ease;
-  }
-  .productCart__main__boxResumen__botonPagar__pagar:hover:before {
-  width: 100%;
-  }
+}
+.productCart__main__boxResumen__botonPagar__pagar:hover:before {
+width: 100%;
+}
 
 .productCart__main__boxResumen__botonPagar__pagar:hover{
 box-shadow: 0px 0px 10px var(--colorVerde);
@@ -392,7 +392,80 @@ box-shadow: 0px 0px 10px var(--colorVerde);
         width: 25%;
         margin-top: 0;
     }
+}
+/* ////////////////////////////////modo claro //////////////////////////////////////////////////*/
+body.noche .productCart__main{
+    background-color: var(--gris4);
+}
+body.noche .productCart__main__boxCesta{
+    background-color: var(--colorBackgroundMc);
+}
+body.noche .productCart__main__boxCesta__nombreJuego{
+    color: #ffffff;
+}
+body.noche .productCart__main__boxCesta__cantidad__buton__minus,body.noche .productCart__main__boxCesta__cantidad__buton__plus {
+background: #ffffff;
+}
+body.noche .productCart__main__boxCesta__eliminar{
+    background-color: #ffffff;   
+}
+body.noche .productCart__main__boxCesta:hover{
+    box-shadow: 0px 0px 10px var(--colorBackgroundMc) }
+body.noche .productCart__main__boxCesta__precio h4{
+    color: #ffffff;
+}
+body.noche #fifth {
+    border: 1px solid rgba(74, 16, 191, 0.5);
+}
+body.noche #fifth:before {
+    background: rgba(255, 255, 255, 0.5);
+}
+body.noche .productCart__main__boxCesta__boton button {
+    background-color:var(--colorBackgroundMc);
+    color: #ffffff;
+    border: 3px solid #000000;
+}
+body.noche #fifth:hover {
+    border: 1px solid rgba(61, 12, 130, 0.5);
+    box-shadow: 0px 0px 10px var(--colorBackgroundMc); }
 
-
+body.noche .productCart__titulo2{
+    background-color: var(--gris3);
+}
+body.noche .productCart__main__boxResumen{
+    background-color: var(--colorBackgroundMc);
+    border:solid 2px #000000;
+} 
+body.noche .productCart__main__boxResumen__botonPagar__pagar{
+color: #ffffff;
+border-color: #ffffff;
 
 }
+body.noche .productCart__main__boxResumen__botonPagar__pagar:before {
+    background: rgba(80, 20, 162, 0.3);
+}
+body.noche .productCart__main__boxResumen__botonPagar__pagar:hover{
+    box-shadow: 0px 0px 10px #ffffff;
+    background-color: var(--colorBackgroundMc);
+}
+body.noche .productCart__main__boxResumen__boxImporte__importeNumero h3{
+    color: #ffffff;
+}
+body.noche .productCart__titulo2 {
+    color: #ffffff;
+    background-color: var(--colorBackgroundMc);
+    border:solid 2px #000000;
+}
+body.noche .productCart__titulo{
+    color: #000000;
+    
+}
+body.noche .productCart__titulo__pagoseguro h2{
+    color: #000000;
+}
+
+
+
+
+
+
