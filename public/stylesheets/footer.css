@@ -67,4 +67,5 @@ footer.index__footer{
 /* Modo Claro */
 body.noche footer{
     background-color: var(--colorBackgroundMc);
+    border: solid 2px rgb(0, 0, 0);
   }

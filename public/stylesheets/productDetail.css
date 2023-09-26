@@ -6,6 +6,7 @@
 .product__main--article{
     background-color: var(--gris1);
     padding: 5px;
+    margin: 10px 0;
 }
 .product__main--article img{
     width: 100%;
@@ -78,6 +79,12 @@
     color: var(--gris4);
     margin: 10px 0;
 }
+.product__main--infoJuego-ocultar{
+    display: none;
+}
+.product__main--infoJuego-mostrar{
+    display: block;
+}
 .product__main--infoJuego-titulo{
     border-bottom: 1px solid var(--gris3);
     font-size: .7rem;
@@ -94,13 +101,12 @@
     text-decoration: underline;
     color: var(--colorVerde);
     font-size: .8rem;
-
+    cursor: pointer;
 }
 .product__main--requisitos{
     color: var(--gris4);
     text-align: left;
     font-size: .8rem;
-
 }
 .product__main--requisitos-logo{
     background-color: var(--gris3);
@@ -120,21 +126,67 @@
 .product__main--requisitos table tr td{
     width: 50%;
 }
-.product__main--requisitos--tableRecomendados{
-    display: none;
+.product__main--requisitos--tableRecomendados-encabezado {
+    color: var(--colorVerde);
 }
 .product__main--requisitos a{
     text-decoration: underline;
     color: var(--colorVerde);
     font-size: .8rem;
 }
+/* Modo Claro: Mobile */
+body.noche .product__main--article-info h4{
+    color: var(--colorBackgroundMc);
+}
+body.noche .product__main--article-comprar{
+    background-color: var(--gris4);
+    color: #000000;
+    border: solid 1px #000000;
+}
+body.noche .product__main--article-favoritos{
+    background-color: var(--colorBackgroundMc);
+    color: var(--gris4);
+}
+body.noche .product__main--slider-screen img{
+    border-top: 1px solid var(--colorBackgroundMc);
+    border-bottom: 1px solid var(--colorBackgroundMc);
+}
+body.noche .product__main--slider-imgs img{
+    border-top: 1px solid var(--colorBackgroundMc);
+    border-bottom: 1px solid var(--colorBackgroundMc);
+}
+body.noche .product__main--infoJuego{
+    color: var(--gris1);
+}
+body.noche .product__main--infoJuego-titulo{
+    border-bottom: 1px solid var(--colorBackgroundMc);
+}
+body.noche .product__main--infoJuego-more a{
+    color: var(--colorBackgroundMc);
+}
+body.noche .product__main--requisitos{
+    color: var(--gris1);
+}
+body.noche .product__main--requisitos--tableRecomendados-encabezado{
+    color: var(--colorBackgroundMc);
+}
+body.noche .product__main--requisitos-logo{
+    background-color: var(--gris3);
+}
+body.noche .product__main--requisitos-logo i{
+    color: var(--gris4);
+}
+body.noche .product__main--requisitos a{
+    color: var(--colorBackgroundMc);
+}
 
-@media (min-width:769px) {
+@media (min-width:768px) {
     .product__main{
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-between;
-        margin: 20px;
+        margin: 20px auto;
+        max-width: 768px;
 
     }
     .product__main--container{
@@ -145,6 +197,7 @@
         padding: 5px;
         height: 50%;
         transition: all 1s ease;
+        margin: 0;
     }
     .product__main--article:hover{
         box-shadow: 0px 0px 10px var(--colorVerde);
@@ -161,6 +214,7 @@
     .product__main--slider-imgs img{
         transition: all 1s ease;
         cursor: pointer;
+        height: 70px;
     }
     .product__main--slider-imgs img:hover{
         box-shadow: 0px 0px 10px var(--colorVerde);
@@ -202,9 +256,11 @@
     .product__main--article-info p{
         font-size: .6rem;
         padding: 5px;
+        margin: 0;
     }
     .product__main--article-info h4{
         font-size: .7rem;
+        margin: 0;
     }
     .product__main--article-comprar{
         font-size: .7rem;
@@ -214,8 +270,15 @@
         padding: 10px;
         margin-bottom: 50px;
     }
+    /* modo claro: tablet */
+    body.noche .product__main--article:hover{
+        box-shadow: 0px 0px 10px var(--colorBackgroundMc);
+    }
+    body.noche .product__main--slider-imgs img:hover{
+        box-shadow: 0px 0px 10px var(--colorBackgroundMc);
+    }
 }
-@media (min-width: 769px){
+@media (min-width: 1024px){
     .product__main{
         margin: 40px;
         max-width: 95%;

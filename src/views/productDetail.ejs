@@ -44,13 +44,14 @@
                     </div>
                     <div class="product__main--infoJuego">
                         <div class="product__main--infoJuego-titulo">
-                            <h2>ACERCA DE ESTE JUEGO: <%= title %>
-                            </h2>
+                            <h2>ACERCA DE ESTE JUEGO: <%= title %></h2>
                         </div>
+                        <span class="product__main--infoJuego-ocultar" id="ocultarTexto">
                         <p>
                             <%= description %>
                         </p>
-                        <div class="product__main--infoJuego-more"><a href="">LEER MÁS</a></div>
+                        </span>
+                        <div class="product__main--infoJuego-more"><a id="ocultarTextoBtn">LEER MÁS</a></div>
                     </div>
                     <div class="product__main--requisitos">
                         <div class="product__main--requisitos-logo">
@@ -94,7 +95,7 @@
                             </table>
                             <table class="product__main--requisitos--tableRecomendados">
                                 <tr>
-                                    <th>Recomendados:</th>
+                                    <th class="product__main--requisitos--tableRecomendados-encabezado">Recomendados:</th>
                                 </tr>
                                 <tr>
                                     <th>OS:</th>
@@ -127,7 +128,6 @@
                                     </td>
                                 </tr>
                             </table>
-                            <a href="">LEER MÁS</a>
                         </div>
                     </div>
                 </div>

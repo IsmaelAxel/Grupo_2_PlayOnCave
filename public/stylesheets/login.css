@@ -1,139 +1,162 @@
 .main__login {
-    margin: 0 10px;
-
+  margin: 0 10px;
 }
 
-
 .main__login--formulario {
-    background-color: #000000;
-    border: 1px solid var(--colorVerde);
-    color: #ffffff;
-    text-align: center;
-    max-width: 300px;
-    margin: 80px auto;
-
+  background-color: #000000;
+  border: 3px solid var(--colorVerde);
+  color: #ffffff;
+  text-align: center;
+  max-width: 300px;
+  margin: 61px auto 61px;
+  box-shadow: 0px 0px 10px var(--colorVerde);
+  text-transform: capitalize;
+  
 }
 
 .main__login__formulario--titulo {
-    padding: 15px 10px;
-    font-family: var(--tipoGrafiaTitulos);
-    font-size: 1rem;
-
+  padding: 15px 10px;
+  font-family: var(--tipoGrafiaTitulos);
+  font-size: 1rem;
+ 
 }
 
 .main__login__formulario__form--inputs {
-    position: relative;
-
+  position: relative;
+  border-radius: 10px;
 }
 
 .main__login__formulario__form--inputs i {
-    position: absolute;
-    color: #000000;
-    font-size: 1.2rem;
-    margin: 5px;
+  position: absolute;
+  color: #000000;
+  font-size: 1.2rem;
+  margin: 5px;
 }
 
 .main__login__formulario__form--inputs input {
-    padding: 5px 30px;
-    margin-bottom: 5px;
+  padding: 5px 30px;
+  margin-bottom: 5px;
+  border-radius: 6px;
+  box-shadow: 0px 0px 10px var(--colorVerde);
 }
 
 .main__login__formulario__form--box {
-    display: flex;
-    justify-content: space-around;
-
+  display: flex;
+  justify-content: space-around;
 }
 
-.main__login__formulario__form--box a{
-    color: #ffffff;
-    margin: 5px 0px;
-} 
-
-.main__login__formulario__form--button{
-    margin: 5px 0px 20px;
-    background-color: #000000;
-    color: #ffffff ;
-    width: 83%;
-    border: 3px solid var(--colorVerde);
-    border-radius: 3px;
-    padding: 5px 0px;
-}
-.main__login__box--iniciarGoogle{
-    position: relative;
-}
-.main__login--lineaVerde{
-    border-bottom: 1px solid var(--colorVerde);
-    margin: 15px 25px 30px;
-     
+.main__login__formulario__form--box a {
+  color: #ffffff;
+  margin: 5px 0px;
 }
 
-.main__login--lineaVerde h5{
-    position: absolute;
-    background-color: #000000;
+.main__login__formulario__form--button {
+  margin: 5px 0px 20px;
+  background-color: #000000;
+  color: #ffffff;
+  width: 83%;
+  border: 3px solid var(--colorVerde);
+  border-radius: 6px;
+  padding: 5px 0px;
+  box-shadow: 0px 0px 10px var(--colorVerde);
+}
+.main__login__box--iniciarGoogle {
+  position: relative;
+}
+.main__login--lineaVerde {
+  border-bottom: 3px solid var(--colorVerde);
+  margin: 15px 25px 30px;
+}
+
+.main__login--lineaVerde h5 {
+  position: absolute;
+  background-color: #000000;
+  top: -8px;
+  left: 47px;
+  padding: 0px 10px;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
+.main__login--buttonGoogle {
+  margin: 30px 15px;
+  border: 3px solid var(--colorVerde);
+  border-radius: 6px;
+  padding: 5px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0px 0px 10px var(--colorVerde);
+}
+
+.main__login--buttonGoogle a {
+  color: #ffffff;
+  width: 95%;
+}
+
+.main__login--buttonGoogle img {
+  width: 21px;
+  bottom: 7px;
+  left: 7px;
+  position: absolute;
+  
+}
+
+@media (min-width: 481px) {
+  .main__login--formulario {
+    max-width: 400px;
+    margin: 59px auto 59px;
+  }
+  .main__login--lineaVerde h5 {
     top: -8px;
-    left: 47px;
-    padding: 0px 10px;
-    font-size: 1rem;
-
+    left: 97px;
+  }
+}
+@media (min-width: 769px) {
+  .main__login--formulario {
+    max-width: 700px;
+    padding: 20px 0;
+    margin: 18px auto 19px;
+  }
+  .main__login--lineaVerde h5 {
+    left: 247px;
+  }
+  .main__login__formulario__form--inputs input {
+    width: 70%;
+  }
+  .main__login__formulario__form--button {
+    width: 70%;
+  }
+  .main__login--buttonGoogle {
+    width: 70%;
+    margin: 20px auto;
+  }
+}
+@media (min-width: 1440px) {
+  .main__login--formulario {
+    margin: 95px auto 94px;
+  }
 }
 
-.main__login--buttonGoogle{
-    margin: 30px 15px;
-    border: 3px solid var(--colorVerde);
-    border-radius: 5px;
-    padding: 5px;
-    text-align: center;
-    position: relative;
+/*modo claro & oscuro*/
+body.noche .main__login--formulario {
+  background-color: var(--gris5);
+  border: 3px solid var(--gris1);
+  color: #fff;
+  box-shadow: 0px 0px 10px var(--colorBackgroundMc);
 }
-
-.main__login--buttonGoogle a{
-    color: #ffffff;
-    width: 95%;
+body.noche .main__login__formulario__form--inputs input{
+  box-shadow: 0px 0px 10px var(--colorBackgroundMc);
 }
-
-.main__login--buttonGoogle img{
-    width: 20px;
-    bottom: 5px;
-    left: 5px;
-    position: absolute;
+body.noche .main__login--lineaVerde h5 {
+  background-color: var(--gris5);
 }
-
-@media (min-width:481px) {
-    
-    .main__login--formulario {
-        max-width: 400px;
-        margin: 150px auto;
-    }
-    .main__login--lineaVerde h5{
-        top: -8px;
-        left: 97px;
-        
-    
-    }
-    
+body.noche .main__login--lineaVerde {
+  border-bottom: 3px solid #fff;
 }
-@media (min-width:769px){
-    .main__login--formulario {
-        max-width: 700px;
-        padding: 20px 0;
-        margin: 200px auto;
-    }
-    .main__login--lineaVerde h5{
-        left: 247px;
-    }
-    .main__login__formulario__form--inputs input {
-        width: 70%;
-    }
-    .main__login__formulario__form--button{
-        width: 70%;
-    }
-    .main__login--buttonGoogle{
-        width: 70%;
-        margin: 20px auto;
-    }
-}
-@media (min-width:1440px){
-    .main__login--formulario {
-        margin: 160px auto;
-    }
+body.noche .main__login__formulario__form--button,
+body.noche .main__login--buttonGoogle {
+  background-color: var(--colorBackgroundMc);
+  border: 3px solid #fff;
+  color: #fff;
+  box-shadow: 0px 0px 10px #fff;
 }
