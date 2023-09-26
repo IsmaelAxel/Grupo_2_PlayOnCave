@@ -97,8 +97,7 @@
 .product__main--infoJuego-more{
     margin: 20px 0;
 }
-.product__main--infoJuego-more a{
-    text-decoration: underline;
+.product__main--infoJuego-more a#ocultarTextoBtn{
     color: var(--colorVerde);
     font-size: .8rem;
     cursor: pointer;
@@ -129,11 +128,6 @@
 .product__main--requisitos--tableRecomendados-encabezado {
     color: var(--colorVerde);
 }
-.product__main--requisitos a{
-    text-decoration: underline;
-    color: var(--colorVerde);
-    font-size: .8rem;
-}
 /* Modo Claro: Mobile */
 body.noche .product__main--article-info h4{
     color: var(--colorBackgroundMc);
@@ -161,7 +155,7 @@ body.noche .product__main--infoJuego{
 body.noche .product__main--infoJuego-titulo{
     border-bottom: 1px solid var(--colorBackgroundMc);
 }
-body.noche .product__main--infoJuego-more a{
+body.noche .product__main--infoJuego-more a#ocultarTextoBtn{
     color: var(--colorBackgroundMc);
 }
 body.noche .product__main--requisitos{

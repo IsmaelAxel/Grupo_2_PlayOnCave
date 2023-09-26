@@ -1,5 +1,6 @@
 .index{
-  margin: 10px;
+  max-width: 420px;
+  margin: 10px auto;
 }
 
 .swiper {
@@ -181,7 +182,10 @@
 .index__main--article-box2{
   display: none;
 }
-@media (min-width: 481px) {
+@media (min-width: 768px) {
+  .index{
+    max-width: 760px;
+  }
   .index__main--products{
     display: flex;
     flex-wrap: wrap;
@@ -229,6 +233,9 @@
   }
 }
 @media (min-width: 1024px){
+  .index{
+    max-width: 1180px;
+  }
   .swiper-slide img {
     height: 400px;
   }

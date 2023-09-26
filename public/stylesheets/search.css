@@ -4,7 +4,8 @@ main.main__search{
     flex-direction: row;
     justify-content: center;
     gap: 10px;
-    margin: 75px 0;
+    margin: 75px auto;
+    max-width: 420px;
 }
 main.main__search__error{ 
     display: flex;
@@ -76,12 +77,18 @@ main.main__search__error{
       transform: translate(-22px,5px) skew(21deg); 
     }
   }
-@media(min-width: 481px){
+@media(min-width: 768px){
+  main.main__search{
+    max-width: 760px;
+}
   main.main__search__error{ 
     margin: 350px 0;
   }
 }
-@media(min-width: 900px){
+@media(min-width: 1024px){
+  main.main__search{
+    max-width: 1180px;
+}
   main.main__search__error{ 
     font-size: 2rem;
     letter-spacing: -4px;

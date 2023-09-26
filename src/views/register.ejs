@@ -34,9 +34,9 @@
                     <input class="form-control" id="password2" type="password" name="password2">
                     <small class="text-danger ms-2"><%= locals.errors && (errors.password2 && errors.password2.msg) %></small>
                 </div>
-                <div>
-                    <label for="form-label" for="image" >Agrega tu avatar</label>
-                    <input type="file" name="img" id="image" class="form-control">
+                <div class="register__box--avatar"> 
+                    <label class="btn btn-dark" for="image" >Agrega tu avatar</label>
+                    <input type="file" name="image" id="image" class="form-control" hidden>
                 </div>
                 <div class="register__form--btn">
                     <button type="submit" class="register__form--btn--crear">crear cuenta</button>

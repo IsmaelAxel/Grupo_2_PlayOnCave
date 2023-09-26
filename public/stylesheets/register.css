@@ -82,6 +82,9 @@
   .register__form--email {
     width: 94%;
   }
+  .register__box--avatar{
+    margin: auto 0;
+  }
   .register__form--btn {
     width: 100%;
     margin-top: 20px;
