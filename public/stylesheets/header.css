@@ -11,7 +11,7 @@
     width: 100%;
     align-items: center;
     flex-wrap: wrap;
-    max-width: 320px;
+    max-width: 425px;
     margin: 0 auto;
     justify-content: space-evenly;
     text-transform: capitalize;
@@ -38,11 +38,14 @@
     border-radius: 5px;
     border: solid 1px var(--colorVerde);
 }
-
+.home__header__box--login{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+}
 .home__header__box--login nav ul{
     display: flex;
-    gap: 3px; 
-    
+    gap: 3px;  
 }
 
 #carri{
@@ -114,7 +117,7 @@
 .home_header_box--btn i{
     position: absolute;
     top: 6px;
-    right: 7px;
+    right: 6px;
     font-size: 18px;
     color: #000000;
     background-color: var(--colorVerde);
@@ -178,16 +181,16 @@
     transform: translateX(8px);
   }
 
-@media (min-width:481px){
+@media (min-width:768px){
 
     .home__header--box{
         width: 100%;
-        max-width: 600px;
+        max-width: 769px;
         margin: 0 auto;
     }
     .home__header__box--logo{
         order: -1;
-        width: 25%;
+        width: 20%;
     }
     .home__header__box--logo img{
         width: 110px;
@@ -198,7 +201,10 @@
         display: flex;
         font-size: 16px;
         order: 1;
-        width: 30%;
+        width: 40%;
+    }
+    .home_header_box--form{
+        width: 100%;
     }
     .home__header__box--burguer{
         order: 3;
@@ -223,7 +229,7 @@
        display: none;
     }
     .showMenu{
-        height: 185px;
+        height: 195px;
     }
     #userlogin__p{
         font-size: 10px;
@@ -295,14 +301,14 @@
       }
 
 }
-@media (min-width:769px){
+@media (min-width:1024px){
     .home__header{
         font-size: 18px;
         width: 100%;
     }
     .home__header--box{
         width: 100%;
-        max-width: 949px;
+        max-width: 1025px;
     }
     .home__header__box--logo{
         width: 15%;
@@ -338,7 +344,7 @@
         display: none;   
     }
     .home_header_box--btn i{ 
-        right: 6px;
+        right: 5px;
     }
    
     .home__header__box--tema p{
@@ -360,6 +366,7 @@
     }
     .home__header__box--login{
         margin-top: 10px;
+        width: 15%;
     }
     .home__header__box--login nav ul{
         text-align: center;  
@@ -375,54 +382,13 @@
     }
     #numberCart{
         bottom: 76px;
-        right: 8px;
-        
+        right: 8px;    
     }
    
     #userlogin__p{
         font-size: 14px;
     }
-
 }
-@media (min-width:950px){
-    .home__header--box{
-        width: 100%;
-        max-width: 1180px;
-    }
-    .home__header__box__categorias--nav{
-        max-width:1180px;
-        width:100%;
-    }
-   
-    .home__header__box__categorias--nav ul li a{
-        font-size: 18px;
-        letter-spacing: 0;
-        margin: 1px 4px;     
-    }
-    .home__header__box--login nav ul li{
-        position: relative;
-        top: 25px;
-    }
-    
-    .home__header__box--login nav ul li a p{
-        display: block;
-        font-size: 14px;
-    }
-    #numberCart{
-        position: absolute;
-        bottom: 84px;
-        right: 12px;
-    }
-    .home__header__box--tema p{
-        font-size: 0.9rem;   
-    } 
-    .home_header_box--form{
-        display: flex;
-        max-width: 500px;
-        justify-content: center;
-    }
-}
-
 /* Modo Claro */
 body.noche header{
     background-color: var(--colorBackgroundMc);
@@ -436,20 +402,20 @@ body.noche header nav li a,body.noche header nav li p,body.noche header nav ul l
     text-shadow: 5px 0 15px white;
   }
   body.noche .home__header__box__categorias--nav ul li a {
-    border:solid 2px #ffffff;
+    border:solid 1px #ffffff;
     box-shadow: none
   }
+
   body.noche .home__header__box__categorias--nav ul li a:hover{
-    border:solid 2px #000000;
-    box-shadow: 0 0 10px white;
+    border:solid 1px #000000;
+    box-shadow: 0 0 10px #ffffff;
   }
   body.noche .home_header_box--btn i{
-    color: rgb(255, 255, 255);
-    background-color: rgb(0, 0, 0);
+    color: #ffffff;
+    background-color: #000000;
   }
   body.noche .home_header_box--form--input{
     border:solid 2px #000000;
-  
   }
   body.noche .home__header__box--burguer{
     color: #ffffff;
@@ -459,6 +425,5 @@ body.noche header nav li a,body.noche header nav li p,body.noche header nav ul l
   
   }
   body.noche  header nav ul li .slider{
-    
-    background-color: rgb(0, 0, 0);
+    background-color: #000000;
   }

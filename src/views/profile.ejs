@@ -27,7 +27,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-md-10 col-lg-3 mx-auto mt-5 text-center">
-                        <div class="card mb-3 shadow-lg bg-dark text-white" style="width: 18rem; margin: 0 auto;">
+                        <div class="card mb-3 shadow-lg bg-secondary text-white" style="width: 18rem; margin: 0 auto;">
                             <img class="card-img-top img-thumbnail" src="/images/users/<%= avatar || 'avatar1.png' %>"
                                 alt="Card image cap">
                             <div class="card-body">
@@ -44,7 +44,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-10 col-lg-8 mx-auto mt-5">
-                        <div class="card mb-3 shadow-lg bg-dark text-white">
+                        <div class="card mb-3 shadow-lg bg-secondary text-white">
                             <div class="card-header">Perfil usuario</div>
                             <div class="card-body">
                                 <form action="/users/profileUpdate/<%= id %>?_method=PUT" method="POST" class="row"
@@ -116,7 +116,7 @@
                                     </div>
                                     <input class="form-control" type="file" id="avatar" name="avatar" hidden>
                                     <div class="d-flex justify-content-between">
-                                        <label for="avatar" class="btn btn-secondary">Avatar</label>
+                                        <label for="avatar" class="btn btn-dark">Avatar</label>
                                         <button type="submit" class="btn btn-dark">Guardar cambios</button>
                                     </div>
                                 </form>
