@@ -1,5 +1,6 @@
 .main__login {
   margin: 0 10px;
+  min-height: 80vh
 }
 
 .main__login--formulario {
