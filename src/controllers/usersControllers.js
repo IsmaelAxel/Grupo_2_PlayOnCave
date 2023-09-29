@@ -7,5 +7,5 @@ module.exports = {
     users: require('./users/users'),
     profile: require("./users/profile"),
     updateProfile: require("./users/updateProfile"),
-    logout:require('./users/logOut')
+    logout:require('./users/logout')
  }
