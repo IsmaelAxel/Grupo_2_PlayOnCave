@@ -32,6 +32,9 @@ module.exports = [
     }).withMessage('Debe tener entre 20 y 500 caracteres'),
     body('MainImage')
     .custom((value,{req}) => {
+      if(req.params.id){
+        return true
+      }
       if(req.files.MainImage){
         return true
       }
@@ -39,6 +42,9 @@ module.exports = [
     }).withMessage('Debes subir una imagen principal'),
     body('images')
     .custom((value,{req}) => {
+      if(req.params.id){
+        return true
+      }
       if(req.files.images){
         return true
       }
