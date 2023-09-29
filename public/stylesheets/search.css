@@ -80,6 +80,7 @@ main.main__search__error{
 @media(min-width: 768px){
   main.main__search{
     max-width: 760px;
+    margin: 200px auto;
 }
   main.main__search__error{ 
     margin: 350px 0;
@@ -88,6 +89,7 @@ main.main__search__error{
 @media(min-width: 1024px){
   main.main__search{
     max-width: 1180px;
+    margin: 150px auto;
 }
   main.main__search__error{ 
     font-size: 2rem;

@@ -16,9 +16,9 @@
                             <label for="category">Categoría:</label>
                             <select id="category" name="category" >
                                 <option hidden selected></option>
-                                <option value="featured" <%= locals.old && (old.category) %>>Destacados</option>
-                                <option value="new releases" <%= locals.old && (old.category) %>>Nuevos Lanzamientos</option>
-                                <option value="best sellers" <%= locals.old && (old.category) %>>Más Vendidos</option>
+                                <option value="featured" <%= locals.old && locals.old.category === "featured" ? 'selected' : '' %>>Destacados</option>
+                                <option value="new releases" <%= locals.old && locals.old.category === "new releases" ? 'selected' : '' %>>Nuevos Lanzamientos</option>
+                                <option value="best sellers" <%= locals.old && locals.old.category === "best sellers" ? 'selected' : '' %>>Más Vendidos</option>
                                 <!-- Agrega más opciones de categorías  -->
                             </select>
                             <small class="text-danger ms-2"><%= locals.errors && (errors.category && errors.category.msg) %></small>
@@ -30,7 +30,8 @@
                         </div>
                         <div class="productAdd__box__form--descuento">
                             <label for="discount">Descuento:</label>
-                            <input type="number" id="discount" name="discount" placeholder="%">
+                            <input type="number" id="discount" name="discount" placeholder="%" value="<%= locals.old && (old.discount && old.discount) || 0 %>">
+                            <small class="text-danger ms-2"><%= locals.errors && (errors.discount && errors.discount.msg) %></small>
                         </div>
                         <div class="productAdd__box__form--requiMinimos">
                            <h3>Requisitos minimos</h3>

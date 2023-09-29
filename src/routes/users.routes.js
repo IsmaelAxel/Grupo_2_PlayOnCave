@@ -13,7 +13,7 @@ router.get('/login', login);
 router.post('/login', uploadUser.single('img'), loginValidator, processLogin);
 router.get('/logout', logout);
 router.get('/register', register);
-router.post('/register', uploadUser.single('img'), registerValidator, processRegister);
+router.post('/register', uploadUser.single('image'), registerValidator, processRegister);
 router.get('/profile', userCheck, profile)
 router.put('/profileUpdate/:id', userCheck, uploadUser.single('avatar'), profileValidator, updateProfile)
 router.get('/admin', adminCheck, admin);
