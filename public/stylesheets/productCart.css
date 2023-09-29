@@ -11,6 +11,8 @@
 .productCart__main {
     background-color: var(--colorBackground);
     padding-bottom: -36px;
+    max-width:500px;
+    margin: 0 auto;
 }
 
 .productCart__main__boxCesta {
@@ -234,9 +236,10 @@ box-shadow: 0px 0px 10px var(--colorVerde);
 }
 
 /* ///////////////////////////////////////////////////////////////481 ///////////////////////////////////////////////////////////////////*/
-@media (min-width: 481px) {
+@media (min-width: 768px) {
     .productCart__main {
         padding-bottom: 132px;
+        max-width: 768px;
     }
     .productCart__titulo {
         padding-bottom: 15px;
@@ -294,7 +297,7 @@ box-shadow: 0px 0px 10px var(--colorVerde);
     }
 }
 /* ///////////////////////////////////////////////////////////////////////768 /////////////////////////////////////////////////////////////*/
-@media (min-width: 768px) {
+/* @media (min-width: 1024px) {
     .productCart__main {
         padding-bottom: 74px;
     }
@@ -336,7 +339,7 @@ box-shadow: 0px 0px 10px var(--colorVerde);
     .productCart__main__boxResumen__boxImporte__importeTotal {
         width: 10%;
     }
-}
+} */
 /* ///////////////////////////////////////////////////////////1024 ////////////////////////////////////////////////////////////////////////*/
 @media (min-width: 1024px) {
     .productCart {
@@ -346,6 +349,7 @@ box-shadow: 0px 0px 10px var(--colorVerde);
         display: none;
     }
     .productCart__main {
+        max-width: 1024px;
         background-color: var(--colorBackground);
         display: flex;
         padding-bottom: 250px;
@@ -358,9 +362,10 @@ box-shadow: 0px 0px 10px var(--colorVerde);
         width: 50%;
     }
     .productCart__titulo {
+        
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
     }
     .productCart__titulo h2 {
         margin-left: 24px;

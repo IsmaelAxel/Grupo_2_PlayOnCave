@@ -77,13 +77,13 @@
                             <small class="text-danger ms-2"><%= locals.errors && (errors.description && errors.description.msg) %></small>
                         </div>
                         <div class="productAdd__box__form--image">
-                            <label for="MainImage">Imagen Principal:</label>
-                            <input class="productAdd__box__image--img" type="file" id="MainImage" name="MainImage" value="<%= MainImage %>">
+                            <label for="MainImage" class="btn btn-dark" >Imagen Principal:</label>
+                            <input class="productAdd__box__image--img" type="file" id="MainImage" name="MainImage" value="<%= MainImage %>" hidden>
                             <small class="text-danger ms-2"><%= locals.errors && (errors.MainImage && errors.MainImage.msg) %></small>
                         </div>
                         <div>
-                        <label for="images">Imagenes Secundarias:</label>
-                        <input class="productAdd__box__image--img" multiple type="file" id="images" name="images" value="<%= images %>">
+                        <label for="images" class="btn btn-dark">Imagenes Secundarias:</label>
+                        <input class="productAdd__box__image--img" multiple type="file" id="images" name="images" value="<%= images %>" hidden>
                         <small class="text-danger ms-2"> <%= locals.errors && (errors.images && errors.images.msg) %></small>
                          </div>
                         <div class="productAdd__box__form--btn">
