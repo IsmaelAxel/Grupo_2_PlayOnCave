@@ -8,7 +8,7 @@
 <% if (results.length) { %>
     <main class="main__search">
         <% results.forEach(result => { %>
-            <%- include('partials/productCardS',{
+            <%- include('partials/productCard',{
                 ...result,
                 toThousand
             }) %>

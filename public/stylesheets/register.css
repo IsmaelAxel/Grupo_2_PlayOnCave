@@ -90,8 +90,11 @@
     flex-wrap: wrap;
     justify-content: space-around;
   }
+  .register__form div {
+    width: 45%;
+  }
   .register__form--email {
-    width: 94%;
+    width: 100%;
   }
   .register__box--avatar {
     margin: auto 0;

@@ -13,15 +13,15 @@
                         <div class="main__login__formulario__form--inputs">
                             <i class="fa-regular fa-envelope"></i>
                             <input type="text" id="email" placeholder="Tu email" name="email">
-                            <small class="text-white  d-flex justify-content-center ms-2">
-                                <%= locals.errors && (errors.email && errors.email.msg) %>
+                            <small class="text-danger d-flex justify-content-center ms-2">
+                               <p><%= locals.errors && (errors.email && errors.email.msg) %></p> 
                             </small>
                         </div>
                         <div class="main__login__formulario__form--inputs">
                             <i class="fa-solid fa-lock"></i>
                             <input type="password" name="password" id="password" placeholder="Ingresar clave...">
-                            <small class="text-white  d-flex justify-content-center ms-2">
-                                <%= locals.errors && (errors.password && errors.password.msg) %>
+                            <small class="text-danger d-flex justify-content-center ms-2">
+                                <p><%= locals.errors && (errors.password && errors.password.msg) %></p>
                             </small>
 
                         </div>

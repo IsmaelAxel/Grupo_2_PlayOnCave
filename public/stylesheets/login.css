@@ -40,7 +40,9 @@
   box-shadow: 0px 0px 10px var(--colorVerde);
   width: 90%;
 }
-
+.main__login__formulario__form--inputs p{
+   font-size: 1rem;
+}
 .main__login__formulario__form--box {
   display: flex;
   justify-content: space-around;
@@ -73,14 +75,14 @@
 }
 .main__login--lineaVerde {
   border-bottom: 3px solid var(--colorVerde);
-  margin: 15px 10px 30px;
+  margin: 15px 15px 30px;
 }
 
 .main__login--lineaVerde h5 {
   position: absolute;
     background-color: #000000;
     top: -8px;
-    left: 45px;
+    left: 43px;
     padding: 0px 10px;
     font-size: 1rem;
     text-transform: capitalize;
