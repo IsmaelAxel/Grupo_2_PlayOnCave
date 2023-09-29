@@ -96,3 +96,8 @@ main.main__search__error{
     letter-spacing: -4px;
   }
 }
+
+body.noche .main__search__error{
+  background-color: var(--gris4);
+  color: var(--colorBackgroundMc);
+}
