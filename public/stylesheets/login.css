@@ -69,20 +69,22 @@
 
 .main__login__box--iniciarGoogle {
   position: relative;
+  
 }
 .main__login--lineaVerde {
   border-bottom: 3px solid var(--colorVerde);
-  margin: 15px 55px 30px;
+  margin: 15px 10px 30px;
 }
 
 .main__login--lineaVerde h5 {
   position: absolute;
     background-color: #000000;
     top: -8px;
-    left: 105px;
+    left: 45px;
     padding: 0px 10px;
     font-size: 1rem;
     text-transform: capitalize;
+
 }
 
 .main__login--buttonGoogle {
@@ -166,7 +168,7 @@ body.noche .main__login__formulario__form--inputs input{
   box-shadow: 0px 0px 10px var(--colorBackgroundMc);
 }
 body.noche .main__login--lineaVerde h5 {
-  background-color: var(--gris5);
+  background-color: var(--gris3);
 }
 body.noche .main__login--lineaVerde {
   border-bottom: 3px solid #fff;
