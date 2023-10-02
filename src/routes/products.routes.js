@@ -3,11 +3,12 @@ const {productCart, productDetail, productEdit, productAdd, productUpdate, produ
 const upload = require('../middlewares/upload');
 const adminCheck = require('../middlewares/adminCheck')
 const productsValitador = require('../validations/productsValidator')
+const userCheck = require('../middlewares/userCheck')
 
 const router = express.Router();
 
 /* GET home page. */
-router.get('/productCart', productCart);
+router.get('/productCart', userCheck,productCart);
 router.get('/productDetail/:id?', productDetail);
 router.get('/productEdit/:id',adminCheck, productEdit);
 router.get('/productAdd', adminCheck,productAdd);
