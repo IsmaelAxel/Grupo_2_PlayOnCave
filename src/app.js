@@ -1,3 +1,4 @@
+require ('dotenv').config();
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -11,6 +12,7 @@ const app = express();
 const session = require("express-session");
 const cookieCheck = require('./middlewares/cookieCheck');
 const userSessionCheck = require('./middlewares/userSessionCheck');
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
