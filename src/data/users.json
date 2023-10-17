@@ -32,7 +32,7 @@
       "email": "nnahuell.gb@hotmail.com",
       "password": "gaston",
       "rol": "admin",
-      "avatar": "1a0c927d154ae9506b5d2f70326890e2821a90a3a8ad6ed64039fd9e78398973.jpg1694913440833_products_.jpg",
+      "avatar": "avatar1.png",
       "birthday": "",
       "address": "",
       "city": "",
@@ -76,5 +76,18 @@
       "address": null,
       "city": null,
       "province": null
+   },
+   {
+      "id": "7d2be32c-0d5b-4267-b1d9-e18bd7986809",
+      "firstName": "Daniel",
+      "lastName": "MENA",
+      "email": "eric@gmail.com",
+      "password": "$2a$10$lKazdU3q.PVf/Vup65Klg..IHED4UVpbogPHfIkom1sP63xwOEGN.",
+      "rol": "user",
+      "avatar": "maxresdefault_5tqm.jpg1695998469185_products_.jpg",
+      "birthday": "",
+      "address": "",
+      "city": "",
+      "province": ""
    }
 ]

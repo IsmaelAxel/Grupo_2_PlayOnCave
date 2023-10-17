@@ -14,21 +14,21 @@
                             <i class="fa-regular fa-envelope"></i>
                             <input type="text" id="email" placeholder="Tu email" name="email">
                             <small class="text-danger d-flex justify-content-center ms-2">
-                                <%= locals.errors && (errors.email && errors.email.msg) %>
+                               <p><%= locals.errors && (errors.email && errors.email.msg) %></p> 
                             </small>
                         </div>
                         <div class="main__login__formulario__form--inputs">
                             <i class="fa-solid fa-lock"></i>
                             <input type="password" name="password" id="password" placeholder="Ingresar clave...">
-                            <small class="text-danger  d-flex justify-content-center ms-2">
-                                <%= locals.errors && (errors.password && errors.password.msg) %>
+                            <small class="text-danger d-flex justify-content-center ms-2">
+                                <p><%= locals.errors && (errors.password && errors.password.msg) %></p>
                             </small>
 
                         </div>
 
                         <div class="main__login__formulario__form--box">
                             <a href="/users/register">Registrarme</a>
-                            <div class="form-check d-flex justify-content-center gap-2 ">
+                            <div class="form-check d-flex justify-content-center gap-2" id="rememberBox">
                                 <input type="checkbox" class="form-check-input"  id="remember" name="remember">
                                 <label for="remember" class="form-check-label d-flex gap-0">recordame</label>
                             </div>

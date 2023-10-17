@@ -1,5 +1,6 @@
 .main__login {
-  margin: 0 10px;
+  margin: 63.5px auto;
+ 
 }
 
 .main__login--formulario {
@@ -18,7 +19,6 @@
   padding: 15px 10px;
   font-family: var(--tipoGrafiaTitulos);
   font-size: 1rem;
- 
 }
 
 .main__login__formulario__form--inputs {
@@ -38,11 +38,15 @@
   margin-bottom: 5px;
   border-radius: 6px;
   box-shadow: 0px 0px 10px var(--colorVerde);
+  width: 90%;
 }
-
+.main__login__formulario__form--inputs p{
+   font-size: 1rem;
+}
 .main__login__formulario__form--box {
   display: flex;
   justify-content: space-around;
+  
 }
 
 .main__login__formulario__form--box a {
@@ -54,28 +58,35 @@
   margin: 5px 0px 20px;
   background-color: #000000;
   color: #ffffff;
-  width: 83%;
+  width: 90%;
   border: 3px solid var(--colorVerde);
   border-radius: 6px;
   padding: 5px 0px;
   box-shadow: 0px 0px 10px var(--colorVerde);
 }
+#rememberBox{
+  flex-wrap: wrap;
+  align-content: center;
+}
+
 .main__login__box--iniciarGoogle {
   position: relative;
+  
 }
 .main__login--lineaVerde {
   border-bottom: 3px solid var(--colorVerde);
-  margin: 15px 25px 30px;
+  margin: 15px 15px 30px;
 }
 
 .main__login--lineaVerde h5 {
   position: absolute;
-  background-color: #000000;
-  top: -8px;
-  left: 47px;
-  padding: 0px 10px;
-  font-size: 1rem;
-  text-transform: capitalize;
+    background-color: #000000;
+    top: -8px;
+    left: 43px;
+    padding: 0px 10px;
+    font-size: 1rem;
+    text-transform: capitalize;
+
 }
 
 .main__login--buttonGoogle {
@@ -90,7 +101,7 @@
 
 .main__login--buttonGoogle a {
   color: #ffffff;
-  width: 95%;
+  width: 100%;
 }
 
 .main__login--buttonGoogle img {
@@ -101,17 +112,21 @@
   
 }
 
-@media (min-width: 481px) {
+@media (min-width: 768px) {
+  .main__login {
+   margin: 181.5px auto;
+   
+  }
   .main__login--formulario {
-    max-width: 400px;
+    max-width: 550px;
     margin: 59px auto 59px;
   }
   .main__login--lineaVerde h5 {
     top: -8px;
-    left: 97px;
+    left: 170px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 1024px) {
   .main__login--formulario {
     max-width: 700px;
     padding: 20px 0;
@@ -120,8 +135,15 @@
   .main__login--lineaVerde h5 {
     left: 247px;
   }
+  .main__login--lineaVerde{
+    border-bottom: 3px solid var(--colorVerde);
+    margin: 15px 105px 30px;
+  }
+
+  
   .main__login__formulario__form--inputs input {
     width: 70%;
+
   }
   .main__login__formulario__form--button {
     width: 70%;
@@ -139,7 +161,7 @@
 
 /*modo claro & oscuro*/
 body.noche .main__login--formulario {
-  background-color: var(--gris5);
+  background-color: var(--gris3);
   border: 3px solid var(--gris1);
   color: #fff;
   box-shadow: 0px 0px 10px var(--colorBackgroundMc);
@@ -148,7 +170,7 @@ body.noche .main__login__formulario__form--inputs input{
   box-shadow: 0px 0px 10px var(--colorBackgroundMc);
 }
 body.noche .main__login--lineaVerde h5 {
-  background-color: var(--gris5);
+  background-color: var(--gris3);
 }
 body.noche .main__login--lineaVerde {
   border-bottom: 3px solid #fff;

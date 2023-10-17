@@ -30,7 +30,8 @@
                         </div>
                         <div class="productAdd__box__form--descuento">
                             <label for="discount">Descuento:</label>
-                            <input type="number" id="discount" name="discount" placeholder="%">
+                            <input type="number" id="discount" name="discount" placeholder="%" value="<%= locals.old && (old.discount && old.discount) || 0 %>">
+                            <small class="text-danger ms-2"><%= locals.errors && (errors.discount && errors.discount.msg) %></small>
                         </div>
                         <div class="productAdd__box__form--uiMinimos">
                            <h3>requisitos minimos</h3>
@@ -79,8 +80,8 @@
                             <small class="text-danger ms-2"><%= locals.errors && (errors.mainImage && errors.mainImage.msg) %></small>
                         </div>
                         <div>
-                        <label for="images">Imagenes Secundarias:</label>
-                        <input class="productAdd__box__image--img" multiple type="file" id="images" name="images" value="<%= locals.old && (old.images && old.images) %>">
+                        <label for="images"  class="btn btn-dark">Imagenes Secundarias:</label>
+                        <input class="productAdd__box__image--img" multiple type="file" id="images" name="images" value="<%= locals.old && (old.images && old.images) %>" hidden>
                         <small class="text-danger ms-2"><%= locals.errors && (errors.images && errors.images.msg) %></small>
                          </div>
                         <div class="productAdd__box__form--btn">
