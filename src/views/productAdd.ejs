@@ -13,12 +13,12 @@
                             <small class="text-danger ms-2"><%= locals.errors && (errors.title && errors.title.msg) %></small>
                         </div>
                         <div class="productAdd__box__form--category">
-                            <label for="category">Categoría:</label>
-                            <select id="category" name="category" >
+                            <label for="categoryId">Categoría:</label>
+                            <select id="categoryId" name="categoryId" >
                                 <option hidden selected></option>
-                                <option value="featured" <%= locals.old && (old.category) %>>Destacados</option>
-                                <option value="new releases" <%= locals.old && (old.category) %>>Nuevos Lanzamientos</option>
-                                <option value="best sellers" <%= locals.old && (old.category) %>>Más Vendidos</option>
+                                <option value="featured" <%= locals.old && (old.categoryId) %>>Destacados</option>
+                                <option value="new releases" <%= locals.old && (old.categoryId) %>>Nuevos Lanzamientos</option>
+                                <option value="best sellers" <%= locals.old && (old.categoryId) %>>Más Vendidos</option>
                                 <!-- Agrega más opciones de categorías  -->
                             </select>
                             <small class="text-danger ms-2"><%= locals.errors && (errors.category && errors.category.msg) %></small>
@@ -32,41 +32,41 @@
                             <label for="discount">Descuento:</label>
                             <input type="number" id="discount" name="discount" placeholder="%">
                         </div>
-                        <div class="productAdd__box__form--requiMinimos">
-                           <h3>Requisitos minimos</h3>
-                           <label for="reqMinOs">os:</label>
-                            <input type="text" id="reqMinOs" name="reqMinOs" value="<%= locals.old && (old.reqMinOs && old.reqMinOs) %>">
-                            <small class="text-danger ms-2"><%= locals.errors && (errors.reqMinOs && errors.reqMinOs.msg) %></small>
-                            <label for="reqMinProcessor">Procesador:</label>
-                            <input type="text" id="reqMinProcessor" name="reqMinProcessor" value="<%= locals.old && (old.reqMinProcessor && old.reqMinProcessor) %>" >
-                            <small class="text-danger ms-2"><%= locals.errors && (errors.reqMinProcessor && errors.reqMinProcessor.msg) %></small>
-                            <label for="reqMinMemory">Memoria:</label>
-                            <input type="text" id="reqMinMemory" name="reqMinMemory" value="<%= locals.old && (old.reqMinMemory && old.reqMinMemory) %>">
-                            <small class="text-danger ms-2"><%= locals.errors && (errors.reqMinMemory && errors.reqMinMemory.msg) %></small>
-                            <label for="reqMinGraphicsCard">Grafica:</label>
-                            <input type="text" id="reqMinGraphicsCard" name="reqMinGraphicsCard" value="<%= locals.old && (old.reqMinGraphicsCard && old.reqMinGraphicsCard) %>">
-                            <small class="text-danger ms-2"><%= locals.errors && (errors.reqMinGraphicsCard && errors.reqMinGraphicsCard.msg) %></small>
-                            <label for="reqMinDisk">Almacenamiento:</label>
-                            <input type="text" id="reqMinDisk" name="reqMinDisk" value="<%= locals.old && (old.reqMinDisk && old.reqMinDisk) %>">
-                            <small class="text-danger ms-2"><%= locals.errors && (errors.reqMinDisk && errors.reqMinDisk.msg) %></small>
+                        <div class="productAdd__box__form--uiMinimos">
+                           <h3>requisitos minimos</h3>
+                           <label for="minOs">os:</label>
+                            <input type="text" id="minOs" name="minOs" value="<%= locals.old && (old.minOs && old.minOs) %>">
+                            <small class="text-danger ms-2"><%= locals.errors && (errors.minOs && errors.minOs.msg) %></small>
+                            <label for="minProcessor">Procesador:</label>
+                            <input type="text" id="minProcessor" name="minProcessor" value="<%= locals.old && (old.minProcessor && old.minProcessor) %>" >
+                            <small class="text-danger ms-2"><%= locals.errors && (errors.minProcessor && errors.minProcessor.msg) %></small>
+                            <label for="minMemory">Memoria:</label>
+                            <input type="text" id="minMemory" name="minMemory" value="<%= locals.old && (old.minMemory && old.minMemory) %>">
+                            <small class="text-danger ms-2"><%= locals.errors && (errors.minMemory && errors.minMemory.msg) %></small>
+                            <label for="minGraphicsCard">Grafica:</label>
+                            <input type="text" id="minGraphicsCard" name="minGraphicsCard" value="<%= locals.old && (old.minGraphicsCard && old.minGraphicsCard) %>">
+                            <small class="text-danger ms-2"><%= locals.errors && (errors.minGraphicsCard && errors.minGraphicsCard.msg) %></small>
+                            <label for="minDisk">Almacenamiento:</label>
+                            <input type="text" id="minDisk" name="minDisk" value="<%= locals.old && (old.minDisk && old.minDisk) %>">
+                            <small class="text-danger ms-2"><%= locals.errors && (errors.minDisk && errors.minDisk.msg) %></small>
                         </div>
-                        <div class="productAdd__box__form--requiRecomendados">
-                            <h3>Requisitos recomendados</h3>
-                           <label for="reqRecommendedOs">os:</label>
-                            <input type="text" id="reqRecommendedOs" name="reqRecommendedOs" value="<%= locals.old && (old.reqRecommendedOs && old.reqRecommendedOs) %>">
-                            <small class="text-danger ms-2"><%= locals.errors && (errors.reqRecommendedOs && errors.reqRecommendedOs.msg) %></small>
-                            <label for="reqRecommendedProcessor">Procesador:</label>
-                            <input type="text" id="reqRecommendedProcessor" name="reqRecommendedProcessor" value="<%= locals.old && (old.reqRecommendedProcessor && old.reqRecommendedProcessor) %>" >
-                            <small class="text-danger ms-2"><%= locals.errors && (errors.reqRecommendedProcessor && errors.reqRecommendedProcessor.msg) %></small>
-                            <label for="reqRecommendedMemory">Memoria:</label>
-                            <input type="text" id="reqRecommendedMemory" name="reqRecommendedMemory" value="<%= locals.old && (old.reqRecommendedMemory && old.reqRecommendedMemory) %>">
-                            <small class="text-danger ms-2"><%= locals.errors && (errors.reqRecommendedMemory && errors.reqRecommendedMemory.msg) %></small>
-                            <label for="reqRecommendedGraphicsCard">Grafica:</label>
-                            <input type="text" id="reqRecommendedGraphicsCard" name="reqRecommendedGraphicsCard" value="<%= locals.old && (old.reqRecommendedGraphicsCard && old.reqRecommendedGraphicsCard) %>">
-                            <small class="text-danger ms-2"><%= locals.errors && (errors.reqRecommendedGraphicsCard && errors.reqRecommendedGraphicsCard.msg) %></small>
-                            <label for="reqRecommendedDisk">Almacenamiento:</label>
-                            <input type="text" id="reqRecommendedDisk" name="reqRecommendedDisk" value="<%= locals.old && (old.reqRecommendedDisk && old.reqRecommendedDisk) %>">
-                            <small class="text-danger ms-2"><%= locals.errors && (errors.reqRecommendedDisk && errors.reqRecommendedDisk.msg) %></small>
+                        <div class="productAdd__box__form--uiRecomendados">
+                            <h3>requisitos recomendados</h3>
+                           <label for="recommendedOs">os:</label>
+                            <input type="text" id="recommendedOs" name="recommendedOs" value="<%= locals.old && (old.recommendedOs && old.recommendedOs) %>">
+                            <small class="text-danger ms-2"><%= locals.errors && (errors.recommendedOs && errors.recommendedOs.msg) %></small>
+                            <label for="recommendedProcessor">Procesador:</label>
+                            <input type="text" id="recommendedProcessor" name="recommendedProcessor" value="<%= locals.old && (old.recommendedProcessor && old.recommendedProcessor) %>" >
+                            <small class="text-danger ms-2"><%= locals.errors && (errors.recommendedProcessor && errors.recommendedProcessor.msg) %></small>
+                            <label for="recommendedMemory">Memoria:</label>
+                            <input type="text" id="recommendedMemory" name="recommendedMemory" value="<%= locals.old && (old.recommendedMemory && old.recommendedMemory) %>">
+                            <small class="text-danger ms-2"><%= locals.errors && (errors.recommendedMemory && errors.recommendedMemory.msg) %></small>
+                            <label for="recommendedGraphicsCard">Grafica:</label>
+                            <input type="text" id="recommendedGraphicsCard" name="recommendedGraphicsCard" value="<%= locals.old && (old.recommendedGraphicsCard && old.recommendedGraphicsCard) %>">
+                            <small class="text-danger ms-2"><%= locals.errors && (errors.recommendedGraphicsCard && errors.recommendedGraphicsCard.msg) %></small>
+                            <label for="recommendedDisk">Almacenamiento:</label>
+                            <input type="text" id="recommendedDisk" name="recommendedDisk" value="<%= locals.old && (old.recommendedDisk && old.recommendedDisk) %>">
+                            <small class="text-danger ms-2"><%= locals.errors && (errors.recommendedDisk && errors.recommendedDisk.msg) %></small>
                         </div>
                         <div class="productAdd__box__form--description">
                             <label for="description">Descripción:</label>
@@ -74,9 +74,9 @@
                             <small class="text-danger ms-2"><%= locals.errors && (errors.description && errors.description.msg) %></small>
                         </div>
                         <div class="productAdd__box__form--image">
-                            <label for="MainImage">Imagen Principal:</label>
-                            <input class="productAdd__box__image--img" type="file" id="MainImage" name="MainImage">
-                            <small class="text-danger ms-2"><%= locals.errors && (errors.MainImage && errors.MainImage.msg) %></small>
+                            <label for="mainImage">Imagen Principal:</label>
+                            <input class="productAdd__box__image--img" type="file" id="mainImage" name="mainImage">
+                            <small class="text-danger ms-2"><%= locals.errors && (errors.mainImage && errors.mainImage.msg) %></small>
                         </div>
                         <div>
                         <label for="images">Imagenes Secundarias:</label>
