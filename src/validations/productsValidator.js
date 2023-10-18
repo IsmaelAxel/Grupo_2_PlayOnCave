@@ -10,7 +10,7 @@ module.exports = [
       })
       .withMessage("Debe tener entre 4 y 20 caracteres")
       .matches(/^[a-zA-Z0-9\s]+$/).withMessage('El campo debe contener letras, números y espacios'),
-    check("category")
+    check("categoryId")
       .notEmpty()
       .withMessage("Es requerida"),
     check("price")
@@ -30,12 +30,12 @@ module.exports = [
       min: 20,
       max: 500,
     }).withMessage('Debe tener entre 20 y 500 caracteres'),
-    body('MainImage')
+    body('mainImage')
     .custom((value,{req}) => {
       if(req.params.id){
         return true
       }
-      if(req.files.MainImage){
+      if(req.files.mainImage){
         return true
       }
       return false
@@ -50,61 +50,61 @@ module.exports = [
       }
       return false
     }).withMessage('Las imagenes secundarias son obligatorias'),
-      check('reqMinOs').notEmpty().withMessage("Se espera un minimo de requisitos").bail()
+      check('minOs').notEmpty().withMessage("Se espera un minimo de requisitos").bail()
     .isLength({
       min: 3,
       max: 100,
     }).withMessage("Se espera un minimo de 3 caracteres y un maximo 100 caracteres ").bail()
     .matches(/^[a-zA-Z0-9\s]+$/).withMessage('El campo debe contener letras, números y espacios'),
-    check('reqRecommendedOs').notEmpty().withMessage("Se espera un recomendado de requisitos").bail()
+    check('recommendedOs').notEmpty().withMessage("Se espera un recomendado de requisitos").bail()
     .isLength({
       min: 3,
       max: 100,
     }).withMessage("Se espera un minimo de 3 caracteres y un maximo 100 caracteres ").bail()
     .matches(/^[a-zA-Z0-9\s]+$/).withMessage('El campo debe contener letras, números y espacios'),
-    check('reqRecommendedProcessor').notEmpty().withMessage("Se espera un recomendado de requisitos").bail()
+    check('recommendedProcessor').notEmpty().withMessage("Se espera un recomendado de requisitos").bail()
     .isLength({
       min: 3,
       max: 100,
     }).withMessage("Se espera un minimo de 3 caracteres y un maximo 100 caracteres ").bail()
     .matches(/^[a-zA-Z0-9\s]+$/).withMessage('El campo debe contener letras, números y espacios'),
-    check('reqMinProcessor').notEmpty().withMessage("Se espera un minimo de requisitos").bail()
+    check('minProcessor').notEmpty().withMessage("Se espera un minimo de requisitos").bail()
     .isLength({
       min: 3,
       max: 100,
     }).withMessage("Se espera un minimo de 3 caracteres y un maximo 100 caracteres ").bail()
     .matches(/^[a-zA-Z0-9\s]+$/).withMessage('El campo debe contener letras, números y espacios'),
-    check('reqRecommendedMemory').notEmpty().withMessage("Se espera un recomendado de requisitos").bail()
+    check('recommendedMemory').notEmpty().withMessage("Se espera un recomendado de requisitos").bail()
     .isLength({
       min: 3,
       max: 100,
     }).withMessage("Se espera un minimo de 3 caracteres y un maximo 100 caracteres ").bail()
     .matches(/^[a-zA-Z0-9\s]+$/).withMessage('El campo debe contener letras, números y espacios'),
-    check('reqMinMemory').notEmpty().withMessage("Se espera un minimo de requisitos").bail()
+    check('minMemory').notEmpty().withMessage("Se espera un minimo de requisitos").bail()
     .isLength({
       min: 3,
       max: 100,
     }).withMessage("Se espera un minimo de 3 caracteres y un maximo 100 caracteres ").bail()
     .matches(/^[a-zA-Z0-9\s]+$/).withMessage('El campo debe contener letras, números y espacios'),
-    check('reqRecommendedGraphicsCard').notEmpty().withMessage("Se espera un recomendado de requisitos").bail()
+    check('recommendedGraphicsCard').notEmpty().withMessage("Se espera un recomendado de requisitos").bail()
     .isLength({
       min: 3,
       max: 100,
     }).withMessage("Se espera un minimo de 3 caracteres y un maximo 100 caracteres ").bail()
     .matches(/^[a-zA-Z0-9\s]+$/).withMessage('El campo debe contener letras, números y espacios'),
-    check('reqMinGraphicsCard').notEmpty().withMessage("Se espera un minimo de requisitos").bail()
+    check('minGraphicsCard').notEmpty().withMessage("Se espera un minimo de requisitos").bail()
     .isLength({
       min: 3,
       max: 100,
     }).withMessage("Se espera un minimo de 3 caracteres y un maximo 100 caracteres ").bail()
     .matches(/^[a-zA-Z0-9\s]+$/).withMessage('El campo debe contener letras, números y espacios'),
-    check('reqRecommendedDisk').notEmpty().withMessage("Se espera un recomendado de requisitos").bail()
+    check('recommendedDisk').notEmpty().withMessage("Se espera un recomendado de requisitos").bail()
     .isLength({
       min: 3,
       max: 100,
     }).withMessage("Se espera un minimo de 3 caracteres y un maximo 100 caracteres ").bail()
     .matches(/^[a-zA-Z0-9\s]+$/).withMessage('El campo debe contener letras, números y espacios'),
-    check('reqMinDisk').notEmpty().withMessage("Se espera un minimo de requisitos").bail()
+    check('minDisk').notEmpty().withMessage("Se espera un minimo de requisitos").bail()
     .isLength({
       min: 3,
       max: 100,

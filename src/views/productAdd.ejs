@@ -16,12 +16,12 @@
                             <label for="categoryId">Categoría:</label>
                             <select id="categoryId" name="categoryId" >
                                 <option hidden selected></option>
-                                <option value="featured" <%= locals.old && (old.categoryId) %>>Destacados</option>
-                                <option value="new releases" <%= locals.old && (old.categoryId) %>>Nuevos Lanzamientos</option>
-                                <option value="best sellers" <%= locals.old && (old.categoryId) %>>Más Vendidos</option>
+                                <option value="<%= category[0].id %>" <%= locals.old && (old.categoryId) %>>Destacados</option>
+                                <option value="<%= category[1].id %>" <%= locals.old && (old.categoryId) %>>Nuevos Lanzamientos</option>
+                                <option value="<%= category[2].id %>" <%= locals.old && (old.categoryId) %>>Más Vendidos</option>
                                 <!-- Agrega más opciones de categorías  -->
                             </select>
-                            <small class="text-danger ms-2"><%= locals.errors && (errors.category && errors.category.msg) %></small>
+                            <small class="text-danger ms-2"><%= locals.errors && (errors.categoryId && errors.categoryId.msg) %></small>
                         </div>
                         <div class="productAdd__box__form--price">
                             <label for="price">Precio:</label>
