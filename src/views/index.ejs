@@ -5,48 +5,7 @@
 
 <body>
     <%- include('partials/header') %>
-    <main class="index">
-        <!-- CARROUSEL -->
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="/images/carrousel/carrousel_1.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="/images/carrousel/carrousel_2.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="/images/carrousel/carrousel_3.jpg" alt=""></div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-        <!-- <div class="index__main--chat">
-            <a href=""><i class="fa-solid fa-comments"></i></a>
-        </div> -->
-        <div class="index__main--products">
-            <h1 id="destacados" class="index__main--titulo1">Destacados</h1>
-            <% productsFeatured.forEach(product => { %>
-             <%- include('partials/productCard',{
-                ...product
-             }) %>
-            <% }) %>
-            <h1 id="news" class="index__main--titulo2">Nuevos Lanzamientos</h1>
-            <% productsNewReleases.forEach(product => { %>
-                <%- include('partials/productCard',{
-                   ...product
-                }) %>
-               <% }) %>
-               
-            <h1 id="+vendidos" class="index__main--titulo3">Los más vendidos</h1>
-            <% productsBestSellers.forEach(product => { %>
-                <%- include('partials/productCardM',{
-                   ...product
-                }) %>
-               <% }) %>
-            <div class="index__main--article-box2">
-                <% productsBestSellers.forEach(product => { %>
-                    <%- include('partials/productCard',{
-                       ...product
-                    }) %>
-                   <% }) %>
-                    </div>
-                </div>
-            </main>
+    
             <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-chevron-up"></i></button>
     <%- include('partials/footer') %>
     <%- include('partials/scripts') %>
