@@ -1,11 +1,30 @@
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const {readJSON} = require('../../data');
-const productRead=readJSON('products.json');
-module.exports =  (req, res) => {
-    const results = productRead.filter(product => product.title.toLowerCase().includes(req.query.keywords.toLowerCase()))
-    return res.render('searchBar',{
-        results,
-        toThousand,
-        keywords: req.query.keywords,
+const { Op } = require('sequelize')
+const db = require('../../database/models');
+module.exports = (req, res) => {
+    db.Products.findAll({
+        where: {
+            [Op.or]: [
+                {
+                    title: {
+                        [Op.substring]: req.query.keywords
+                    }
+                },
+                {
+                    description: {
+                        [Op.substring]: req.query.keywords
+                    }
+                }
+            ]
+        }
     })
-  }
+        .then(results => {
+            return res.render('searchBar', {
+                results,
+                toThousand,
+                keywords: req.query.keywords
+            })
+        })
+        .catch(err => console.log(err))
+}
+

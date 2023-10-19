@@ -7,7 +7,7 @@
         <%- include('partials/header') %>
             <main class="product__main">
                 <article class="product__main--article">
-                    <img src="/images/products/<%= MainImage || 'default_image.png' %>" alt="">
+                    <img src="/images/products/default_image.png" alt="">
                     <div class="product__main--article-info">
                         <% if (discount) { %>
                             <h4 class="index__main--article-lineProduct"> $<%=toThousand(price)%></h4>
@@ -25,21 +25,21 @@
                 <div class="product__main--container">
                     <div class="product__main--slider">
                         <div class="product__main--slider-screen">
-                            <img id="product_detail_imgs" src="/images/products/<%= MainImage || 'default_image.png'%>" alt="">
+                            <img id="product_detail_imgs" src="/images/products/default_image.png" alt="">
                         </div>
                         <div class="product__main--slider-imgs">
-                            <img src="/images/products/<%= MainImage || 'default_image.png'%>" alt=""
-                                onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= MainImage || `default_image.png`%>')">
-                            <img src="/images/products/<%= images[0] || 'default_image.png'%>" alt=""
-                                onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[0] || `default_image.png` %>')">
-                            <img src="/images/products/<%= images[1] || 'default_image.png'%>" alt=""
-                                onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[1] || `default_image.png` %>')">
-                            <img class="slider1" src="/images/products/<%= images[2] || 'default_image.png'%>" alt=""
-                                onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[2] || `default_image.png` %>')">
-                            <img class="slider2" src="/images/products/<%= images[3] || 'default_image.png'%>" alt=""
-                                onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[3] || `default_image.png` %>')">
-                            <img class="slider3" src="/images/products/<%= images[4] || 'default_image.png'%>" alt=""
-                                onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[4] || `default_image.png` %>')">
+                            <img src="/images/products/default_image.png" alt=""
+                                onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/default_image.png')">
+                            <img src="/images/products/default_image.png" alt=""
+                                onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/default_image.png')">
+                            <img src="/images/products/default_image.png" alt=""
+                                onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/default_image.png')">
+                            <img class="slider1" src="/images/products/default_image.png" alt=""
+                                onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/default_image.png')">
+                            <img class="slider2" src="/images/products/default_image.png" alt=""
+                                onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/default_image.png')">
+                            <img class="slider3" src="/images/products/default_image.png" alt=""
+                                onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/default_image.png')">
                         </div>
                     </div>
                     <div class="product__main--infoJuego">
@@ -71,25 +71,25 @@
                                 <tr>
                                     <th>Procesador:</th>
                                     <td>
-                                        <%= reqMinProcessor %>
+                                        <%= minProcessor %>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Memoria:</th>
                                     <td>
-                                        <%= reqMinMemory %>
+                                        <%= minMemory %>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Grafica:</th>
                                     <td>
-                                        <%= reqMinGraphicsCard %>
+                                        <%= minGraphicsCard %>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Almacenamiento:</th>
                                     <td>
-                                        <%= reqMinDisk %>
+                                        <%= minDisk %>
                                     </td>
                                 </tr>
                             </table>
@@ -100,31 +100,31 @@
                                 <tr>
                                     <th>OS:</th>
                                     <td>
-                                        <%= reqRecommendedOs %>
+                                        <%= recommendedOs %>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Procesador:</th>
                                     <td>
-                                        <%= reqRecommendedProcessor %>
+                                        <%= recommendedProcessor %>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Memoria:</th>
                                     <td>
-                                        <%= reqRecommendedMemory %>
+                                        <%= recommendedMemory %>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Grafica:</th>
                                     <td>
-                                        <%= reqRecommendedGraphicsCard %>
+                                        <%= recommendedGraphicsCard %>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Almacenamiento:</th>
                                     <td>
-                                        <%= reqRecommendedDisk %>
+                                        <%= recommendedDisk %>
                                     </td>
                                 </tr>
                             </table>

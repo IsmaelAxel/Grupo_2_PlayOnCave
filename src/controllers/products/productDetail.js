@@ -1,11 +1,12 @@
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const {readJSON } = require('../../data');
-const productRead = readJSON('products.json');
+const db = require('../../database/models');
 module.exports = (req, res) => {
-    const product = productRead.find(product => product.id === req.params.id)
-    console.log(product);
-    return res.render('productDetail', {
-        ...product,
-        toThousand
-    })
+    db.Products.findByPk(req.params.id)
+        .then(product => {
+            return res.render('productDetail', {
+                ...product.dataValues,
+                toThousand
+            })
+        })
+        .catch(err => console.log(err))
 }
