@@ -1,16 +1,15 @@
 
 <!DOCTYPE html>
 <html lang="es">
-    <%- include('partials/head',{title: "Resultados de tu búsqueda"}) %>
+    <%- include('partials/head',{title: "Resultados de tu búsqueda" }) %>
 <body>
     <%- include('partials/header') %>
 
 <% if (results.length) { %>
     <main class="main__search">
-        <% results.forEach(result => { %>
+        <% results.forEach(product => { %>
             <%- include('partials/productCard',{
-                ...result,
-                toThousand
+                ...product.dataValues, toThousand
             }) %>
         <% }) %>
     </main>

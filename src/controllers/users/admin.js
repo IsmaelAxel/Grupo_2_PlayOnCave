@@ -1,9 +1,16 @@
-const {readJSON } = require('../../data');
-module.exports = (req,res)  => {
-    const products = readJSON('products.json');
-    const users = readJSON('users.json');
-    return res.render('admin', {
-        products,
-        users
+const db = require('../../database/models')
+module.exports = (req,res) => {
+    const products = db.Products.findAll({
+        include: ['category','images']
+    })
+    const categories = db.Category.findAll()
+    const users = db.Users.findAll()
+    Promise.all([products, categories,users])
+    .then(([products,categories,users])=>{
+        return res.render('admin',{
+            products,
+            categories,
+            users
+        })
     })
 }
