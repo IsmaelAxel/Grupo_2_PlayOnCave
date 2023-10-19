@@ -1,11 +1,30 @@
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const {readJSON} = require('../../data');
-const productRead=readJSON('products.json');
+const db = require('../../database/models');
 module.exports = (req, res) => {
-    return res.render('index',{
-    productsFeatured:productRead.filter(product=>product.category==='featured'),
-    productsNewReleases:productRead.filter(product=>product.category==='new releases'),
-    productsBestSellers:productRead.filter(product=>product.category==='best sellers'),
-    toThousand})
-
+    const productsFeatured = db.Products.findAll({
+        where: {
+            categoryId: 1
+        }
+    });
+    const productsNewReleases = db.Products.findAll({
+        where: {
+            categoryId: 2
+        }
+    });
+    const productsBestSellers = db.Products.findAll({
+        where: {
+            categoryId: 3
+        }
+    });
+    Promise.all([productsFeatured, productsNewReleases, productsBestSellers])
+        .then(([productsFeatured, productsNewReleases, productsBestSellers]) => {
+            return res.render('index', {
+                productsFeatured,
+                productsNewReleases,
+                productsBestSellers,
+                toThousand
+            })
+        })
+        .catch(err => console.log(err))
 }
+
