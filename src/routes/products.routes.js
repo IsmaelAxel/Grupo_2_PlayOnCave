@@ -18,7 +18,7 @@ router.put('/productUpdate/:id', upload.fields([
     },
     {
         name: 'images', maxCount: 5
-    }]), productsValitador, productUpdate),
+    }]), productUpdate),
 
 router.post('/productAdd', upload.fields([
         {
