@@ -55,23 +55,30 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <% users.forEach(({id, firstName,lastName, email,rol},index)=> { %>
+                                                    <% users.forEach(({id, name ,surname, email,roleId},index)=> { %>
                                                         <tr>
                                                             <th scope="row">
                                                                 <%= index + 1 %>
                                                             </th>
                                                             <td>
-                                                                <%= firstName %>
+                                                                <%= name %>
                                                             </td>
                                                             <td>
-                                                                <%= lastName  %>
+                                                                <%= surname  %>
                                                             </td>
                                                             <td>
                                                                 <%=email %>
                                                             </td>
-                                                            <td>
-                                                                <%= rol %>
-                                                            </td>
+                                                            
+                                                                <% if (roleId === 1) { %>
+                                                                 <td>
+                                                                    Admin
+                                                                 </td>
+                                                                <% } else {%> 
+                                                                    <td>
+                                                                        Usuario
+                                                                     </td>
+                                                                    <% } %> 
                                                             <td>
                                                                 <div class="d-flex gap-1">
                                         
@@ -86,7 +93,7 @@
                                                                             <div class="modal-content">
                                                                                 <div class="modal-header">
                                                                                     <h5 class="modal-title" id="detailProduct<%=id%>Label">
-                                                                                        <%= firstName %>
+                                                                                        <%= name %>
                                                                                     </h5>
                                                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                                                         aria-label="Close"></button>
@@ -98,7 +105,7 @@
                                                                                             <div class="">
                                                                                                 <div class="card-body">
                                                                                                     <h5 class="card-title">
-                                                                                                        <%= firstName %>
+                                                                                                        <%= name %>
                                                                                                     </h5>
                                                                                                     <p class="card-text">
                                                                                                        
@@ -136,7 +143,7 @@
                                                                                         aria-label="Close"></button>
                                                                                 </div>
                                                                                 <div class="modal-body">
-                                                                                    <p>Estás seguro que querés eliminar el producto <b><%= firstName %></b></p> 
+                                                                                    <p>Estás seguro que querés eliminar el producto <b><%= name %></b></p> 
                                                                                 </div>
                                                                                 <div class="modal-footer">
                                                                                     <button type="button" class="btn btn-secondary"
