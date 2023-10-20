@@ -49,7 +49,7 @@ module.exports = (req,res) => {
             return res.redirect('/users/admin')
         }).catch(error => console.log(error))
     }else{
-        (req.files.MainImage && existsSync(`./public/images/products/${req.files.MainImage[0].filename }`)) && unlinkSync(`./public/images/products/${req.files.MainImage[0].filename }`);
+        (req.files.mainImage && existsSync(`./public/images/products/${req.files.mainImage[0].filename }`)) && unlinkSync(`./public/images/products/${req.files.mainImage[0].filename }`);
         if(req.files.images) {
             req.files.images.forEach(file => {
                 existsSync(`./public/images/products/${file.filename}`) && unlinkSync(`./public/images/products/${file.filename}`)
