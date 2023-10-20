@@ -1,6 +1,6 @@
 const { validationResult } = require('express-validator');
 const db = require('../../database/models');
-const fs = require('fs');
+const {existsSync,unlinkSync} = require('fs');
 const path = require('path');
 
 module.exports = (req, res) => {
@@ -13,7 +13,7 @@ module.exports = (req, res) => {
         db.Users.findByPk(req.session.userLogin.id)
             .then(user => {
                 const oldAvatar = user.avatar;
-
+     
                 db.Users.update(
                     {
                         name: name.trim(),
@@ -26,7 +26,8 @@ module.exports = (req, res) => {
                             id: req.session.userLogin.id
                         }
                     }
-                ).then(response => {
+                ).then(() => {
+                    
                     req.session.userLogin.name = name;
                     req.session.userLogin.avatar = avatar;
 
@@ -35,18 +36,9 @@ module.exports = (req, res) => {
                     }
 
                     if (req.file && oldAvatar) {
-                        const avatarPath = path.join(__dirname, '../../public/images/users', oldAvatar);
-                        fs.unlink(avatarPath, (error) => {
-                            if (error) {
-                                console.error('Error al eliminar el avatar antiguo:', error);
-                            } else {
-                                console.log('Avatar antiguo eliminado con éxito.');
-                            }
-                        });
+                        existsSync(`./public/images/users/${user.avatar}`) &&
+                        unlinkSync(`./public/images/users/${user.avatar}`);
                     }
-                    
-                    
-
                     return res.redirect('/');
                 }).catch(error => {
                     console.error('Error al actualizar el usuario:', error);
