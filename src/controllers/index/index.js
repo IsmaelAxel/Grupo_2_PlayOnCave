@@ -1,17 +1,21 @@
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const db = require('../../database/models');
 module.exports = (req, res) => {
+  
     const productsFeatured = db.Products.findAll({
+        include : ['images'],
         where: {
             categoryId: 1
         }
     });
     const productsNewReleases = db.Products.findAll({
+        include : ['images'],
         where: {
             categoryId: 2
         }
     });
     const productsBestSellers = db.Products.findAll({
+        include : ['images'],
         where: {
             categoryId: 3
         }
