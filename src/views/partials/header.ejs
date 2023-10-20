@@ -58,7 +58,7 @@
                 <li><a href="/contact">contacto</a></li>
 
                 <% if (locals.userLogin) { %>
-                    <% if (userLogin.rol==="admin" ) { %>
+                    <% if (userLogin.role === 1 ) { %>
                         <li><a href="/users/admin">admin</a></li>
                         <% } %>
                         <li><a href="/users/logout">salir</a></li>
