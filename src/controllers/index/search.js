@@ -3,6 +3,7 @@ const { Op } = require('sequelize')
 const db = require('../../database/models');
 module.exports = (req, res) => {
     db.Products.findAll({
+        include: ['images'],
         where: {
             [Op.or]: [
                 {

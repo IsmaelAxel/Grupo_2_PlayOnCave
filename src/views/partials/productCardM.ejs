@@ -1,7 +1,7 @@
 
 <div class="index__main--article-box1">
     <article class="index__main__article--horizontal" data-aos="flip-down" data-aos-duration="1000">
-        <img src="/images/products/default_image.png" alt="">
+        <img src="/images/products/<%= images.find(image => image.main).file || `default_image.png` %>" alt="">
         <a href="/products/productDetail/<%= id %>">
             <h4><%= title %>  <i class="fa-solid fa-cart-shopping"></i></h4>
         </a>
