@@ -35,27 +35,27 @@
                         </div>
                         <div class="product__main--slider-imgs">
                            
-                                <img src="/images/products/<%= images[0].file || `default_image.png` %>"
+                                <img src="/images/products/<%= images[0] ? images[0].file : 'default_image.png' %>"
                                     alt=""
-                                    onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[0].file || `default_image.png` %>')">
-                                    <img src="/images/products/<%= images[1].file || `default_image.png` %>"
+                                    onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[0] ? images[0].file :  `default_image.png` %>')">
+                                    <img src="/images/products/<%= images[1] ? images[1].file : 'default_image.png' %>"
                                     alt=""
-                                    onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[1].file || `default_image.png` %>')">
-                                <img src="/images/products/<%= images[2].file || `default_image.png` %>"
+                                    onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[1] ? images[1].file :  `default_image.png` %>')">
+                                <img src="/images/products/<%= images[2] ? images[2].file : 'default_image.png' %>"
                                     alt=""
-                                    onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[2].file || `default_image.png` %>')">
+                                    onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[2] ? images[2].file :  `default_image.png` %>')">
                                 <img class="slider1"
-                                    src="/images/products/<%= images[3].file || `default_image.png` %>"
+                                    src="/images/products/<%= images[3] ? images[3].file : 'default_image.png' %>"
                                     alt=""
-                                    onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[3].file || `default_image.png` %>')">
+                                    onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[3] ? images[3].file :  `default_image.png` %>')">
                                 <img class="slider2"
-                                    src="/images/products/<%= images[4].file || `default_image.png` %>"
+                                    src="/images/products/<%=  images[4] ? images[4].file : 'default_image.png' %>"
                                     alt=""
-                                    onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[4].file || `default_image.png` %>')">
+                                    onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[4] ? images[4].file : `default_image.png` %>')">
                                 <img class="slider3"
-                                    src="/images/products/<%= images[5].file || `default_image.png` %>"
+                                    src="/images/products/<%=  images[5] ? images[5].file : 'default_image.png'%>"
                                     alt=""
-                                    onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[5].file || `default_image.png` %>')">
+                                    onclick="document.getElementById('product_detail_imgs').setAttribute('src','/images/products/<%= images[5] ? images[5].file : `default_image.png` %>')">
                                 
                         </div>
                     </div>
