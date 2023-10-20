@@ -1,65 +1,55 @@
-const db= require('../../database/models')
-const { existsSync, unlinkSync } = require('fs')
-const { validationResult } = require("express-validator");
+const { validationResult } = require('express-validator');
+const db = require('../../database/models');
 
-module.exports = async (req, res) => {
-    try {
-        
-        const errors = validationResult(req);
+module.exports = (req, res) => {
+    const errors = validationResult(req);
 
-        if (errors.isEmpty()) {
-            const {name,surname,birthday,address, city, province} =req.body
+    if (errors.isEmpty()) {
 
-            db.Users.update(
-                {
-                    name: name.trim(),
-                    surname: surname.trim(),
-                    birthday
-                },
-                {
-                    where: {
-                        id: req.session.userLogin.id
-                    }
-                }).then(response=>{
-                    console.log(response);
-                    req.session.userLogin.name = name;
-                    res.locals.userLogin.name= name;
-                
-                    return res.redirect('/')
-                })
+        const { name, surname,birthday} = req.body;
 
-                    if (req.file) {
-                        // Verifica si existe la imagen y elimínala si es necesario.
-                        const imagePath = `./public/images/users/${user.avatar}`;
-                        try {
-                            const stats = fs.promises.stat(imagePath);
-                            if (stats.isFile()) {
-                                fs.promises.unlink(imagePath);
-                            }
-                        } catch (err) {
-                            console.error('Error al verificar o eliminar el archivo:', err);
-                        }
+        console.log(req.body.name);
 
-                        user.avatar = req.file.filename;
-                    }
-                
-                return user;
+        db.Users.update(
+            {
+                name: name.trim(),
+                surname: surname.trim(),
+                birthday
+            },
+            {
+                where: {
+                    id: req.session.userLogin.id
+                }
+            }
+        ).then(response => {
+            
+            console.log( response);
+            
+            req.session.userLogin.name = name;
+                res.locals.userLogin.name = name
+            
+            if (req.cookies.PlayOnCave) {
+                res.cookie('PlayOnCave', req.session.userLogin);
+            }
+            return res.redirect('/');
+        }).catch(error => {
+            console.error('Error al actualizar el usuario:', error);
+            return res.status(500).send('Error al actualizar el usuario');
+        });
 
-        } else {
-            (req.file && existsSync(`./public/images/users/${req.file.filename}`) && unlinkSync(`./public/images/users/${req.file.filename}`))
-            db.Users.findByPk(req.session.userLogin.id)
-           .then(user => {
-            return res.render('profile',{
-                title:'profile',
-            ...user.dataValues,
-            errors : errors.mapped()
-    })
-    
-    }).catch(errors => console.log(errors))
-        }
-    } catch (error) {
-        console.error('Error al leer, escribir o procesar los datos:', error);
-        // Maneja el error de acuerdo a tus requerimientos.
-        res.status(500).send('Error interno del servidor');
+    } else {
+        db.Users.findByPk(req.session.userLogin.id)
+            .then(user => {
+                console.log('Usuario encontrado en la base de datos:', user);
+
+                return res.render('profile', {
+                    ...user.dataValues,
+                    errors: errors.mapped()
+                });
+            })
+            .catch(error => {
+                console.error('Error al buscar el usuario en la base de datos:', error);
+                return res.status(500).send('Error al buscar el usuario en la base de datos');
+            });
     }
-}
+};

@@ -11,11 +11,11 @@ const router = express.Router();
 
 /* GET users listing. */
 router.get('/login',userRedirect, login);
-router.post('/login', uploadUser.single('img'), loginValidator, processLogin);
+router.post('/login', loginValidator, processLogin);
 router.get('/logout', logout);
 router.get('/register',userRedirect, register);
 router.post('/register', uploadUser.single('image'), registerValidator, processRegister);
 router.get('/profile', userCheck, profile)
-router.put('/profileUpdate/:id', userCheck, uploadUser.single('avatar'), profileValidator, updateProfile)
+router.put('/profileUpdate', uploadUser.single('image'), userCheck, updateProfile)
 router.get('/admin', adminCheck, admin);
 module.exports = router;

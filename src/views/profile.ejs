@@ -47,8 +47,8 @@
                         <div class="card mb-3 shadow-lg bg-secondary text-white">
                             <div class="card-header">Perfil usuario</div>
                             <div class="card-body">
-                                <form action="/users/profileUpdate/<%= id %>?_method=PUT" method="POST" class="row"
-                                    enctype="multipart/form-data">
+                                <form action="/users/profileUpdate?_method=PUT" enctype="multipart/form-data" method="POST" class="row"
+                                    >
                                     <div class="col-12 col-md-6 mb-3">
                                         <label for="name" class="form-label">Nombre</label>
                                         <input type="text" class="form-control" id="name" placeholder="Tu nombre"
@@ -114,7 +114,7 @@
                                             <%= locals.errors && (errors.city && errors.city.msg) %>
                                         </small>
                                     </div>
-                                    <input class="form-control" type="file" id="avatar" name="avatar" hidden>
+                                    <input class="form-control" type="file" id="avatar" name="image" hidden>
                                     <div class="d-flex justify-content-between">
                                         <label for="avatar" class="btn btn-dark">Avatar</label>
                                         <button type="submit" class="btn btn-dark">Guardar cambios</button>
