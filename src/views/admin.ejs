@@ -35,7 +35,7 @@
                                 <div class="tab-content" id="myTabContent">
                                     <div class="tab-pane fade show active" id="home" role="tabpanel"
                                         aria-labelledby="home-tab">
-                                        <%- include('partials/tableProducts',{ products }) %>
+                                        <%- include('partials/tableProducts',{ ...products.dataValues }) %>
                                     </div>
                                     <div class="tab-pane fade" id="profile" role="tabpanel"
                                         aria-labelledby="profile-tab">

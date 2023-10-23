@@ -12,7 +12,7 @@
             </tr>
         </thead>
         <tbody>
-            <% products.forEach(({id, title,category, price,discount, MainImage, description},index)=> { %>
+            <% products.forEach(({id, title,category, price,discount, images, description},index)=> { %>
                 <tr>
                     <th scope="row">
                         <%= index + 1 %>
@@ -53,9 +53,9 @@
                                         </div>
                                         <div class="modal-body">
                                             <div class="card mb-3 bg-dark text-white" >
-                                                <div class="row col-sm-12">
+                                                <div class=" col-md-12">
                                                     <div class="" >
-                                                        <img src="/images/products/<%= MainImage || 'img-pdto-1.jpg'%>"
+                                                        <img src="/images/products/<%=images.find(image => image.main).file%>"
                                                             class="img-fluid" style="text-align: center;" alt="...">
                                                     </div>
                                                     <div class="">
