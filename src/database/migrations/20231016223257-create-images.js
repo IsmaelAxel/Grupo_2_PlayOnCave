@@ -10,13 +10,15 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       file: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull:false,
       },
       main: {
         type: Sequelize.BOOLEAN
       },
       productId: {
         type: Sequelize.INTEGER,
+        allowNull:false,
         references:{
           model:{
             tableName:'Products'

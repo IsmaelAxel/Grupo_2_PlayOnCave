@@ -10,10 +10,13 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       total: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull:false,
+
       },
       userId: {
         type: Sequelize.INTEGER,
+        allowNull:false,
         references:{
           model:{
             tableName:'Users'

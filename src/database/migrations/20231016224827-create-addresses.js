@@ -11,15 +11,22 @@ module.exports = {
       },
       adress: {
         type: Sequelize.STRING,
+       
+
       },
       city: {
         type: Sequelize.STRING,
+        
+
       },
       province: {
         type: Sequelize.STRING,
+        
+
       },
       userId: {
         type: Sequelize.INTEGER,
+        allowNull:false,
         references: {
           model: {
             tableName: "Users",
