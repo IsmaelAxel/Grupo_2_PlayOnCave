@@ -29,7 +29,7 @@ CREATE TABLE `addresses` (
   `adress` varchar(255) DEFAULT NULL,
   `city` varchar(255) DEFAULT NULL,
   `province` varchar(255) DEFAULT NULL,
-  `userId` int DEFAULT NULL,
+  `userId` int NOT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   PRIMARY KEY (`id`),
@@ -47,9 +47,9 @@ DROP TABLE IF EXISTS `carts`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `carts` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `quantity` int DEFAULT NULL,
-  `orderId` int DEFAULT NULL,
-  `productId` int DEFAULT NULL,
+  `quantity` int NOT NULL,
+  `orderId` int NOT NULL,
+  `productId` int NOT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   PRIMARY KEY (`id`),
@@ -69,7 +69,7 @@ DROP TABLE IF EXISTS `categories`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `categories` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   PRIMARY KEY (`id`)
@@ -85,15 +85,15 @@ DROP TABLE IF EXISTS `images`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `images` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `file` varchar(255) DEFAULT NULL,
+  `file` varchar(255) NOT NULL,
   `main` tinyint(1) DEFAULT NULL,
-  `productId` int DEFAULT NULL,
+  `productId` int NOT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `productId` (`productId`),
-  CONSTRAINT `images_ibfk_1` FOREIGN KEY (`productId`) REFERENCES `products` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `images_ibfk_1` FOREIGN KEY (`productId`) REFERENCES `products` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=75 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -105,8 +105,8 @@ DROP TABLE IF EXISTS `orders`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `orders` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `total` int DEFAULT NULL,
-  `userId` int DEFAULT NULL,
+  `total` int NOT NULL,
+  `userId` int NOT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   PRIMARY KEY (`id`),
@@ -124,27 +124,27 @@ DROP TABLE IF EXISTS `products`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `products` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) DEFAULT NULL,
-  `price` int DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
+  `price` int NOT NULL,
   `discount` int DEFAULT NULL,
-  `description` text,
-  `recommendedOs` varchar(255) DEFAULT NULL,
-  `minOs` varchar(255) DEFAULT NULL,
-  `recommendedProcessor` varchar(255) DEFAULT NULL,
-  `minProcessor` varchar(255) DEFAULT NULL,
-  `recommendedMemory` varchar(255) DEFAULT NULL,
-  `minMemory` varchar(255) DEFAULT NULL,
-  `recommendedGraphicsCard` varchar(255) DEFAULT NULL,
-  `minGraphicsCard` varchar(255) DEFAULT NULL,
-  `recommendedDisk` varchar(255) DEFAULT NULL,
-  `minDisk` varchar(255) DEFAULT NULL,
-  `categoryId` int DEFAULT NULL,
+  `description` text NOT NULL,
+  `recommendedOs` varchar(255) NOT NULL,
+  `minOs` varchar(255) NOT NULL,
+  `recommendedProcessor` varchar(255) NOT NULL,
+  `minProcessor` varchar(255) NOT NULL,
+  `recommendedMemory` varchar(255) NOT NULL,
+  `minMemory` varchar(255) NOT NULL,
+  `recommendedGraphicsCard` varchar(255) NOT NULL,
+  `minGraphicsCard` varchar(255) NOT NULL,
+  `recommendedDisk` varchar(255) NOT NULL,
+  `minDisk` varchar(255) NOT NULL,
+  `categoryId` int NOT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `categoryId` (`categoryId`),
   CONSTRAINT `products_ibfk_1` FOREIGN KEY (`categoryId`) REFERENCES `categories` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -156,8 +156,8 @@ DROP TABLE IF EXISTS `products_sections`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `products_sections` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `productsId` int DEFAULT NULL,
-  `sectionId` int DEFAULT NULL,
+  `productsId` int NOT NULL,
+  `sectionId` int NOT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   PRIMARY KEY (`id`),
@@ -177,7 +177,7 @@ DROP TABLE IF EXISTS `roles`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `roles` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   PRIMARY KEY (`id`)
@@ -193,9 +193,8 @@ DROP TABLE IF EXISTS `sections`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sections` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
-  `productsId` varchar(255) DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   PRIMARY KEY (`id`)
@@ -225,13 +224,13 @@ DROP TABLE IF EXISTS `users`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
-  `surname` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `surname` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `birthday` datetime DEFAULT NULL,
   `avatar` varchar(255) DEFAULT NULL,
-  `roleId` int DEFAULT NULL,
+  `roleId` int NOT NULL,
   `favorite_product_id` int DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
@@ -240,7 +239,7 @@ CREATE TABLE `users` (
   KEY `favorite_product_id` (`favorite_product_id`),
   CONSTRAINT `users_ibfk_1` FOREIGN KEY (`roleId`) REFERENCES `roles` (`id`),
   CONSTRAINT `users_ibfk_2` FOREIGN KEY (`favorite_product_id`) REFERENCES `products` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -252,4 +251,4 @@ CREATE TABLE `users` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-10-17 14:42:38
+-- Dump completed on 2023-10-25  9:43:41
