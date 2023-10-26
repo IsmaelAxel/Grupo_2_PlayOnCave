@@ -7,6 +7,15 @@
 
 <body>
     <%- include('partials/header') %>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <% platforms.forEach(platform => { %>
+                <div class="swiper-slide"><a href="/platforms/<%= platform.id %>"><img class="swiper-slide__imgs" src="/images/section/<%= platform.image %>" alt=""></a></div>
+            <% }) %>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <div class="swiper-pagination"></div>
     <main class="main__search">
     <% section.products.forEach(product => { %>
         <%- include('partials/productCardS',{
