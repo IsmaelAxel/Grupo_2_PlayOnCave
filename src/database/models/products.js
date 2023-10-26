@@ -20,6 +20,12 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'productId',
         onDelete: 'cascade'
       })
+      Products.belongsToMany(models.Section,{
+        as: 'section',
+        through: 'products_sections',
+        foreignKey: 'productsId',
+        otherKey: 'sectionId'
+    })
     }
   }
   Products.init({

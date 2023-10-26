@@ -1,0 +1,18 @@
+[
+    {
+        "name": "PC",
+        "image": "logo_pc.png"
+    },
+    {
+        "name": "PS5",
+        "image": "logo_ps5.png"
+    },
+    {
+        "name": "XBOX SERES",
+        "image": "logo_xbox.png"
+    },
+    {
+        "name": "RETRO",
+        "image": "logo_retro.png"
+    }
+]

@@ -10,9 +10,9 @@
         <!-- CARROUSEL -->
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="/images/carrousel/carrousel_1.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="/images/carrousel/carrousel_2.jpg" alt=""></div>
-                <div class="swiper-slide"><img src="/images/carrousel/carrousel_3.jpg" alt=""></div>
+                <% platforms.forEach(platform => { %>
+                    <div class="swiper-slide"><a href="/platforms/<%= platform.id %>"><img class="swiper-slide__imgs" src="/images/section/<%= platform.image %>" alt=""></a></div>
+                <% }) %>
             </div>
             <div class="swiper-pagination"></div>
         </div>

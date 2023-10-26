@@ -1,6 +1,6 @@
 [
    {
-      "id": "1",
+      "id": 1,
       "title": "DARK SOULS: REMASTERED",
       "category": "featured",
       "price": 8299,
@@ -26,7 +26,7 @@
       "reqMinDisk": "8 GB de espacio disponible"
    },
    {
-      "id": "2",
+      "id": 2,
       "title": "EA SPORTS FC™ 24",
       "category": "featured",
       "price": 11999,
@@ -52,7 +52,7 @@
       "reqMinDisk": "100 GB de espacio disponible"
    },
    {
-      "id": "3",
+      "id": 3,
       "title": "Forza Horizon 5",
       "category": "featured",
       "price": 11999,
@@ -78,7 +78,7 @@
       "reqMinDisk": "110 GB de espacio disponible"
    },
    {
-      "id": "4",
+      "id": 4,
       "title": "Tom Clancy’s Rainbow Six® Extraction",
       "category": "featured",
       "price": 3999,
@@ -104,7 +104,7 @@
       "reqMinDisk": "72 GB de espacio disponible"
    },
    {
-      "id": "5",
+      "id": 5,
       "title": "Starfield",
       "category": "new releases",
       "price": 11999,
@@ -130,7 +130,7 @@
       "reqMinDisk": "125 GB de espacio disponible"
    },
    {
-      "id": "6",
+      "id": 6,
       "title": "METAL GEAR SOLID Δ: SNAKE EATER",
       "category": "new releases",
       "price": 11999,
@@ -156,7 +156,7 @@
       "reqMinDisk": "125 GB de espacio disponible"
    },
    {
-      "id": "7",
+      "id": 7,
       "title": "Cyberpunk 2077",
       "category": "new releases",
       "price": 9999,
@@ -182,7 +182,7 @@
       "reqMinDisk": "70 GB de espacio disponible"
    },
    {
-      "id": "8",
+      "id": 8,
       "title": "Mortal Kombat 1",
       "category": "new releases",
       "price": 10999,
@@ -208,7 +208,7 @@
       "reqMinDisk": "100 GB de espacio disponible"
    },
    {
-      "id": "9",
+      "id": 9,
       "title": "ELDEN RING",
       "category": "best sellers",
       "price": 12956,
@@ -234,7 +234,7 @@
       "reqMinDisk": "60 GB de espacio disponible"
    },
    {
-      "id": "10",
+      "id": 10,
       "title": "Resident Evil 4",
       "category": "best sellers",
       "price": 12956,
@@ -260,7 +260,7 @@
       "reqMinDisk": "68 GB de espacio disponible"
    },
    {
-      "id": "11",
+      "id": 11,
       "title": "Remnant II",
       "category": "best sellers",
       "price": 7699,
@@ -286,7 +286,7 @@
       "reqMinDisk": "80 GB de espacio disponible"
    },
    {
-      "id": "12",
+      "id": 12,
       "title": "ARMORED CORE",
       "category": "best sellers",
       "price": 12399,

@@ -20,12 +20,16 @@ module.exports = (req, res) => {
             categoryId: 3
         }
     });
-    Promise.all([productsFeatured, productsNewReleases, productsBestSellers])
-        .then(([productsFeatured, productsNewReleases, productsBestSellers]) => {
+    const platforms = db.Section.findAll({
+        include: ['products']
+    })
+    Promise.all([productsFeatured, productsNewReleases, productsBestSellers,platforms])
+        .then(([productsFeatured, productsNewReleases, productsBestSellers, platforms]) => {
             return res.render('index', {
                 productsFeatured,
                 productsNewReleases,
                 productsBestSellers,
+                platforms,
                 toThousand
             })
         })

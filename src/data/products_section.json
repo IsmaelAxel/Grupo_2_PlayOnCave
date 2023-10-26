@@ -1,0 +1,143 @@
+[
+    {
+        "productsId": 1,
+        "sectionId": 1
+    },
+    {
+        "productsId": 1,
+        "sectionId": 2
+    },
+    {
+        "productsId": 1,
+        "sectionId": 3
+    },
+    {
+        "productsId": 1,
+        "sectionId": 4
+    },
+    {
+        "productsId": 2,
+        "sectionId": 1
+    },
+    {
+        "productsId": 2,
+        "sectionId": 2
+    },
+    {
+        "productsId": 2,
+        "sectionId": 3
+    },
+    {
+        "productsId": 3,
+        "sectionId": 1
+    },
+    {
+        "productsId": 3,
+        "sectionId": 3
+    },
+    {
+        "productsId": 4,
+        "sectionId": 1
+    },
+    {
+        "productsId": 4,
+        "sectionId": 2
+    },
+    {
+        "productsId": 4,
+        "sectionId": 3
+    },
+    {
+        "productsId": 5,
+        "sectionId": 1
+    },
+    {
+        "productsId": 5,
+        "sectionId": 3
+    },
+    {
+        "productsId": 6,
+        "sectionId": 1
+    },
+    {
+        "productsId": 6,
+        "sectionId": 2
+    },
+    {
+        "productsId": 6,
+        "sectionId": 3
+    },
+    {
+        "productsId": 7,
+        "sectionId": 1
+    },
+    {
+        "productsId": 7,
+        "sectionId": 2
+    },
+    {
+        "productsId": 7,
+        "sectionId": 3
+    },
+    {
+        "productsId": 8,
+        "sectionId": 1
+    },
+    {
+        "productsId": 8,
+        "sectionId": 2
+    },
+    {
+        "productsId": 8,
+        "sectionId": 3
+    },
+    {
+        "productsId": 9,
+        "sectionId": 1
+    },
+    {
+        "productsId": 9,
+        "sectionId": 2
+    },
+    {
+        "productsId": 9,
+        "sectionId": 3
+    },
+    {
+        "productsId": 10,
+        "sectionId": 1
+    },
+    {
+        "productsId": 10,
+        "sectionId": 2
+    },
+    {
+        "productsId": 10,
+        "sectionId": 3
+    },
+    {
+        "productsId": 11,
+        "sectionId": 1
+    },
+    {
+        "productsId": 11,
+        "sectionId": 2
+    },
+    {
+        "productsId": 11,
+        "sectionId": 3
+    },
+    {
+        "productsId": 12,
+        "sectionId": 1
+    },
+    {
+        "productsId": 12,
+        "sectionId": 2
+    },
+    {
+        "productsId": 12,
+        "sectionId": 3
+    }
+    
+]

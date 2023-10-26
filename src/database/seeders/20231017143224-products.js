@@ -4,8 +4,9 @@ const db = require('../models')
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await Promise.all(productsJSON.map(async ({ title, category, price, discount, description, reqRecommendedOs, reqMinOs, reqRecommendedProcessor, reqMinProcessor, reqRecommendedMemory, reqMinMemory, reqRecommendedGraphicsCard, reqMinGraphicsCard, reqRecommendedDisk, reqMinDisk, MainImage, images }) => {
+    await Promise.all(productsJSON.map(async ({ id,title, category, price, discount, description, reqRecommendedOs, reqMinOs, reqRecommendedProcessor, reqMinProcessor, reqRecommendedMemory, reqMinMemory, reqRecommendedGraphicsCard, reqMinGraphicsCard, reqRecommendedDisk, reqMinDisk, MainImage, images }) => {
       const product = await db.Products.create({
+        id,
         title,
         price,
         discount,
