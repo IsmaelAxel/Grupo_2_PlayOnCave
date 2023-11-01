@@ -1,0 +1,32 @@
+.platform { 
+    max-width: 420px;
+    margin: 10px auto;
+}
+.platform__titulo{
+    font-family: var(--tipoGrafiaTitulos);
+    color: #ffffff;
+    font-size: 2rem;
+}
+.platform__section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+@media (min-width: 768px){
+  .platform { 
+    max-width: 768px;
+}
+  .platform__section{
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 1024px){
+.platform{
+  max-width: 1180px;
+}
+}
+body.noche .platform__titulo{
+   color: var(--colorBackgroundMc);
+}

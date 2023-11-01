@@ -7,21 +7,23 @@
 
 <body>
     <%- include('partials/header') %>
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-            <% platforms.forEach(platform => { %>
-                <div class="swiper-slide"><a href="/platforms/<%= platform.id %>"><img class="swiper-slide__imgs" src="/images/section/<%= platform.image %>" alt=""></a></div>
-            <% }) %>
+    <main class="platform">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <% platforms.forEach(platform => { %>
+                    <div class="swiper-slide"><a href="/platforms/<%= platform.id %>"><img class="swiper-slide__imgs" src="/images/section/<%= platform.image %>" alt=""></a></div>
+                <% }) %>
+            </div>
+            <div class="swiper-pagination"></div>
         </div>
-        <div class="swiper-pagination"></div>
-    </div>
-    <div class="swiper-pagination"></div>
-    <main class="main__search">
+        <h1 class="platform__titulo">Plataforma: <%= section.name %></h1>
+        <section class="platform__section">
     <% section.products.forEach(product => { %>
-        <%- include('partials/productCardS',{
+        <%- include('partials/productCard',{
             ...product.dataValues, toThousand
          }) %>
     <% }) %>
+        </section>
     </main>
     <%- include('partials/footer') %>
     <%- include('partials/scripts') %>
