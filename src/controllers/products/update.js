@@ -5,7 +5,7 @@ const db = require("../../database/models");
 module.exports = (req, res) => {
 
     
-    const {title, categoryId, price, discount, description, minOs, minProcessor, minMemory, minGraphicsCard, minDisk, recommendedOs, recommendedProcessor, recommendedMemory, recommendedGraphicsCard, recommendedDisk} = req.body
+    const {title, categoryId, price, discount, description, minOs, minProcessor, minMemory, minGraphicsCard, minDisk, recommendedOs, recommendedProcessor, recommendedMemory, recommendedGraphicsCard, recommendedDisk,sectionId} = req.body
     const errors = validationResult(req)
     if(errors.isEmpty()){
         
@@ -28,7 +28,9 @@ module.exports = (req, res) => {
                 recommendedProcessor: recommendedProcessor.trim(),
                 recommendedMemory: recommendedMemory.trim(),
                 recommendedGraphicsCard: recommendedGraphicsCard.trim(),
-                recommendedDisk: recommendedDisk.trim()
+                recommendedDisk: recommendedDisk.trim(),
+                sectionId
+
             },{
                 where:{
                 id:req.params.id

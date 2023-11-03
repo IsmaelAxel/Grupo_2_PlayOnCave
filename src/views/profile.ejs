@@ -20,8 +20,11 @@
                                 <h5 class="card-title">Perfil de <%= name %> <%= surname %> 
                                     
                                 </h5>
-                                <p class="card-text">Rol: 
-                                </p>
+                                <% if (roleId===1) { %>
+                                    <p class="card-text">Admin
+                                    </p>
+                                <% } %>
+                              
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">Email: <%= email %>
