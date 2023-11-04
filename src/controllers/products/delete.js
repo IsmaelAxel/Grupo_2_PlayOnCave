@@ -1,6 +1,11 @@
 const db = require('../../database/models');
 const {existsSync, unlinkSync} = require('fs')
 module.exports = (req,res) => {
+    db.Products_section.destroy({
+        where:{
+            productsId: req.params.id
+        },
+    })
     db.Images.findAll({
         where:{
             productId: req.params.id
