@@ -36,6 +36,25 @@ module.exports = (req, res) => {
                 id:req.params.id
                 }
               }).then(() =>{
+                db.Products_section.destroy({
+                    where: {
+                        productsId: req.params.id
+                    }
+                }).then(() => {
+                    if(sectionId){
+                        const sectionsDB = sectionId.map(section => {
+                            return {
+                                productsId: req.params.id,
+                                sectionId: section
+                            }
+                        })
+                        db.Products_section.bulkCreate(sectionsDB,{
+                            validate: true
+                        }).then(() => {
+                            return console.log('Plataformas cambiadas correctamente')
+                        })
+                    }
+                }).catch(error => console.log(error))
                 if (req.files.mainImage) {
                     
                     existsSync(`./public/images/products/${product.images.find(image=>image.main).file}`) && 
@@ -85,26 +104,32 @@ module.exports = (req, res) => {
           })
        
     }else{
-        const category =  db.Category.findAll({
-            order: ['name']
-        })
-        const products = db.Products.findByPk(req.params.id,{
-            include:{
-                all: true
-           }
-        })
-       
-        Promise.all([category,products])
+        const categories =  db.Category.findAll()
     
-        .then(([category,products])=> {
+
+        const products = db.Products.findByPk(req.params.id,{
+            include:['category','section'],
+        })
+    
+        const sections = db.Section.findAll({
+            order: ['name']
+        });
+      
+        Promise.all([categories,products,sections])
+    
+        .then(([categories,products,sections])=> {
+    
+            // return res.send(category)
+        //    return res.send(products.section)
+        console.log("Products data:", products);
             return res.render('productEdit',{
-                category,
-                ...products?.dataValues,
-                errors: errors.mapped() 
+                categories,
+                products: products ? products.dataValues : null,
+                sections,
+                errors : errors.mapped(),
+                old : req.body
             })
         })
         .catch(error => console.log(error));
     }
-
-    
 }

@@ -8,10 +8,10 @@
                     <div class="col-12 col-md-8 mx-auto mt-5">
                         <div class="card bg-dark text-white">
                             <div class="card-header">
-                                <h1 class="card-title">Carga de Nuevos Productos</h1>
+                                <h1 class="card-title">Estas editando: <%= products.title %></h1>
                             </div>
                             <div class="card-body d-flex bg-dark text-white">
-                                <form class="row" method="post" action="/products/productAdd" enctype="multipart/form-data">
+                                <form class="row" method="POST" action="/products/productUpdate/<%= products.id %>?_method=PUT" enctype="multipart/form-data">
                                     <div class="col-12 col-md-6 mb-3">
                                         <label class="form-label" for="title">Nombre del Producto:</label>
                                         <input class="form-control <%= locals.errors && (errors.title && 'is-invalid') %>" type="text" id="title" name="title" value ="<%= products.title %>">
