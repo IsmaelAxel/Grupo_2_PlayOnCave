@@ -110,5 +110,6 @@ module.exports = [
       max: 100,
     }).withMessage("Se espera un minimo de 3 caracteres y un maximo 100 caracteres ").bail()
     .matches(/^[a-zA-Z0-9\s]+$/).withMessage('El campo debe contener letras, números y espacios'),
+    check("sectionId").notEmpty().withMessage('Es requerida')
   ];
   

@@ -4,7 +4,7 @@ const db = require('../../database/models')
 module.exports = (req,res) => {
     const errors = validationResult(req)
     if(errors.isEmpty()){
-        const {title, categoryId, price, discount, description, minOs, minProcessor, minMemory, minGraphicsCard, minDisk, recommendedOs, recommendedProcessor, recommendedMemory, recommendedGraphicsCard, recommendedDisk} = req.body
+        const {title, categoryId, price, discount, description, minOs, minProcessor, minMemory, minGraphicsCard, minDisk, recommendedOs, recommendedProcessor, recommendedMemory, recommendedGraphicsCard, recommendedDisk,sectionId} = req.body
         db.Products.create({
             title: title.trim(),
             categoryId,
@@ -20,7 +20,9 @@ module.exports = (req,res) => {
             recommendedProcessor: recommendedProcessor.trim(),
             recommendedMemory: recommendedMemory.trim(),
             recommendedGraphicsCard: recommendedGraphicsCard.trim(),
-            recommendedDisk: recommendedDisk.trim()
+            recommendedDisk: recommendedDisk.trim(),
+            sectionId,
+            
 
         })
         .then(product => {
@@ -55,14 +57,22 @@ module.exports = (req,res) => {
                 existsSync(`./public/images/products/${file.filename}`) && unlinkSync(`./public/images/products/${file.filename}`)
             })
         }
-        db.Category.findAll()
-        .then(category => {
-            // return res.send(category)
+        const category = db.Category.findAll({
+            order: ['name']
+        });
+    
+        const sections = db.Section.findAll({
+            order: ['name']
+        });
+    
+        Promise.all([category,sections])
+        .then(([category,sections]) => {
             return res.render('productAdd',{
                 category,
-                errors: errors.mapped(),
-                old: req.body
-            })
+                sections : sections,
+                errors : errors.mapped(),
+                old : req.body
+            }) 
         }).catch(error => console.log(error))
     }
 }
