@@ -5,7 +5,7 @@
 .platform__titulo{
     font-family: var(--tipoGrafiaTitulos);
     color: #ffffff;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 .platform__section{
     display: flex;
@@ -15,6 +15,9 @@
 @media (min-width: 768px){
   .platform { 
     max-width: 768px;
+}
+.platform__titulo{
+  font-size: 2rem;
 }
   .platform__section{
     flex-direction: row;
