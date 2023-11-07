@@ -25,12 +25,15 @@ module.exports = (req, res) => {
         })
             .then(product => {
                 if (sectionId) {
-                    const sectionDB = sectionId.map(section => {
+                    const sectionDB = Array.isArray(sectionId) ? sectionId.map(section => {
                         return {
-                            productsId: product.id,
-                            sectionId: section
-                        }
-                    })
+                          productsId: product.id,
+                          sectionId: section
+                        };
+                      }) : [{
+                        productsId: product.id,
+                        sectionId: sectionId
+                      }];
                     db.Products_section.bulkCreate(sectionDB, {
                         validate: true
                     }).then(() => {

@@ -42,13 +42,16 @@ module.exports = (req, res) => {
                     }
                 }).then(() => {
                     if(sectionId){
-                        const sectionsDB = sectionId.map(section => {
+                        const sectionDB = Array.isArray(sectionId) ? sectionId.map(section => {
                             return {
-                                productsId: req.params.id,
-                                sectionId: section
-                            }
-                        })
-                        db.Products_section.bulkCreate(sectionsDB,{
+                              productsId: product.id,
+                              sectionId: section
+                            };
+                          }) : [{
+                            productsId: product.id,
+                            sectionId: sectionId
+                          }];
+                        db.Products_section.bulkCreate(sectionDB,{
                             validate: true
                         }).then(() => {
                             return console.log('Plataformas cambiadas correctamente')

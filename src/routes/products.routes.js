@@ -3,7 +3,8 @@ const {productCart, productDetail, productEdit, productAdd, productUpdate, produ
 const upload = require('../middlewares/upload');
 const adminCheck = require('../middlewares/adminCheck')
 const productsValitador = require('../validations/productsValidator')
-const userCheck = require('../middlewares/userCheck')
+const userCheck = require('../middlewares/userCheck');
+const productsValidator = require('../validations/productsValidator');
 
 const router = express.Router();
 
@@ -18,7 +19,7 @@ router.put('/productUpdate/:id', upload.fields([
     },
     {
         name: 'images', maxCount: 5
-    }]), productUpdate),
+    }]),productsValidator, productUpdate),
 
 router.post('/productAdd', upload.fields([
         {
