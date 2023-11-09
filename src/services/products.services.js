@@ -3,7 +3,7 @@ const getAllProducts = async () => {
     try {
         const products = await db.Products.findAll({
             attributes: {
-                exclude: ['created_at', 'updated_at', 'categoryId']
+                exclude: [ 'price', 'discount', 'recommendedOs', 'minOs','minProcessor', 'minMemory','recommendedGraphicsCard','recommendedMemory','minGraphicsCard','recommendedProcessor','recommendedDisk','minDisk','createdAt','updatedAt', 'categoryId']
             },
             include: [
                 {
@@ -17,12 +17,6 @@ const getAllProducts = async () => {
                         attributes : []
                     }
                 },
-                {
-                    association: 'images',
-                    attributes: ['id','file']
-                }
-        
-
             ]
         });
         const count = await db.Products.count()
