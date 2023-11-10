@@ -42,7 +42,7 @@ const getProductId = async(id) => {
         }
         const product = await db.Products.findByPk(id,{
             attributes: {
-                exclude: ['created_at', 'updated_at', 'categoryId']
+                exclude: ['createdAt', 'createdAt', 'categoryId']
             },
             include: [
                 {

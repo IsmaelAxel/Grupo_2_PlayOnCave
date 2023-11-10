@@ -9,6 +9,7 @@ const indexRouter = require('./routes/index.routes');
 const usersRouter = require('./routes/users.routes');
 const productsRouter = require('./routes/products.routes')
 const apiProductsRouter = require('./routes/v1/apiProducts.routes')
+const apiUsersRouter = require('./routes/v1/apiUsers.routes')
 const app = express();
 const session = require("express-session");
 const cookieCheck = require('./middlewares/cookieCheck');
@@ -39,6 +40,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 app.use('/api/products', apiProductsRouter)
+app.use('/api/users', apiUsersRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
