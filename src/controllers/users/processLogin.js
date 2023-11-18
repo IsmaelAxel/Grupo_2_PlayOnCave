@@ -18,7 +18,7 @@ module.exports = (req, res) => {
 
         req.body.remember !== undefined &&
           res.cookie('PlayOnCave', req.session.userLogin, {
-            maxAge: 1000 * 60 * 5,
+            maxAge: 1000 * 60 * 30,
           });
 
         return res.redirect("/");

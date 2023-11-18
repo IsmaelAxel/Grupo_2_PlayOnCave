@@ -40,8 +40,8 @@
         </div>
 
         <div class="home_header_box--barra">
-            <form class="home_header_box--form" action="/search" method="get">
-                <input class="home_header_box--form--input" name="keywords" type="text"
+            <form id="form_search" class="home_header_box--form" action="/search" method="get">
+                <input id="input_search" class="home_header_box--form--input" name="keywords" type="text"
                     placeholder="Buscar productos, marcas">
                 <div class="home_header_box--btn">
                     <button class="home_header_box--button" type="submit"><i
@@ -66,4 +66,5 @@
             </ul>
         </nav>
     </div>
+    <script src="/javascripts/validationsFrontEnd/searchValidator.js"></script>
 </header>
