@@ -24,5 +24,10 @@
     "sequelize": "^6.33.0",
     "sequelize-cli": "^6.6.1",
     "uuidv4": "^6.2.13"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "public/js/*"
+    ]
   }
 }

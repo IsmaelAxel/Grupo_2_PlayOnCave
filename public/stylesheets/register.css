@@ -33,12 +33,14 @@
   width: 100%;
 }
 
+
 .register__form input {
   background-color: #ffffff;
   border: none;
   padding: 3px;
   outline: none;
   box-shadow: 0px 0px 10px var(--colorVerde);
+ 
 }
 
 .register__form div {

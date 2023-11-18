@@ -13,17 +13,16 @@
                         <div class="main__login__formulario__form--inputs">
                             <i class="fa-regular fa-envelope"></i>
                             <input type="text" id="email" placeholder="Tu email" name="email">
-                            <small class="text-danger d-flex justify-content-center ms-2">
+                            <small class="text-danger d-flex justify-content-center ms-2" id="msgError-email">
                                <p><%= locals.errors && (errors.email && errors.email.msg) %></p> 
                             </small>
                         </div>
                         <div class="main__login__formulario__form--inputs">
-                            <i class="fa-solid fa-lock"></i>
+                            <i  id="button-eye" class="fa fa-eye"></i>
                             <input type="password" name="password" id="password" placeholder="Ingresar clave...">
-                            <small class="text-danger d-flex justify-content-center ms-2">
+                            <small class="text-danger d-flex justify-content-center ms-2" id="msgError-password">
                                 <p><%= locals.errors && (errors.password && errors.password.msg) %></p>
                             </small>
-
                         </div>
 
                         <div class="main__login__formulario__form--box">
@@ -53,8 +52,8 @@
             </main>
 
             <%- include('partials/footer') %>
-                <%- include('partials/scripts') %>
-
+            <%- include('partials/scripts') %>
+            <script src="/javascripts/validationsFrontEnd/loginValidator.js"></script>
     </body>
 
 </html>
