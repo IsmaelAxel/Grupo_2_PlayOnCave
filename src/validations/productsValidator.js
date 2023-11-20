@@ -42,10 +42,10 @@ module.exports = [
       if (req.params.id) {
         return true;
       }
-      if (req.files.mainImage) {
-        return true;
+      if (!req.files.mainImage && !req.fileValidatorError.mainImage) {
+        return false;
       }
-      return false;
+      return true;
     })
     .withMessage("Debes subir una imagen principal"),
   body("images")
@@ -53,12 +53,15 @@ module.exports = [
       if (req.params.id) {
         return true;
       }
-      if (req.files.images) {
-        return true;
+      if (req.files.images.length > 5) {
+        req.files.images.forEach(file => {
+          existsSync(`./public/img/products/${file.filename}`) && unlinkSync(`./public/img/products/${file.filename}`)
+        });
+        return false
       }
-      return false;
+      return true;
     })
-    .withMessage("Las imagenes secundarias son obligatorias"),
+    .withMessage("Solo se permiten 5 imagenes"),
   check("minOs")
     .trim()
     .notEmpty()

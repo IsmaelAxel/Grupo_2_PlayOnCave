@@ -35,8 +35,8 @@ window.onload = function () {
           "El campo debe contener letras, números y espacios";
         this.classList.add("is-invalid");
         break;
-      case this.value.trim().length < 2:
-        $("msgError-title").innerHTML = "Mínimo dos caracteres";
+      case this.value.trim().length < 4:
+        $("msgError-title").innerHTML = "Mínimo cuatro caracteres";
         this.classList.add("is-invalid");
         break;
       default:
@@ -120,10 +120,8 @@ window.onload = function () {
   
     if (!atLeastOneChecked) {
       $("msgError-sectionId").innerHTML = "Debes seleccionar al menos una opción";
-      checkboxes.forEach((checkbox) => checkbox.classList.add("is-invalid"));
     } else {
       $("msgError-sectionId").innerHTML = null;
-      checkboxes.forEach((checkbox) => checkbox.classList.remove("is-invalid"));
     }
   
     return atLeastOneChecked; // Devuelve true si al menos una casilla está marcada
@@ -307,11 +305,11 @@ window.onload = function () {
     }
     const checkboxesValid = updateCheckboxValidation();
 
-    // Resto de la validación del formulario
+
     const elementsForm = document.querySelectorAll('#formAdd input, #formAdd select, #formAdd textarea');
     let errors = [];
   
-    // Restablecer mensajes de error y clases de validación
+
     for (const element of elementsForm) {
       element.classList.remove('is-invalid');
     }
@@ -324,13 +322,13 @@ window.onload = function () {
     }
   
     if (errors.length > 0 || !checkboxesValid) {
-      // Aplicar clases de error y mostrar mensaje de error general
+
       for (const errorElement of errors) {
         errorElement.classList.add('is-invalid');
       }
       $('msgError-empty').innerHTML = "Hay errores en la carga de datos";
     } else {
-      // Si no hay errores, enviar el formulario
+
       this.submit();
     }
   });

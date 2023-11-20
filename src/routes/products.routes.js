@@ -15,18 +15,18 @@ router.get('/productEdit/:id',adminCheck, productEdit);
 router.get('/productAdd', adminCheck,productAdd);
 router.put('/productUpdate/:id', upload.fields([
     {
-        name: 'mainImage', maxCount: 1
+        name: 'mainImage'
     },
     {
-        name: 'images', maxCount: 5
+        name: 'images'
     }]),productsValidator, productUpdate),
 
 router.post('/productAdd', upload.fields([
         {
-            name: 'mainImage', maxCount: 1
+            name: 'mainImage'
         },
         {
-            name: 'images', maxCount: 5
+            name: 'images'
         }
     ]),productsValitador, productCreate)
 
