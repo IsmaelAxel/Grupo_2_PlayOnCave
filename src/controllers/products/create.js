@@ -1,8 +1,8 @@
-const { validationResult } = require('express-validator')
 const { existsSync, unlinkSync } = require('fs')
-const db = require('../../database/models')
+const {validationResult} = require('express-validator');
+const db = require('../../database/models');
 module.exports = (req, res) => {
-    const errors = validationResult(req)
+    let errors = validationResult(req)
     if (errors.isEmpty()) {
         const { title, categoryId, price, discount, description, minOs, minProcessor, minMemory, minGraphicsCard, minDisk, recommendedOs, recommendedProcessor, recommendedMemory, recommendedGraphicsCard, recommendedDisk, sectionId } = req.body
         db.Products.create({
@@ -79,7 +79,21 @@ module.exports = (req, res) => {
         const sections = db.Section.findAll({
             order: ['name']
         });
-
+        (req.fileValidatorError && req.fileValidatorError.mainImage) && errors.errors.push({
+            type : 'field',
+            value : "",
+            path : 'mainImage',
+            msg: req.fileValidatorError.mainImage,
+            location : "body"
+        });
+    
+        (req.fileValidatorError && req.fileValidatorError.images) && errors.errors.push({
+            type : 'field',
+            value : "",
+            path : 'images',
+            msg: req.fileValidatorError.images,
+            location : "body"
+        })
         Promise.all([category, sections])
             .then(([category, sections]) => {
                 return res.render('productAdd', {

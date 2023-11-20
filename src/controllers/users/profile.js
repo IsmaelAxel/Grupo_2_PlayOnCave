@@ -2,7 +2,9 @@ const db = require('../../database/models')
 
 module.exports = (req, res) => {
 
-    db.Users.findByPk(req.session.userLogin.id)
+    db.Users.findByPk(req.session.userLogin.id, {
+        include: ['address']
+    })
         .then(user => {
             const birthday = new Date(user.birthday).toISOString();
             console.log(birthday.split('T')[0]);
