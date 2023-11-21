@@ -117,15 +117,16 @@ window.onload = function () {
     const atLeastOneChecked = Array.from(checkboxes).some(
       (checkbox) => checkbox.checked
     );
-  
+
     if (!atLeastOneChecked) {
-      $("msgError-sectionId").innerHTML = "Debes seleccionar al menos una opción";
-      checkboxes.forEach((checkbox) => checkbox.classList.add("is-invalid"));
+      $("msgError-sectionId").innerHTML =
+        "Debes seleccionar al menos una opción";
+     
     } else {
       $("msgError-sectionId").innerHTML = null;
-      checkboxes.forEach((checkbox) => checkbox.classList.remove("is-invalid"));
+    
     }
-  
+
     return atLeastOneChecked; // Devuelve true si al menos una casilla está marcada
   }
   checkboxes.forEach((checkbox) => {
@@ -257,52 +258,41 @@ window.onload = function () {
     this.classList.remove("is-invalid");
   });
 
-  $("mainImage").addEventListener("change", function () {
-    if (!$("mainImage").files || $("mainImage").files.length === 0) {
-        $("msgError-mainImage").innerHTML = "Debes seleccionar una imagen principal";
-        $("mainImageLabel").classList.remove("btn-secondary");
-        $("mainImageLabel").classList.add("btn-danger");
-      }else {
-          $("msgError-mainImage").innerHTML = null;
-          $("mainImageLabel").classList.remove("btn-danger");
-          $("mainImageLabel").classList.add("btn-secondary");
-      }
-  });
-
- 
-
-  $("formAdd").addEventListener("submit", function (e) {
+  $("formEdit").addEventListener("submit", function (e) {
     e.preventDefault();
-    
-    
-
-    
-   
+    const checkboxesValid = updateCheckboxValidation();
 
     // Resto de la validación del formulario
-    const elementsForm = document.querySelectorAll('#formAdd input, #formAdd select, #formAdd textarea');
+    const elementsForm = document.querySelectorAll(
+      '#formEdit input:not([type="file"]), #formEdit select, #formEdit textarea'
+    );
+
     let errors = [];
-  
+
     // Restablecer mensajes de error y clases de validación
     for (const element of elementsForm) {
-      element.classList.remove('is-invalid');
+      element.classList.remove("is-invalid");
     }
-    $('msgError-empty').innerHTML = "";
-  
+    $("msgError-empty").innerHTML = "";
+
     for (const element of elementsForm) {
-      if (!element.value.trim() || element.classList.contains('is-invalid')) {
+      if (
+        element.type !== "file" &&
+        (!element.value.trim() || element.classList.contains("is-invalid"))
+      ) {
         errors.push(element);
       }
     }
-  
+
     if (errors.length > 0 || !checkboxesValid) {
-      // Aplicar clases de error y mostrar mensaje de error general
+      console.log("Errors:", errors);
+      console.log("Checkbox Validation:", checkboxesValid);
+
       for (const errorElement of errors) {
-        errorElement.classList.add('is-invalid');
+        errorElement.classList.add("is-invalid");
       }
-      $('msgError-empty').innerHTML = "Hay errores en la carga de datos";
+      $("msgError-empty").innerHTML = "Hay errores en la carga de datos";
     } else {
-      // Si no hay errores, enviar el formulario
       this.submit();
     }
   });

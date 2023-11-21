@@ -11,7 +11,7 @@
                                 <h1 class="card-title">Estas editando: <%= products.title %></h1>
                             </div>
                             <div class="card-body d-flex bg-dark text-white">
-                                <form class="row" method="POST" action="/products/productUpdate/<%= products.id %>?_method=PUT" enctype="multipart/form-data">
+                                <form class="row" id="formEdit" method="POST" action="/products/productUpdate/<%= products.id %>?_method=PUT" enctype="multipart/form-data">
                                     <div class="col-12 col-md-6 mb-3">
                                         <label class="form-label" for="title">Nombre del Producto:</label>
                                         <input class="form-control <%= locals.errors && (errors.title && 'is-invalid') %>" type="text" id="title" name="title" value ="<%= products.title %>">
@@ -134,6 +134,11 @@
                                     <div class="productAdd__box__form--btn">
                                         <button class="btn btn-danger" type="reset">CLEAR</button>
                                         <button class="btn btn-primary" type="submit">CARGAR</button>
+                                    </div>
+                                    <div class="text-center mt-4 mb-3">
+                                        <h4 class="text-danger" id="msgError-empty">
+
+                                        </h4>
                                     </div>
                                 </form>
                             </div>   
