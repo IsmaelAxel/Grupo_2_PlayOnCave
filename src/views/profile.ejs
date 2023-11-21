@@ -36,13 +36,13 @@
                         <div class="card mb-3 shadow-lg bg-secondary text-white">
                             <div class="card-header">Perfil usuario</div>
                             <div class="card-body">
-                                <form action="/users/profileUpdate?_method=PUT" enctype="multipart/form-data" method="POST" class="row"
+                                <form action="/users/profileUpdate?_method=PUT" id="formProfile" enctype="multipart/form-data" method="POST" class="row"
                                     >
                                     <div class="col-12 col-md-6 mb-3">
                                         <label for="name" class="form-label">Nombre</label>
                                         <input type="text" class="form-control" id="name" placeholder="Tu nombre"
                                             name="name" value="<%= name %>">
-                                        <small class="text-danger ms-2">
+                                        <small class="text-danger ms-2 fw-bold fs-6" id="msgError-name">
                                             <%= locals.errors && (errors.name && errors.name.msg) %>
                                         </small>
                                     </div>
@@ -50,7 +50,7 @@
                                         <label for="surname" class="form-label">Apellido</label>
                                         <input type="text" class="form-control" id="surname" placeholder="Tu apellido"
                                             name="surname" value="<%= surname %>">
-                                        <small class="text-danger ms-2">
+                                        <small class="text-danger ms-2 fw-bold fs-6" id="msgError-surname">
                                             <%= locals.errors && (errors.surname && errors.surname.msg) %>
                                         </small>
                                     </div>
@@ -58,46 +58,34 @@
                                         <label for="birthday" class="form-label">Cumpleaños</label>
                                         <input type="date" class="form-control" id="birthday" name="birthday"
                                             value="<%= birthday %>">
-                                        <small class="text-danger ms-2">
+                                        <small class="text-danger ms-2" id="msgError-birthday">
                                             <%= locals.errors && (errors.birthday && errors.birthday.msg) %>
                                         </small>
                                     </div>
                                     <div class="col-12 col-md-6 mb-3">
                                         <label for="address" class="form-label">Dirección</label>
                                         <input type="text" class="form-control" id="address" placeholder="Domicilio"
-                                            name="address" value="">
-                                        <small class="text-danger ms-2">
-                                            <%= locals.errors && (errors.address && errors.address.msg) %>
-                                        </small>
+                                            name="address" value=" <%= address.address %>">
                                     </div>
                                     <div class="col-12 col-md-6 mb-3">
                                         <label for="province" class="form-label">Provincia</label>
-                                        <select type="text" class="form-select" id="province" name="province"
-                                            value="">
-                                            <option  value="" hidden>Seleccione...
-                                            </option>
-                                            <option  value="BA">Buenos Aires</option>
-                                            <option  value="ROS">Santa Fe</option>
-                                            <option  value="CBA">Córdoba</option>
-                                            <option  value="NQN">Neuquén</option>
-                                            <option  value="MDZ">Mendoza</option>
-                                            <option  value="UAQ">San Juan</option>
+                                        <select type="text" class="form-select" id="province" name="province">
+                                           <% if (address.city) {%>
+                                             <option  value="<%=address.province %>" hidden> <%=address.province %>    </option>
+                                             <%   } else {  %>
+                                            <option  value="" hidden>Seleccione...</option>
+                                            <% } %>
+
                                         </select>
-                                        <small class="text-danger ms-2">
-                                            <%= locals.errors && (errors.province && errors.province.msg) %>
-                                        </small>
                                     </div>
                                     <div class="col-12 col-md-6 mb-3">
                                         <label for="city" class="form-label">Ciudad</label>
-                                        <select type="text" class="form-select" id="city" name="city"
-                                            value="">
-                                            <option  value="" hidden>Seleccione...</option>
-                                            <option  value="BA">Buenos Aires</option>
-                                            <option  value="ROS">Rosario</option>
-                                            <option  value="CBA">Córdoba</option>
-                                            <option  value="NQN">Neuquén</option>
-                                            <option  value="MDZ">Mendoza</option>
-                                            <option  value="UAQ">San Juan</option>
+                                        <select type="text" class="form-select" id="city" name="city" >
+                                            <% if (address.city) {%>
+                                                <option  value="<%=address.city %> " hidden> <%=address.city %>    </option>
+                                                <%   } else {  %>
+                                               <option  value="" hidden>Seleccione...</option>
+                                               <% } %>
                                         </select>
                                         <small class="text-danger ms-2">
                                             <%= locals.errors && (errors.city && errors.city.msg) %>
@@ -108,7 +96,13 @@
                                         <label for="avatar" class="btn btn-dark">Avatar</label>
                                         <button type="submit" class="btn btn-dark">Guardar cambios</button>
                                     </div>
+                                    <div class="text-center mt-4 mb-3">
+                                        <h4 class="text-danger" id="msgError-empty">
+
+                                        </h4>
+                                    </div>
                                 </form>
+                               
                             </div>
                         </div>
                     </div>
@@ -118,6 +112,7 @@
         </main>
         <%- include('partials/footer') %>
             <%- include('partials/scripts') %>
+            <script src="/javascripts/validationsFrontEnd/profile.js"></script>
 
 </body>
 
