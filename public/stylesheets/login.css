@@ -26,6 +26,14 @@
   border-radius: 10px;
 }
 
+.inputRojo{
+  border: solid 3px red !important;
+  box-shadow: 0px 0px 10px red !important;
+}
+.inputVerde{
+  border: solid 3px green !important;
+  box-shadow: 0px 0px 10px var(--colorVerde) !important;
+}
 .main__login__formulario__form--inputs i {
   position: absolute;
   color: #000000;
@@ -181,4 +189,8 @@ body.noche .main__login--buttonGoogle {
   border: 3px solid #fff;
   color: #fff;
   box-shadow: 0px 0px 10px #fff;
+}
+body.noche .inputVerde{
+  border: solid 3px var(--colorBackgroundMc) !important;
+  box-shadow: 0px 0px 10px var(--colorBackgroundMc) !important;
 }

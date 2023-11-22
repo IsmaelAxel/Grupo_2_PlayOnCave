@@ -17,7 +17,14 @@
   text-transform: capitalize;
   
 }
-
+.inputRojo{
+  border: solid 3px red !important;
+  box-shadow: 0px 0px 10px red !important;
+}
+.inputVerde{
+  border: solid 3px green !important;
+  box-shadow: 0px 0px 10px var(--colorVerde) !important;
+}
 .register h2 {
   text-align: center;
   margin-bottom: 15px;
@@ -162,4 +169,9 @@ body.noche .register__form input {
 
 body.noche .register__form--btn--crear:hover {
   background-color: var(--colorIconos);
+}
+
+body.noche .inputVerde{
+  border: solid 3px var(--colorBackgroundMc) !important;
+  box-shadow: 0px 0px 10px var(--colorBackgroundMc) !important;
 }

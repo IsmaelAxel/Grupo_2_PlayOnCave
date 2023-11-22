@@ -8,39 +8,46 @@
     <main class="register">
         <div class="register__box">
             <h2>registrate </h2>
-            <form action="" class="register__form" method="post" enctype="multipart/form-data">
-                <div>
+            <form action="" id="form-register" class="register__form" method="post" enctype="multipart/form-data">
+                <div >
                     <label class="form-label" for="name">Nombre</label>
-                    <input class="form-control" id="name" type="text" name="name" placeholder="Ej: Eric" value="<%=  locals.old && (old.name && old.name ) %>">
+                    <input class="form-control cambiarColor" id="name" type="text" name="name" placeholder="Ej: Eric" value="<%=  locals.old && (old.name && old.name ) %>">
                     <small class="text-danger fs-6 ms-2" id="msgError-name"><%= locals.errors && (errors.name && errors.name.msg) %></small>
                 </div>
                 <div>
                     <label for="surname" class="form-label">Apellido</label>
-                    <input class="form-control" id="surname" type="text" name="surname" placeholder="Ej: Mena" value="<%=  locals.old && (old.surname && old.surname ) %>">
+                    <input class="form-control cambiarColor" id="surname" type="text" name="surname" placeholder="Ej: Mena" value="<%=  locals.old && (old.surname && old.surname ) %>">
                     <small class="text-danger fs-6 ms-2" id="msgError-surname"><%= locals.errors && (errors.surname && errors.surname.msg) %></small>
                 </div>
                 <div id="register__form--email">
                     <label class="form-label" for="email">Email</label>
-                    <input class="form-control" id="email" type="email" name="email"    placeholder="Eric_BATMAN@formar.com" value="<%=  locals.old && (old.email && old.email ) %>">
+                    <input class="form-control cambiarColor" id="email" type="email" name="email"    placeholder="Eric_BATMAN@formar.com" value="<%=  locals.old && (old.email && old.email ) %>">
                     <small class="text-danger fs-6 ms-2" id="msgError-email"><%= locals.errors && (errors.email && errors.email.msg) %></small>
                 </div>
                 <div>
                     <label class="form-label" for="password">Contraseña <i id="button-eye" class="fa fa-eye"></i></label>
-                    <input class="form-control" id="password" type="password" name="password" >
+                    <input class="form-control cambiarColor" id="password" type="password" name="password" >
                     <small class="text-danger fs-6 ms-2" id="msgError-password"><%= locals.errors && (errors.password && errors.password.msg) %></small>
                 </div>
                 <div>
                     <label class="form-label" for="password2">Confirmar Contraseña</label>
-                    <input class="form-control" id="password2" type="password" name="password2">
+                    <input class="form-control cambiarColor" id="password2" type="password" name="password2">
                     <small class="text-danger fs-6 ms-2" id="msgError-password2"><%= locals.errors && (errors.password2 && errors.password2.msg) %></small>
                 </div>
                 <div class="register__box--avatar"> 
-                    <label id="addAvatar" class="btn btn-dark" for="image" >Agrega tu avatar</label>
-                    <input type="file" name="image" id="image" class="form-control" hidden>
+                    <label class="btn btn-dark imageLabel" for="image" id="addAvatar"  >Agrega tu avatar</label>
+                    <input class="form-control cambiarColor" type="file" name="image" id="image"  hidden>
+                    <small class="text-danger fs-6 ms-2" id="msgError-image"><%= locals.errors && (errors.image && errors.image.msg) %></small>
+
                 </div>
                 <div class="register__form--btn">
                     <button type="submit" class="register__form--btn--crear">crear cuenta</button>
                     <p>¿Ya tenés cuenta? <a href="/users/login"> inicía sesión</a></p>
+                </div>
+                <div class="text-center mt-4 mb-3">
+                    <h4 class="text-danger" id="msgError-empty">
+
+                    </h4>
                 </div>
             </form>
         </div>

@@ -12,14 +12,14 @@
                     <form action="" method="POST">
                         <div class="main__login__formulario__form--inputs">
                             <i class="fa-regular fa-envelope"></i>
-                            <input type="text" id="email" placeholder="Tu email" name="email">
+                            <input class="cambiarColor" type="text" id="email" placeholder="Tu email" name="email">
                             <small class="text-danger d-flex justify-content-center ms-2" id="msgError-email">
                                <p><%= locals.errors && (errors.email && errors.email.msg) %></p> 
                             </small>
                         </div>
                         <div class="main__login__formulario__form--inputs">
                             <i  id="button-eye" class="fa fa-eye"></i>
-                            <input type="password" name="password" id="password" placeholder="Ingresar clave...">
+                            <input class="cambiarColor" type="password" name="password" id="password" placeholder="Ingresar clave...">
                             <small class="text-danger d-flex justify-content-center ms-2" id="msgError-password">
                                 <p><%= locals.errors && (errors.password && errors.password.msg) %></p>
                             </small>
