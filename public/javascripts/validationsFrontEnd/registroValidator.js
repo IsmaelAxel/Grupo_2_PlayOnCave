@@ -113,38 +113,23 @@ window.onload = function () {
         }
     });
 
-    document.getElementById('email').addEventListener('focus', function () {
-        document.getElementById('msgError-email').innerHTML = null;
-        this.classList.remove("is-invalid");
-        let inputElement = this;
-        let container = inputElement.closest('.cambiarColor');
-        container.classList.remove('inputRojo', 'inputVerde');
-    });
-
-    document.getElementById('email').addEventListener('change', async function (e) {
+    document.getElementById('email').addEventListener('blur', async function (e) {
         try {
-            const response = await fetch(`/api/checkEmail?email=${this.value}`);
+            const response = await fetch(`/api/users/check-email?email=${this.value}`);
             const result = await response.json();
-            let inputElement = this;
-            let container = inputElement.closest('.cambiarColor');
-
             if (result.data) {
                 document.getElementById('msgError-email').innerHTML = "El email ya se encuentra registrado";
-                inputElement.classList.add("is-invalid");
-                container.classList.add('inputRojo');
-                container.classList.remove('inputVerde');
-            } else {
-                document.getElementById('msgError-email').innerHTML = null;
-                inputElement.classList.remove("is-invalid");
-                inputElement.classList.add("is-valid");
-                container.classList.remove('inputRojo');
-                container.classList.add('inputVerde');
+                this.classList.add("is-invalid");
             }
         } catch (error) {
             console.error(error);
         }
     });
 
+    document.getElementById('email').addEventListener('focus', function () {
+        document.getElementById('msgError-email').innerHTML = null;
+        this.classList.remove("is-invalid");
+    });
 
     document.getElementById('password').addEventListener('blur', function (e) {
         let inputElement = this;

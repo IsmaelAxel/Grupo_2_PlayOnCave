@@ -1,4 +1,5 @@
 const { getAllUsers, getUserId } = require('../../services/users.services')
+const db = require('../../database/models')
 module.exports = {
     allUsers: async (req,res) => {
         try{
@@ -46,7 +47,7 @@ module.exports = {
     checkEmail : async (req,res) => {
         const email = req.query.email;
         try {
-            const user = await db.User.findOne({
+            const user = await db.Users.findOne({
                 where : {
                     email
                 }
