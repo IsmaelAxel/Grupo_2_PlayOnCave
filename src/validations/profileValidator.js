@@ -10,7 +10,7 @@ module.exports = [
       min: 2,
     })
     .withMessage("El nombre es obligatorio")
-    .matches(/^[A-Za-z0-9_]+$/u)
+    .matches(/^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/u)
     .withMessage("El campo debe contener letras y espacios"),
   check("surname")
     .trim()
@@ -19,7 +19,7 @@ module.exports = [
       min: 2,
     })
     .withMessage("El apellido es obligatorio")
-    .matches(/^[A-Za-z0-9_]+$/u)
+    .matches(/^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/u)
     .withMessage("El campo debe contener letras y espacios"),
 
     check("birthday")
