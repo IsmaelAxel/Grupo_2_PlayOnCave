@@ -57,7 +57,7 @@ window.onload = async function (e) {
         this.classList.add("is-invalid");
         break;
       case birthDate.isAfter(currentDate):
-        $("msgError-birthday").innerHTML = "Que sos, termitator??";
+        $("msgError-birthday").innerHTML = "La fecha debe ser anterior a la actual";
         this.classList.add("is-invalid");
         break;
       case birthDate.isBefore(minDate):
@@ -104,6 +104,32 @@ window.onload = async function (e) {
         }
      
     })
+    function validateAvatar() {
+      const avatarInput = $('avatar');
+      const allowedExtensions = ["jpg", "png", "webp"];
+    
+      const fileName = avatarInput.files[0].name;
+      const fileExtension = fileName.split('.').pop().toLowerCase();
+    
+      if (!allowedExtensions.includes(fileExtension)) {
+        avatarInput.classList.add("is-invalid");
+        $('msgError-avatar').innerHTML = "Tipo de archivo inválido. Las extensiones permitidas son: jpg, png, webp";
+        $("avatarLabel").classList.remove("btn-secondary");
+        $("avatarLabel").classList.add("btn-danger");
+        return false; // No es válida
+      }
+    
+      avatarInput.classList.remove("is-invalid");
+      $('msgError-avatar').innerHTML = ""; // Limpiar el mensaje si se ha seleccionado una imagen
+      $("avatarLabel").classList.remove("btn-danger");
+      $("avatarLabel").classList.add("btn-secondary");
+      return true; // Es válida
+    }
+    
+    $("avatar").addEventListener("change", function () {
+      validateAvatar();
+    });
+
     $('formProfile').addEventListener('submit', function(e){
       e.preventDefault();
 
@@ -112,16 +138,12 @@ window.onload = async function (e) {
 
       for (let i = 0; i < elementsForm.length - 2; i++) {
           
-          if(!elementsForm[i].value.trim() || elementsForm[i].classList.contains('is-invalid')){
+          if( elementsForm[i].classList.contains('is-invalid')){
               elementsForm[i].classList.add('is-invalid')
               $('msgError-empty').innerHTML = "Hay errores en la carga de datos"
               error = true
           }
       }
-
       !error && this.submit()
-  
-
-  })
-    
+  })    
 };

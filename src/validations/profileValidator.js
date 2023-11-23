@@ -1,4 +1,4 @@
-const moment = require('moment');
+const moment = require("moment");
 const { check, body } = require("express-validator");
 const db = require('../database/models');
 
@@ -20,14 +20,6 @@ module.exports = [
 
     check("birthday")
     .notEmpty().withMessage("Ingrese la fecha de nacimiento")
-    .custom((value) => {
-      const birthDate = moment(value);
-
-      if (!birthDate.isValid()) {
-        throw new Error("La fecha no tiene un formato válido");
-      }
-      return true;
-    })
     .custom((value) => {
       const birthDate = moment(value);
       const currentDate = moment();

@@ -34,7 +34,7 @@
                     </div>
                     <div class="col-12 col-md-10 col-lg-8 mx-auto mt-5">
                         <div class="card mb-3 shadow-lg bg-secondary text-white">
-                            <div class="card-header">Perfil usuario</div>
+                            <div class="card-header fs-3">Perfil usuario</div>
                             <div class="card-body">
                                 <form action="/users/profileUpdate?_method=PUT" id="formProfile" enctype="multipart/form-data" method="POST" class="row"
                                     >
@@ -58,7 +58,7 @@
                                         <label for="birthday" class="form-label">Cumpleaños</label>
                                         <input type="date" class="form-control" id="birthday" name="birthday"
                                             value="<%= birthday %>">
-                                        <small class="text-danger ms-2" id="msgError-birthday">
+                                        <small class="text-danger ms-2 fw-bold fs-6" id="msgError-birthday">
                                             <%= locals.errors && (errors.birthday && errors.birthday.msg) %>
                                         </small>
                                     </div>
@@ -91,16 +91,26 @@
                                             <%= locals.errors && (errors.city && errors.city.msg) %>
                                         </small>
                                     </div>
-                                    <input class="form-control" type="file" id="avatar" name="image" hidden>
-                                    <div class="d-flex justify-content-between">
-                                        <label for="avatar" class="btn btn-dark">Avatar</label>
-                                        <button type="submit" class="btn btn-dark">Guardar cambios</button>
-                                    </div>
-                                    <div class="text-center mt-4 mb-3">
-                                        <h4 class="text-danger" id="msgError-empty">
+                                    <div>
+                                        <div class="d-flex justify-content-start">
+                                            <input class="form-control" type="file" id="avatar" name="avatar" hidden>
+                                            <label for="avatar" id="avatarLabel" class="btn btn-dark">Avatar</label>
+                                            <small class="text-danger ms-2 fw-bold fs-6" id="msgError-avatar">
+                                                <%= locals.errors && (errors.avatar && errors.avatar.msg) %>
+                                            </small>
+                                        </div>
+                                        <div class="text-center mt-4 mb-3">
+                                            <h5 class="text-danger my-1" id="msgError-empty">
+    
+                                            </h5>
+                                        </div>
 
-                                        </h4>
                                     </div>
+                                   <div class="d-flex justify-content-end">
+
+                                       <button type="submit" class="btn btn-dark col-8 col-md-4 my-3">Guardar cambios</button>
+                                   </div>
+                                    
                                 </form>
                                
                             </div>
@@ -112,6 +122,7 @@
         </main>
         <%- include('partials/footer') %>
             <%- include('partials/scripts') %>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.min.js" integrity="sha512-Dz4zO7p6MrF+VcOD6PUbA08hK1rv0hDv/wGuxSUjImaUYxRyK2gLC6eQWVqyDN9IM1X/kUA8zkykJS/gEVOd3w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
             <script src="/javascripts/validationsFrontEnd/profile.js"></script>
 
 </body>

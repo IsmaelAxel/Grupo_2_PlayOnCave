@@ -70,7 +70,8 @@ module.exports = (req, res) => {
                 console.log(birthday.split('T')[0]);
                 return res.render('profile', {
                     ...user.dataValues,
-                    birthday: birthday.split('T')[0]
+                    birthday: birthday.split('T')[0],
+                    errors : errors.mapped()
                 })
             })
             .catch(error => {
