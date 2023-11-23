@@ -8,7 +8,7 @@ window.onload = async function (e) {
         $("msgError-name").innerHTML = "El nombre es obligatorio";
         this.classList.add("is-invalid");
         break;
-      case !/^[A-Za-z]+$/.test(this.value):
+      case !/^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/u.test(this.value):
         $("msgError-name").innerHTML = "Solo caracteres alfabéticos";
         this.classList.add("is-invalid");
         break;
@@ -30,7 +30,7 @@ window.onload = async function (e) {
         $("msgError-surname").innerHTML = "El apellido es obligatorio";
         this.classList.add("is-invalid");
         break;
-      case !/^[A-Za-z]+$/.test(this.value):
+      case !/^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/u.test(this.value):
         $("msgError-surname").innerHTML = "Solo caracteres alfabéticos";
         this.classList.add("is-invalid");
         break;
@@ -45,6 +45,25 @@ window.onload = async function (e) {
         break;
     }
   });
+  $("address").addEventListener("blur", function (e) {
+    switch (true) {
+      case this.value.trim().length === 0:
+        $("msgError-address").innerHTML = null;
+        this.classList.remove("is-invalid");
+        this.classList.add("is-valid");
+        break;
+      case !/^[A-Za-z0-9\s.,#-]+$/u.test(this.value):
+        $("msgError-address").innerHTML = "Solo caracteres alfabéticos";
+        this.classList.add("is-invalid");
+        break;
+      
+      default:
+        $("msgError-address").innerHTML = null;
+        this.classList.remove("is-invalid");
+        this.classList.add("is-valid");
+        break;
+    }
+  });
 
   $("birthday").addEventListener("blur", function (e) {
     const birthDate = moment(this.value);
@@ -52,10 +71,7 @@ window.onload = async function (e) {
     const minDate = moment().subtract(120, "years");
 
     switch (true) {
-      case !this.value.trim():
-        $("msgError-birthday").innerHTML = "La fecha es obligatoria";
-        this.classList.add("is-invalid");
-        break;
+      
       case birthDate.isAfter(currentDate):
         $("msgError-birthday").innerHTML = "La fecha debe ser anterior a la actual";
         this.classList.add("is-invalid");
@@ -136,9 +152,9 @@ window.onload = async function (e) {
       const elementsForm = $('formProfile').elements;
       let error = false
 
-      for (let i = 0; i < elementsForm.length - 2; i++) {
+      for (let i = 0; i < elementsForm.length - 1; i++) {
           
-          if( elementsForm[i].classList.contains('is-invalid')){
+          if(  elementsForm[i].classList.contains('is-invalid')){
               elementsForm[i].classList.add('is-invalid')
               $('msgError-empty').innerHTML = "Hay errores en la carga de datos"
               error = true
