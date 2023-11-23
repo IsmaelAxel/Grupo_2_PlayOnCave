@@ -1,33 +1,29 @@
-const moment = require('moment');
+const moment = require("moment");
 const { check, body } = require("express-validator");
 const db = require('../database/models');
 
 module.exports = [
   check("name")
+    .trim()
+    .notEmpty()
     .isLength({
       min: 2,
     })
     .withMessage("El nombre es obligatorio")
-    .isAlpha("es-ES")
-    .withMessage("Solo letras"),
+    .matches(/^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/u)
+    .withMessage("El campo debe contener letras y espacios"),
   check("surname")
+    .trim()
+    .notEmpty()
     .isLength({
       min: 2,
     })
     .withMessage("El apellido es obligatorio")
-    .isAlpha("es-ES")
-    .withMessage("Solo letras"),
+    .matches(/^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/u)
+    .withMessage("El campo debe contener letras y espacios"),
 
     check("birthday")
     .notEmpty().withMessage("Ingrese la fecha de nacimiento")
-    .custom((value) => {
-      const birthDate = moment(value);
-
-      if (!birthDate.isValid()) {
-        throw new Error("La fecha no tiene un formato válido");
-      }
-      return true;
-    })
     .custom((value) => {
       const birthDate = moment(value);
       const currentDate = moment();

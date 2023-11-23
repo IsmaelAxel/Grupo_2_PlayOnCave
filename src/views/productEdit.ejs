@@ -121,13 +121,13 @@
                                         <small class="text-danger ms-2" id="msgError-description"><%= locals.errors && (errors.description && errors.description.msg) %></small>
                                     </div>
                                     <div class="col-12 col-md-6 mb-3 d-flex flex-column">
-                                        <label class="btn btn-secondary form-label" for="mainImage">Imagen Principal:</label>
+                                        <label class="btn btn-secondary form-label" id="mainImageLabel" for="mainImage">Imagen Principal:</label>
                                         <input class="productAdd__box__image--img" type="file" id="mainImage" name="mainImage" value="<%= locals.old && (old.images && old.images) %>" hidden>
                                         <small class="text-danger ms-2" id="msgError-mainImage"><%= locals.errors && (errors.mainImage && errors.mainImage.msg) %></small>
                                     </div>
 
                                     <div class="col-12 col-md-6 mb-3 d-flex flex-column">
-                                    <label for="images"  class="btn btn-secondary form-label">Imagenes Secundarias:</label>
+                                    <label for="images" id="imagesLabel" class="btn btn-secondary form-label">Imagenes Secundarias:</label>
                                     <input class="productAdd__box__image--img" multiple type="file" id="images" name="images" value="<%= locals.old && (old.images && old.images) %>" hidden>
                                     <small class="text-danger ms-2" id="msgError-images"><%= locals.errors && (errors.images && errors.images.msg) %></small>
                                      </div>

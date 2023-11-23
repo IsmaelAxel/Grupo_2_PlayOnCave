@@ -1,136 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('partials/head',{title: "Añadir Producto"}) %>
+<%- include('partials/head',{title: "Añadir Producto" }) %>
+
     <body>
         <%- include('partials/header') %>
-                <main class="container">
-                  <div class="row">
+            <main class="container">
+                <div class="row">
                     <div class="col-12 col-md-8 mx-auto mt-5 mb-5">
                         <div class="card bg-dark text-white">
                             <div class="card-header">
                                 <h1 class="card-title">Carga de Nuevos Productos</h1>
                             </div>
                             <div class="card-body d-flex bg-dark text-white">
-                                <form id="formAdd" class="row" method="post" action="/products/productAdd" enctype="multipart/form-data">
+                                <form id="formAdd" class="row" method="post" action="/products/productAdd"
+                                    enctype="multipart/form-data">
                                     <div class="col-12 col-md-6 mb-3">
                                         <label class="form-label" for="title">Nombre del Producto:</label>
-                                        <input class="form-control <%= locals.errors && (errors.title && 'is-invalid') %>" type="text" id="title" name="title" value ="<%= locals.old && (old.title && old.title) %>">
-                                        <small class="text-danger ms-2" id="msgError-title"><%= locals.errors && (errors.title && errors.title.msg) %></small>
+                                        <input
+                                            class="form-control <%= locals.errors && (errors.title && 'is-invalid') %>"
+                                            type="text" id="title" name="title"
+                                            value="<%= locals.old && (old.title && old.title) %>">
+                                        <small class="text-danger ms-2" id="msgError-title">
+                                            <%= locals.errors && (errors.title && errors.title.msg) %>
+                                        </small>
                                     </div>
                                     <div class="col-12 col-md-6 mb-3">
                                         <label class="form-label" for="categoryId">Categoría:</label>
-                                        <select class="form-control <%= locals.errors && (errors.category && 'is-invalid') %>" type="text" id="categoryId" name="categoryId" value ="<%= locals.old && (old.title&&old.category) %>" id="categoryId" name="categoryId" >
+                                        <select
+                                            class="form-control <%= locals.errors && (errors.category && 'is-invalid') %>"
+                                            type="text" id="categoryId" name="categoryId"
+                                            value="<%= locals.old && (old.title&&old.category) %>" id="categoryId"
+                                            name="categoryId">
                                             <option value="" selected hidden>Seleccione...</option>
-                                            <option value="<%= category[0].id %>" <%=locals.old && (locals.old.categoryId==category[0].id)
-                                                && 'selected'  %>>Destacados</option>
-                                            <option value="<%= category[1].id %>" <%=locals.old && (locals.old.categoryId==category[1].id)
-                                            && 'selected'  %>>Nuevos Lanzamientos</option>
-                                            <option value="<%= category[2].id %>" <%=locals.old && (locals.old.categoryId==category[2].id)
-                                                && 'selected'  %>>Más Vendidos</option>
+                                            <option value="<%= category[0].id %>" <%=locals.old &&
+                                                (locals.old.categoryId==category[0].id) && 'selected' %>>Destacados
+                                            </option>
+                                            <option value="<%= category[1].id %>" <%=locals.old &&
+                                                (locals.old.categoryId==category[1].id) && 'selected' %>>Nuevos
+                                                Lanzamientos</option>
+                                            <option value="<%= category[2].id %>" <%=locals.old &&
+                                                (locals.old.categoryId==category[2].id) && 'selected' %>>Más Vendidos
+                                            </option>
                                             <!-- Agrega más opciones de categorías  -->
                                         </select>
-                                        <small class="text-danger ms-2" id="msgError-categoryId"><%= locals.errors && (errors.categoryId && errors.categoryId.msg) %></small>
+                                        <small class="text-danger ms-2" id="msgError-categoryId">
+                                            <%= locals.errors && (errors.categoryId && errors.categoryId.msg) %>
+                                        </small>
                                     </div>
                                     <div class="col-12 col-md-6 mb-3">
                                         <label class="form-label" for="price">Precio:</label>
-                                        <input class="form-control <%= locals.errors && (errors.price && 'is-invalid') %>" type="number" id="price" name="price" placeholder="$" value="<%= locals.old && (old.price && old.price) %>">
-                                        <small class="text-danger ms-2" id="msgError-price"><%= locals.errors && (errors.price && errors.price.msg) %></small>
+                                        <input
+                                            class="form-control <%= locals.errors && (errors.price && 'is-invalid') %>"
+                                            type="number" id="price" name="price" placeholder="$"
+                                            value="<%= locals.old && (old.price && old.price) %>">
+                                        <small class="text-danger ms-2" id="msgError-price">
+                                            <%= locals.errors && (errors.price && errors.price.msg) %>
+                                        </small>
                                     </div>
                                     <div class="col-12 col-md-6 mb-3">
                                         <label class="form-label" for="discount">Descuento:</label>
-                                        <input class="form-control " type="number" id="discount" name="discount" placeholder="%" value="<%= locals.old && (old.discount && old.discount) || 0 %>">
-                                        <small class="text-danger ms-2" id="msgError-discount"><%= locals.errors && (errors.discount && errors.discount.msg) %></small>
+                                        <input class="form-control " type="number" id="discount" name="discount"
+                                            placeholder="%"
+                                            value="<%= locals.old && (old.discount && old.discount) || 0 %>">
+                                        <small class="text-danger ms-2" id="msgError-discount">
+                                            <%= locals.errors && (errors.discount && errors.discount.msg) %>
+                                        </small>
                                     </div>
 
                                     <div class="col-12 col-md-12 mb-3">
                                         <label for="sectionId" class="form-label">Plataformas: </label>
-                                        <% sections.forEach(section => { %>
+                                        <% sections.forEach(section=> { %>
                                             <div class="col-6 col-md-4">
-                                              <div class="form-check">
-                                                <input name="sectionId" id="sectionId" class="form-check-input" type="checkbox" value="<%= section.id %>" <%= locals.old && locals.old.sectionId && locals.old.sectionId.includes(section.id.toString()) ? 'checked' : '' %>>
-                                                <label class="form-check-label" for="flexCheckDefault">
-                                                  <%= section.name %>
-                                                </label>
-                                              </div>
+                                                <div class="form-check">
+                                                    <input name="sectionId" id="sectionId" class="form-check-input"
+                                                        type="checkbox" value="<%= section.id %>" <%=locals.old &&
+                                                        locals.old.sectionId &&
+                                                        locals.old.sectionId.includes(section.id.toString()) ? 'checked'
+                                                        : '' %>>
+                                                    <label class="form-check-label" for="flexCheckDefault">
+                                                        <%= section.name %>
+                                                    </label>
+                                                </div>
                                             </div>
-                                          <% }) %>
-                                        <small class="text-danger" id="msgError-sectionId">
-                                          <%= locals.errors && (errors.sectionId && errors.sectionId.msg) %>
+                                            <% }) %>
+                                                <small class="text-danger" id="msgError-sectionId">
+                                                    <%= locals.errors && (errors.sectionId && errors.sectionId.msg) %>
+                                                </small>
+                                    </div>
+
+                                    <h3>requisitos minimos</h3>
+
+                                    <div class="col-12 col-md-4 mb-3">
+                                        <label class="form-label" for="minOs">os:</label>
+                                        <input
+                                            class="form-control <%= locals.errors && (errors.minOs && 'is-invalid') %>"
+                                            type="text" id="minOs" name="minOs"
+                                            value="<%= locals.old && (old.minOs && old.minOs) %>">
+                                        <small class="text-danger ms-2" id="msgError-minOs">
+                                            <%= locals.errors && (errors.minOs && errors.minOs.msg) %>
                                         </small>
-                                      </div>
-
-                                      <h3>requisitos minimos</h3>
-                                   
-                                      <div class="col-12 col-md-4 mb-3">    
-                                       <label class="form-label" for="minOs">os:</label>
-                                        <input class="form-control <%= locals.errors && (errors.minOs && 'is-invalid') %>" type="text" id="minOs" name="minOs" value="<%= locals.old && (old.minOs && old.minOs) %>">
-                                        <small class="text-danger ms-2" id="msgError-minOs"><%= locals.errors && (errors.minOs && errors.minOs.msg) %></small>
                                     </div>
-                                        <div class="col-12 col-md-4 mb-3">
+                                    <div class="col-12 col-md-4 mb-3">
                                         <label class="form-label" for="minProcessor">Procesador:</label>
-                                        <input class="form-control <%= locals.errors && (errors.minProcessor && 'is-invalid') %>" type="text" id="minProcessor" name="minProcessor" value="<%= locals.old && (old.minProcessor && old.minProcessor) %>" >
-                                        <small class="text-danger ms-2" id="msgError-minProcessor"><%= locals.errors && (errors.minProcessor && errors.minProcessor.msg) %></small>
+                                        <input
+                                            class="form-control <%= locals.errors && (errors.minProcessor && 'is-invalid') %>"
+                                            type="text" id="minProcessor" name="minProcessor"
+                                            value="<%= locals.old && (old.minProcessor && old.minProcessor) %>">
+                                        <small class="text-danger ms-2" id="msgError-minProcessor">
+                                            <%= locals.errors && (errors.minProcessor && errors.minProcessor.msg) %>
+                                        </small>
                                     </div>
-                                        <div class="col-12 col-md-4 mb-3">
+                                    <div class="col-12 col-md-4 mb-3">
                                         <label class="form-label" for="minMemory">Memoria:</label>
-                                        <input class="form-control <%= locals.errors && (errors.minMemory && 'is-invalid') %>" type="text" id="minMemory" name="minMemory" value="<%= locals.old && (old.minMemory && old.minMemory) %>">
-                                        <small class="text-danger ms-2" id="msgError-minMemory"><%= locals.errors && (errors.minMemory && errors.minMemory.msg) %></small>
+                                        <input
+                                            class="form-control <%= locals.errors && (errors.minMemory && 'is-invalid') %>"
+                                            type="text" id="minMemory" name="minMemory"
+                                            value="<%= locals.old && (old.minMemory && old.minMemory) %>">
+                                        <small class="text-danger ms-2" id="msgError-minMemory">
+                                            <%= locals.errors && (errors.minMemory && errors.minMemory.msg) %>
+                                        </small>
                                     </div>
-                                        <div class="col-12 col-md-4 mb-3">
+                                    <div class="col-12 col-md-4 mb-3">
                                         <label class="form-label" for="minGraphicsCard">Grafica:</label>
-                                        <input class="form-control <%= locals.errors && (errors.minGraphicsCard && 'is-invalid') %>" type="text" id="minGraphicsCard" name="minGraphicsCard" value="<%= locals.old && (old.minGraphicsCard && old.minGraphicsCard) %>">
-                                        <small class="text-danger ms-2" id="msgError-minGraphicsCard"><%= locals.errors && (errors.minGraphicsCard && errors.minGraphicsCard.msg) %></small>
+                                        <input
+                                            class="form-control <%= locals.errors && (errors.minGraphicsCard && 'is-invalid') %>"
+                                            type="text" id="minGraphicsCard" name="minGraphicsCard"
+                                            value="<%= locals.old && (old.minGraphicsCard && old.minGraphicsCard) %>">
+                                        <small class="text-danger ms-2" id="msgError-minGraphicsCard">
+                                            <%= locals.errors && (errors.minGraphicsCard && errors.minGraphicsCard.msg)
+                                                %>
+                                        </small>
                                     </div>
-                                        <div class="col-12 col-md-4 mb-3">
+                                    <div class="col-12 col-md-4 mb-3">
                                         <label class="form-label" for="minDisk">Almacenamiento:</label>
-                                        <input class="form-control <%= locals.errors && (errors.minDisk && 'is-invalid') %>" type="text" id="minDisk" name="minDisk" value="<%= locals.old && (old.minDisk && old.minDisk) %>">
-                                        <small class="text-danger ms-2" id="msgError-minDisk"><%= locals.errors && (errors.minDisk && errors.minDisk.msg) %></small>
+                                        <input
+                                            class="form-control <%= locals.errors && (errors.minDisk && 'is-invalid') %>"
+                                            type="text" id="minDisk" name="minDisk"
+                                            value="<%= locals.old && (old.minDisk && old.minDisk) %>">
+                                        <small class="text-danger ms-2" id="msgError-minDisk">
+                                            <%= locals.errors && (errors.minDisk && errors.minDisk.msg) %>
+                                        </small>
                                     </div>
-                                
-                                        <h3>requisitos recomendados</h3>
-                                       
 
-                                        <div class="col-12 col-md-4 mb-3">
-                                       <label class="form-label" for="recommendedOs">os:</label>
-                                        <input class="form-control <%= locals.errors && (errors.recommendedOs && 'is-invalid') %>" type="text" id="recommendedOs" name="recommendedOs" value="<%= locals.old && (old.recommendedOs && old.recommendedOs) %>">
-                                        <small class="text-danger ms-2" id="msgError-recommendedOs"><%= locals.errors && (errors.recommendedOs && errors.recommendedOs.msg) %></small>
+                                    <h3>requisitos recomendados</h3>
+
+
+                                    <div class="col-12 col-md-4 mb-3">
+                                        <label class="form-label" for="recommendedOs">os:</label>
+                                        <input
+                                            class="form-control <%= locals.errors && (errors.recommendedOs && 'is-invalid') %>"
+                                            type="text" id="recommendedOs" name="recommendedOs"
+                                            value="<%= locals.old && (old.recommendedOs && old.recommendedOs) %>">
+                                        <small class="text-danger ms-2" id="msgError-recommendedOs">
+                                            <%= locals.errors && (errors.recommendedOs && errors.recommendedOs.msg) %>
+                                        </small>
                                     </div>
-                                        <div class="col-12 col-md-4 mb-3">
+                                    <div class="col-12 col-md-4 mb-3">
                                         <label class="form-label" for="recommendedProcessor">Procesador:</label>
-                                        <input class="form-control <%= locals.errors && (errors.recommendedProcessor && 'is-invalid') %>" type="text" id="recommendedProcessor" name="recommendedProcessor" value="<%= locals.old && (old.recommendedProcessor && old.recommendedProcessor) %>" >
-                                        <small class="text-danger ms-2" id="msgError-recommendedProcessor"><%= locals.errors && (errors.recommendedProcessor && errors.recommendedProcessor.msg) %></small>
+                                        <input
+                                            class="form-control <%= locals.errors && (errors.recommendedProcessor && 'is-invalid') %>"
+                                            type="text" id="recommendedProcessor" name="recommendedProcessor"
+                                            value="<%= locals.old && (old.recommendedProcessor && old.recommendedProcessor) %>">
+                                        <small class="text-danger ms-2" id="msgError-recommendedProcessor">
+                                            <%= locals.errors && (errors.recommendedProcessor &&
+                                                errors.recommendedProcessor.msg) %>
+                                        </small>
                                     </div>
-                                        <div class="col-12 col-md-4 mb-3">
+                                    <div class="col-12 col-md-4 mb-3">
                                         <label class="form-label" for="recommendedMemory">Memoria:</label>
-                                        <input class="form-control <%= locals.errors && (errors.recommendedMemory && 'is-invalid') %>" type="text" id="recommendedMemory" name="recommendedMemory" value="<%= locals.old && (old.recommendedMemory && old.recommendedMemory) %>">
-                                        <small class="text-danger ms-2" id="msgError-recommendedMemory"><%= locals.errors && (errors.recommendedMemory && errors.recommendedMemory.msg) %></small>
+                                        <input
+                                            class="form-control <%= locals.errors && (errors.recommendedMemory && 'is-invalid') %>"
+                                            type="text" id="recommendedMemory" name="recommendedMemory"
+                                            value="<%= locals.old && (old.recommendedMemory && old.recommendedMemory) %>">
+                                        <small class="text-danger ms-2" id="msgError-recommendedMemory">
+                                            <%= locals.errors && (errors.recommendedMemory &&
+                                                errors.recommendedMemory.msg) %>
+                                        </small>
                                     </div>
-                                        <div class="col-12 col-md-4 mb-3">
+                                    <div class="col-12 col-md-4 mb-3">
                                         <label class="form-label" for="recommendedGraphicsCard">Grafica:</label>
-                                        <input class="form-control <%= locals.errors && (errors.recommendedGraphicsCard && 'is-invalid') %>" type="text" id="recommendedGraphicsCard" name="recommendedGraphicsCard" value="<%= locals.old && (old.recommendedGraphicsCard && old.recommendedGraphicsCard) %>">
-                                        <small class="text-danger ms-2" id="msgError-recommendedGraphicsCard"><%= locals.errors && (errors.recommendedGraphicsCard && errors.recommendedGraphicsCard.msg) %></small>
+                                        <input
+                                            class="form-control <%= locals.errors && (errors.recommendedGraphicsCard && 'is-invalid') %>"
+                                            type="text" id="recommendedGraphicsCard" name="recommendedGraphicsCard"
+                                            value="<%= locals.old && (old.recommendedGraphicsCard && old.recommendedGraphicsCard) %>">
+                                        <small class="text-danger ms-2" id="msgError-recommendedGraphicsCard">
+                                            <%= locals.errors && (errors.recommendedGraphicsCard &&
+                                                errors.recommendedGraphicsCard.msg) %>
+                                        </small>
                                     </div>
-                                        <div class="col-12 col-md-4 mb-3">
+                                    <div class="col-12 col-md-4 mb-3">
                                         <label class="form-label" for="recommendedDisk">Almacenamiento:</label>
-                                        <input class="form-control <%= locals.errors && (errors.recommendedDisk && 'is-invalid') %>" type="text" id="recommendedDisk" name="recommendedDisk" value="<%= locals.old && (old.recommendedDisk && old.recommendedDisk) %>">
-                                        <small class="text-danger ms-2" id="msgError-recommendedDisk"><%= locals.errors && (errors.recommendedDisk && errors.recommendedDisk.msg) %></small>
+                                        <input
+                                            class="form-control <%= locals.errors && (errors.recommendedDisk && 'is-invalid') %>"
+                                            type="text" id="recommendedDisk" name="recommendedDisk"
+                                            value="<%= locals.old && (old.recommendedDisk && old.recommendedDisk) %>">
+                                        <small class="text-danger ms-2" id="msgError-recommendedDisk">
+                                            <%= locals.errors && (errors.recommendedDisk && errors.recommendedDisk.msg)
+                                                %>
+                                        </small>
                                     </div>
                                     <div class="productAdd__box__form--description">
                                         <label class="form-label" for="description">Descripción:</label>
-                                        <textarea class="form-control <%= locals.errors && (errors.description && 'is-invalid') %>" id="description" name="description" ><%= locals.old && (old.description && old.description) %></textarea>
-                                        <small class="text-danger ms-2" id="msgError-description"><%= locals.errors && (errors.description && errors.description.msg) %></small>
+                                        <textarea
+                                            class="form-control <%= locals.errors && (errors.description && 'is-invalid') %>"
+                                            id="description"
+                                            name="description"><%= locals.old && (old.description && old.description) %></textarea>
+                                        <small class="text-danger ms-2" id="msgError-description">
+                                            <%= locals.errors && (errors.description && errors.description.msg) %>
+                                        </small>
                                     </div>
                                     <div class="col-12 col-md-6 mb-3 d-flex flex-column">
-                                        <label class="btn btn-secondary form-label" for="mainImage" id="mainImageLabel">Imagen Principal:</label>
-                                        <input class="productAdd__box__image--img" type="file" id="mainImage" name="mainImage" value="<%= locals.old && (old.images && old.images) %>" hidden>
-                                        <small class="text-danger ms-2" id="msgError-mainImage"><%= locals.errors && (errors.mainImage && errors.mainImage.msg) %></small>
+                                        <label class="btn btn-secondary form-label" for="mainImage"
+                                            id="mainImageLabel">Imagen Principal:</label>
+                                        <input class="productAdd__box__image--img" type="file" id="mainImage"
+                                            name="mainImage" value="<%= locals.old && (old.images && old.images) %>"
+                                            hidden>
+                                        <small class="text-danger ms-2" id="msgError-mainImage">
+                                            <%= locals.errors && (errors.mainImage && errors.mainImage.msg) %>
+                                        </small>
                                     </div>
 
                                     <div class="col-12 col-md-6 mb-3 d-flex flex-column">
-                                    <label for="images"  class="btn btn-secondary form-label" id="imagesLabel">Imagenes Secundarias:</label>
-                                    <input class="productAdd__box__image--img" multiple type="file" id="images" name="images" value="<%= locals.old && (old.images && old.images) %>" hidden>
-                                    <small class="text-danger ms-2" id="msgError-images"><%= locals.errors && (errors.images && errors.images.msg) %></small>
-                                     </div>
+                                        <label for="images" class="btn btn-secondary form-label"
+                                            id="imagesLabel">Imagenes Secundarias:</label>
+                                        <input class="productAdd__box__image--img" multiple type="file" id="images"
+                                            name="images" value="<%= locals.old && (old.images && old.images) %>"
+                                            hidden>
+                                        <small class="text-danger ms-2" id="msgError-images">
+                                            <%= locals.errors && (errors.images && errors.images.msg) %>
+                                        </small>
+                                    </div>
                                     <div class="productAdd__box__form--btn">
                                         <button class="btn btn-danger" type="reset">CLEAR</button>
                                         <button class="btn btn-primary" type="submit">CARGAR</button>
@@ -142,18 +241,20 @@
                                     </div>
                                 </form>
                             </div>
-                           
-                        </div>
-                   
 
-                </div>
+                        </div>
+
+
+                    </div>
                 </div>
                 <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-chevron-up"></i></button>
-                </main>
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-                <%- include('partials/footer') %>
+            </main>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+                crossorigin="anonymous"></script>
+            <%- include('partials/footer') %>
                 <%- include('partials/scripts') %>
-                <script src="/javascripts/validationsFrontEnd/productAddValidator.js"></script>
+                    <script src="/javascripts/validationsFrontEnd/productAddValidator.js"></script>
     </body>
 
 </html>

@@ -58,4 +58,20 @@ window.onload = function () {
         $('password').type = $('password').type === "password" ? "text" : "password"
 
     });
+    $('formLogin').addEventListener('submit', function(e){
+        e.preventDefault();
+  
+        const elementsForm = $('formLogin').elements;
+        let error = false
+  
+        for (let i = 0; i < elementsForm.length - 1; i++) {
+            
+            if( !elementsForm[i].value.trim() ||  elementsForm[i].classList.contains('is-invalid')){
+                elementsForm[i].classList.add('is-invalid')
+                $('msgError-empty').innerHTML = "Hay errores en la carga de datos"
+                error = true
+            }
+        }
+        !error && this.submit()
+    })    
 }
