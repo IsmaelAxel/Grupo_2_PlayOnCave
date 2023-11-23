@@ -123,7 +123,7 @@ window.onload = function () {
 
     document.getElementById('email').addEventListener('change', async function (e) {
         try {
-            const response = await fetch(`/api/check-email?email=${this.value}`);
+            const response = await fetch(`/api/checkEmail?email=${this.value}`);
             const result = await response.json();
             let inputElement = this;
             let container = inputElement.closest('.cambiarColor');
