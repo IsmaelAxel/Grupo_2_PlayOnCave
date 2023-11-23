@@ -4,19 +4,23 @@ const db = require('../database/models');
 
 module.exports = [
   check("name")
+    .trim()
+    .notEmpty()
     .isLength({
       min: 2,
     })
     .withMessage("El nombre es obligatorio")
-    .isAlpha("es-ES")
-    .withMessage("Solo letras"),
+    .matches(/^[A-Za-z0-9_]+$/u)
+    .withMessage("El campo debe contener letras y espacios"),
   check("surname")
+    .trim()
+    .notEmpty()
     .isLength({
       min: 2,
     })
     .withMessage("El apellido es obligatorio")
-    .isAlpha("es-ES")
-    .withMessage("Solo letras"),
+    .matches(/^[A-Za-z0-9_]+$/u)
+    .withMessage("El campo debe contener letras y espacios"),
 
     check("birthday")
     .notEmpty().withMessage("Ingrese la fecha de nacimiento")

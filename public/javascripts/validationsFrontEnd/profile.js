@@ -71,7 +71,10 @@ window.onload = async function (e) {
     const minDate = moment().subtract(120, "years");
 
     switch (true) {
-      
+      case !this.value.trim():
+        $("msgError-birthday").innerHTML = "La fecha es obligatoria";
+        this.classList.add("is-invalid");
+        break;
       case birthDate.isAfter(currentDate):
         $("msgError-birthday").innerHTML = "La fecha debe ser anterior a la actual";
         this.classList.add("is-invalid");
