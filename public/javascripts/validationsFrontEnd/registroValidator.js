@@ -21,7 +21,7 @@ window.onload = function () {
                 container.classList.add('inputRojo');
                 container.classList.remove('inputVerde');
                 break;
-            case !/^[A-Za-z]+$/.test(inputElement.value):
+            case !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(inputElement.value):
                 $('msgError-name').innerHTML = "Solo caracteres alfabéticos";
                 inputElement.classList.add("is-invalid");
                 container.classList.add('inputRojo');
@@ -64,7 +64,7 @@ window.onload = function () {
                 container.classList.add('inputRojo');
                 container.classList.remove('inputVerde');
                 break;
-            case !/^[A-Za-z]+$/.test(inputElement.value):
+            case !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(inputElement.value):
                 document.getElementById('msgError-surname').innerHTML = "Solo caracteres alfabéticos";
                 inputElement.classList.add("is-invalid");
                 container.classList.add('inputRojo');
@@ -117,9 +117,15 @@ window.onload = function () {
         try {
             const response = await fetch(`/api/users/check-email?email=${this.value}`);
             const result = await response.json();
+            let inputElement = this;
+            let container = inputElement.closest('.cambiarColor');
             if (result.data) {
                 document.getElementById('msgError-email').innerHTML = "El email ya se encuentra registrado";
+                container.classList.add('inputRojo');
+                container.classList.remove('inputVerde');
+                
                 this.classList.add("is-invalid");
+                
             }
         } catch (error) {
             console.error(error);
