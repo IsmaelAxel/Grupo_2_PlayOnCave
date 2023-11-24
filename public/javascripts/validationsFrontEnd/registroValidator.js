@@ -21,7 +21,7 @@ window.onload = function () {
                 container.classList.add('inputRojo');
                 container.classList.remove('inputVerde');
                 break;
-            case !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(inputElement.value):
+            case !/^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/u.test(inputElement.value):
                 $('msgError-name').innerHTML = "Solo caracteres alfabéticos";
                 inputElement.classList.add("is-invalid");
                 container.classList.add('inputRojo');
@@ -64,7 +64,7 @@ window.onload = function () {
                 container.classList.add('inputRojo');
                 container.classList.remove('inputVerde');
                 break;
-            case !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(inputElement.value):
+            case !/^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/u.test(inputElement.value):
                 document.getElementById('msgError-surname').innerHTML = "Solo caracteres alfabéticos";
                 inputElement.classList.add("is-invalid");
                 container.classList.add('inputRojo');
