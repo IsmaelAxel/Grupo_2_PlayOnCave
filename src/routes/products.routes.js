@@ -2,9 +2,9 @@ const express = require('express');
 const {productCart, productDetail, productEdit, productAdd, productUpdate, productCreate, productDelete} = require('../controllers/productsControllers');
 const upload = require('../middlewares/upload');
 const adminCheck = require('../middlewares/adminCheck')
-const productsValitador = require('../validations/productsValidator')
 const userCheck = require('../middlewares/userCheck');
 const productsValidator = require('../validations/productsValidator');
+const productsEditValidator = require('../validations/productsEditValidator')
 
 const router = express.Router();
 
@@ -19,7 +19,7 @@ router.put('/productUpdate/:id', upload.fields([
     },
     {
         name: 'images'
-    }]),productsValidator, productUpdate),
+    }]),productsEditValidator, productUpdate),
 
 router.post('/productAdd', upload.fields([
         {
@@ -28,7 +28,7 @@ router.post('/productAdd', upload.fields([
         {
             name: 'images'
         }
-    ]),productsValitador, productCreate)
+    ]),productsValidator, productCreate)
 
 router.delete('/delete/:id', productDelete)
 

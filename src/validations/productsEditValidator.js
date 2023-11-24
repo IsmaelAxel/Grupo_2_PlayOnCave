@@ -1,4 +1,5 @@
 const { check, body } = require("express-validator");
+const {existsSync, unlinkSync} = require('fs')
 module.exports = [
   check("title")
     .trim()
@@ -38,60 +39,56 @@ module.exports = [
     .matches(/^[a-zA-Z0-9\s\/(),|\-.áéíóúÁÉÍÓÚ]+$/u)
     .withMessage("El campo solo acepta estos caracteres especiales: ' , ', ' / ', ' | ', ' - ', ' ( ) ' , ' . ' , y tíldes"),
   body("mainImage")
-    .custom((value, {req}) => {
-        if (req.files.mainImage[0]) {
-          return true;
+    .custom((value, { req }) => {
+    if(req.files.mainImage){
+        let mimeTypeFile = req.files.mainImage[0].mimetype
+        if (mimeTypeFile === "image/jpeg" || mimeTypeFile === "image/png" || mimeTypeFile === "image/webp") {
+          return true
         }else{
-          console.log(req.files)
+          existsSync(`./public/images/products/${req.files.mainImage[0].filename}`) && unlinkSync(`./public/images/products/${req.files.mainImage[0].filename}`)
           return false;
         }
-    }).withMessage("Debes subir una imagen principal")
-    .bail()
-    .custom((value, { req }) => {
-      let mimeTypeFile = req.files.mainImage[0].mimetype
-      if (mimeTypeFile === "image/jpeg" || mimeTypeFile === "image/png" || mimeTypeFile === "image/webp") {
+    }else{
         return true
-      }else{
-        existsSync(`./public/images/products/${req.files.mainImage[0].filename}`) && unlinkSync(`./public/images/products/${req.files.mainImage[0].filename}`)
-        return false;
-      }
-    }).withMessage("Tipo de archivo incompatible"),
+    }   
+    }).withMessage("Tipo de archivo incompatible :("),
   body("images")
-    .custom((value, { req }) => {
-      if (!req.files.images) {
-        return false;
-      }else{
-        return true;
-      }
-    }).withMessage("Debes subir imagenes secundarias")
     .bail()
     .custom((value, {req}) => {
-      if(req.files.images.length !== 5){
-        req.files.images.forEach(file => {
-          existsSync(`./public/images/products/${file.filename}`) && unlinkSync(`./public/images/products/${file.filename}`)
-        });
-        return false
-      }else{
+    if(req.files.images){
+        if(req.files.images.length !== 5){
+            req.files.images.forEach(file => {
+              existsSync(`./public/images/products/${file.filename}`) && unlinkSync(`./public/images/products/${file.filename}`)
+            });
+            return false
+          }else{
+            return true
+          }
+    }else{
         return true
-      }
+    }
     }).withMessage("Tenes que subir 5 imagenes")
     .bail()
     .custom((value, {req})=>{
-      let mimetypeFilesImages = req.files.images
-      let mimetypeFilesImagesValidates = []
-      for (let i = 0; i < req.files.images.length; i++) {
-        if(mimetypeFilesImages[i].mimetype === "image/jpeg" || mimetypeFilesImages[i].mimetype === "image/png" || mimetypeFilesImages[i].mimetype === "image/webp"){
-          mimetypeFilesImagesValidates.push(mimetypeFilesImages[i].mimetype)
+    if(req.files.images){
+        let mimetypeFilesImages = req.files.images
+        let mimetypeFilesImagesValidates = []
+        for (let i = 0; i < req.files.images.length; i++) {
+          if(mimetypeFilesImages[i].mimetype === "image/jpeg" || mimetypeFilesImages[i].mimetype === "image/png" || mimetypeFilesImages[i].mimetype === "image/webp"){
+            mimetypeFilesImagesValidates.push(mimetypeFilesImages[i].mimetype)
+          }
         }
-      }
-      if(mimetypeFilesImagesValidates.length === 5){
+        if(mimetypeFilesImagesValidates.length === 5){
+          return true
+        }else{
+            req.files.images.forEach(file => {
+                existsSync(`./public/images/products/${file.filename}`) && unlinkSync(`./public/images/products/${file.filename}`)
+              });
+          return false
+        }
+    }else{
         return true
-      }else{
-        req.files.images.forEach(file => {
-          existsSync(`./public/images/products/${file.filename}`) && unlinkSync(`./public/images/products/${file.filename}`)
-        });
-        return false
-      }
+    } 
     }).withMessage("Tipo de archivo incompatible")
     .bail(),
   check("minOs")
