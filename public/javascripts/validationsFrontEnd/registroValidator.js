@@ -132,7 +132,7 @@ window.onload = function () {
         }
     });
 
-    document.getElementById('email').addEventListener('focus', function () {
+    document.getElementById('email').addEventListener('change', function () {
         document.getElementById('msgError-email').innerHTML = null;
         this.classList.remove("is-invalid");
     });
