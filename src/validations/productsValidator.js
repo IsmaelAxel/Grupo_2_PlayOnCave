@@ -39,17 +39,23 @@ module.exports = [
     .withMessage("El campo solo acepta estos caracteres especiales: ' , ', ' / ', ' | ', ' - ', ' ( ) ' , ' . ' , y tíldes"),
   body("mainImage")
     .custom((value, { req }) => {
-      if (req.params.id) {
+      if (req.files.mainImage[0]) {
         return true;
-      }
-      if (!req.files.mainImage && !req.fileValidatorError.mainImage) {
+      }else{
         return false;
       }
-      return true;
-    })
-    .withMessage("Debes subir una imagen principal"),
-  body("images")
+    }).withMessage("Debes subir una imagen principal")
+    .bail()
     .custom((value, { req }) => {
+      let mimeTypeFile = req.files.mainImage[0].mimetype
+      if (mimeTypeFile === "image/jpeg" || mimeTypeFile === "image/png" || mimeTypeFile === "image/webp") {
+        return true
+      }else{
+        return false;
+      }
+    }).withMessage("Formato de imagen invalido"),
+  body("images")
+    /* .custom((value, { req }) => {
       if (req.params.id) {
         return true;
       }
@@ -61,7 +67,17 @@ module.exports = [
       }
       return true;
     })
-    .withMessage("Solo se permiten 5 imagenes"),
+    .withMessage("Solo se permiten 5 imagenes") */
+    .custom((value, { req }) => {
+      if (req.files.images) {
+        return true;
+      }else{
+        return false;
+      }
+    }).withMessage("Debes subir imagenes secundarias")
+    .bail()
+    
+    ,
   check("minOs")
     .trim()
     .notEmpty()
