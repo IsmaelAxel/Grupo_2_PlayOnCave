@@ -38,12 +38,13 @@ module.exports = [
     .matches(/^[a-zA-Z0-9\s\/(),|\-.áéíóúÁÉÍÓÚ]+$/u)
     .withMessage("El campo solo acepta estos caracteres especiales: ' , ', ' / ', ' | ', ' - ', ' ( ) ' , ' . ' , y tíldes"),
   body("mainImage")
-    .custom((value, { req }) => {
-      if (req.files.mainImage[0]) {
-        return true;
-      }else{
-        return false;
-      }
+    .custom((value, {req}) => {
+        if (req.files.mainImage[0]) {
+          return true;
+        }else{
+          console.log(req.files)
+          return false;
+        }
     }).withMessage("Debes subir una imagen principal")
     .bail()
     .custom((value, { req }) => {
@@ -53,31 +54,42 @@ module.exports = [
       }else{
         return false;
       }
-    }).withMessage("Formato de imagen invalido"),
+    }).withMessage("Tipo de archivo incompatible"),
   body("images")
-    /* .custom((value, { req }) => {
-      if (req.params.id) {
-        return true;
-      }
-      if (req.files.images.length > 5) {
-        req.files.images.forEach(file => {
-          existsSync(`./public/img/products/${file.filename}`) && unlinkSync(`./public/img/products/${file.filename}`)
-        });
-        return false
-      }
-      return true;
-    })
-    .withMessage("Solo se permiten 5 imagenes") */
     .custom((value, { req }) => {
-      if (req.files.images) {
-        return true;
-      }else{
+      if (!req.files.images) {
         return false;
+      }else{
+        return true;
       }
     }).withMessage("Debes subir imagenes secundarias")
     .bail()
-    
-    ,
+    .custom((value, {req}) => {
+      if(req.files.images.length !== 5){
+        req.files.images.forEach(file => {
+          existsSync(`./public/images/products/${file.filename}`) && unlinkSync(`./public/images/products/${file.filename}`)
+        });
+        return false
+      }else{
+        return true
+      }
+    }).withMessage("Tenes que subir 5 imagenes")
+    .bail()
+    .custom((value, {req})=>{
+      let mimetypeFilesImages = req.files.images
+      let mimetypeFilesImagesValidates = []
+      for (let i = 0; i < req.files.images.length; i++) {
+        if(mimetypeFilesImages[i].mimetype === "image/jpeg" || mimetypeFilesImages[i].mimetype === "image/png" || mimetypeFilesImages[i].mimetype === "image/webp"){
+          mimetypeFilesImagesValidates.push(mimetypeFilesImages[i].mimetype)
+        }
+      }
+      if(mimetypeFilesImagesValidates.length === 5){
+        return true
+      }else{
+        return false
+      }
+    }).withMessage("Tipo de archivo incompatible")
+    .bail(),
   check("minOs")
     .trim()
     .notEmpty()

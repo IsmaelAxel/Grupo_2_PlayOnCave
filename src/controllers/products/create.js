@@ -5,7 +5,6 @@ module.exports = (req, res) => {
     let errors = validationResult(req)
     if (errors.isEmpty()) {
         const { title, categoryId, price, discount, description, minOs, minProcessor, minMemory, minGraphicsCard, minDisk, recommendedOs, recommendedProcessor, recommendedMemory, recommendedGraphicsCard, recommendedDisk, sectionId } = req.body
-        
         db.Products.create({
             title: title.trim(),
             categoryId,
@@ -82,7 +81,6 @@ module.exports = (req, res) => {
         });
         Promise.all([category, sections])
             .then(([category, sections]) => {
-                return res.send(errors.mapped().images)
                 return res.render('productAdd', {
                     category,
                     sections: sections,
