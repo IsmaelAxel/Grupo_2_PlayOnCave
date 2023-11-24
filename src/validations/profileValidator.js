@@ -1,6 +1,5 @@
 const moment = require("moment");
 const { check, body } = require("express-validator");
-const db = require('../database/models');
 
 module.exports = [
   check("name")
@@ -42,5 +41,16 @@ module.exports = [
       }
 
       return true;
-    })
+    }),
+    body("avatar")
+    .custom((value, { req }) => {
+      
+      if (req.file && req.file.mimetype) {
+        const allowedMimeTypes = ["image/jpeg", "image/png", "image/webp"];
+        if (!allowedMimeTypes.includes(req.file.mimetype)) {
+          throw new Error("Formato de imagen invalido");
+        }
+      }
+      return true;
+    }).withMessage("Formato de imagen invalido")
 ];

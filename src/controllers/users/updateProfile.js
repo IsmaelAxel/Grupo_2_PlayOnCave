@@ -62,6 +62,11 @@ module.exports = (req, res) => {
                 return res.status(500).send('Error al buscar el usuario en la base de datos');
             });
     } else {
+        if (req.file) {
+            const filePath = path.join('./public/images/users', req.file.filename);
+            existsSync(filePath) && unlinkSync(filePath);
+        }
+       
         db.Users.findByPk(req.session.userLogin.id, {
             include: ['address']
         })
