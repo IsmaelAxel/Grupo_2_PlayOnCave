@@ -217,14 +217,14 @@ window.onload = function () {
 
     function validateMainImage() {
         const mainImageInput = $('image');
-        const allowedExtensions = ["jpg", "png", "webp"];
+        const allowedExtensions = ["jpg", "jpeg", "png", "webp"];
 
         if (mainImageInput.files[0]) {
             const fileName = mainImageInput.files[0].name;
             const fileExtension = fileName.split('.').pop().toLowerCase();
             if (!allowedExtensions.includes(fileExtension)) {
                 mainImageInput.classList.add("is-invalid");
-                $('msgError-image').innerHTML = "Las extensiones permitidas son: jpg, png, webp";
+                $('msgError-image').innerHTML = "Las extensiones permitidas son: jpg/jpeg, png, webp";
                 return false; // No es válida
             }
             mainImageInput.classList.remove("is-invalid");
