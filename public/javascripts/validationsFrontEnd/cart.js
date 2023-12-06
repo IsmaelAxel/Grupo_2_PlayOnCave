@@ -166,11 +166,22 @@ const clearCart = async () => {
   }
 };
 
-window.onload = function () {
+window.onload = async function () {
 
-  if (!sessionStorage.getItem('cart-count')) {
-    sessionStorage.setItem('cart-count', 0);
+  try {
+    const response = await fetch('/api/cart')
+    const { ok, data: { products, total } } = await response.json();
+    
+    showCountProductCart(products)
+
+
+  } catch (error) {
+    console.error
   }
+
+  /* if (!sessionStorage.getItem('cart-count')) {
+    sessionStorage.setItem('cart-count', 0);
+  } */
 
   if (getById('show-count')) {
     getById('show-count').innerHTML = sessionStorage.getItem('cart-count');
