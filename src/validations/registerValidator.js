@@ -51,5 +51,15 @@ module.exports = [
       }
       return true
     }).withMessage('Las contraseñas no coinciden'),
-    
+    body("image")
+    .custom((value, { req }) => {
+      
+      if (req.file && req.file.mimetype) {
+        const allowedMimeTypes = ["image/jpeg", "image/png", "image/webp"];
+        if (!allowedMimeTypes.includes(req.file.mimetype)) {
+          throw new Error("Las extensiones permitidas son: jpg, png, webp");
+        }
+      }
+      return true;
+    }).withMessage("Las extensiones permitidas son: jpg, png, webp")
 ];

@@ -267,7 +267,7 @@ window.onload = function () {
 
   function validateMainImage() {
     const mainImageInput = $("mainImage");
-    const allowedExtensions = ["jpg", "png", "webp"];
+    const allowedExtensions = ["jpg","jpeg", "png", "webp"];
 
     if (mainImageInput.files[0]) {
       const fileName = mainImageInput.files[0].name;
@@ -276,7 +276,7 @@ window.onload = function () {
       if (!allowedExtensions.includes(fileExtension)) {
         mainImageInput.classList.add("is-invalid");
         $("msgError-mainImage").innerHTML =
-          "Tipo de archivo inválido. Las extensiones permitidas son: jpg, png, webp";
+          "Tipo de archivo inválido. Las extensiones permitidas son: jpg/jpeg, png, webp";
         $("mainImageLabel").classList.remove("btn-secondary");
         $("mainImageLabel").classList.add("btn-danger");
         return false; // No es válida
@@ -296,7 +296,7 @@ window.onload = function () {
 
   function validateImages() {
     const imagesInput = $("images");
-    const allowedExtensions = ["jpg", "png", "webp"];
+    const allowedExtensions = ["jpg","jpeg", "png", "webp"];
 
     // Validar imágenes
     if (imagesInput.files[0]) {
@@ -315,7 +315,7 @@ window.onload = function () {
         if (!allowedExtensions.includes(fileExtension)) {
           imagesInput.classList.add("is-invalid");
           $("msgError-images").innerHTML =
-            "Tipo de archivo inválido. Las extensiones permitidas son: jpg, png, webp";
+            "Tipo de archivo inválido. Las extensiones permitidas son: jpg/jpeg, png, webp";
           $("imagesLabel").classList.remove("btn-secondary");
           $("imagesLabel").classList.add("btn-danger");
           return false; // No es válida

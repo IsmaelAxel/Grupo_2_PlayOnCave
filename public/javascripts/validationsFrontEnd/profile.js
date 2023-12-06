@@ -125,14 +125,14 @@ window.onload = async function (e) {
     })
     function validateAvatar() {
       const avatarInput = $('avatar');
-      const allowedExtensions = ["jpg", "png", "webp"];
+      const allowedExtensions = ["jpg","jpeg", "png", "webp"];
     
       const fileName = avatarInput.files[0].name;
       const fileExtension = fileName.split('.').pop().toLowerCase();
     
       if (!allowedExtensions.includes(fileExtension)) {
         avatarInput.classList.add("is-invalid");
-        $('msgError-avatar').innerHTML = "Tipo de archivo inválido. Las extensiones permitidas son: jpg, png, webp";
+        $('msgError-avatar').innerHTML = "Tipo de archivo inválido. Las extensiones permitidas son: jpg/jpeg, png, webp";
         $("avatarLabel").classList.remove("btn-secondary");
         $("avatarLabel").classList.add("btn-danger");
         return false; // No es válida
