@@ -1,0 +1,103 @@
+main.main__search{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin: 75px auto;
+    max-width: 420px;
+}
+main.main__search__error{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 200px 0;
+    background: var(--colorBackground);
+    color: var(--colorVerde);
+    font-size: .9rem;
+    font-family: var(--tipoGrafiaTitulos);
+    letter-spacing: -4px;
+  }
+  
+  .main__search__error--404{
+    animation: glitch 1s linear infinite;
+    margin: 0 auto;
+  }
+  
+  @keyframes glitch{
+    2%,64%{
+      transform: translate(2px,0) skew(0deg);
+    }
+    4%,60%{
+      transform: translate(-2px,0) skew(0deg);
+    }
+    62%{
+      transform: translate(0,0) skew(5deg); 
+    }
+  }
+  
+  .main__search__error--404:before,
+  .main__search__error--404:after{
+    position: absolute;
+    left: 0;
+  }
+  
+  .main__search__error--404:before{
+    animation: glitchTop 1s linear infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  }
+  
+  @keyframes glitchTop{
+    2%,64%{
+      transform: translate(2px,-2px);
+    }
+    4%,60%{
+      transform: translate(-2px,2px);
+    }
+    62%{
+      transform: translate(13px,-1px) skew(-13deg); 
+    }
+  }
+  
+  div:after{
+    animation: glitchBotom 1.5s linear infinite;
+    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  }
+  
+  @keyframes glitchBotom{
+    2%,64%{
+      transform: translate(-2px,0);
+    }
+    4%,60%{
+      transform: translate(-2px,0);
+    }
+    62%{
+      transform: translate(-22px,5px) skew(21deg); 
+    }
+  }
+@media(min-width: 768px){
+  main.main__search{
+    max-width: 760px;
+    margin: 200px auto;
+}
+  main.main__search__error{ 
+    margin: 350px 0;
+  }
+}
+@media(min-width: 1024px){
+  main.main__search{
+    max-width: 1180px;
+    margin: 150px auto;
+}
+  main.main__search__error{ 
+    font-size: 2rem;
+    letter-spacing: -4px;
+  }
+}
+
+body.noche .main__search__error{
+  background-color: var(--gris4);
+  color: var(--colorBackgroundMc);
+}

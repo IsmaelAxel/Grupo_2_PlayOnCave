@@ -1,0 +1,69 @@
+.admin__main{
+    margin: 100px 10px;
+}
+.admin__main__box{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    border: 2px solid var(--colorVerde);
+    box-shadow: 0px 0px 10px var(--colorVerde);
+    max-width: 500px;
+    height: 300px;
+}
+.admin__main__box h1{
+    font-size: 1rem;
+    font-family: var(--tipoGrafiaTitulos);
+    color: #ffffff;
+}
+.admin__main__box a button{
+    padding: 10px 20px;
+    color: #ffffff;
+    background-color: #000000;
+    border-radius: 20px;
+    border: 3px solid var(--colorVerde);
+    margin: 20px 0;
+    cursor: pointer;
+}
+.admin__main__box form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.admin__main__box form label{
+    font-size: 1rem;
+    color: #ffffff;
+    margin: 10px 0;
+}
+.admin__main__box form input{
+    border-radius: 10px;
+    padding: 10px 20px;
+    border-style: none;
+}
+@media (min-width: 481px) {
+    .admin__main{
+        margin: 100px 10px 220px;
+    }
+    .admin__main__box{
+        height: 400px;
+        justify-content: space-around;   
+    }
+    .admin__main__box h1{
+        font-size: 1.6rem;
+    }
+    .admin__main__box a button{
+        font-size: 1.4rem;
+    }
+    .admin__main__box form label{
+        font-size: 1.5rem;
+    }
+}
+.modal-content{
+    background-color:  rgba(0, 0, 0, 0.5);
+}
+.modal-body{
+    background-color:  rgba(0, 0, 0, 0.5);
+}

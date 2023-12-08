@@ -1,0 +1,429 @@
+.home__header{
+    background-color: #000000;
+    color: var(--colorVerde);
+    border-bottom: 2px solid var(--colorVerde);
+    font-size: 20px;
+    width: 100%;
+}
+
+.home__header--box{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 425px;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    text-transform: capitalize;
+}
+
+.home__header__box--logo{
+    width: 40%;
+    text-align: center; 
+}
+
+.home__header__box--logo img{
+    width: 128px
+}
+
+.home__header__box--burguer{
+    display: flex;
+    justify-content: center;
+    width: 25%;
+}
+
+.home__header__box--burguer i{  
+    padding: 3px;
+    padding-bottom: 2px;
+    border-radius: 5px;
+    border: solid 1px var(--colorVerde);
+}
+.home__header__box--login{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+}
+.home__header__box--login nav ul{
+    display: flex;
+    gap: 3px;  
+}
+
+#carri{
+    position: relative;
+}
+#numberCart{
+    position: absolute;
+    bottom: 22px;
+    right: 4px;
+    margin-left: 6px;
+    font-size: 10px;
+    border-radius: 50%;
+    color: #000000;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 1px
+}
+
+.home__header__box--login nav ul li a p{
+    display: none;
+}
+
+.home__header__box--login nav ul li a p,.home__header__box--login nav ul li a i{
+    color: var(--colorVerde);
+    padding: 3px;
+}
+
+.home__header__box__categorias--nav{
+    height: 0;
+    overflow: hidden;
+    transition: all 1s ease;
+    width: 100%;
+}
+.showMenu{
+    height: 170px;
+}
+.home__header__box__categorias--nav ul li a{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 12px;
+    color: #ffffff;
+    padding: 3px;
+    border: 1px solid var(--colorVerde);
+    border-radius: 5px;
+    margin: 1px;
+}
+.home__header__box__categorias--nav ul li a:hover{
+    color: var(--colorVerde);
+}
+
+.home_header_box--barra{
+    font-size: 16px;
+}
+
+.home_header_box--form{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.home_header_box--form--input{
+    border-radius: 5px;
+    border:solid 2px var(--colorVerde);
+    margin: 5px;
+    padding: 5px;
+    width: 100%;
+}
+
+.home_header_box--btn i{
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    font-size: 18px;
+    color: #000000;
+    background-color: var(--colorVerde);
+    padding: 6px;
+    border-radius: 5px;
+}
+
+.home_header_box--button{
+    border: none;
+}
+.home__header__box--tema p{
+    display: none;
+}
+/* Estilos para el interruptor */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 24px;
+    height: 18px;
+    top: 8px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--colorVerde);
+    border-radius: 24px;
+    transition: background-color 0.4s ease;
+  }
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 2px;
+    bottom: 3px;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: transform 0.4s ease;
+  }
+  
+  /* Cambios en el interruptor cuando está en estado "encendido" */
+  input:checked + .slider {
+    background-color: var(--colorVerde);
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 10px var(--colorVerde)
+  }
+  
+  input:checked + .slider::before {
+    transform: translateX(8px);
+  }
+
+@media (min-width:768px){
+
+    .home__header--box{
+        width: 100%;
+        max-width: 769px;
+        margin: 0 auto;
+    }
+    .home__header__box--logo{
+        order: -1;
+        width: 20%;
+    }
+    .home__header__box--logo img{
+        width: 110px;
+    }
+    
+    .home_header_box--barra{
+        padding: 10px;
+        display: flex;
+        font-size: 16px;
+        order: 1;
+        width: 40%;
+    }
+    .home_header_box--form{
+        width: 100%;
+    }
+    .home__header__box--burguer{
+        order: 3;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .home__header__box__categorias--nav{
+        order: 3;
+        max-width: 481px;
+    }
+    .home__header__box__categorias--nav ul li a{
+        font-size: 14px;
+    }
+    
+    .home__header__box--login{
+        order: 2;
+        width: 20%;
+        margin-top: 40px;
+    }
+    
+    .home__header__box--login nav ul li a p{
+       display: none;
+    }
+    .showMenu{
+        height: 195px;
+    }
+    #userlogin__p{
+        font-size: 10px;
+        display: flex;
+    }
+    #numberCart{
+        bottom: 58px;
+    }
+    .home__header__box--login nav ul li{
+        display: flex;
+        justify-content: space-between;
+    }
+    .home__header__box--login nav ul li a i{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .home__header__box--tema{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        order: 4;
+        margin-right: 10px;
+        width: 5%;
+    }
+
+    .home__header__box--tema p{
+        font-size: 12px;
+        text-align: center;
+    }
+    .switch {
+        width: 24px;
+        height: 18px;
+        top: 2px;
+      }
+      
+    .slider {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 24px;
+        transition: background-color 0.4s ease;
+      }
+      .slider::before {
+        position: absolute;
+        content: "";
+        height: 12px;
+        width: 12px;
+        left: 2px;
+        bottom: 3px;
+        border-radius: 50%;
+        background-color: #fff;
+        transition: transform 0.4s ease;
+      }
+      
+      /* Cambios en el interruptor cuando está en estado "encendido" */
+      input:checked + .slider {
+        background-color: var(--colorVerde);
+      }
+      
+      input:focus + .slider {
+        box-shadow: 0 0 10px var(--colorVerde)
+      }
+      
+      input:checked + .slider::before {
+        transform: translateX(8px);
+      }
+
+}
+@media (min-width:1024px){
+    .home__header{
+        font-size: 18px;
+        width: 100%;
+    }
+    .home__header--box{
+        width: 100%;
+        max-width: 1025px;
+    }
+    .home__header__box--logo{
+        width: 15%;
+    }
+    .home__header__box--logo img{
+        width: 130px;
+    }
+    
+    .home__header__box__categorias--nav{
+        height: auto;
+        margin-bottom: 5px;
+        width: 100%;
+    }
+    .home__header__box__categorias--nav ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .home__header__box__categorias--nav ul li a{
+        display: flex;
+        font-size: 14px;
+        letter-spacing: 0px;
+        color: #ffffff;
+        padding: 5px;
+        border-radius: 5px;
+        margin: 2px;
+        box-shadow: 0px 0px 10px var(--colorVerde);
+    }
+    .home__header__box__categorias--nav ul li a:hover{
+        color: var(--colorVerde);
+    }
+    .home__header__box--burguer{
+        display: none;   
+    }
+    .home_header_box--btn i{ 
+        right: 5px;
+    }
+   
+    .home__header__box--tema p{
+        display: block;
+    }
+    .home__header__box--tema i{
+        rotate: 0deg; 
+    }
+    .home_header_box--barra{
+        display: flex;
+        width: 50%;
+        padding: 10px;
+        font-size: 16px;
+        justify-content: center;
+    }
+    .home_header_box--form{
+        display: flex;
+        width: 100%;
+    }
+    .home__header__box--login{
+        margin-top: 10px;
+        width: 15%;
+    }
+    .home__header__box--login nav ul{
+        text-align: center;  
+    }
+    .home__header__box--login nav ul li{
+        position: relative;
+        top: 25px;
+    }
+    
+    .home__header__box--login nav ul li a p{
+        display: block;
+        font-size: 12px;
+    }
+    #numberCart{
+        bottom: 76px;
+        right: 8px;    
+    }
+   
+    #userlogin__p{
+        font-size: 14px;
+    }
+}
+/* Modo Claro */
+body.noche header{
+    background-color: var(--colorBackgroundMc);
+    border-bottom:solid 2px #000000
+}
+body.noche header nav li a,body.noche header nav li p,body.noche header nav ul li i{
+    color: #ffffff;
+  }
+  body.noche header nav li a:hover{
+    color:black;
+    text-shadow: 5px 0 15px white;
+  }
+  body.noche .home__header__box__categorias--nav ul li a {
+    border:solid 1px #ffffff;
+    box-shadow: none
+  }
+
+  body.noche .home__header__box__categorias--nav ul li a:hover{
+    border:solid 1px #000000;
+    box-shadow: 0 0 10px #ffffff;
+  }
+  body.noche .home_header_box--btn i{
+    color: #ffffff;
+    background-color: #000000;
+  }
+  body.noche .home_header_box--form--input{
+    border:solid 2px #000000;
+  }
+  body.noche .home__header__box--burguer{
+    color: #ffffff;
+  }
+  body.noche .home__header__box--burguer a i{
+    border:solid 2px #000000;
+  
+  }
+  body.noche  header nav ul li .slider{
+    background-color: #000000;
+  }

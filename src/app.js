@@ -15,9 +15,10 @@ const app = express();
 const session = require("express-session");
 const cookieCheck = require('./middlewares/cookieCheck');
 const userSessionCheck = require('./middlewares/userSessionCheck');
-
+const cors = require("cors")
 
 // view engine setup
+app.use(cors())
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
