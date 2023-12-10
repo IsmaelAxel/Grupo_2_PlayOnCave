@@ -226,6 +226,9 @@
                                         <input class="productAdd__box__image--img" type="file" id="mainImage"
                                             name="mainImage" value="<%= locals.old && (old.images && old.images) %>"
                                             hidden>
+                                        <div class="mainImagePreview">
+                                            <img src="/images/preview_image.png" alt="" id="mainImagePreview">
+                                        </div>
                                         <small class="text-danger ms-2" id="msgError-mainImage">
                                             <%= locals.errors && (errors.mainImage && errors.mainImage.msg) %>
                                         </small>
@@ -237,6 +240,9 @@
                                         <input class="productAdd__box__image--img" multiple type="file" id="images"
                                             name="images" value="<%= locals.old && (old.images && old.images) %>"
                                             hidden>
+                                        <div class="imagesPreview" id="boxImagesPreview">
+
+                                        </div>  
                                         <small class="text-danger ms-2" id="msgError-images">
                                             <%= locals.errors && (errors.images && errors.images.msg) %>
                                         </small>
@@ -266,6 +272,7 @@
                 <%- include('partials/footer') %>
                 <%- include('partials/scripts') %>
             <script src="/javascripts/validationsFrontEnd/productAddValidator.js"></script>
+            <script src="/javascripts/productPreviewImages.js"></script>
     </body>
 
 </html>
