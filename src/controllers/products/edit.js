@@ -6,7 +6,9 @@ module.exports = (req, res) => {
     
 
     const products = db.Products.findByPk(req.params.id,{
-        include:['category','section'],
+        include : {
+            all : true
+        }
     })
 
     const sections = db.Section.findAll({
