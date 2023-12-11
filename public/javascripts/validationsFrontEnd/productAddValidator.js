@@ -5,9 +5,9 @@ function validarCampo(inputElement, errorMsgElement) {
       errorMsgElement.innerHTML = "El campo es obligatorio";
       inputElement.classList.add("is-invalid");
       break;
-    case !/^[a-zA-Z0-9\s/(),|-]+$/.test(inputElement.value):
+    case !/^[a-zA-Z0-9\s/(),|.|-]+$/.test(inputElement.value):
       errorMsgElement.innerHTML =
-        "El campo solo acepta estos caracteres especiales: ' / ', ' | ', ' - ', ' ( ) ' y ' , '";
+        "El campo solo acepta estos caracteres especiales: ' / ', ' | ', ' - ', ' ( ) ', ' . ' y ' , '";
       inputElement.classList.add("is-invalid");
       break;
     case inputElement.value.trim().length > 2 &&
@@ -30,7 +30,7 @@ window.onload = function () {
         $("msgError-title").innerHTML = "El titulo es obligatorio";
         this.classList.add("is-invalid");
         break;
-      case !/^[a-zA-Z0-9\s]+$/.test(this.value):
+      case !/^[a-zA-Z0-9\s:'Δ]+$/ .test(this.value):
         $("msgError-title").innerHTML =
           "El campo debe contener letras, números y espacios";
         this.classList.add("is-invalid");
@@ -212,19 +212,19 @@ window.onload = function () {
         $("msgError-description").innerHTML = "El campo es obligatorio";
         this.classList.add("is-invalid");
         break;
-      case !/^[a-zA-Z0-9\s\/(),|\-.áéíóúÁÉÍÓÚ]+$/u.test(this.value):
+      case !/^[a-zA-Z0-9\s\/(),|\-.áéíóúÁÉÍÓÚñÑ':]+$/u.test(this.value):
         $("msgError-description").innerHTML =
           "El campo solo acepta estos caracteres especiales: ' , ', ' / ', ' | ', ' - ', ' ( ) ' , ' . ' , y tíldes";
         this.classList.add("is-invalid");
         break;
-      case this.value.trim().length > 20 && this.value.trim().length < 500:
+      case this.value.trim().length > 20 && this.value.trim().length < 1000:
         $("msgError-description").innerHTML = null;
         this.classList.remove("is-invalid");
         this.classList.add("is-valid");
         break;
       default:
         $("msgError-description").innerHTML =
-          "Mínimo 20 y maximo 500 caracteres";
+          "Mínimo 20 y maximo 1000 caracteres";
         this.classList.add("is-invalid");
         break;
     }

@@ -10,7 +10,7 @@ module.exports = [
       max: 50,
     })
     .withMessage("Debe tener entre 4 y 20 caracteres")
-    .matches(/^[a-zA-Z0-9\s]+$/)
+    .matches(/^[a-zA-Z0-9\s:'Δ]+$/ )
     .withMessage("El campo debe contener letras, números y espacios"),
   check("categoryId").notEmpty().withMessage("Es requerida"),
   check("price")
@@ -32,10 +32,10 @@ module.exports = [
     .trim()
     .isLength({
       min: 20,
-      max: 500,
+      max: 1000,
     })
-    .withMessage("Debe tener entre 20 y 500 caracteres")
-    .matches(/^[a-zA-Z0-9\s\/(),|\-.áéíóúÁÉÍÓÚ]+$/u)
+    .withMessage("Debe tener entre 20 y 1000 caracteres")
+    .matches(/^[a-zA-Z0-9\s\/(),|\-.áéíóúÁÉÍÓÚñÑ':]+$/u)
     .withMessage("El campo solo acepta estos caracteres especiales: ' , ', ' / ', ' | ', ' - ', ' ( ) ' , ' . ' , y tíldes"),
   body("mainImage")
     .custom((value, {req}) => {
@@ -107,8 +107,8 @@ module.exports = [
       "Se espera un minimo de 3 caracteres y un maximo 100 caracteres "
     )
     .bail()
-    .matches(/^[a-zA-Z0-9\s/(),|-]+$/)
-    .withMessage("El campo solo acepta estos caracteres especiales: ' / ', ' | ', ' - ', ' ( ) ' y ' , '"),
+    .matches(/^[a-zA-Z0-9\s/(),|.|-]+$/)
+    .withMessage("El campo solo acepta estos caracteres especiales: ' / ', ' | ', ' - ', ' ( ) ', ' . ' y ' , '"),
   check("recommendedOs")
     .trim()
     .notEmpty()
@@ -122,8 +122,8 @@ module.exports = [
       "Se espera un minimo de 3 caracteres y un maximo 100 caracteres "
     )
     .bail()
-    .matches(/^[a-zA-Z0-9\s/(),|-]+$/)
-    .withMessage("El campo solo acepta estos caracteres especiales: ' / ', ' | ', ' - ', ' ( ) ' y ' , '"),
+    .matches(/^[a-zA-Z0-9\s/(),|.|-]+$/)
+    .withMessage("El campo solo acepta estos caracteres especiales: ' / ', ' | ', ' - ', ' ( ) ', ' . ' y ' , '"),
   check("recommendedProcessor")
     .trim()
     .notEmpty()
@@ -137,8 +137,8 @@ module.exports = [
       "Se espera un minimo de 3 caracteres y un maximo 100 caracteres "
     )
     .bail()
-    .matches(/^[a-zA-Z0-9\s/(),|-]+$/)
-    .withMessage("El campo solo acepta estos caracteres especiales: ' / ', ' | ', ' - ', ' ( ) ' y ' , '"),
+    .matches(/^[a-zA-Z0-9\s/(),|.|-]+$/)
+    .withMessage("El campo solo acepta estos caracteres especiales: ' / ', ' | ', ' - ', ' ( ) ', ' . ' y ' , '"),
   check("minProcessor")
     .trim()
     .notEmpty()
@@ -152,8 +152,8 @@ module.exports = [
       "Se espera un minimo de 3 caracteres y un maximo 100 caracteres "
     )
     .bail()
-    .matches(/^[a-zA-Z0-9\s/(),|-]+$/)
-    .withMessage("El campo solo acepta estos caracteres especiales: ' / ', ' | ', ' - ', ' ( ) ' y ' , '"),
+    .matches(/^[a-zA-Z0-9\s/(),|.|-]+$/)
+    .withMessage("El campo solo acepta estos caracteres especiales: ' / ', ' | ', ' - ', ' ( ) ', ' . ' y ' , '"),
   check("recommendedMemory")
     .trim()
     .notEmpty()
@@ -167,8 +167,8 @@ module.exports = [
       "Se espera un minimo de 3 caracteres y un maximo 100 caracteres "
     )
     .bail()
-    .matches(/^[a-zA-Z0-9\s/(),|-]+$/)
-    .withMessage("El campo solo acepta estos caracteres especiales: ' / ', ' | ', ' - ', ' ( ) ' y ' , '"),
+    .matches(/^[a-zA-Z0-9\s/(),|.|-]+$/)
+    .withMessage("El campo solo acepta estos caracteres especiales: ' / ', ' | ', ' - ', ' ( ) ', ' . ' y ' , '"),
   check("minMemory")
     .trim()
     .notEmpty()
@@ -182,8 +182,8 @@ module.exports = [
       "Se espera un minimo de 3 caracteres y un maximo 100 caracteres "
     )
     .bail()
-    .matches(/^[a-zA-Z0-9\s/(),|-]+$/)
-    .withMessage("El campo solo acepta estos caracteres especiales: ' / ', ' | ', ' - ', ' ( ) ' y ' , '"),
+    .matches(/^[a-zA-Z0-9\s/(),|.|-]+$/)
+    .withMessage("El campo solo acepta estos caracteres especiales: ' / ', ' | ', ' - ', ' ( ) ', ' . ' y ' , '"),
   check("recommendedGraphicsCard")
     .trim()
     .notEmpty()
@@ -197,8 +197,8 @@ module.exports = [
       "Se espera un minimo de 3 caracteres y un maximo 100 caracteres "
     )
     .bail()
-    .matches(/^[a-zA-Z0-9\s/(),|-]+$/)
-    .withMessage("El campo solo acepta estos caracteres especiales: ' / ', ' | ', ' - ', ' ( ) ' y ' , '"),
+    .matches(/^[a-zA-Z0-9\s/(),|.|-]+$/)
+    .withMessage("El campo solo acepta estos caracteres especiales: ' / ', ' | ', ' - ', ' ( ) ', ' . ' y ' , '"),
   check("minGraphicsCard")
     .trim()
     .notEmpty()
@@ -212,8 +212,8 @@ module.exports = [
       "Se espera un minimo de 3 caracteres y un maximo 100 caracteres "
     )
     .bail()
-    .matches(/^[a-zA-Z0-9\s/(),|-]+$/)
-    .withMessage("El campo solo acepta estos caracteres especiales: ' / ', ' | ', ' - ', ' ( ) ' y ' , '"),
+    .matches(/^[a-zA-Z0-9\s/(),|.|-]+$/)
+    .withMessage("El campo solo acepta estos caracteres especiales: ' / ', ' | ', ' - ', ' ( ) ', ' . ' y ' , '"),
   check("recommendedDisk")
     .trim()
     .notEmpty()
@@ -227,8 +227,8 @@ module.exports = [
       "Se espera un minimo de 3 caracteres y un maximo 100 caracteres "
     )
     .bail()
-    .matches(/^[a-zA-Z0-9\s/(),|-]+$/)
-    .withMessage("El campo solo acepta estos caracteres especiales: ' / ', ' | ', ' - ', ' ( ) ' y ' , '"),
+    .matches(/^[a-zA-Z0-9\s/(),|.|-]+$/)
+    .withMessage("El campo solo acepta estos caracteres especiales: ' / ', ' | ', ' - ', ' ( ) ', ' . ' y ' , '"),
   check("minDisk")
     .trim()
     .notEmpty()
@@ -242,7 +242,7 @@ module.exports = [
       "Se espera un minimo de 3 caracteres y un maximo 100 caracteres "
     )
     .bail()
-    .matches(/^[a-zA-Z0-9\s/(),|-]+$/)
-    .withMessage("El campo solo acepta estos caracteres especiales: ' / ', ' | ', ' - ', ' ( ) ' y ' , '"),
+    .matches(/^[a-zA-Z0-9\s/(),|.|-]+$/)
+    .withMessage("El campo solo acepta estos caracteres especiales: ' / ', ' | ', ' - ', ' ( ) ', ' . ' y ' , '"),
   check("sectionId").notEmpty().withMessage("Es requerida"),
 ];

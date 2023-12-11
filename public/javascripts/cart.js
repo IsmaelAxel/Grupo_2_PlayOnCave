@@ -45,6 +45,10 @@ const showProductInCart = (products, total) => {
         </td>
     </tr>
     `;
+    console.log(title)
+    console.log(typeof price)
+    console.log(typeof discount)
+    console.log(typeof quantity)
     });
     getById('show-total').innerHTML = total;
   }
@@ -52,7 +56,7 @@ const showProductInCart = (products, total) => {
 
 const addItemToCart = async (quantity, product) => {
   try {
-    const response = await fetch(`/api/cart`, {
+    const response = await fetch(`/api/cart/`, {
       method: "POST",
       body: JSON.stringify({
         quantity,
@@ -168,31 +172,22 @@ const clearCart = async () => {
 
 window.onload = async function () {
 
-  try {
-    const response = await fetch('/api/cart')
-    const { ok, data: { products, total } } = await response.json();
-    
-    showCountProductCart(products)
+  if(!sessionStorage.getItem('cart-count')) {
+    sessionStorage.setItem('cart-count',0)
+  } 
 
+  if(getById('show-count')){
+    getById('show-count').innerHTML = sessionStorage.getItem('cart-count')
+    getById('show-count').hidden =  sessionStorage.getItem('cart-count') > 0 ? false : true; 
+  } 
+  
 
-  } catch (error) {
-    console.error
-  }
-
-  /* if (!sessionStorage.getItem('cart-count')) {
-    sessionStorage.setItem('cart-count', 0);
-  } */
-
-  if (getById('show-count')) {
-    getById('show-count').innerHTML = sessionStorage.getItem('cart-count');
-    getById('show-count').hidden = sessionStorage.getItem('cart-count') > 0 ? false : true;
-  }
 
   getById("btn-cart") &&
     getById("btn-cart").addEventListener("click", async function (e) {
       try {
-        const response = await fetch("/api/cart");
-        const { ok, data: { products, total } } = await response.json();
+        const response = await fetch("/api/cart/");
+        const { ok, data: {products, total} } = await response.json();
 
         if (ok) {
           if (products.length) {
@@ -216,12 +211,12 @@ window.onload = async function () {
                     </div>
                  </caption>
             </table>`;
-            showProductInCart(products, total);
-            getById("btn-clearCart").classList.remove('disabled');
+            showProductInCart(products, total)
+            getById("btn-clearCart").classList.remove('disabled')
           } else {
             getById("cart-body").innerHTML =
               '<div class="alert alert-warning" role="alert">No hay productos agregados al carrito</div>';
-            getById("btn-clearCart").classList.add('disabled');
+            getById("btn-clearCart").classList.add('disabled')
           }
         }
       } catch (error) {
