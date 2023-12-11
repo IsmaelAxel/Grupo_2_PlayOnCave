@@ -275,6 +275,8 @@ window.onload = function () {
       $('msgError-mainImage').innerHTML = "Debe seleccionar una imagen principal";
       $("mainImageLabel").classList.remove("btn-secondary");
       $("mainImageLabel").classList.add("btn-danger");
+      $("mainImagePreviewColor").classList.remove("mainImagePreview-color");
+      $("mainImagePreviewColor").classList.add("mainImagePreview-isInvalid");
       return false; // No es válida
     }
   
@@ -286,6 +288,8 @@ window.onload = function () {
       $('msgError-mainImage').innerHTML = "Tipo de archivo inválido. Las extensiones permitidas son: jpg/jpeg, png, webp";
       $("mainImageLabel").classList.remove("btn-secondary");
       $("mainImageLabel").classList.add("btn-danger");
+      $("mainImagePreviewColor").classList.remove("mainImagePreview-color");
+      $("mainImagePreviewColor").classList.add("mainImagePreview-isInvalid");
       return false; // No es válida
     }
   
@@ -293,6 +297,8 @@ window.onload = function () {
     $('msgError-mainImage').innerHTML = ""; // Limpiar el mensaje si se ha seleccionado una imagen
     $("mainImageLabel").classList.remove("btn-danger");
     $("mainImageLabel").classList.add("btn-secondary");
+    $("mainImagePreviewColor").classList.add("mainImagePreview-color");
+    $("mainImagePreviewColor").classList.remove("mainImagePreview-isInvalid");
     return true; // Es válida
   }
   
@@ -310,6 +316,8 @@ window.onload = function () {
       $('msgError-images').innerHTML = "Debe seleccionar exactamente 5 imágenes";
       $("imagesLabel").classList.remove("btn-secondary");
       $("imagesLabel").classList.add("btn-danger");
+      $("boxImagesPreview").classList.remove("mainImagePreview-color");
+      $("boxImagesPreview").classList.add("mainImagePreview-isInvalid");
       return false; 
     }
   
@@ -322,6 +330,8 @@ window.onload = function () {
         $('msgError-images').innerHTML = "Tipo de archivo inválido. Las extensiones permitidas son: jpg/jpeg, png, webp";
         $("imagesLabel").classList.remove("btn-secondary");
         $("imagesLabel").classList.add("btn-danger");
+        $("boxImagesPreview").classList.remove("mainImagePreview-color");
+      $("boxImagesPreview").classList.add("mainImagePreview-isInvalid");
         return false; // No es válida
       }
     }
@@ -330,12 +340,17 @@ window.onload = function () {
     $('msgError-images').innerHTML = "";
     $("imagesLabel").classList.remove("btn-danger");
     $("imagesLabel").classList.add("btn-secondary");
+    $("boxImagesPreview").classList.add("mainImagePreview-color");
+    $("boxImagesPreview").classList.remove("mainImagePreview-isInvalid");
     return true; // Es válida
   }
   
   $("images").addEventListener("change", function () {
     validateImages();
   });
+
+
+  $("")
 
   $("formAdd").addEventListener("submit", function (e) {
     e.preventDefault();

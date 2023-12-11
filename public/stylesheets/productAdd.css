@@ -7,7 +7,7 @@
 .mainImagePreview{
     height: 217px;
     margin: 0 10px;
-    border: solid 1px var(--colorVerde);
+   
     border-radius: 5px;
     overflow: hidden;
 }
@@ -19,7 +19,7 @@
 .imagesPreview{
     height: 217px;
     margin: 0 10px;
-    border: solid 1px var(--colorVerde);
+   
     border-radius: 5px;
     overflow: hidden;
     display: flex;
@@ -28,6 +28,13 @@
     gap: 1rem;
     padding: 1px;
 }
+
 .imagesPreview img{
     width: 30%;
+}
+.mainImagePreview-color{
+    border: solid 1px var(--colorVerde);
+}
+.mainImagePreview-isInvalid{
+    border: solid 1px var(--colorBotones);
 }
