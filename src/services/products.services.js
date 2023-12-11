@@ -76,6 +76,9 @@ const getProductId = async(id) => {
         }
     }
 }
+
+
+
 module.exports = {
     getAllProducts,
     getProductId

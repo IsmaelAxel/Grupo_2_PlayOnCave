@@ -1,12 +1,23 @@
-import {createBrowserRouter} from 'react-router-dom'
+import { createBrowserRouter } from "react-router-dom";
+import { Layout } from "./layouts/layout";
+import { Home } from "./pages/home";
+import { ListProductsPage } from "./pages/ListProductsPage";
 
-import {  HomeAdminPage } from './pages/HomeAdminPage'
-import { loader } from './pages/HomeAdminPage/loader'
 
-export const router = createBrowserRouter (
-[
-   { path : '/' ,
-    element : <HomeAdminPage/>,
-    loader : loader,
-    
-}])
+export const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <Layout/>,
+        children : [
+            {
+                index:true,
+                element : <Home/>
+            },
+            {
+                path: '/movies',
+                element : <ListProductsPage/>
+            }
+        ]
+       
+    } 
+])

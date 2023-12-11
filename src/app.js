@@ -11,6 +11,7 @@ const productsRouter = require('./routes/products.routes')
 const apiProductsRouter = require('./routes/v1/apiProducts.routes')
 const apiUsersRouter = require('./routes/v1/apiUsers.routes')
 const apiCartRouter = require('./routes/v1/apiCart.routes')
+const apiCategoriesRouter = require('./routes/v1/apiCategories.routes')
 const app = express();
 const session = require("express-session");
 const cookieCheck = require('./middlewares/cookieCheck');
@@ -44,6 +45,7 @@ app.use('/products', productsRouter);
 app.use('/api/products', apiProductsRouter)
 app.use('/api/users', apiUsersRouter)
 app.use('/api/cart', apiCartRouter)
+app.use('/api/categories', apiCategoriesRouter )
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
