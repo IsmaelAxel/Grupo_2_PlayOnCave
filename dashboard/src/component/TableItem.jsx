@@ -1,17 +1,21 @@
 import  PropTypes  from 'prop-types'
 import { FaPencilAlt, FaTrash } from 'react-icons/fa/index.esm';
 
-export const TableItem = ({products: {id, title,category, price,discount} }) => {
+export const TableItem = ({product: {id, title,category,detail} }) => {
+  const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   return (
     <tr>
        <td>{id}</td>
     <td>{title}</td>
     <td>{category.name}</td>
-    <td>{price}</td>
+    <td>${toThousand(detail.price)}</td>
     <td>
-    {discount }
-    </td>
+    {detail.discount  ? "$"+ detail.discount   : "s/n"}
     
+    </td>
+    <td>
+    ${toThousand(detail.price - (detail.price*detail.discount/100).toFixed(0)) }  
+    </td>
     <td>
       <div className='d-flex '>
         <button className='btn btn-sm btn-outline-success rounded mr-3' ><FaPencilAlt /></button>
@@ -24,6 +28,7 @@ export const TableItem = ({products: {id, title,category, price,discount} }) => 
 }
 
 TableItem.propTypes = {
-   products : PropTypes.object
+   product : PropTypes.object,
+   detail : PropTypes.object
  
 }

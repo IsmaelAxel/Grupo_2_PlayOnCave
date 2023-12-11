@@ -35,10 +35,10 @@ export const SideBar = () => {
         </Link>
       </li>
 
-      <li className={`nav-item ${pathname === "/movies" && "active"}` }>
-        <Link className="nav-link" to="/movies">
+      <li className={`nav-item ${pathname === "/products" && "active"}` }>
+        <Link className="nav-link" to="/products">
           <i className="fas fa-fw fa-film"></i>
-          <span>Peliculas</span>
+          <span>Productos</span>
         </Link>
       </li>
 

@@ -76,6 +76,7 @@ export const ListProductsPage = () => {
                     <TableItem
                       key={product.id}
                       product={product}
+                      
                     
                     />
                   ))}
