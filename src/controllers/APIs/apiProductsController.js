@@ -1,4 +1,4 @@
-const {getAllProducts, getProductId, totalProductInDb} = require('../../services/products.services')
+const {getAllProducts, getProductId} = require('../../services/products.services')
 const createError = require('http-errors')
 module.exports = {
     allProducts: async (req,res) => {
@@ -42,22 +42,6 @@ module.exports = {
                 ok: false,
                 status: error.status || 500,
                 error: error.message || 'ERROR EN EL SERVICIO'
-            })
-        }
-    },
-     totalProducts : async (req,res)  => {
-        try {
-            const {  count } = await getAllProducts();
-            return res.status(200).json({
-            ok: true,
-            totalProducts: count
-           
-         
-        });
-        } catch (error) {
-            return res.status(error.status || 500 ).json({
-                ok: false,
-                msg: error.message || 'upss error'
             })
         }
     }
