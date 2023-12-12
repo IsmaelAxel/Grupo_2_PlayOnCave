@@ -20,9 +20,12 @@ const getAllProducts = async () => {
             ]
         });
         const count = await db.Products.count()
+        const countSections = await db.Section.count()
         return {
             products,
-            count
+            count,
+            countSections
+
         }
     } catch (error) {
         console.log(error)

@@ -3,10 +3,11 @@ const createError = require('http-errors')
 module.exports = {
     allProducts: async (req,res) => {
         try {
-            const { products, count } = await getAllProducts();
+            const { products, count, countSections } = await getAllProducts();
             return res.status(200).json({
             ok: true,
             totalProducts: count,
+            totalSections: countSections,
             products: products.map(product => {
                 return {
                 ...product.dataValues,

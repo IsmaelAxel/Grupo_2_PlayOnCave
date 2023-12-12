@@ -4,14 +4,12 @@ import { ContentRowMovies } from "../../component/ContentRowMovies"
 
 import { LastMovieInDb } from "../../component/LastMovieInDb"
 
-
-
 export const Home = () => {
 
-  const {totalProducts} = useLoaderData() 
+  const {totalProducts,totalUsers,totalSections} = useLoaderData() 
   return (
     <>
-    <ContentRowMovies  totalProducts={totalProducts} />
+    <ContentRowMovies  totalProducts={totalProducts} totalUsers={totalUsers} totalSections={totalSections} />
     <div className="row">
 
     <LastMovieInDb />

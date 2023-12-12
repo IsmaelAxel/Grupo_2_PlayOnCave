@@ -1,7 +1,7 @@
 import { ContentRowItem } from "./ContentRowItem";
 import PropTypes from "prop-types";
 
-export const ContentRowMovies = ({totalProducts}) => {
+export const ContentRowMovies = ({totalProducts,totalUsers,totalSections}) => {
  
   const items = [
     {
@@ -17,14 +17,14 @@ export const ContentRowMovies = ({totalProducts}) => {
       color: "success",
       title: "Plataformas",
       icon: "fas fa-award",
-      value: 79,
+      value: totalSections,
     },
     {
       id: crypto.randomUUID(),
       color: "warning",
       title: "Users quantity",
       icon: "fas fa-user",
-      value: 49,
+      value: totalUsers,
     },
   ];
   return (
@@ -36,5 +36,7 @@ export const ContentRowMovies = ({totalProducts}) => {
   );
 };
 ContentRowMovies.propTypes = {
-  totalProducts: PropTypes.number
+  totalProducts: PropTypes.number,
+  totalUsers: PropTypes.number,
+  totalSections: PropTypes.number
 }
