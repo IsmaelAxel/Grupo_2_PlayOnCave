@@ -64,7 +64,7 @@ const getProductId = async(id) => {
         if(!product){
             throw{
                 status: 400,
-                message: 'No hay pelicula con ese id'
+                message: 'No hay producto con ese id'
             }
         }
         return product
@@ -77,9 +77,24 @@ const getProductId = async(id) => {
     }
 }
 
+const totalProductInDb = async (req,res)  => {
+    try {
+        const  total = await db.Products.count()
+        return res.status(200).json({
+            ok:true, 
+            data : total
+        })
+    } catch (error) {
+        return res.status(error.status || 500 ).json({
+            ok: false,
+            msg: error.message || 'upss error'
+        })
+    }
+}
 
 
 module.exports = {
     getAllProducts,
-    getProductId
+    getProductId,
+    totalProductInDb
 }

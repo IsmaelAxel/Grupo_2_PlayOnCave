@@ -1,25 +1,28 @@
 import { ContentRowItem } from "./ContentRowItem";
+import PropTypes from "prop-types";
 
-export const ContentRowMovies = () => {
+export const ContentRowMovies = ({totalProducts}) => {
+ 
   const items = [
     {
       id: crypto.randomUUID(),
       color: "primary",
-      title: "Movies in data base",
+      title: "Products in db",
       icon: "fas fa-film",
-      value: 21,
+      value: totalProducts,
+      
     },
     {
       id: crypto.randomUUID(),
       color: "success",
-      title: "Total awards",
+      title: "Plataformas",
       icon: "fas fa-award",
       value: 79,
     },
     {
       id: crypto.randomUUID(),
       color: "warning",
-      title: "Actors quantity",
+      title: "Users quantity",
       icon: "fas fa-user",
       value: 49,
     },
@@ -32,3 +35,6 @@ export const ContentRowMovies = () => {
     </div>
   );
 };
+ContentRowMovies.propTypes = {
+  totalProducts: PropTypes.number
+}
