@@ -7,6 +7,7 @@ const logger = require('morgan');
 const methodOverride = require('method-override')
 const indexRouter = require('./routes/index.routes');
 const usersRouter = require('./routes/users.routes');
+const authRouter= require('./routes/auth.routes')
 const productsRouter = require('./routes/products.routes')
 const apiProductsRouter = require('./routes/v1/apiProducts.routes')
 const apiUsersRouter = require('./routes/v1/apiUsers.routes')
@@ -17,6 +18,10 @@ const session = require("express-session");
 const cookieCheck = require('./middlewares/cookieCheck');
 const userSessionCheck = require('./middlewares/userSessionCheck');
 const cors = require("cors")
+const passport = require ('passport');
+const {loginGoogleInitialize} =require('./services/googleServices')
+loginGoogleInitialize()
+
 
 // view engine setup
 app.use(cors())
@@ -36,6 +41,9 @@ app.use(session({
 }))
 app.use(cookieCheck)
 app.use(userSessionCheck);
+app.use(passport.initialize())
+app.use(passport.session())
+
 
 
 
@@ -46,6 +54,7 @@ app.use('/api/products', apiProductsRouter)
 app.use('/api/users', apiUsersRouter)
 app.use('/api/cart', apiCartRouter)
 app.use('/api/categories', apiCategoriesRouter )
+app.use('/auth.routes', authRouter)
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
