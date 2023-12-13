@@ -18,4 +18,5 @@ router.post('/register', uploadUser.single('image'), registerValidator, processR
 router.get('/profile', userCheck, profile)
 router.put('/profileUpdate', uploadUser.single('avatar'),profileValidator, userCheck, updateProfile)
 router.get('/admin', adminCheck, admin);
+router.get('/admin/search2',  admin);
 module.exports = router;

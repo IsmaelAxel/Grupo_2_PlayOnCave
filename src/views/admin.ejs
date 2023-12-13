@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <%- include('partials/head', {title: "admin" }) %>
 
     <body class="">
@@ -13,7 +12,7 @@
                         <div class="card  bg-dark">
 
                             <div class="card-header d-flex text-white bg-secondary justify-content-between">
-                                
+
                                 <ul class="breadcrumb fs-4 ">
                                     <li class="breadcrumb-item fw-bold  "><a class="text-reset" href="/">Home</a></li>
                                     <li class="breadcrumb-item fw-bold active  "><a class="text-dark "
@@ -21,61 +20,52 @@
                                     <li class="breadcrumb-item fw-bold  "> <a class="text-reset"
                                             href="/products/productAdd">Nuevo producto</a></li>
                                 </ul>
-                                <div >
-                                    <form id="form_search" class="home_header_box--form" action="/search2" method="get">
-                                        <input id="input_search" class="home_header_box--form--input" name="keywords" type="text"
-                                            placeholder="Buscar productos, marcas">
+                                <div>
+                                    <form id="form_search" class="home_header_box--form" action="admin/search2"
+                                        method="get">
+                                        <input id="input_search" class="home_header_box--form--input" name="keywords"
+                                            type="text" placeholder="Buscar productos, marcas">
                                         <div class="home_header_box--btn">
                                             <button class="home_header_box--button" type="submit"><i
                                                     class="fa-solid fa-magnifying-glass"></i></button>
                                         </div>
                                     </form>
-                            </div>
-                                
-                              
-                  
+                                </div>
+                                <div class="pagination mx-4 d-flex justify-content-center">
+                                    <nav aria-label="Page navigation example">
+                                        <ul class="pagination">
+                                            <% if (pages.length) { %>
+                                                <% if (currentPage !==1) { %>
 
+                                                    <li class="page-item"> <a
+                                                            href="<%= paginate.href({ page: currentPage - 1 }) %>"
+                                                            class="page-link"><i class="fa fa-angle-left"></i>Prev</a>
+                                                    </li>
+                                                    <% } %>
+                                                        <% pages.forEach(page=> { %>
+                                                            <li class="page-number">
+                                                                <a href="<%= page.url %>"
+                                                                    class="page-link <%= page.number === currentPage && 'active' %>">
+                                                                    <%= page.number %>
+                                                                </a>
+                                                            </li>
+                                                            <% }); %>
+                                                                <% if (currentPage !==currentPage.length) { %>
+                                                                    <li class="page-item">
+                                                                        <a href="<%= paginate.href({ page: currentPage + 1 }) %>"
+                                                                            class="page-link">
+                                                                            Next <i class="fa fa-angle-right"></i>
+                                                                        </a>
+                                                                    </li>
 
-<div class="pagination mx-4 d-flex justify-content-center">
-    <nav aria-label="Page navigation example">
-        <ul class="pagination">
-            <% if (pages.length) { %>
-                <% if (currentPage !== 1) { %>
-                    
-                    <li class="page-item"> <a href="<%= paginate.href({ page: currentPage - 1 }) %>" class="page-link"><i
-                        class="fa fa-angle-left"></i>Prev</a></li>
-                <% } %>
-                <% pages.forEach(page => { %>
-                    <li class="page-number">
-                        <a href="<%= page.url %>" class="page-link <%= page.number === currentPage && 'active' %>">
-                            <%= page.number %>
-                        </a>
-                    </li>
-                <% }); %>
-                <% if (currentPage !== pagesCount) { %>
-                    <li class="page-item">
-                        <a href="<%= paginate.href({ page: currentPage + 1 }) %>" class="page-link">
-                            Next <i class="fa fa-angle-right"></i>
-                        </a>
-                    </li>
-                    
-                <% } %>
-            <% } %>
-        </ul>
-    </nav>
-</div>
-
-<!-- ... Otro código ... -->
-
-
-<!-- ... Otro código ... -->
-
-                               
-
+                                                                    <% } %>
+                                                                        <% } %>
+                                        </ul>
+                                    </nav>
+                                </div>
 
                             </div>
-                           
-                               
+
                             <div class="card-body">
                                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                                     <li class="nav-item" role="presentation">
@@ -273,8 +263,5 @@
             <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-chevron-up"></i></button>
             <%- include('partials/footer') %>
                 <%- include('partials/scripts') %>
-
-
     </body>
-
 </html>
