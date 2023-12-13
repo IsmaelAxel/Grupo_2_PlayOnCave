@@ -1,7 +1,17 @@
 const db = require('../database/models')
-const getAllProducts = async () => {
+const getAllProducts = async (limit, offset, keyword) => {
+
+    const options = keyword ? {
+        where: {
+            title: {
+                [Op.substring]: keyword
+            }
+        }
+    } : null;
     try {
         const products = await db.Products.findAll({
+            limit,
+            offset,
             attributes: {
                 exclude: [ 'price', 'discount', 'recommendedOs', 'minOs','minProcessor', 'minMemory','recommendedGraphicsCard','recommendedMemory','minGraphicsCard','recommendedProcessor','recommendedDisk','minDisk','createdAt','updatedAt', 'categoryId']
             },
@@ -17,9 +27,13 @@ const getAllProducts = async () => {
                         attributes : []
                     }
                 },
-            ]
+            ],
+            ...options
         });
-        const count = await db.Products.count()
+        const count = await db.Products.count({
+            ...options
+        })
+        console.log('<<<<<<<<<',count);
         const countSections = await db.Section.count()
         return {
             products,
