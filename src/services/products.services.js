@@ -1,4 +1,5 @@
 const db = require('../database/models')
+const { Op } = require("sequelize")
 const getAllProducts = async (limit, offset, keyword) => {
 
     const options = keyword ? {
