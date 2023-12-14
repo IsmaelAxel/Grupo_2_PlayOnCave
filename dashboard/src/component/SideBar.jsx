@@ -8,11 +8,12 @@ export const SideBar = () => {
       id="accordionSidebar"
     >
     <div className="p-3">
+      <a href="/">
           <img
             className="w-100 rounded-circle"
             src="/images/logo.svg"
             alt="Digital House"
-          />
+          /></a>
         </div>
 
       <hr className="sidebar-divider my-0" />
@@ -20,7 +21,7 @@ export const SideBar = () => {
       <li className="nav-item active">
         <Link className="nav-link" to="/">
           <i className="fas fa-fw fa-tachometer-alt "></i>
-          <span>Dashboard - DH movies</span>
+          <span>Dashboard - Play On Cave</span>
         </Link>
       </li>
 
@@ -42,10 +43,10 @@ export const SideBar = () => {
         </Link>
       </li>
 
-      <li className={`nav-item ${pathname === "/actors" && "active"}` }>
+      <li className={`nav-item ${pathname === "/" && "active"}` }>
         <Link className="nav-link" to="/">
           <i className="fas fa-fw fa-users"></i>
-          <span>Actores</span>
+          <span>Plataformas</span>
         </Link>
       </li>
 

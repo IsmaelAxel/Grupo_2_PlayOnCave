@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import Pagination from "react-bootstrap/Pagination";
-import {  FaChevronLeft, FaChevronRight } from 'react-icons/fa/index.esm';
 import "./Paginator.css";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa/index.esm";
 
 export const Paginator = ({
   pagination,

@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Button, Form } from "react-bootstrap"
 import  PropTypes  from 'prop-types'
 
-export const FormSearch = ({getMovies}) => {
+export const FormSearch = ({getProducts}) => {
 
 const [valuesForm, setvaluesForm] = useState({})
 
@@ -15,7 +15,7 @@ const handleChange = ({target}) => {
 
 const handleSubmit = (event) => {
     event.preventDefault()
-    getMovies(`/api/v1/movies?keyword=${valuesForm.keyword}`)
+    getProducts(`/api/products?keyword=${valuesForm.keyword}`)
 }
   return (
     <Form className="d-flex justify-content-center" onSubmit={handleSubmit}>
@@ -27,5 +27,5 @@ const handleSubmit = (event) => {
   )
 }
 FormSearch.propTypes = {
-    getMovies: PropTypes.func
+  getProducts: PropTypes.func
 }

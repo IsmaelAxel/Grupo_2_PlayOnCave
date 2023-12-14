@@ -5,6 +5,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride = require('method-override')
+const paginate = require('express-paginate');
 const indexRouter = require('./routes/index.routes');
 const usersRouter = require('./routes/users.routes');
 const authRouter= require('./routes/auth.routes')
@@ -46,7 +47,7 @@ app.use(passport.session())
 
 
 
-
+app.use(paginate.middleware(6, 50))
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);

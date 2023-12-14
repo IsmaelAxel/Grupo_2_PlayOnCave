@@ -1,17 +1,30 @@
 const {getAllProducts, getProductId} = require('../../services/products.services')
+const paginate = require('express-paginate')
 const createError = require('http-errors')
 module.exports = {
     allProducts: async (req,res) => {
+        const {keyword} = req.query
         try {
-            const { products, count, countSections } = await getAllProducts();
+            const { products, count, countSections } = await getAllProducts(req.query.limit, req.skip,keyword);
+            const pagesCount = Math.ceil(count / req.query.limit)
+            const currentPage = req.query.page
+            const pages = paginate.getArrayPages(req)(pagesCount, pagesCount, currentPage)
+           
+
             return res.status(200).json({
+                
             ok: true,
+            meta: {
+                pagesCount,
+                currentPage,  
+                pages
+            }, 
             totalProducts: count,
             totalSections: countSections,
             products: products.map(product => {
                 return {
                 ...product.dataValues,
-                section: product.section.map(section => section.name), // Aquí se obtiene solo los nombres de las secciones
+                section: product.section.map(section => section.name), 
                 detail: `${req.protocol}://${req.get('host')}/api/products/${product.id}`,
                 };
             }),

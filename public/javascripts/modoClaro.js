@@ -1,4 +1,5 @@
 // Obtener el estado del modo del almacenamiento local o configurar el modo claro por defecto
+const clasesBootstrap = id => document.getElementById(id)
 if (localStorage.getItem('modo') === 'noche') {
     document.querySelector('body').classList.add('noche');
 } else {
