@@ -20,6 +20,7 @@ const showMessageInfo = (msg) => {
 
 const showCountProductCart = (products, hidden = false) => {
   sessionStorage.setItem('cart-count', products.map(product => product.quantity).reduce((a, b) => a + b, 0));
+  getById('show-count').innerHTML = products.quantity
   getById('show-count').innerHTML = sessionStorage.getItem('cart-count');
   getById('show-count').hidden = hidden;
 };
@@ -30,25 +31,21 @@ const showProductInCart = (products, total) => {
     products.forEach(({ id, image, title, price, quantity, discount }) => {
       getById("cart-table").innerHTML += `
     <tr>
-        <th scope="row"><img src="/images/products/${image}" alt="" width=100/></th>
-        <td>${title}</td>
-        <td>${(price - price * discount / 100) * quantity}</td>
+        <td class="text-center" scope="row"><img src="/images/products/${image}" alt="" width="100"/></td>
+        <td class="text-center">${title}</td>
+        <td class="text-center">$ ${(price - price * discount / 100) * quantity}</td>
         <td>
-            <div class="d-flex gap-2">
+            <div class="d-flex gap-2 justify-content-center">
                 <button class="btn btn-sm btn-danger ${quantity === 1 && 'disabled'}" onclick="removeItemToCart(${id})"><i class="fa-solid fa-minus"></i></button>
                 <input type="text" value=" ${quantity}" style="width:30px"/>
                 <button class="btn btn-sm btn-success" onclick="addItemToCart(1,${id})"><i class="fa-solid fa-plus"></i></button>
             </div>
         </td>
-        <td>
+        <td class="text-center">
         <h3 style="cursor:pointer" onclick="deleteItemToCart(${id})" class="text-danger"><i class="fa fa-trash"></i></h3>
         </td>
     </tr>
     `;
-    console.log(title)
-    console.log(typeof price)
-    console.log(typeof discount)
-    console.log(typeof quantity)
     });
     getById('show-total').innerHTML = total;
   }
@@ -192,21 +189,21 @@ window.onload = async function () {
         if (ok) {
           if (products.length) {
             getById("cart-body").innerHTML = `
-            <table class="table">
-                <thead>
+            <table class="table table-dark" id="tableCart">
+                <thead class="text-center">
                     <tr>
                     <th scope="col">Imagen</th>
-                    <th scope="col">Product</th>
+                    <th scope="col">Producto</th>
                     <th scope="col">Precio</th>
                     <th scope="col">Cantidad</th>
-                    <th scope="col"></th>
+                    <th scope="col">Eliminar Producto</th>
                     </tr>
                 </thead>
                 <tbody id="cart-table">
                   
                 </tbody>
                 <caption>
-                    <div class="d-flex justify-content-end">
+                    <div class="d-flex justify-content-end text-white">
                         <h5>Total: $<span id="show-total">${total}</span></h5> 
                     </div>
                  </caption>

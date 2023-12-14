@@ -14,7 +14,7 @@
                             <div class="card mb-3 shadow-lg bg-secondary text-white"
                                 style="width: 18rem; margin: 0 auto;">
                                 <div style="height: 312.95px; overflow: hidden;">
-                                    <img class="card-img-top img-thumbnail" style="width: 100%; height: 100%; object-fit: cover;" src="/images/users/<%= avatar || 'avatar1.png' %>" alt="Card image cap" id="mainImage">
+                                    <img class="card-img-top img-thumbnail" style="width: 100%; height: 100%; object-fit: cover;" src="<%= /http/.test(avatar)? avatar?.toString().trim() : `/images/users/${avatar || 'default.png'}` %>" alt="Card image cap" id="mainImage">
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">Perfil de <%= name %>
@@ -131,12 +131,9 @@
                 <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-chevron-up"></i></button>
             </main>
             <%- include('partials/footer') %>
-                <script src="/javascripts/profileUpdateImage.js"></script>
-                <%- include('partials/scripts') %>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.min.js"
-                        integrity="sha512-Dz4zO7p6MrF+VcOD6PUbA08hK1rv0hDv/wGuxSUjImaUYxRyK2gLC6eQWVqyDN9IM1X/kUA8zkykJS/gEVOd3w=="
-                        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-                    <script src="/javascripts/validationsFrontEnd/profile.js"></script>
+            <script src="/javascripts/profileUpdateImage.js"></script>
+            <script src="/javascripts/validationsFrontEnd/profile.js"></script>
+            <%- include('partials/scripts') %>
 
     </body>
 
