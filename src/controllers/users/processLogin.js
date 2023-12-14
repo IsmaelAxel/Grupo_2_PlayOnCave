@@ -43,8 +43,10 @@ module.exports = (req, res) => {
               orderId: orders.id,
               total: orders.total,
               products: orders.cart.map(
-                ({ quantity, products: { title, price, images } }) => {
+                ({ quantity, products: {id, title, price,discount, images } }) => {
                   return {
+                    id,
+                    discount,
                     title,
                     price,
                     image: images.find((image) => image.main).file,
@@ -54,7 +56,7 @@ module.exports = (req, res) => {
               ),
             };
             console.log(req.session.cart, '<<<<<<<<<<<<<<<<<');
-            return res.redirect("/");
+            return res.redirect("/users/profile");
           } else {
             db.Orders.create({
               total: 0,
@@ -67,7 +69,7 @@ module.exports = (req, res) => {
                 products: [],
               };
               console.log(req.session.cart, '<<<<<<<<<<<<<<<<<');
-              return res.redirect("/");
+              return res.redirect("/users/profile");
             })
           }
         })

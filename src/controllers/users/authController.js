@@ -33,7 +33,7 @@ if (!isCreate){
         socialId:googleId,
         
     }
-    res.redirect('/')
+    res.redirect('/users/profile')
     } catch (error) {
         console.log(error);
         
