@@ -3,6 +3,7 @@ import { Layout } from "./layouts/layout";
 import { ListProductsPage } from "./pages/ListProductsPage";
 import { Home } from "./pages/HomeAdminPage/home";
 import { loader } from "./pages/HomeAdminPage/loader";
+import { ListUserPage } from "./pages/ListUserPage";
 
 
 export const router = createBrowserRouter([
@@ -18,6 +19,11 @@ export const router = createBrowserRouter([
             {
                 path: '/products',
                 element : <ListProductsPage/>
+            }
+            ,
+            {
+                path: '/users',
+                element : <ListUserPage/>
             }
         ]
        

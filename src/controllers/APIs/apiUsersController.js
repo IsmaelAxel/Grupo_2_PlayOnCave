@@ -1,11 +1,23 @@
 const { getAllUsers, getUserId } = require('../../services/users.services')
 const db = require('../../database/models')
+const paginate = require('express-paginate')
 module.exports = {
     allUsers: async (req,res) => {
-        try{
-            const {users, count} = await getAllUsers()
+        const {keyword} = req.query
+        try {
+            const { users, count } = await getAllUsers(req.query.limit, req.skip,keyword);
+            const pagesCount = Math.ceil(count / req.query.limit)
+            const currentPage = req.query.page
+            const pages = paginate.getArrayPages(req)(pagesCount, pagesCount, currentPage)
+    
+           
             return res.status(200).json({
                 ok: true,
+                meta: {
+                    pagesCount,
+                    currentPage,  
+                    pages
+                }, 
                 totalUsers: count,
                 users: users.map(user => {
                     return {
