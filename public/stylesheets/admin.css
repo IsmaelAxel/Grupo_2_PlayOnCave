@@ -1,5 +1,5 @@
-.admin__main{
-    margin: 100px 10px;
+.container{
+    margin-bottom: 200px
 }
 .admin__main__box{
     margin: 0 auto;
@@ -43,10 +43,9 @@
     padding: 10px 20px;
     border-style: none;
 }
+
 @media (min-width: 481px) {
-    .admin__main{
-        margin: 100px 10px 220px;
-    }
+    
     .admin__main__box{
         height: 400px;
         justify-content: space-around;   
