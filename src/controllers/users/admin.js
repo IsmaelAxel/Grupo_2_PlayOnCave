@@ -4,7 +4,7 @@ const { Op } = require("sequelize");
 
 module.exports = async (req, res) => {
     try {
-        const keyword = req.query.keywords; // Cambié 'keyword' a 'keywords' para que coincida con el nombre del campo en el formulario.
+        const keyword = req.query.keywords; 
 
         if (keyword) {
             const products = await db.Products.findAll({
@@ -30,7 +30,7 @@ module.exports = async (req, res) => {
             });
         }
 
-        // Tu código existente para la paginación y recuperación de todos los productos.
+        
         const count = await db.Products.count();
         const pagesCount = Math.ceil(count / req.query.limit);
         const products = await db.Products.findAll({

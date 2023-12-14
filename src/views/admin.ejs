@@ -21,7 +21,7 @@
                                             href="/products/productAdd">Nuevo producto</a></li>
                                 </ul>
                                 <div>
-                                    <form id="form_search" class="home_header_box--form" action="admin/search2"
+                                    <form id="form_search" class="home_header_box--form" action="search2"
                                         method="get">
                                         <input id="input_search" class="home_header_box--form--input" name="keywords"
                                             type="text" placeholder="Buscar productos, marcas">
@@ -50,7 +50,7 @@
                                                                 </a>
                                                             </li>
                                                             <% }); %>
-                                                                <% if (currentPage !==currentPage.length) { %>
+                                                                <% if (currentPage !== pages.length  ) { %>
                                                                     <li class="page-item">
                                                                         <a href="<%= paginate.href({ page: currentPage + 1 }) %>"
                                                                             class="page-link">

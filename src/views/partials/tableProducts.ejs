@@ -12,6 +12,7 @@
             </tr>
         </thead>
         <tbody>
+
             <% products.forEach(({id, title,category, price,discount, images, description},index)=> { %>
                 <tr>
                     <th scope="row">
@@ -33,6 +34,7 @@
                         <%= price - (price * discount / 100) %>
                     </td>
                     <td>
+
                         <div class="d-flex gap-1">
 
                             <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal"
@@ -52,9 +54,9 @@
                                                 aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <div class="card mb-3 bg-dark text-white" >
+                                            <div class="card mb-3 bg-dark text-white">
                                                 <div class=" col-md-12">
-                                                    <div class="" >
+                                                    <div class="">
                                                         <img src="/images/products/<%=images.find(image => image.main).file%>"
                                                             class="img-fluid" style="text-align: center;" alt="...">
                                                     </div>
@@ -89,25 +91,28 @@
                             </button>
 
                             <!-- Modal -->
-                            <div class="modal fade" id="removeProduct<%= id %>" tabindex="-1" aria-labelledby="removeProduct<%= id %>Label"
-                                aria-hidden="true">
+                            <div class="modal fade" id="removeProduct<%= id %>" tabindex="-1"
+                                aria-labelledby="removeProduct<%= id %>Label" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="removeProduct<%= id %>Label">ADVERTENCIA</h1>
+                                            <h1 class="modal-title fs-5" id="removeProduct<%= id %>Label">ADVERTENCIA
+                                            </h1>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <p>Estás seguro que querés eliminar el producto <b><%= title %></b></p> 
+                                            <p>Estás seguro que querés eliminar el producto <b>
+                                                    <%= title %>
+                                                </b></p>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
                                                 data-bs-dismiss="modal">Cancelar</button>
-                                                <form action="/products/delete/<%= id %>?_method=DELETE" method="POST">
-                                                    <button type="submit" class="btn btn-danger">Eliminalo</button>
-                                                </form>
-                                            
+                                            <form action="/products/delete/<%= id %>?_method=DELETE" method="POST">
+                                                <button type="submit" class="btn btn-danger">Eliminalo</button>
+                                            </form>
+
                                         </div>
                                     </div>
                                 </div>
@@ -119,4 +124,7 @@
         </tbody>
 
     </table>
+    <% if (products.length===0) { %>
+        <h2 class="text-white"> "NO SE ENCONTRARON PRODUCTOS"</h2>
+        <% } %>
 </div>
