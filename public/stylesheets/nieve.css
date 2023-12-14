@@ -1,5 +1,7 @@
 
-
+.tpl-snow {
+    display: none; /* Oculta el contenedor de nieve inicialmente */
+}
 @-moz-keyframes nieve{	
 	from{top:-40px;}
     to{top:101%;}

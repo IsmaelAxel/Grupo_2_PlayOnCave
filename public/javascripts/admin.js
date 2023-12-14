@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-                       
+
     const productsTableHeight = document.querySelector('.products-tab table').clientHeight;
 
     const categoriesTab = document.querySelector('#profile');
@@ -7,4 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const usersTab = document.querySelector('#contact');
     usersTab.style.marginBottom = `${productsTableHeight}px`;
+
+
 });
