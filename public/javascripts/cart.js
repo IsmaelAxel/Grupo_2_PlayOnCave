@@ -68,6 +68,9 @@ const addItemToCart = async (quantity, product) => {
       throw new Error(msg);
     } else {
       const { products, total } = data;
+      // Reproduce el sonido al añadir un producto al carrito
+      const cartSound = getById('cartSound');
+      cartSound.play();
       showCountProductCart(products);
       showProductInCart(products, total);
       showMessageInfo(msg);

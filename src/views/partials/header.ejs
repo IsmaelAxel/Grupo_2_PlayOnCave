@@ -18,7 +18,7 @@
                                     <%= userLogin.name %>
                                 </p>
                             </a></li>
-                        <li id="carri"><i id="numberCart" class="fa-solid "></i>
+                        <li id="carri"><i class="fa-solid "></i>
                             <a data-bs-toggle="modal" data-bs-target="#cart" id="btn-cart" href="#">
                                 <i class="fa-solid fa-cart-shopping"></i>
                                 <p>mi <br> carrito</p>
@@ -78,21 +78,24 @@
 <!-- Modal -->
 <div class="modal fade" id="cart" tabindex="-1" aria-labelledby="cartLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-3 text-white" id="cartLabel">Carrito de compra</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-3 text-white" id="cartLabel">Carrito de compra</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="cart-body">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continuar comprando</button>
+                <button type="button" id="btn-clearCart" onclick="clearCart()" class="btn btn-danger">Vaciar
+                    carrito</button>
+                <button type="button" class="btn btn-success">Finalizar compra</button>
+            </div>
         </div>
-        <div class="modal-body">
-          <div id="cart-body">
-            
-          </div>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continuar comprando</button>
-          <button type="button" id="btn-clearCart" onclick="clearCart()" class="btn btn-danger">Vaciar carrito</button>
-          <button type="button" class="btn btn-success">Finalizar compra</button>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
+
+<audio id="cartSound" src="/sound.mp3"></audio>

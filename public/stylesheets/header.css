@@ -51,18 +51,7 @@
 #carri{
     position: relative;
 }
-#numberCart{
-    position: absolute;
-    bottom: 22px;
-    right: 4px;
-    margin-left: 6px;
-    font-size: 10px;
-    border-radius: 50%;
-    color: #000000;
-    background-color: #ffffff;
-    border: 1px solid #ffffff;
-    padding: 1px
-}
+
 
 .home__header__box--login nav ul li a p{
     display: none;
