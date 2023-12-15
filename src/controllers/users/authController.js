@@ -19,9 +19,6 @@ module.exports = {
       });
       if(existingUser){
         await existingUser.update({
-          name,
-          surname,
-          avatar: picture,
           socialId: googleId,
           socialProvider: provider,
         });
