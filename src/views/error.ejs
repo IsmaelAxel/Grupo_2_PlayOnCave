@@ -1,3 +1,34 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404</title>
+    <link rel="stylesheet" href="/stylesheets/404A.css">
+</head>
+
+<body>
+    <div class="noise"></div>
+    <div class="overlay"></div>
+    <div class="terminal">
+        <h1><h1>
+            <%= message %>
+        </h1> <span class="errorcode"><h2>
+            <%= error.status %>
+        </h2></span></h1>
+        <p class="output"><pre><%= error.stack %></pre></p>
+        <p class="output">Please try to <a href="/">go back</a> or <a href="/">return to the homepage</a>.</p>
+        <p class="output">Good luck.</p> 
+    </div>
+    <script src="/javascripts/title.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
