@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404</title>
     <link rel="stylesheet" href="/stylesheets/404A.css">
+    <link rel="stylesheet" href="/stylesheets/nieve.css">
+    <link rel="stylesheet" href="/stylesheets/lluvia.css">
 </head>
 
 <body>
@@ -21,6 +23,13 @@
         <p class="output">Please try to <a href="/">go back</a> or <a href="/">return to the homepage</a>.</p>
         <p class="output">Good luck.</p> 
     </div>
+    <%- include('partials/scripts') %>
+    <!-- nieve -->
+    <%- include('partials/nieve') %>
+    <button hidden class="nav-link snow-btn" type="button"></button>
+    <!-- lluvia -->
+    <%- include('partials/lluvia') %>
+    <button hidden class="nav-link lluvia-btn" type="button"></button>
     <script src="/javascripts/title.js"></script>
 </body>
 
