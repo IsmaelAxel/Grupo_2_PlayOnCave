@@ -13,7 +13,16 @@ module.exports = {
           email,
         },
       } = req.session.passport.user;
-
+      
+      const existingUser = await db.Users.findOne({
+        where: { email: email },
+      });
+      if(existingUser){
+        await existingUser.update({
+          socialId: googleId,
+          socialProvider: provider,
+        });
+      }
       const [{ id, roleId }, isCreate] = await db.Users.findOrCreate({
         where: { socialId: googleId },
         defaults: {

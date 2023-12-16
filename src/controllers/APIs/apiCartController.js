@@ -1,9 +1,12 @@
 const db = require("../../database/models");
 
-const calculateTotal = (req) => {
+const calculateTotal = async (req) => {
   req.session.cart.total = req.session.cart.products
   .map(({price, discount, quantity}) => (price - price * discount / 100) * quantity)
   .reduce((a, b) => a + b, 0);
+  await db.Orders.update({total:req.session.cart.total},{where:{
+    id: req.session.cart.orderId
+  }})
 }
 
 const getCart = async (req, res) => {

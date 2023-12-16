@@ -31,10 +31,10 @@ if (document.title === "Login") {
     }, 1000)
 }
 
-if (document.title === "Login") {
+if (document.title === "Añadir Producto") {
     setInterval(() => {
         document.title =
-            alertShow ? "Login"
+            alertShow ? "Añadir Producto"
                 : "playOnCave"
 
         alertShow = !alertShow
