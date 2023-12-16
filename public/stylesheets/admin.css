@@ -61,8 +61,8 @@
 .cardNav nav ul li a{
     font-size: 12px;
 }
-.card{
-    max-width: 924px ;
+.tablaGeneral{
+    max-width: 780px ;
 }
 
 @media (min-width: 768px) {
