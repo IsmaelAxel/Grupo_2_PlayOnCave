@@ -1,8 +1,9 @@
 import { useLoaderData } from "react-router-dom"
 import { CategoriesInDb } from "../../component/CategoriesInDb"
 import { ContentRowMovies } from "../../component/ContentRowMovies"
+import { LastProductInDb } from "../../component/LastProductInDb"
 
-import { LastMovieInDb } from "../../component/LastMovieInDb"
+
 
 export const Home = () => {
 
@@ -12,7 +13,7 @@ export const Home = () => {
     <ContentRowMovies  totalProducts={totalProducts} totalUsers={totalUsers} totalSections={totalSections} />
     <div className="row">
 
-    <LastMovieInDb />
+    < LastProductInDb/>
     <CategoriesInDb/>
   </div>
   </>
