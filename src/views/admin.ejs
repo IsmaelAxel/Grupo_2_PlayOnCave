@@ -4,6 +4,7 @@
 <%- include('partials/head', {title: "admin" }) %>
 
     <body class="">
+     
         <%- include('partials/header') %>
 
             <main class="container">
@@ -81,11 +82,17 @@
                                             aria-selected="false">Usuarios</button>
                                     </li>
                                     <li class="nav-item" role="presentation">
+                                        <a href="http://localhost:5173/" target="_blank"><button class="nav-link p-1"  
+                                             type="submit" role="tab" 
+                                            aria-selected="false">Dashboard React</button></a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
                                         <button class="nav-link snow-btn" type="button"><i class="fas fa-snowflake"></i></button>
                                     </li>
                                     <li class="nav-item" role="presentation">
                                         <button class="nav-link lluvia-btn" type="button"><i class="fas fa-tint"></i></button>
                                     </li>
+                                  
                                     
                                 </ul>
                                 <div class="tab-content " id="myTabContent">

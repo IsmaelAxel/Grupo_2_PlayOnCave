@@ -28,7 +28,7 @@ export const LastProductInDb = () => {
             const lastProductData = lastPageResult.products[0];
             const detailProduct = await fetch(`${lastProductData.detail}`);
             const detailProductData = await detailProduct.json();
-            console.log(detailProductData);
+          
             setDetailProductData(detailProductData);
 
             setLastProduct(lastProductData);
@@ -67,10 +67,10 @@ export const LastProductInDb = () => {
               <h2>
                 $
                 {detailProductData.data.discount !== 0
-                  ? detailProductData.data.discount -
+                  ? (detailProductData.data.price) -
                     (detailProductData.data.price *
-                      detailProductData.data.discount) /
-                      100
+                      detailProductData.data.discount)/100 
+                      
                   : detailProductData.data.price}
               </h2>
               <p>{lastProduct.description}</p>
