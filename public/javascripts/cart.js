@@ -5,7 +5,7 @@ const showMessageInfo = (msg) => {
     toast: true,
     position: "top-end",
     showConfirmButton: false,
-    timer: 1500,
+    timer: 500,
     timerProgressBar: true,
     didOpen: (toast) => {
       toast.onmouseenter = Swal.stopTimer;
@@ -36,14 +36,12 @@ const showProductInCart = (products, total) => {
     <tr>
         <td class="text-center" scope="row"><img src="/images/products/${image}" alt="" width="100"/></td>
         <td class="text-center">${title}</td>
-        <td class="text-center">$ ${
-          (price - (price * discount) / 100) * quantity
+        <td class="text-center">$ ${(price - (price * discount) / 100) * quantity
         }</td>
         <td>
             <div class="d-flex gap-2 justify-content-center">
-                <button class="btn btn-sm btn-danger ${
-                  quantity === 1 && "disabled"
-                }" onclick="removeItemToCart(${id})"><i class="fa-solid fa-minus"></i></button>
+                <button class="btn btn-sm btn-danger ${quantity === 1 && "disabled"
+        }" onclick="removeItemToCart(${id})"><i class="fa-solid fa-minus"></i></button>
                 <input type="text" value=" ${quantity}" style="width:30px"/>
                 <button class="btn btn-sm btn-success" onclick="addItemToCart(1,${id})"><i class="fa-solid fa-plus"></i></button>
             </div>
@@ -245,22 +243,15 @@ window.onload = async function () {
     });
 };
 
-/* / Función para actualizar el conteo del carrito después de iniciar sesión */
 const updateCartCountAfterLogin = async () => {
   try {
-    const response = await fetch("/api/cart/");
-    const {
-      ok,
-      data: { products, total },
-    } = await response.json();
-
-    if (ok) {
-      // Actualizar el conteo del carrito
+    const response = await fetch("/api/cart");
+    const { ok, data } = await response.json();
+    if (ok && data) {
+      const { products } = data;
       showCountProductCart(products);
-      showProductInCart(products, total);
     }
   } catch (error) {
     console.error(error);
-    // Manejar el error si es necesario
   }
 };
