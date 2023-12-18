@@ -1,152 +1,170 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useFormik } from "formik";
 import PropTypes from "prop-types";
+import { validate } from "./../validations/formMoviesValidation";
 
+export const FormMovie = ({
+  handleAddProduct,
+  handleUpdateProduct,
+  product,
+  setProduct,
+}) => {
+  const [categories, setCategories] = useState([]);
 
-export const FormMovie = ({ handleAddMovie, handleUpdateMovie, movie, setMovie }) => {
-  const [genres, setGenres] = useState([]);
-
-  const getGenres = async () => {
-    let response = await fetch(`${import.meta.env.VITE_APP_API_URL}/genres`);
+  const getCategories= async (endpoint = "/api/categories") => {
+    let response = await fetch(`http://localhost:3000${endpoint}`);
     const result = await response.json();
-    setGenres(result.data);
+    setCategories(result.data);
   };
   useEffect(() => {
-    getGenres();
+    getCategories();
   }, []);
 
-useEffect(() => {
-  if (movie) {
-    formik.setValues({
-      title: movie.title,
-      rating: movie.rating,
-      awards: movie.awards,
-      release_date: movie.release_date ? movie.release_date.split('T')[0] : "",
-      length: movie.length,
-      genre_id: movie.genre ? movie.genre.id : null
-    })
+  useEffect(() => {
+    if (product) {
+      formik.setValues({
+        title: product.title || "",
+        price: product.price || 0,
+        discount: product.discount || 0,
+        category: product.category?.name || "",
+        description: product.description || "",
+        recommendedOs:"windows 10"
+      });
     }
-  },[movie])
-
+  }, [product]);
 
   const formik = useFormik({
     initialValues: {
       title: "",
-      rating: "",
-      awards: "",
-      release_date: "",
-      length: "",
-      genre_id: "",
+      price: 0,
+      discount: 0,
+      category: "",
+      description: "",
     },
-   
+    validate,
     onSubmit: (values) => {
-      
-    movie ? 
-    handleUpdateMovie(movie.id, values) :  handleAddMovie(values) 
-    formik.handleReset();
+      product
+        ? handleUpdateProduct(product.id, values)
+        : handleAddProduct(values);
+      formik.handleReset();
     },
   });
 
-const handleCancel = () => {
-  setMovie(null);
-  formik.handleReset();
-};
+  const handleFormReset = () => {
+    setProduct(null);
+    formik.handleReset();
+  };
 
   return (
     <>
       <Form className="row" onSubmit={formik.handleSubmit}>
         <Form.Group className="mb-3 col-12">
-          <Form.Label>Título</Form.Label>
+          <Form.Label htmlFor="title">Título</Form.Label>
           <Form.Control
             style={{ color: "black" }}
             type="text"
-            placeholder="Título de pelicula..."
+            placeholder="Título del producto..."
             name="title"
+            id="title"
             onChange={formik.handleChange}
-            value={ formik.values.title}
-          />{
-            formik.errors.title && <small className="ms-2 text-danger bold" >{formik.errors.title}</small>
-          }
+            value={formik.values.title}
+          />
+          {formik.errors.title && (
+            <small className="ms-2 text-danger bold">
+              {formik.errors.title}
+            </small>
+          )}
         </Form.Group>
         <Form.Group className="mb-3 col-12 col-md-6">
-          <Form.Label>Rating</Form.Label>
+          <Form.Label htmlFor="price">Price</Form.Label>
           <Form.Control
             type="number"
             style={{ color: "black" }}
-            name="rating"
+            name="price"
+            id="price"
             onChange={formik.handleChange}
-            value={ formik.values.rating}
-          />{
-            formik.errors.rating && <small className="ms-2 text-danger bold" >{formik.errors.rating}</small>
-          }
+            value={formik.values.price}
+          />
+          {formik.errors.price && (
+            <small className="ms-2 text-danger bold">
+              {formik.errors.price}
+            </small>
+          )}
         </Form.Group>
         <Form.Group className="mb-3 col-12 col-md-6">
-          <Form.Label>Premios</Form.Label>
+          <Form.Label htmlFor="discount">Discount</Form.Label>
           <Form.Control
             type="number"
             style={{ color: "black" }}
-            name="awards"
+            name="discount"
+            id="discount"
             onChange={formik.handleChange}
-            value={ formik.values.awards}
-          />{
-            formik.errors.awards && <small className="ms-2 text-danger bold" >{formik.errors.awards}</small>
-          }
+            value={formik.values.discount}
+          />
+          {formik.errors.discount && (
+            <small className="ms-2 text-danger bold">
+              {formik.errors.discount}
+            </small>
+          )}
         </Form.Group>
-        <Form.Group className="mb-3 col-12 col-md-6">
-          <Form.Label>Duración</Form.Label>
-          <Form.Control
-            type="number"
-            style={{ color: "black" }}
-            name="length"
-            onChange={formik.handleChange}
-            value={formik.values.length}
-          />{
-            formik.errors.length && <small className="ms-2 text-danger bold" >{formik.errors.length}</small>
-          }
-        </Form.Group>
-        <Form.Group className="mb-3 col-12 col-md-6">
-          <Form.Label>Fecha Estreno</Form.Label>
-          <Form.Control
-            type="date"
-            style={{ color: "black" }}
-            name="release_date"
-            onChange={formik.handleChange}
-            value={ formik.values.release_date}
-          />{
-            formik.errors.release_date && <small className="ms-2 text-danger bold" >{formik.errors.release_date}</small>
-          }
-        </Form.Group>
+
         <Form.Group className="mb-3 col-12 ">
-          <Form.Label>Género </Form.Label>
+          <Form.Label htmlFor="category">Categoria </Form.Label>
           <Form.Select
             className="form-control"
-            name="genre_id"
+            name="category"
+            id="category"
             onChange={formik.handleChange}
-            value={formik.values.genre_id}
+            value={formik.values.category}
           >
             <option hidden defaultChecked>
-              Seleccione genero...
+              Seleccione la categoria...
             </option>
-            {genres.map(({ name, id }) => (
-              <option key={id} value={id} >
-                {name}
-              </option>
-              
-            ))}
+            {Array.isArray(categories) &&
+              categories.map((category) => (
+                <option key={category.id} value={category.name}>
+                  {category.name}
+                </option>
+              ))}
           </Form.Select>
-          {
-            formik.errors.genre_id && <small className="ms-2 text-danger bold" >{formik.errors.genre_id}</small>
-          }
+          {formik.errors.category && (
+            <small className="ms-2 text-danger bold">
+              {formik.errors.category}
+            </small>
+          )}
+        </Form.Group>
+        <Form.Group className="mb-3 col-12">
+          <Form.Label htmlFor="title">Description</Form.Label>
+          <Form.Control
+            style={{ color: "black" }}
+            type="text"
+            placeholder="Description del producto..."
+            name="description"
+            id="description"
+            onChange={formik.handleChange}
+            value={formik.values.description}
+          />
+          {formik.errors.description && (
+            <small className="ms-2 text-danger bold">
+              {formik.errors.description}
+            </small>
+          )}
         </Form.Group>
         <Form.Group className="mb-3 col-12 ">
           <div className="d-flex justify-content-between">
-        <Button onClick={handleCancel} type="submit" variant="outline-secondary" className="w-100">
-            Cancelar
-          </Button>
-          <Button type="submit" variant="outline-light" className="w-100">
-            Guardar
-          </Button>
+            <Button
+              onClick={handleFormReset}
+              type="submit"
+              variant="outline-secondary"
+              className="w-100"
+            >
+              Cancelar
+            </Button>
+            <Button type="submit" variant="outline-light" className="w-100">
+              Guardar
+            </Button>
           </div>
         </Form.Group>
       </Form>
@@ -155,9 +173,8 @@ const handleCancel = () => {
 };
 
 FormMovie.propTypes = {
-  handleAddMovie: PropTypes.func,
-  movie: PropTypes.object,
-  setMovie: PropTypes.func,
-  handleUpdateMovie : PropTypes.func,
-
+  handleAddProduct: PropTypes.func,
+  product: PropTypes.object,
+  setProduct: PropTypes.func,
+  handleUpdateProduct: PropTypes.func,
 };

@@ -14,7 +14,7 @@ const getAllProducts = async (limit, offset, keyword) => {
             limit,
             offset,
             attributes: {
-                exclude: [ 'price', 'discount', 'recommendedOs', 'minOs','minProcessor', 'minMemory','recommendedGraphicsCard','recommendedMemory','minGraphicsCard','recommendedProcessor','recommendedDisk','minDisk','createdAt','updatedAt', 'categoryId']
+                exclude: ['price', 'discount', 'recommendedOs', 'minOs', 'minProcessor', 'minMemory', 'recommendedGraphicsCard', 'recommendedMemory', 'minGraphicsCard', 'recommendedProcessor', 'recommendedDisk', 'minDisk', 'createdAt', 'updatedAt', 'categoryId']
             },
             include: [
                 {
@@ -25,7 +25,7 @@ const getAllProducts = async (limit, offset, keyword) => {
                     association: 'section',
                     attributes: ['name'],
                     through: {
-                        attributes : []
+                        attributes: []
                     }
                 },
             ],
@@ -34,7 +34,7 @@ const getAllProducts = async (limit, offset, keyword) => {
         const count = await db.Products.count({
             ...options
         })
-        console.log('<<<<<<<<<',count);
+        console.log('<<<<<<<<<', count);
         const countSections = await db.Section.count()
         return {
             products,
@@ -50,17 +50,17 @@ const getAllProducts = async (limit, offset, keyword) => {
         }
     }
 }
-const getProductId = async(id) => {
-    try{
-        if(!id){
-            throw{
+const getProductId = async (id) => {
+    try {
+        if (!id) {
+            throw {
                 status: 400,
                 message: 'ID inexistente'
             }
         }
-        const product = await db.Products.findByPk(id,{
+        const product = await db.Products.findByPk(id, {
             attributes: {
-                exclude: ['createdAt', 'createdAt', 'categoryId']
+                exclude: ['recommendedOs', 'minOs', 'minProcessor', 'minMemory', 'recommendedGraphicsCard', 'recommendedMemory', 'minGraphicsCard', 'recommendedProcessor', 'recommendedDisk', 'minDisk', 'createdAt', 'updatedAt','categoryId']
             },
             include: [
                 {
@@ -71,7 +71,7 @@ const getProductId = async(id) => {
                     association: 'section',
                     attributes: ['name'],
                     through: {
-                        attributes : []
+                        attributes: []
                     }
                 },
                 {
@@ -79,14 +79,14 @@ const getProductId = async(id) => {
                 }
             ]
         })
-        if(!product){
-            throw{
+        if (!product) {
+            throw {
                 status: 400,
                 message: 'No hay producto con ese id'
             }
         }
         return product
-    }catch(error){
+    } catch (error) {
         console.log(error)
         throw {
             status: error.status || 500,
@@ -95,10 +95,116 @@ const getProductId = async(id) => {
     }
 }
 
+const storeProduct = async (dataProducts, category) => {
+    try {
+        const newProducts = await db.Products.create(dataProducts);
+        if (category) {
+            const categoryDB = category.map((category) => {
+                return {
+                    productsId: newProducts.id,
+                    categoryId: category,
+                };
+            });
+            await db.Category.bulkCreate(categoryDB, {
+                validate: true,
+            });
+        }
+        return await getProductId(newProducts.id);
+    } catch (error) {
+        console.log(error);
+        throw {
+            status: error.status || 500,
+            message: error.message || "ERROR en servicio",
+        };
+    }
+};
 
+const updateProduct = async (id, dataProduct) => {
+    
+    try {
+        if (!id || !dataProduct) {
+            throw {
+              status: 400,
+              message: "ID or product data is missing.",
+            };
+          }
+        const { title, price, discount, category } = dataProduct;
+        console.log("Product ID:", id);
+        console.log("Data received:", dataProduct);
+
+        const product = await db.Products.findByPk(id, {
+            attributes: {
+                exclude: ['recommendedOs', 'minOs', 'minProcessor', 'minMemory', 'recommendedGraphicsCard', 'recommendedMemory', 'minGraphicsCard', 'recommendedProcessor', 'recommendedDisk', 'minDisk', 'createdAt', 'updatedAt','categoryId']
+            },
+            include: [
+                {
+                    association: "category",
+                    attributes: ["name"],
+                },
+            ],
+        });
+
+        if (!product) {
+            throw {
+                status: 400,
+                message: "No hay una película con ese ID",
+            };
+        }
+        product.title = title?.trim() || product.title;
+        product.price = price || product.price;
+        product.discount = discount || product.discount;
+        product.category = category || product.category;
+        await product.save();
+
+        await product.reload();
+        console.log("Product updated successfully:", product);
+        return product;
+    } catch (error) {
+        console.log(error);
+        throw {
+            status: error.status || 500,
+            message: error.message || "upss, error",
+        };
+    }
+};
+
+const deleteProduct = async (id) => {
+    try {
+        if (isNaN(id)) {
+            throw {
+                status: 404,
+                message: "Id corrupto",
+            };
+        }
+        const Product = await db.Products.findByPk(id);
+        if (!Product) {
+            throw {
+                status: 404,
+                message: "No hay una peliculas con ese Id",
+            };
+        }
+        await db.Products.destroy({
+           
+            where: {
+                productId: id,
+            },
+        });
+        await Product.destroy();
+        return null;
+    } catch (error) {
+        console.log(error);
+        throw {
+            status: error.status || 500,
+            message: error.message || "upss, error",
+        };
+    }
+};
 
 
 module.exports = {
     getAllProducts,
-    getProductId
+    getProductId,
+    storeProduct,
+    updateProduct,
+    deleteProduct,
 }

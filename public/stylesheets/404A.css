@@ -1,27 +1,30 @@
-@import 'https://fonts.googleapis.com/css?family=Inconsolata';
+@import "https://fonts.googleapis.com/css?family=Inconsolata";
 
 html {
   min-height: 100%;
-  
 }
-
+.err {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
 body {
   box-sizing: border-box;
   height: 100%;
   background-color: #000000;
-  background-image: radial-gradient(#11581E, #041607), url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
+  background-image: radial-gradient(#11581e, #041607),
+    url("https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif");
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: 'Inconsolata', Helvetica, sans-serif;
-  font-size: 1rem;
+  font-family: "Inconsolata", Helvetica, sans-serif;
+  font-size: 0.15rem;
   color: rgba(128, 255, 128, 0.8);
-  text-shadow:
-      0 0 1ex rgba(51, 255, 51, 1),
-      0 0 2px rgba(255, 255, 255, 0.8);
+  text-shadow: 0 0 1ex rgba(51, 255, 51, 1), 0 0 2px rgba(255, 255, 255, 0.8);
   padding: 0;
   margin: 0;
-}
+  
 
+}
 
 .noise {
   pointer-events: none;
@@ -32,7 +35,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   z-index: -1;
-  opacity: .02;
+  opacity: 0.02;
 }
 
 .overlay {
@@ -40,12 +43,12 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background:
-      repeating-linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0) 0,
-      rgba(0, 0, 0, 0.3) 50%,
-      rgba(0, 0, 0, 0) 100%);
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
   background-size: auto 4px;
   z-index: 1;
 }
@@ -62,19 +65,25 @@ body {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(
-      0deg,
-      transparent 0%,
-      rgba(32, 128, 32, 0.2) 2%,
-      rgba(32, 128, 32, 0.8) 3%,
-      rgba(32, 128, 32, 0.2) 3%,
-      transparent 100%);
+    0deg,
+    transparent 0%,
+    rgba(32, 128, 32, 0.2) 2%,
+    rgba(32, 128, 32, 0.8) 3%,
+    rgba(32, 128, 32, 0.2) 3%,
+    transparent 100%
+  );
   background-repeat: no-repeat;
   animation: scan 7.5s linear 0s infinite;
 }
 
 @keyframes scan {
-  0%        { background-position: 0 -100vh; }
-  35%, 100% { background-position: 0 100vh; }
+  0% {
+    background-position: 0 -100vh;
+  }
+  35%,
+  100% {
+    background-position: 0 100vh;
+  }
 }
 
 .terminal {
@@ -83,15 +92,13 @@ body {
   height: 100%;
   width: 1000px;
   max-width: 100%;
-  
+
   text-transform: uppercase;
 }
 
 .output {
   color: rgba(128, 255, 128, 0.8);
-  text-shadow:
-      0 0 1px rgba(51, 255, 51, 0.4),
-      0 0 2px rgba(255, 255, 255, 0.8);
+  text-shadow: 0 0 1px rgba(51, 255, 51, 0.4), 0 0 2px rgba(255, 255, 255, 0.8);
 }
 
 .output::before {
@@ -126,4 +133,36 @@ a::after {
 
 .errorcode {
   color: white;
+}
+@media (min-width: 420px) {
+  body {
+    font-size: 0.2rem;
+  }
+}
+@media (min-width: 580px) {
+  body {
+    font-size: 0.3rem;
+  }
+}
+@media (min-width: 768px) {
+  body {
+    font-size: 0.5rem;
+  }
+}
+@media (min-width: 1028px) {
+  body {
+    font-size: 0.7rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  body {
+    font-size: 1rem;
+  }
 }
