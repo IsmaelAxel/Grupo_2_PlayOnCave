@@ -11,15 +11,15 @@ export const FormMovie = ({
   product,
   setProduct,
 }) => {
-  const [producto, setProducto] = useState([]);
+  const [categories, setCategories] = useState([]);
 
-  const getProducts = async (endpoint = "/api/products") => {
+  const getCategories= async (endpoint = "/api/categories") => {
     let response = await fetch(`http://localhost:3000${endpoint}`);
     const result = await response.json();
-    setProducto(result);
+    setCategories(result.data);
   };
   useEffect(() => {
-    getProducts();
+    getCategories();
   }, []);
 
   useEffect(() => {
@@ -30,6 +30,7 @@ export const FormMovie = ({
         discount: product.discount || 0,
         category: product.category?.name || "",
         description: product.description || "",
+        recommendedOs:"windows 10"
       });
     }
   }, [product]);
@@ -121,10 +122,10 @@ export const FormMovie = ({
             <option hidden defaultChecked>
               Seleccione la categoria...
             </option>
-            {Array.isArray(producto.products) &&
-              producto.products.map((product) => (
-                <option key={product.id} value={product.category?.name}>
-                  {product.category?.name}
+            {Array.isArray(categories) &&
+              categories.map((category) => (
+                <option key={category.id} value={category.name}>
+                  {category.name}
                 </option>
               ))}
           </Form.Select>
@@ -147,7 +148,7 @@ export const FormMovie = ({
           />
           {formik.errors.description && (
             <small className="ms-2 text-danger bold">
-              {formik.errors.descriptiontitle}
+              {formik.errors.description}
             </small>
           )}
         </Form.Group>
