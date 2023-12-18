@@ -120,7 +120,14 @@ const storeProduct = async (dataProducts, category) => {
 };
 
 const updateProduct = async (id, dataProduct) => {
+    
     try {
+        if (!id || !dataProduct) {
+            throw {
+              status: 400,
+              message: "ID or product data is missing.",
+            };
+          }
         const { title, price, discount, category } = dataProduct;
         console.log("Product ID:", id);
         console.log("Data received:", dataProduct);
@@ -177,11 +184,11 @@ const deleteProduct = async (id) => {
             };
         }
         await db.Products.destroy({
+           
             where: {
                 productId: id,
             },
         });
-
         await Product.destroy();
         return null;
     } catch (error) {

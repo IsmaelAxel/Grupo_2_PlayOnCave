@@ -2,7 +2,6 @@ import {
   Card,
   CardBody,
   CardHeader,
-  CardTitle,
   Col,
   Row,
   Table,
@@ -176,7 +175,7 @@ export const ListProductsPage = () => {
       <Col sm={12} lg={4}>
         <Card className=" shadow-lg bg-dark text-white">
           <CardHeader className=" shadow-lg bg-dark ">
-            <CardTitle> Productos: </CardTitle>
+          <Card.Title> {product ? "Edit" : "Add"} Product</Card.Title>
           </CardHeader>
           <CardBody>
             <FormMovie

@@ -23,13 +23,13 @@ export const FormMovie = ({
   }, []);
 
   useEffect(() => {
-    
     if (product) {
       formik.setValues({
-        title: product.title ? product.title : "",
-        price: product.price ? product.price : 0,
-        discount: product.discount ? product.discount : 0,
-        category: product.category,
+        title: product.title || "",
+        price: product.price || 0,
+        discount: product.discount || 0,
+        category: product.category?.name || "",
+        description: product.description || "",
       });
     }
   }, [product]);
@@ -37,9 +37,10 @@ export const FormMovie = ({
   const formik = useFormik({
     initialValues: {
       title: "",
-      price: "",
-      discount: "",
+      price: 0,
+      discount: 0,
       category: "",
+      description: "",
     },
     validate,
     onSubmit: (values) => {
@@ -130,6 +131,23 @@ export const FormMovie = ({
           {formik.errors.category && (
             <small className="ms-2 text-danger bold">
               {formik.errors.category}
+            </small>
+          )}
+        </Form.Group>
+        <Form.Group className="mb-3 col-12">
+          <Form.Label htmlFor="title">Description</Form.Label>
+          <Form.Control
+            style={{ color: "black" }}
+            type="text"
+            placeholder="Description del producto..."
+            name="description"
+            id="description"
+            onChange={formik.handleChange}
+            value={formik.values.description}
+          />
+          {formik.errors.description && (
+            <small className="ms-2 text-danger bold">
+              {formik.errors.descriptiontitle}
             </small>
           )}
         </Form.Group>

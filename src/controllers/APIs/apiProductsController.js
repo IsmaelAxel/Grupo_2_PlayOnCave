@@ -82,14 +82,14 @@ module.exports = {
             })
         }
     },
-    storeProduct: async (req, res) => {
+    storeProducts: async (req, res) => {
         console.log(req.body, '<<<<<<<<<');
         try {
             const { title, price, discount, category } = req.body
             if ([title, price, discount, category].includes('' || undefined)) {
                 throw createError(400, 'Todos los campos obligatorio')
             }
-            const product = await storeProduct(req.body, product)
+            const product = await storeProduct(req.body, category)
             return res.status(200).json({
                 ok: true,
                 message: 'Producto agregado con exito',
@@ -105,7 +105,7 @@ module.exports = {
             })
         }
     },
-    update: async (req, res) => {
+    updateProduct: async (req, res) => {
         try {
             const productUpdate = await updateProduct(req.params.id, req.body)
 
@@ -123,7 +123,7 @@ module.exports = {
             })
         }
     },
-    delete: async (req, res) => {
+    deleteProduct: async (req, res) => {
         try {
             await deleteProduct(req.params.id)
             return res.status(200).json({
