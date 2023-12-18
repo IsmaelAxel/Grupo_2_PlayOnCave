@@ -193,9 +193,10 @@ window.onload = async function () {
     getById("show-count").innerHTML = sessionStorage.getItem("cart-count");
     getById("show-count").hidden =
       sessionStorage.getItem("cart-count") > 0 ? false : true;
+      updateCartCountAfterLogin();
   }
 
-  updateCartCountAfterLogin();
+
 
   getById("btn-cart") &&
     getById("btn-cart").addEventListener("click", async function (e) {
