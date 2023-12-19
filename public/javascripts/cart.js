@@ -5,7 +5,7 @@ const showMessageInfo = (msg) => {
     toast: true,
     position: "top-end",
     showConfirmButton: false,
-    timer: 500,
+    timer: 1000,
     timerProgressBar: true,
     didOpen: (toast) => {
       toast.onmouseenter = Swal.stopTimer;
@@ -82,9 +82,10 @@ const addItemToCart = async (quantity, product) => {
     }
   } catch (error) {
     Swal.fire({
-      title: "Upss",
-      text: error.message,
+      title: "Error",
+      footer: `<a href="/users/login">${error.message }</a>`,
       icon: "error",
+     
     });
   }
 };
@@ -171,8 +172,39 @@ const clearCart = async () => {
       getById("cart-body").innerHTML =
         '<div class="alert alert-warning" role="alert">No hay productos agregados al carrito</div>';
       showCountProductCart(products, true);
-
+      getById("btn-endCart").classList.add("disabled");
       getById("btn-clearCart").classList.add("disabled");
+      showMessageInfo(msg);
+    }
+  } catch (error) {
+    Swal.fire({
+      title: "Upss",
+      text: error.message,
+      icon: "error",
+    });
+  }
+};
+
+const endCart = async () => {
+  try {
+    const response = await fetch(`/api/cart/end`, {
+      method: "DELETE",
+    });
+
+    const {
+      ok,
+      data: { products, total },
+      msg,
+    } = await response.json();
+
+    if (!ok) {
+      throw new Error(msg);
+    } else {
+      getById("cart-body").innerHTML =
+        '<div class="alert alert-warning" role="alert">No hay productos agregados al carrito</div>';
+      showCountProductCart(products, true);
+      getById("btn-clearCart").classList.add("disabled");
+      getById("btn-endCart").classList.add("disabled");
       showMessageInfo(msg);
     }
   } catch (error) {
@@ -231,10 +263,13 @@ window.onload = async function () {
             </table>`;
             showProductInCart(products, total);
             getById("btn-clearCart").classList.remove("disabled");
+            getById("btn-endCart").classList.remove("disabled");
           } else {
             getById("cart-body").innerHTML =
               '<div class="alert alert-warning" role="alert">No hay productos agregados al carrito</div>';
             getById("btn-clearCart").classList.add("disabled");
+            getById("btn-endCart").classList.add("disabled");
+            
           }
         }
       } catch (error) {

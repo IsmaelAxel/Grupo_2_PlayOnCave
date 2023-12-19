@@ -2,17 +2,19 @@ const db = require("../../database/models");
 
 const calculateTotal = async (req) => {
   req.session.cart.total = req.session.cart.products
-  .map(({price, discount, quantity}) => (price - price * discount / 100) * quantity)
-  .reduce((a, b) => a + b, 0);
-  await db.Orders.update({total:req.session.cart.total},{where:{
-    id: req.session.cart.orderId
-  }})
+    .map(({ price, discount, quantity }) => (price - price * discount / 100) * quantity)
+    .reduce((a, b) => a + b, 0);
+  await db.Orders.update({ total: req.session.cart.total }, {
+    where: {
+      id: req.session.cart.orderId
+    }
+  })
 }
 
 const getCart = async (req, res) => {
   try {
     if (!req.session.cart) {
-      let error = new Error("Debe loguearte para comprar");
+      let error = new Error("¡Inicie sesión aquí!");
       error.status = 404;
       throw error;
     }
@@ -32,7 +34,7 @@ const getCart = async (req, res) => {
 const addItemToCart = async (req, res) => {
   try {
     if (!req.session.cart) {
-      let error = new Error("Debe loguearte para comprar");
+      let error = new Error("¡Inicie sesión aquí!");
       error.status = 404;
       throw error;
     }
@@ -42,7 +44,7 @@ const addItemToCart = async (req, res) => {
     const { title, price, discount, images } = await db.Products.findByPk(id, {
       include: ["images"],
     });
-console.log(images);
+    console.log(images);
     let newProduct = {
       id,
       title,
@@ -53,7 +55,7 @@ console.log(images);
     };
 
     if (req.session.cart.products.map((product) => product.id).includes(id)) {
-      
+
       req.session.cart.products = req.session.cart.products.map((product) => {
         if (product.id === id) {
           ++product.quantity;
@@ -62,13 +64,13 @@ console.log(images);
       });
       await db.Cart.update(
         {
-          quantity : req.session.cart.products.find(product => product.id === +id).quantity
+          quantity: req.session.cart.products.find(product => product.id === +id).quantity
 
         },
         {
-          where : {
-            orderId : req.session.cart.orderId,
-            productId : id
+          where: {
+            orderId: req.session.cart.orderId,
+            productId: id
           }
         }
       )
@@ -77,9 +79,9 @@ console.log(images);
       req.session.cart.products.push(newProduct);
 
       await db.Cart.create({
-        orderId : req.session.cart.orderId,
-        productId : id,
-        quantity : 1
+        orderId: req.session.cart.orderId,
+        productId: id,
+        quantity: 1
       })
     }
 
@@ -88,7 +90,7 @@ console.log(images);
     return res.status(200).json({
       ok: true,
       data: req.session.cart,
-      msg : 'Producto agregado exitosamente'
+      msg: 'Producto agregado exitosamente'
     });
   } catch (error) {
     console.log(error);
@@ -103,7 +105,7 @@ console.log(images);
 const removeItemToCart = async (req, res) => {
   try {
     if (!req.session.cart) {
-      let error = new Error("Debe loguearte para comprar");
+      let error = new Error("¡Inicie sesión aquí!");
       error.status = 404;
       throw error;
     }
@@ -116,7 +118,7 @@ const removeItemToCart = async (req, res) => {
       }
       return product;
     });
-    
+
     calculateTotal(req)
 
     /* base de datos */
@@ -124,13 +126,13 @@ const removeItemToCart = async (req, res) => {
     await db.Cart.update(
       {
 
-        quantity : req.session.cart.products.find(product => product.id == +id).quantity
+        quantity: req.session.cart.products.find(product => product.id == +id).quantity
 
       },
       {
-        where : {
-          orderId : req.session.cart.orderId,
-          productId : id
+        where: {
+          orderId: req.session.cart.orderId,
+          productId: id
         }
       }
     )
@@ -139,7 +141,7 @@ const removeItemToCart = async (req, res) => {
     return res.status(200).json({
       ok: true,
       data: req.session.cart,
-      msg : 'Producto eliminado exitosamente'
+      msg: 'Producto eliminado exitosamente'
     });
   } catch (error) {
     console.log(error);
@@ -150,11 +152,11 @@ const removeItemToCart = async (req, res) => {
   }
 };
 
-const deleteItemToCart = async (req,res) => {
+const deleteItemToCart = async (req, res) => {
   try {
 
     if (!req.session.cart) {
-      let error = new Error("Debe loguearte para comprar");
+      let error = new Error("¡Inicie sesión aquí!");
       error.status = 404;
       throw error;
     }
@@ -169,19 +171,19 @@ const deleteItemToCart = async (req,res) => {
 
     await db.Cart.destroy(
       {
-        where : {
-          orderId : req.session.cart.orderId,
-          productId : id
+        where: {
+          orderId: req.session.cart.orderId,
+          productId: id
         }
       }
     )
 
-  return res.status(200).json({
-    ok: true,
-    data: req.session.cart,
-    msg : 'Producto eliminado exitosamente'
-  });
-    
+    return res.status(200).json({
+      ok: true,
+      data: req.session.cart,
+      msg: 'Producto eliminado exitosamente'
+    });
+
   } catch (error) {
     console.log(error);
     return res.status(error.status || 500).json({
@@ -191,11 +193,11 @@ const deleteItemToCart = async (req,res) => {
   }
 };
 
-const clearCart = async (req,res) => {
+const clearCart = async (req, res) => {
   try {
 
     if (!req.session.cart) {
-      let error = new Error("Debe loguearte para comprar");
+      let error = new Error("¡Inicie sesión aquí!");
       error.status = 404;
       throw error;
     };
@@ -204,22 +206,58 @@ const clearCart = async (req,res) => {
 
     calculateTotal(req);
 
-      /* base de datos */
+    /* base de datos */
 
-      await db.Cart.destroy(
-        {
-          where : {
-            orderId : req.session.cart.orderId,
-          }
+    await db.Cart.destroy(
+      {
+        where: {
+          orderId: req.session.cart.orderId,
         }
-      )
+      }
+    )
 
     return res.status(200).json({
       ok: true,
       data: req.session.cart,
-      msg : 'Carrito vaciado con éxito'
+      msg: 'Carrito vaciado con éxito'
     });
-    
+
+  } catch (error) {
+    console.log(error);
+    return res.status(error.status || 500).json({
+      ok: false,
+      msg: error.message || "Upss, hubo un error :(",
+    });
+  }
+}
+const endCart = async (req, res) => {
+  try {
+
+    if (!req.session.cart) {
+      let error = new Error("¡Inicie sesión aquí!");
+      error.status = 404;
+      throw error;
+    };
+
+    req.session.cart.products = [];
+
+    calculateTotal(req);
+
+    /* base de datos */
+
+    await db.Cart.destroy(
+      {
+        where: {
+          orderId: req.session.cart.orderId,
+        }
+      }
+    )
+    return res.status(200).json({
+      ok: true,
+      data: req.session.cart,
+      msg: 'Finalizando compra'
+    });
+
   } catch (error) {
     console.log(error);
     return res.status(error.status || 500).json({
@@ -234,5 +272,6 @@ module.exports = {
   addItemToCart,
   removeItemToCart,
   deleteItemToCart,
-  clearCart
+  clearCart,
+  endCart,
 };
