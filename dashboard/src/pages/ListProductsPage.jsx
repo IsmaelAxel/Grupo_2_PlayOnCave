@@ -170,7 +170,10 @@ export const ListProductsPage = () => {
     });
   };
 
-  return (
+  return loading ? (
+    <Loading />
+  ) : (
+
     <Row className="admin">
       <Col sm={12} lg={4}>
         <Card className=" shadow-lg bg-dark text-white">
@@ -199,9 +202,7 @@ export const ListProductsPage = () => {
                 handlePrevPage={handlePrevPage}
               />
             </CardHeader>
-            {loading ? (
-              <Loading />
-            ) : (
+           
               <Table striped bordered className="text-white" responsive>
                 <thead>
                   <tr>
@@ -231,10 +232,9 @@ export const ListProductsPage = () => {
                   )}
                 </tbody>
               </Table>
-            )}
+           
           </CardBody>
         </Card>
       </Col>
     </Row>
-  );
-};
+     )}
