@@ -51,7 +51,9 @@
 #carri{
     position: relative;
 }
-
+.home__header__box--login nav ul li i{
+    font-size: 12px;
+}
 
 .home__header__box--login nav ul li a p{
     display: none;
@@ -124,8 +126,8 @@
 .switch {
     position: relative;
     display: inline-block;
-    width: 24px;
-    height: 18px;
+    width: 22px;
+    height: 16px;
     top: 8px;
   }
   
@@ -148,8 +150,8 @@
   .slider::before {
     position: absolute;
     content: "";
-    height: 12px;
-    width: 12px;
+    height: 10px;
+    width: 10px;
     left: 2px;
     bottom: 3px;
     border-radius: 50%;
@@ -168,6 +170,14 @@
   
   input:checked + .slider::before {
     transform: translateX(8px);
+  }
+  #show-count{
+    top:5px;
+    left: 16px;
+   
+  }
+  #nav--ingresar{
+font-size: 16px;
   }
 
 @media (min-width:768px){
@@ -203,6 +213,9 @@
     .home__header__box__categorias--nav{
         order: 3;
         max-width: 481px;
+    }
+    .home__header__box--login nav ul li i{
+        font-size: 18px;
     }
     .home__header__box__categorias--nav ul li a{
         font-size: 14px;
@@ -287,6 +300,11 @@
       
       input:checked + .slider::before {
         transform: translateX(8px);
+      }
+      #show-count{
+        top:-2px;
+        left: 16px;
+       
       }
 
 }
@@ -377,6 +395,11 @@
     #userlogin__p{
         font-size: 14px;
     }
+    #show-count{
+        top:-2px;
+        left: 24px;
+       
+      }
 }
 /* Modo Claro */
 body.noche header{

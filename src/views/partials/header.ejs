@@ -13,7 +13,7 @@
             <nav class="home__header__box__login--nav">
                 <ul class="home__header__box__login__nav--ul">
                     <% if (locals.userLogin) { %>
-                        <li><a href="/users/profile"><i class="fa-solid fa-user-check"></i>
+                        <li><a href="/users/profile"><i id="nav--ingresar" class="fa-solid fa-user-check"></i>
                                 <p class="home__header__box__login__nav__ul__li__a__p" id="userlogin__p">
                                     <%= userLogin.name %>
                                 </p>
@@ -23,7 +23,7 @@
                                 <i class="fa-solid fa-cart-shopping" ></i>
                                 <p>mi <br> carrito</p>
                                 <span id="show-count"
-                                    class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger"
+                                    class="position-absolute translate-middle badge rounded-pill bg-danger"
                                     hidden style="font-size: 0.5rem;" >
                                 </span>
                             </a>
@@ -31,7 +31,7 @@
                         
 
                         <% }else{ %>
-                            <li><a href="/users/login"><i class="fa-solid fa-user"></i>
+                            <li><a href="/users/login"><i id="nav--ingresar" class="fa-solid fa-user"></i>
                                     <p id="userlogin__p">ingresar</p>
                                 </a></li>
                             <% } %>

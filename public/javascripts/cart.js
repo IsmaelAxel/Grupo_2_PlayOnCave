@@ -52,7 +52,7 @@ const showProductInCart = (products, total) => {
     </tr>
     `;
     });
-    getById("show-total").innerHTML = total;
+    getById("show-total").innerHTML = total ;
   }
 };
 
