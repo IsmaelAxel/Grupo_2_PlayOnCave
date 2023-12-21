@@ -35,7 +35,7 @@ export const TopBar = () => {
         
         <li className="nav-item dropdown no-arrow">
             <a className="nav-link dropdown-toggle" href="/" id="userDropdown">
-                <span className="mr-2 d-none d-lg-inline text-gray-600 small">Jordan Walke</span>
+                <span className="mr-2 d-none d-lg-inline text-gray-600 small">User</span>
                 <img className="img-profile rounded-circle" src="images/users/7b450e8f-bed2-4b8a-8108-5f10d28f5d1e_users_.jpeg" alt="Jordan Walke - Creador de React" width="60" />
             </a>
         </li>

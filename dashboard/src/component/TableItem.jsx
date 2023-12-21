@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
-import { FaPencilAlt, FaTrash } from "react-icons/fa/index.esm";
+// import { FaPencilAlt, FaTrash } from "react-icons/fa/index.esm";
 
 export const TableItem = ({
   product: { id, title, category, detail },
-  handleEditProduct,
-  handleDeleteProduct,
+  // handleEditProduct,
+  // handleDeleteProduct,
 }) => {
   const toThousand = (n) =>
     n ? n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") : "0";
@@ -23,7 +23,7 @@ export const TableItem = ({
           )}
       </td>
       
-      <td>
+      {/* <td>
         
         <div className="d-flex ">
           <button
@@ -39,7 +39,7 @@ export const TableItem = ({
             <FaTrash />
           </button>
         </div>
-      </td>
+      </td> */}
     </tr>
   );
 };

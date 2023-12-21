@@ -14,12 +14,12 @@ import { Loading } from "../component/Loading";
 
 import { FormSearch } from "../component/FormSearch";
 import { Paginator } from "../component/Paginator";
-import { SweetAlertToast } from "../component/SweetAlertToast";
-import Swal from "sweetalert2";
-import { FormMovie } from "../component/FormMovie";
+/* import { SweetAlertToast } from "../component/SweetAlertToast";
+import Swal from "sweetalert2"; */
+// import { FormMovie } from "../component/FormMovie";
 
 export const ListProductsPage = () => {
-  const [product, setProduct] = useState([]);
+  // const [product, setProduct] = useState([]);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [pagination, setPagination] = useState({
@@ -69,113 +69,113 @@ export const ListProductsPage = () => {
     }
   };
 
-  const handleAddProduct = async (data, endpoint = "/api/products") => {
-    try {
-      const response = await fetch(`http://localhost:3000${endpoint}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-      const result = await response.json();
+  // const handleAddProduct = async (data, endpoint = "/api/products") => {
+  //   try {
+  //     const response = await fetch(`http://localhost:3000${endpoint}`, {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(data),
+  //     });
+  //     const result = await response.json();
       
-      if (response.ok) {
+  //     if (response.ok) {
         
-        SweetAlertToast(result.message)
-      }else{
-        console.error(`Error: ${response.status} - ${response.statusText}`);
-        SweetAlertToast(result.message, "error");
-      }
+  //       SweetAlertToast(result.message)
+  //     }else{
+  //       console.error(`Error: ${response.status} - ${response.statusText}`);
+  //       SweetAlertToast(result.message, "error");
+  //     }
        
 
-      getProducts();
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  const handleEditProduct = async (id, endpoint = "/api/products") => {
-    try {
-      const response = await fetch(`http://localhost:3000${endpoint}/${id}`);
-      const result = await response.json();
-        setLoading(true);
-        setProduct(result.data);
-        setLoading(false);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  //     getProducts();
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+  // const handleEditProduct = async (id, endpoint = "/api/products") => {
+  //   try {
+  //     const response = await fetch(`http://localhost:3000${endpoint}/${id}`);
+  //     const result = await response.json();
+  //       setLoading(true);
+  //       setProduct(result.data);
+  //       setLoading(false);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
-  const handleUpdateProduct = async (id, detail, endpoint = "/api/products") => {
-    try {
-      if (!id) {
-        console.error("ID is undefined. Cannot update product.");
-        return handleAddProduct(detail, endpoint);
-      }
+  // const handleUpdateProduct = async (id, detail, endpoint = "/api/products") => {
+  //   try {
+  //     if (!id) {
+  //       console.error("ID is undefined. Cannot update product.");
+  //       return handleAddProduct(detail, endpoint);
+  //     }
   
-      const response = await fetch(`http://localhost:3000${endpoint}/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(detail),
-      });
-      const result = await response.json();
+  //     const response = await fetch(`http://localhost:3000${endpoint}/${id}`, {
+  //       method: "PUT",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(detail),
+  //     });
+  //     const result = await response.json();
   
-      if (response.ok) {
-        SweetAlertToast(result.message);
-        setProducts(
-          products.map((product) => (product.id === id ? result.data : products))
-        );
-        setProduct(null);
-      } else {
-        console.error(`Error: ${response.status} - ${response.statusText}`);
-        SweetAlertToast(result.message, "error");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  //     if (response.ok) {
+  //       SweetAlertToast(result.message);
+  //       setProducts(
+  //         products.map((product) => (product.id === id ? result.data : products))
+  //       );
+  //       setProduct(null);
+  //     } else {
+  //       console.error(`Error: ${response.status} - ${response.statusText}`);
+  //       SweetAlertToast(result.message, "error");
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
   
 
-  const handleDeleteProduct = async (id, endpoint = "/api/products") => {
-    Swal.fire({
-      title: "Are you sure you want to delete the product?",
-      showDenyButton: true,
-      confirmButtonText: "Delete",
-      denyButtonText: `Don't Delete`,
-    }).then(async (result) => {
-      if (result.isConfirmed) {
-        try {
-          const response = await fetch(
-            `http://localhost:3000${endpoint}/${id}`,
-            {
-              method: "DELETE",
-            }
-          );
-          const result = await response.json();
+  // const handleDeleteProduct = async (id, endpoint = "/api/products") => {
+  //   Swal.fire({
+  //     title: "Are you sure you want to delete the product?",
+  //     showDenyButton: true,
+  //     confirmButtonText: "Delete",
+  //     denyButtonText: `Don't Delete`,
+  //   }).then(async (result) => {
+  //     if (result.isConfirmed) {
+  //       try {
+  //         const response = await fetch(
+  //           `http://localhost:3000${endpoint}/${id}`,
+  //           {
+  //             method: "DELETE",
+  //           }
+  //         );
+  //         const result = await response.json();
           
-          if (response.ok) {
-            SweetAlertToast(result.message);
-            setProducts(products.filter((product) => product.id !== id));
-          } else {
-            SweetAlertToast(result.message, "error");
-          }
-        } catch (error) {
-          console.log(error);
-        }
-      } else if (result.isDenied) {
-        Swal.fire("Changes are not saved", "", "info");
-      }
-    });
-  };
+  //         if (response.ok) {
+  //           SweetAlertToast(result.message);
+  //           setProducts(products.filter((product) => product.id !== id));
+  //         } else {
+  //           SweetAlertToast(result.message, "error");
+  //         }
+  //       } catch (error) {
+  //         console.log(error);
+  //       }
+  //     } else if (result.isDenied) {
+  //       Swal.fire("Changes are not saved", "", "info");
+  //     }
+  //   });
+  // };
 
   return loading ? (
     <Loading />
   ) : (
 
     <Row className="admin">
-      <Col sm={12} lg={4}>
+      {/* <Col sm={12} lg={4}>
         <Card className=" shadow-lg bg-dark text-white">
           <CardHeader className=" shadow-lg bg-dark ">
           <Card.Title> {product ? "Edit" : "Add"} Product</Card.Title>
@@ -189,7 +189,7 @@ export const ListProductsPage = () => {
             />
           </CardBody>
         </Card>
-      </Col>
+      </Col> */}
       <Col sm={12} lg={8}>
         <Card className=" shadow-lg bg-dark ">
           <CardBody>
@@ -212,7 +212,7 @@ export const ListProductsPage = () => {
                     <th scope="col">Precio</th>
                     <th scope="col">Decuento</th>
                     <th scope="col">P. Final</th>
-                    <th scope="col">Acciones</th>
+                    {/* <th scope="col">Acciones</th> */}
                   </tr>
                 </thead>
                 <tbody>
@@ -221,8 +221,8 @@ export const ListProductsPage = () => {
                       <TableItem
                         key={product.id}
                         product={product}
-                        handleEditProduct={handleEditProduct}
-                        handleDeleteProduct={handleDeleteProduct}
+                       /*  handleEditProduct={handleEditProduct}
+                        handleDeleteProduct={handleDeleteProduct} */
                       />
                     ))
                   ) : (
