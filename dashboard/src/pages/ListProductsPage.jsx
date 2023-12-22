@@ -190,7 +190,7 @@ export const ListProductsPage = () => {
           </CardBody>
         </Card>
       </Col> */}
-      <Col sm={12} lg={8}>
+      <Col sm={12} lg={12}>
         <Card className=" shadow-lg bg-dark ">
           <CardBody>
             <CardHeader className="d-flex shadow-lg bg-dark justify-content-between">

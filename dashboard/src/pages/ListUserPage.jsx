@@ -61,7 +61,7 @@ export const ListUserPage = () => {
   return (
     <Row className="admin">
       
-      <Col sm={12} lg={8}>
+      <Col sm={12} lg={12}>
         <Card className=" shadow-lg bg-dark" >
           <CardHeader className=" shadow-lg bg-dark d-flex justify-content-between" >
             <CardTitle className="text-white"> Users: </CardTitle>
